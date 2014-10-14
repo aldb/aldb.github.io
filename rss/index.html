@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://localhost:2368/</link><generator>Ghost 0.5</generator><lastBuildDate>Tue, 14 Oct 2014 20:22:45 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Как создать блог на github.io используя Ghost]]></title><description><![CDATA[<p>Github предоставляет всем своим пользотелям создать статический блог в домене github.io. <br>
+При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms <strong>ghost</strong>.</p>
+
+<p>Я не хочу создавать, я хочу <a href="http://alexsdbk.github.io/">demo</a>!</p>
+
+<p>На создание блога нам потребуется <strong>3 Этапа</strong>:</p>
+
+<h3 id="i">I этап</h3>
+
+<p>Следуем <a href="https://pages.github.com/">инструкции</a> создадим <a href="https://github.com/new">репозиторий</a> c именем нашего пользователя на github.</p>
+
+<pre><code>git clone https://github.com/username/username.github.io 
+cd username.github.io
+echo "Hello World" &gt; index.html
+git add --all
+git commit -m "Initial commit"
+git push
+</code></pre>
+
+<p>Ожидаем пару минут и проверяем <a href="http://username.github.io/">http://username.github.io</a></p>
+
+<h3 id="ii">II Этап</h3>
+
+<p>Настройка локального окружения и создание блога.</p>
+
+<p>Нам потребуется Node.js 0.10.x (latest stable). Для работы с Ghost рекомендуют Node.js 0.10.30 и пакертный менеджер npm 1.4.21. 
+Ниже будут примеры кода под Linux
+Ссылки для других платформ:<a href="http://support.ghost.org/installing-ghost-mac/">Mac</a> <a href="http://support.ghost.org/installing-ghost-windows/">Windows</a></p>
+
+<p>Установим ghost</p>
+
+<pre><code>mkdir ghost
+wget "http://ghost.org/zip/ghost-latest.zip"
+unzip ghost-latest.zip -d ghost
+cd ghost
+cp config.example.js config.js
+</code></pre>
+
+<p>Установим nodejs &amp; npm</p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+</code></pre>
+
+<p>Изменим <strong>URL</strong> адрес в config.js раздел Development с <a href="http://localhost:2368/">http://localhost:2368</a> на <a href="http://username.github.io/">http://username.github.io</a></p>
+
+<pre><code>// ### Development **(default)**
+development: {
+    // The url to use when providing links to the site, E.g. in RSS and email.
+    // Change this to your Ghost blogs published URL.
+    url: 'http://username.github.io',
+
+    // Example mail config
+    // Visit http://support.ghost.org/mail for instructions
+    // ```
+    //  mail: {
+    //      transport: 'SMTP',
+    //      options: {
+    //          service: 'Mailgun',
+    //          auth: {
+    //              user: '', // mailgun username
+    //              pass: ''  // mailgun password
+    //          }
+    //      }
+    //  },
+    // ``
+</code></pre>
+
+<p>Зайдем в папку ghost, установим и запусим npm</p>
+
+<pre><code>npm install
+npm start
+</code></pre>
+
+<p><img src="http://localhost:2368/content/images/2014/10/npminstall.png" alt="npm install"></p>
+
+<p>Зайдем <a href="http://127.0.0.1:2368/ghost/">http://127.0.0.1:2368/ghost/</a></p>
+
+<p><img src="http://localhost:2368/content/images/2014/10/ghost-wellcome.png" alt="ghost wellcome"></p>
+
+<p>Создание и настройка блока а также редактирования постов(по примеру шаблона первого) интуитивно понятны. Так же всегда можно найти информацию <a href="https://ghost.org/">https://ghost.org/</a>.</p>
+
+<h3 id="iii">III Этап</h3>
+
+<p>Создание статичного блога и коммит на github</p>
+
+<p>Что бы сделать  <strong>ghost</strong> статичным Нам потребуется <strong>Buster</strong>
+<img src="http://localhost:2368/content/images/2014/10/Clippard-GB.gif" alt="buster"></p>
+
+<p>Установка </p>
+
+<pre><code>sudo apt-get update
+sudo apt-get install wget
+sudo apt-get install python
+sudo apt-get install python-pip
+ pip install buster
+</code></pre>
+
+<p>Проверяем запущен наш блог <a href="http://127.0.0.1:2368/">http://127.0.0.1:2368</a> или запускаем:</p>
+
+<pre><code>cd ghost/blog
+npm start
+</code></pre>
+
+<p>Создадим новую папку для статичной версии блога.</p>
+
+<pre><code>cd ghost
+mkdir blog_static
+cd buster setup
+</code></pre>
+
+<p>Запускаем бустер</p>
+
+<pre><code>buster setup
+</code></pre>
+
+<p>Указываем ссылку на github репозиториий:</p>
+
+<pre><code>https://github.com/username/username.github.io 
+</code></pre>
+
+<p>Захватим бустером приведение, т.е. наш локальный ghost.</p>
+
+<pre><code>buster generate --domain=http://127.0.0.1:2368
+</code></pre>
+
+<p>Для предпросмотра запустим:</p>
+
+<pre><code>buster preview 
+</code></pre>
+
+<p>Теперь наш статичный блог можно посмотреть <a href="http://127.0.0.1:9000/">http://127.0.0.1:9000</a></p>
+
+<p>Останавливаем отображение превью Control + C. Загружаем блог на Git:</p>
+
+<pre><code>buster deploy
+</code></pre>
+
+<p>Теперь или спустя пару минут он будет доступен <a href="http://username.github.io/">http://username.github.io</a></p>
+
+<h3 id="">Дальнейшее использование</h3>
+
+<p>Запускаем ghost(nmp start) и редактируем посты <a href="http://127.0.0.1:2368/ghost">http://127.0.0.1:2368/ghost</a></p>
+
+<p>Генерируем статичную версию и делаем комит:</p>
+
+<pre><code>buster generate --domain=http://127.0.0.1:2368    
+buster deploy
+</code></pre>
+
+<h3 id="">Полезные ссылки:</h3>
+
+<ul>
+<li>Оригинальная статья: <a href="http://talalanwar.com/host-a-ghost-blog-for-free/">How to: Host a Ghost Blog for Free</a></li>
+<li>Набор ссылок по установке <strong>Ghost</strong> <a href="http://ghost.centminmod.com/how-to-install-ghost-blogging-platform/">How to install Ghost blogging platform</a> </li>
+<li>Git репозиторий <a href="https://github.com/axitkhurana/buster">buster</a></li>
+</ul>]]></description><link>http://localhost:2368/kak-sozdat-blogh-na-github-io-ispolzuia-ghost/</link><guid isPermaLink="false">855f38d0-63d3-41b2-9429-fbcc9ba967c7</guid><category><![CDATA[github]]></category><category><![CDATA[cms]]></category><category><![CDATA[ghost]]></category><category><![CDATA[node.js]]></category><category><![CDATA[linux]]></category><category><![CDATA[Buster]]></category><category><![CDATA[githubpage]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Tue, 14 Oct 2014 19:03:32 GMT</pubDate></item></channel></rss>
