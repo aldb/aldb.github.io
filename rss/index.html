@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://localhost:2368/</link><generator>Ghost 0.5</generator><lastBuildDate>Tue, 14 Oct 2014 20:22:45 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Как создать блог на github.io используя Ghost]]></title><description><![CDATA[<p>Github предоставляет всем своим пользотелям создать статический блог в домене github.io. <br>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://localhost:2368/</link><generator>Ghost 0.5</generator><lastBuildDate>Tue, 14 Oct 2014 20:44:21 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Как создать блог на github.io используя Ghost]]></title><description><![CDATA[<p>Github предоставляет всем своим пользотелям создать статический блог в домене github.io. <br>
 При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms <strong>ghost</strong>.</p>
 
 <p>Я не хочу создавать, я хочу <a href="http://alexsdbk.github.io/">demo</a>!</p>
@@ -8,17 +8,9 @@
 
 <h3 id="i">I этап</h3>
 
+<p>Необходимо создать открытый репозиторий на Git, который создаст поддомен с вашим именем пользователя(<a href="http://username.github.io/">http://username.github.io</a>).</p>
+
 <p>Следуем <a href="https://pages.github.com/">инструкции</a> создадим <a href="https://github.com/new">репозиторий</a> c именем нашего пользователя на github.</p>
-
-<pre><code>git clone https://github.com/username/username.github.io 
-cd username.github.io
-echo "Hello World" &gt; index.html
-git add --all
-git commit -m "Initial commit"
-git push
-</code></pre>
-
-<p>Ожидаем пару минут и проверяем <a href="http://username.github.io/">http://username.github.io</a></p>
 
 <h3 id="ii">II Этап</h3>
 
@@ -80,7 +72,7 @@ npm start
 
 <p><img src="http://localhost:2368/content/images/2014/10/ghost-wellcome.png" alt="ghost wellcome"></p>
 
-<p>Создание и настройка блока а также редактирования постов(по примеру шаблона первого) интуитивно понятны. Так же всегда можно найти информацию <a href="https://ghost.org/">https://ghost.org/</a>.</p>
+<p>Создание и настройка блока а также редактирования постов(по примеру шаблона) интуитивно понятны. Так же всегда можно найти информацию <a href="https://ghost.org/">https://ghost.org/</a>.</p>
 
 <h3 id="iii">III Этап</h3>
 
@@ -100,14 +92,13 @@ sudo apt-get install python-pip
 
 <p>Проверяем запущен наш блог <a href="http://127.0.0.1:2368/">http://127.0.0.1:2368</a> или запускаем:</p>
 
-<pre><code>cd ghost/blog
+<pre><code>cd ghost
 npm start
 </code></pre>
 
 <p>Создадим новую папку для статичной версии блога.</p>
 
 <pre><code>cd ghost
-mkdir blog_static
 cd buster setup
 </code></pre>
 
@@ -121,7 +112,8 @@ cd buster setup
 <pre><code>https://github.com/username/username.github.io 
 </code></pre>
 
-<p>Захватим бустером приведение, т.е. наш локальный ghost.</p>
+<p>Бустер сгенерировал папку static.
+Теперь захватим бустером приведение, т.е. наш локальный ghost.</p>
 
 <pre><code>buster generate --domain=http://127.0.0.1:2368
 </code></pre>
@@ -133,7 +125,7 @@ cd buster setup
 
 <p>Теперь наш статичный блог можно посмотреть <a href="http://127.0.0.1:9000/">http://127.0.0.1:9000</a></p>
 
-<p>Останавливаем отображение превью Control + C. Загружаем блог на Git:</p>
+<p>Останавливаем отображение превью <strong>Control + C</strong>. Загружаем блог на Git:</p>
 
 <pre><code>buster deploy
 </code></pre>
