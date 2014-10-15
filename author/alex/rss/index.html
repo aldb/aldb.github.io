@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Wed, 15 Oct 2014 05:26:54 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Как создать блог на github.io используя CMS Ghost]]></title><description><![CDATA[<p>Github предоставляет всем своим пользотелям создать статический блог в домене github.io. <br>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Wed, 15 Oct 2014 06:03:36 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Как создать блог на github.io используя CMS Ghost]]></title><description><![CDATA[<p>Github предоставляет всем своим пользователям создать статический блог в домене github.io. <br>
 При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms <strong>ghost</strong>.</p>
 
 <p>Я не хочу создавать, я хочу <a href="http://alexsdbk.github.io/">demo</a>!</p>
@@ -15,7 +15,7 @@
 <p>II Этап <br>
 Настройка локального окружения и создание блога.</p>
 
-<p>Нам потребуется Node.js 0.10.x (latest stable). Для работы с Ghost рекомендуют Node.js 0.10.30 и пакертный менеджер npm 1.4.21. Ниже будут примеры кода под Linux Ссылки для других платформ:<a href="http://support.ghost.org/installing-ghost-mac/">Mac</a> <a href="http://support.ghost.org/installing-ghost-windows/">Windows</a></p>
+<p>Нам потребуется Node.js 0.10.x (latest stable). Для работы с Ghost рекомендуют Node.js 0.10.30 и пакетный менеджер npm 1.4.21. Ниже будут примеры кода под Linux Ссылки для других платформ:<a href="http://support.ghost.org/installing-ghost-mac/">Mac</a> <a href="http://support.ghost.org/installing-ghost-windows/">Windows</a></p>
 
 <p>Установим ghost</p>
 
@@ -56,7 +56,7 @@ url: 'http://username.github.io',
 // ``
 </code></pre>
 
-<p>Зайдем в папку ghost, установим и запусим npm</p>
+<p>Зайдем в папку ghost, установим и запустим npm</p>
 
 <pre><code>npm install
 npm start
@@ -72,7 +72,7 @@ npm start
 
 <h3 id="iii">III Этап</h3>
 
-<p>Создание статичного блога и коммит на github</p>
+<p>Создание статичного блога и 'commit' на github</p>
 
 <p>Что бы сделать ghost статичным Нам потребуется <strong>Buster</strong></p>
 
@@ -130,13 +130,16 @@ cd buster setup
 
 <h6 id="">Ложка дёгтя</h6>
 
-<p>У меня в отличнии от автора не получился deploy в Git через buster, но это не помешало сделать мне вручную.</p>
+<p>У меня не получился deploy в Git через buster. Но я сделал 'commit' через терминал.</p>
 
-<h3 id="">Дальнейшее использование</h3>
+<h3 id="">Повседневное использование</h3>
 
-<p>Запускаем ghost(nmp start) и редактируем посты <a href="http://127.0.0.1:2368/ghost">http://127.0.0.1:2368/ghost</a></p>
+<p>Запускаем ghost и редактируем посты <a href="http://127.0.0.1:2368/ghost">http://127.0.0.1:2368/ghost</a></p>
 
-<p>Генерируем статичную версию и делаем комит:</p>
+<pre><code>nmp start
+</code></pre>
+
+<p><strong>Buster</strong> генерирует статичную версию и делает 'commit'.</p>
 
 <pre><code>buster generate --domain=http://127.0.0.1:2368    
 buster deploy
