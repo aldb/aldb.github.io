@@ -18,6 +18,7 @@
     11. Media Queries (Tablet)
     12. Media Queries (Mobile)
     13. Animations
+    14. Custom Menu
 
 */
 
@@ -1779,3 +1780,109 @@ body:not(.post-template) .post-title {
    End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+
+
+/* ==========================================================================
+   14. Custom Menu
+   ========================================================================== */
+.hexagon,
+.hexagon:before,
+.hexagon:after{
+    border-style: solid;
+    border-color: #BCBFC2;
+    border-width: 1px;
+    border-top: none;
+    border-bottom: none;
+    height: 75px;
+    width: 129.9px;
+    background-color: #414142;
+}
+
+.hexagon{
+    text-align: center;
+    line-height: 100px;
+    position:relative;
+    z-index:0;
+    margin: 60px 10px;
+}
+
+.hexagon:after,
+.hexagon:before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: -1px;
+    z-index: -1;
+}
+
+.hexagon:before{
+    -webkit-transform: rotate(60deg);
+       -moz-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+         -o-transform: rotate(60deg);
+            transform: rotate(60deg);
+}
+
+.hexagon:after{
+    -webkit-transform: rotate(-60deg);
+       -moz-transform: rotate(-60deg);
+        -ms-transform: rotate(-60deg);
+         -o-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+}
+
+.hexagon:hover,
+.hexagon:hover:before,
+.hexagon:hover:after{
+    background-color: #78888F;
+}
+.hex-menu ul > li:hover a {
+   color: #58585A;
+   /*top:10px;*/
+}
+.hex-menu {
+	overflow: hidden;
+	text-align: center;
+}
+.hex-menu ul {
+	 display: inline-block;
+	 margin-left: -20px;
+}
+.hex-menu ul li{
+    position:relative;
+    float: left;
+    list-style: none;
+/*    width: auto;*/
+/*    min-width: 100px;*/
+     margin: 1px 5px;
+/*    padding: 2px auto;
+    *padding: 2px 40px;*/
+/*    text-align: center;
+    white-space: nowrap;*/
+}
+.hex-menu ul li a { 
+    text-decoration: none;
+    color: #FFF;
+    white-space:nowrap;
+}
+
+.element-icon {
+    position: relative;
+}
+ 
+/*replace the content value with the
+corresponding value from the list below*/
+ 
+.element-icon:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+/*    text-decoration: inherit;*/
+/*--adjust as necessary--*/
+    color: #000;
+    font-size: 80px;
+/*    padding-right: 0.5em;*/
+/*    position: absolute;*/
+    /*top: 10px;*/
+    left: 0;
+}
