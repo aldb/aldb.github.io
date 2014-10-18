@@ -1835,11 +1835,15 @@ body:not(.post-template) .post-title {
 .hexagon:hover:before,
 .hexagon:hover:after{
     background-color: #78888F;
+    cursor: pointer;
 }
 .hex-menu ul > li:hover a {
    color: #58585A;
-   /*top:10px;*/
 }
+.hex-menu ul > li:hover .element-icon:before{
+   color: #FFFFFF;
+}
+
 .hex-menu {
 	overflow: hidden;
 	text-align: center;
@@ -1852,13 +1856,7 @@ body:not(.post-template) .post-title {
     position:relative;
     float: left;
     list-style: none;
-/*    width: auto;*/
-/*    min-width: 100px;*/
      margin: 1px 5px;
-/*    padding: 2px auto;
-    *padding: 2px 40px;*/
-/*    text-align: center;
-    white-space: nowrap;*/
 }
 .hex-menu ul li a { 
     text-decoration: none;
@@ -1868,21 +1866,17 @@ body:not(.post-template) .post-title {
 
 .element-icon {
     position: relative;
+    color: black;
 }
- 
-/*replace the content value with the
-corresponding value from the list below*/
- 
+
+.element-icon:hover {
+    position: relative;
+}
 .element-icon:before {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
-/*    text-decoration: inherit;*/
-/*--adjust as necessary--*/
-    color: #000;
     font-size: 80px;
-/*    padding-right: 0.5em;*/
-/*    position: absolute;*/
-    /*top: 10px;*/
     left: 0;
+    color:#111;
 }
