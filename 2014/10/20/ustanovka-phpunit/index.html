@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Установка phpunit</title>
+    <meta name="description" content="Быстрая установка phpunit framework для linux" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=eea9f188fa" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <meta name="generator" content="Ghost 0.5" />
+<link rel="alternate" type="application/rss+xml" title="Веб разработка с alexsdbk.github.io" href="../../../../rss/index.html">
+<link rel="canonical" href="http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/" />
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body class="post-template tag-php tag-phpunit tag-ustanovka">
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-55760234-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+    
+
+
+<header class="main-header post-head " style="background-image: url(../../../../content/images/2014/10/phpunit.png)">
+    <nav class="main-nav overlay clearfix">
+        <a class="back-button icon-arrow-left" href="http://alexsdbk.github.io">Home</a>
+        <a class="subscribe-button icon-feed" href="http://alexsdbk.github.io/rss/">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-php tag-phpunit tag-ustanovka">
+
+        <header class="post-header">
+            <h1 class="post-title">Установка phpunit</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2014-10-20">20 October 2014</time>  on <a href="../../../../tag/php/index.html">php</a>, <a href="../../../../tag/phpunit/index.html">phpunit</a>, <a href="../../../../tag/ustanovka/index.html">установка</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>Все знаем что phpunit модно, стильно, молодежно.
+И вот как ее быстро установить:</p>
+
+<pre><code>pear channel-discover pear.phpunit.de
+pear channel-discover pear.symfony-project.com
+</code></pre>
+
+<p>В случаи проблемы с правами добавляем волшебное "sudo"
+Таким образом мы добавили  <strong>PEAR Installer</strong></p>
+
+<pre><code>pear install phpunit/PHPUnit
+</code></pre>
+
+<p>Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:</p>
+
+<pre><code>apt-get install php5-dev
+pecl install xdebug
+</code></pre>
+
+<p>После этого все должно заработать, проверить версию PHPUnit можно командой </p>
+
+<pre><code>phpunit
+</code></pre>
+
+<p>В дополнения простенький пример теста:</p>
+
+<pre><code>&lt;?php
+class StackTest extends PHPUnit_Framework_TestCase
+{
+    public function testPushAndPop()
+    {
+        $stack = array();
+        $this-&gt;assertEquals(0, count($stack));
+
+        array_push($stack, 'foo');
+        $this-&gt;assertEquals('foo',$stack[count($stack)-1]);
+        $this-&gt;assertEquals(1, count($stack));
+
+        $this-&gt;assertEquals('foo',array_pop($stack));
+        $this-&gt;assertEquals(0, count($stack));
+    }
+}
+</code></pre>
+
+<p>Подробнее можно посмотреть в <a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html">документации</a>, где все примеры с закрывающим тегом&lt; ? - facepalm</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../../../../author/alex/index.html" style="background-image: url(../../../../content/images/2014/10/vvv.jpg)"><span class="hidden">Alex's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../../../../author/alex/index.html">Alex</a></h4>
+
+                    <p>Full Stack Web Developer</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Bay Area, CA</span>
+                    <span class="author-link icon-link"><a href="http://alexsdbk.github.io/">http://alexsdbk.github.io/</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20phpunit&amp;url=http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            <div id="disqus_thread"></div>
+			<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			var disqus_shortname = 'httpalexsdbkgithubio'; // required: replace example with your forum shortname
+
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="http://alexsdbk.github.io">Веб разработка с alexsdbk.github.io</a> &copy; 2014</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+         <!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=26632854&amp;from=informer"
+target="_blank" rel="nofollow"><img src="http://bs.yandex.ru/informer/26632854/1_0_FFFFFFFF_FFFFFFFF_0_pageviews"
+style="width:80px; height:15px; border:0;" alt="Yandex metrika" title="Views Yandex metrika
+today" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter26632854 = new Ya.Metrika({id:26632854,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="http://mc.yandex.ru/watch/26632854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    </footer>
+
+    <script src="../../../../public/jquery.js?v=eea9f188fa"></script>
+
+    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=eea9f188fa"></script>
+    <script type="text/javascript" src="../../../../assets/js/index.js?v=eea9f188fa"></script>
+
+</body>
+</html>

@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Sat, 18 Oct 2014 17:26:37 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[SQL комиксы!]]></title><description><![CDATA[<h3 id="i">I</h3>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Mon, 20 Oct 2014 07:02:22 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Установка phpunit]]></title><description><![CDATA[<p>Все знаем что phpunit модно, стильно, молодежно.
+И вот как ее быстро установить:</p>
+
+<pre><code>pear channel-discover pear.phpunit.de
+pear channel-discover pear.symfony-project.com
+</code></pre>
+
+<p>В случаи проблемы с правами добавляем волшебное "sudo"
+Таким образом мы добавили  <strong>PEAR Installer</strong></p>
+
+<pre><code>pear install phpunit/PHPUnit
+</code></pre>
+
+<p>Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:</p>
+
+<pre><code>apt-get install php5-dev
+pecl install xdebug
+</code></pre>
+
+<p>После этого все должно заработать, проверить версию PHPUnit можно командой </p>
+
+<pre><code>phpunit
+</code></pre>
+
+<p>В дополнения простенький пример теста:</p>
+
+<pre><code>&lt;?php
+class StackTest extends PHPUnit_Framework_TestCase
+{
+    public function testPushAndPop()
+    {
+        $stack = array();
+        $this-&gt;assertEquals(0, count($stack));
+
+        array_push($stack, 'foo');
+        $this-&gt;assertEquals('foo',$stack[count($stack)-1]);
+        $this-&gt;assertEquals(1, count($stack));
+
+        $this-&gt;assertEquals('foo',array_pop($stack));
+        $this-&gt;assertEquals(0, count($stack));
+    }
+}
+</code></pre>
+
+<p>Подробнее можно посмотреть в <a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html">документации</a>, где все примеры с закрывающим тегом&lt; ? - facepalm</p>]]></description><link>http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/</link><guid isPermaLink="false">cdbbfc04-3c09-4f8b-9726-140d5b0a2b9a</guid><category><![CDATA[php]]></category><category><![CDATA[phpunit]]></category><category><![CDATA[установка]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Mon, 20 Oct 2014 07:01:32 GMT</pubDate></item><item><title><![CDATA[SQL комиксы!]]></title><description><![CDATA[<h3 id="i">I</h3>
 
 <p><img src="http://alexsdbk.github.io/content/images/2014/10/sql_comics2.png" alt=""></p>
 
 <h3 id="ii">II</h3>
 
-<p><img src="http://alexsdbk.github.io/content/images/2014/10/sql_comics1.png" alt=""></p>]]></description><link>http://alexsdbk.github.io/sql-komiksy/</link><guid isPermaLink="false">ee006c80-0bfb-4d15-8d99-cb2d9bdb89e3</guid><category><![CDATA[sql]]></category><category><![CDATA[comics]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Sat, 18 Oct 2014 16:53:47 GMT</pubDate></item><item><title><![CDATA[About]]></title><description><![CDATA[<p><br> <br>
+<p><img src="http://alexsdbk.github.io/content/images/2014/10/sql_comics1.png" alt=""></p>]]></description><link>http://alexsdbk.github.io/2014/10/18/sql-komiksy/</link><guid isPermaLink="false">ee006c80-0bfb-4d15-8d99-cb2d9bdb89e3</guid><category><![CDATA[sql]]></category><category><![CDATA[comics]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Sat, 18 Oct 2014 16:53:47 GMT</pubDate></item><item><title><![CDATA[About]]></title><description><![CDATA[<p><br> <br>
 <br></p>
 
 <p>Hello! <br>
 My name is <strong>Alex</strong> and this is my blog on github. <br>
 I'm interested in web development, so this blog is about it.</p>
 
-<p>If you want to contact me, please use my email: alexs.dbk@gmail.com</p>]]></description><link>http://alexsdbk.github.io/about/</link><guid isPermaLink="false">dc9dfdb4-4c70-4444-9cc8-0871833b5eff</guid><category><![CDATA[about]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Thu, 16 Oct 2014 07:27:33 GMT</pubDate></item><item><title><![CDATA[Как создать блог на github.io используя CMS Ghost]]></title><description><![CDATA[<p>Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms <strong>ghost</strong>.</p>
+<p>If you want to contact me, please use my email: alexs.dbk@gmail.com</p>]]></description><link>http://alexsdbk.github.io/2014/10/16/about/</link><guid isPermaLink="false">dc9dfdb4-4c70-4444-9cc8-0871833b5eff</guid><category><![CDATA[about]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Thu, 16 Oct 2014 07:27:33 GMT</pubDate></item><item><title><![CDATA[Как создать блог на github.io используя CMS Ghost]]></title><description><![CDATA[<p>Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms <strong>ghost</strong>.</p>
 
 <p>Я не хочу создавать, я хочу <a href="http://alexsdbk.github.io/">demo</a>!</p>
 
@@ -176,4 +220,4 @@ buster deploy
 <li>Оригинальная статья: <a href="http://talalanwar.com/host-a-ghost-blog-for-free/">How to: Host a Ghost Blog for Free</a></li>
 <li>Набор ссылок по установке cms ghost: <a href="http://ghost.centminmod.com/how-to-install-ghost-blogging-platform/">Ghost How to install Ghost blogging platform</a></li>
 <li>Git репозиторий <a href="https://github.com/axitkhurana/buster">buster</a></li>
-</ul>]]></description><link>http://alexsdbk.github.io/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/</link><guid isPermaLink="false">0737aed8-60e9-4f85-883c-727c720d3451</guid><category><![CDATA[ghost]]></category><category><![CDATA[github]]></category><category><![CDATA[github pages]]></category><category><![CDATA[nodejs]]></category><category><![CDATA[npm]]></category><category><![CDATA[cms]]></category><category><![CDATA[blog]]></category><category><![CDATA[buster]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Wed, 15 Oct 2014 01:30:03 GMT</pubDate></item></channel></rss>
+</ul>]]></description><link>http://alexsdbk.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/</link><guid isPermaLink="false">0737aed8-60e9-4f85-883c-727c720d3451</guid><category><![CDATA[ghost]]></category><category><![CDATA[github]]></category><category><![CDATA[github pages]]></category><category><![CDATA[nodejs]]></category><category><![CDATA[npm]]></category><category><![CDATA[cms]]></category><category><![CDATA[blog]]></category><category><![CDATA[buster]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Wed, 15 Oct 2014 01:30:03 GMT</pubDate></item></channel></rss>
