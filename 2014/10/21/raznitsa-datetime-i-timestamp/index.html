@@ -4,8 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>SQL Комикс</title>
-    <meta name="description" content="Картинки  SQL комиксов" />
+    <title>Datetime и timestamp в MySQL хранят информации по дате. Их отличия</title>
+    <meta name="description" content="Datetime
+8 байт без часового пояса
+DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP 
+Timestamp
+4 байта с часовым поясом
+хранит время UTC" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +22,11 @@
 
     <meta name="generator" content="Ghost 0.5" />
 <link rel="alternate" type="application/rss+xml" title="Веб разработка с alexsdbk.github.io" href="../../../../rss/index.html">
-<link rel="canonical" href="http://alexsdbk.github.io/2014/10/18/sql-komiksy/" />
+<link rel="canonical" href="http://alexsdbk.github.io/2014/10/21/raznitsa-datetime-i-timestamp/" />
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body class="post-template tag-sql tag-comics">
+<body class="post-template tag-sql tag-mysql">
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -44,23 +49,32 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-sql tag-comics">
+    <article class="post tag-sql tag-mysql">
 
         <header class="post-header">
-            <h1 class="post-title">SQL комиксы!</h1>
+            <h1 class="post-title">Разница datetime и timestamp</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2014-10-18">18 October 2014</time>  on <a href="../../../../tag/sql/index.html">sql</a>, <a href="../../../../tag/comics/index.html">comics</a>
+                <time class="post-date" datetime="2014-10-21">21 October 2014</time>  on <a href="../../../../tag/sql/index.html">sql</a>, <a href="../../../../tag/mysql/index.html">mysql</a>
             </section>
         </header>
 
         <section class="post-content">
-            <h3 id="i">I</h3>
+            <p>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</p>
 
-<p><img src="../../../../content/images/2014/10/sql_comics2.png" alt="" /></p>
+<h5 id="datetime">Datetime</h5>
 
-<h3 id="ii">II</h3>
+<ul>
+<li>8 байт без часового пояса</li>
+<li>DEFAULT CURRENT<em>TIMESTAMP / ON UPDATE CURRENT</em>TIMESTAMP устанавливает время по умолчанию (<strong>MySQL 5.6.5</strong>)</li>
+</ul>
 
-<p><img src="../../../../content/images/2014/10/sql_comics1.png" alt="" /></p>
+<h5 id="timestamp">Timestamp</h5>
+
+<ul>
+<li>4 байта с часовым поясом</li>
+<li>хранит время <strong>UTC</strong>(Гринвчи)</li>
+<li>в версии до <strong>MySQL 5.6.1</strong> не более 2 TIMESTAMP колонок в одной таблице, в версии <strong>MySQL 5.6.5</strong>+ без ограничений</li>
+</ul>
         </section>
 
         <footer class="post-footer">
@@ -83,15 +97,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=SQL%20%D0%BA%D0%BE%D0%BC%D0%B8%D0%BA%D1%81%D1%8B!&amp;url=http://alexsdbk.github.io/2014/10/18/sql-komiksy/"
+                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%A0%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0%20datetime%20%D0%B8%20timestamp&amp;url=http://alexsdbk.github.io/2014/10/21/raznitsa-datetime-i-timestamp/"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/18/sql-komiksy/"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/21/raznitsa-datetime-i-timestamp/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/18/sql-komiksy/"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/21/raznitsa-datetime-i-timestamp/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Mon, 20 Oct 2014 07:02:24 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Установка phpunit]]></title><description><![CDATA[<p>Все знаем что phpunit модно, стильно, молодежно.
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Wed, 22 Oct 2014 05:14:43 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Разница datetime и timestamp]]></title><description><![CDATA[<p>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</p>
+
+<h5 id="datetime">Datetime</h5>
+
+<ul>
+<li>8 байт без часового пояса</li>
+<li>DEFAULT CURRENT<em>TIMESTAMP / ON UPDATE CURRENT</em>TIMESTAMP устанавливает время по умолчанию (<strong>MySQL 5.6.5</strong>)</li>
+</ul>
+
+<h5 id="timestamp">Timestamp</h5>
+
+<ul>
+<li>4 байта с часовым поясом</li>
+<li>хранит время <strong>UTC</strong>(Гринвчи)</li>
+<li>в версии до <strong>MySQL 5.6.1</strong> не более 2 TIMESTAMP колонок в одной таблице, в версии <strong>MySQL 5.6.5</strong>+ без ограничений</li>
+</ul>]]></description><link>http://alexsdbk.github.io/2014/10/21/raznitsa-datetime-i-timestamp/</link><guid isPermaLink="false">b0979971-d700-44b9-afc9-7f816446c7ab</guid><category><![CDATA[sql]]></category><category><![CDATA[mysql]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Wed, 22 Oct 2014 05:13:59 GMT</pubDate></item><item><title><![CDATA[Установка phpunit]]></title><description><![CDATA[<p>Все знаем что phpunit модно, стильно, молодежно.
 И вот как ее быстро установить:</p>
 
 <pre><code>pear channel-discover pear.phpunit.de
@@ -193,7 +208,7 @@ cd buster setup
 
 <p>Запускаем ghost и редактируем посты <a href="http://127.0.0.1:2368/ghost">http://127.0.0.1:2368/ghost</a></p>
 
-<pre><code>nmp start
+<pre><code>npm start
 </code></pre>
 
 <p><strong>Buster</strong> генерирует статичную версию и делает 'commit'.</p>
