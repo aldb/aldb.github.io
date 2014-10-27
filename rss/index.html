@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Thu, 23 Oct 2014 06:16:07 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Разница datetime и timestamp]]></title><description><![CDATA[<p>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Mon, 27 Oct 2014 03:23:49 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Как сделать слияние masters с github pages]]></title><description><![CDATA[<p>Сабж, создаем бранч, мержим с продактишном и коммитим:</p>
+
+<pre><code>git checkout --orphan gh-pages
+git merge master
+git push origin gh-pages
+</code></pre>
+
+<p>Если есть желание всегда обновлять gh-pages при коммите можно добавить в файл .git/config, секцию [remote "origin"]</p>
+
+<pre><code>push = +refs/heads/master:refs/heads/gh-pages
+push = +refs/heads/master:refs/heads/master
+</code></pre>
+
+<p>Ссылки:</p>
+
+<ul>
+<li><a href="https://help.github.com/articles/creating-project-pages-manually/">Creating Project Pages manually</a></li>
+</ul>]]></description><link>http://alexsdbk.github.io/2014/10/26/sozdat-stranichku-na-github-pages/</link><guid isPermaLink="false">337f6e79-f670-4e50-844a-1a0d5febf6ff</guid><category><![CDATA[github pages]]></category><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Mon, 27 Oct 2014 03:19:35 GMT</pubDate></item><item><title><![CDATA[Разница datetime и timestamp]]></title><description><![CDATA[<p>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</p>
 
 <h5 id="datetime">Datetime</h5>
 
@@ -15,8 +32,8 @@
 <li>4 байта с часовым поясом</li>
 <li>хранит время <strong>UTC</strong>(Гринвич)</li>
 <li>в версии до <strong>MySQL 5.6.1</strong> не более 2 TIMESTAMP колонок в одной таблице, в версии <strong>MySQL 5.6.5</strong>+ без ограничений</li>
-<li>Свойство DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP  может быть примененно только для одной колонке:</li>
-<li><p>Запросы кешируются по умолчанию</p>
+<li>Запросы кешируются по умолчанию</li>
+<li><p>Свойство DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP  может быть примененно только для одной колонке:</p>
 
 <pre><code>CREATE TABLE `test` (
   `id` INT(10) UNSIGNED NOT NULL,
@@ -123,8 +140,9 @@ I'm interested in web development, so this blog is about it.</p>
 
 <p>Следуем <a href="https://pages.github.com/">инструкции</a> создадим <a href="https://github.com/new">репозиторий</a> c именем нашего пользователя на github.</p>
 
-<p>II Этап <br>
-Настройка локального окружения и создание блога.</p>
+<h3 id="ii">II Этап</h3>
+
+<p>Настройка локального окружения и создание блога.</p>
 
 <p>Нам потребуется Node.js 0.10.x (latest stable). Для работы с Ghost рекомендуют Node.js 0.10.30 и пакетный менеджер npm 1.4.21. Ниже будут примеры кода под Linux Ссылки для других платформ:<a href="http://support.ghost.org/installing-ghost-mac/">Mac</a> <a href="http://support.ghost.org/installing-ghost-windows/">Windows</a></p>
 

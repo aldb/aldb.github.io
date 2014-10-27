@@ -4,8 +4,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>SQL Комикс</title>
-    <meta name="description" content="Картинки  SQL комиксов" />
+    <title>Как сделать слияние masters с github pages</title>
+    <meta name="description" content="Сабж, создаем бранч, мержим с продактишном и коммитим:
+
+	git checkout --orphan gh-pages
+	git merge master
+	git push origin gh-pages" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +21,11 @@
 
     <meta name="generator" content="Ghost 0.5" />
 <link rel="alternate" type="application/rss+xml" title="Веб разработка с alexsdbk.github.io" href="../../../../rss/index.html">
-<link rel="canonical" href="http://alexsdbk.github.io/2014/10/18/sql-komiksy/" />
+<link rel="canonical" href="http://alexsdbk.github.io/2014/10/26/sozdat-stranichku-na-github-pages/" />
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body class="post-template tag-sql tag-comics">
+<body class="post-template tag-github-pages">
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -44,23 +48,34 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-sql tag-comics">
+    <article class="post tag-github-pages">
 
         <header class="post-header">
-            <h1 class="post-title">SQL комиксы!</h1>
+            <h1 class="post-title">Как сделать слияние masters с github pages</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2014-10-18">18 October 2014</time>  on <a href="../../../../tag/sql/index.html">sql</a>, <a href="../../../../tag/comics/index.html">comics</a>
+                <time class="post-date" datetime="2014-10-26">26 October 2014</time>  on <a href="../../../../tag/github-pages/index.html">github pages</a>
             </section>
         </header>
 
         <section class="post-content">
-            <h3 id="i">I</h3>
+            <p>Сабж, создаем бранч, мержим с продактишном и коммитим:</p>
 
-<p><img src="../../../../content/images/2014/10/sql_comics2.png" alt="" /></p>
+<pre><code>git checkout --orphan gh-pages
+git merge master
+git push origin gh-pages
+</code></pre>
 
-<h3 id="ii">II</h3>
+<p>Если есть желание всегда обновлять gh-pages при коммите можно добавить в файл .git/config, секцию [remote "origin"]</p>
 
-<p><img src="../../../../content/images/2014/10/sql_comics1.png" alt="" /></p>
+<pre><code>push = +refs/heads/master:refs/heads/gh-pages
+push = +refs/heads/master:refs/heads/master
+</code></pre>
+
+<p>Ссылки:</p>
+
+<ul>
+<li><a href="https://help.github.com/articles/creating-project-pages-manually/">Creating Project Pages manually</a></li>
+</ul>
         </section>
 
         <footer class="post-footer">
@@ -83,15 +98,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=SQL%20%D0%BA%D0%BE%D0%BC%D0%B8%D0%BA%D1%81%D1%8B!&amp;url=http://alexsdbk.github.io/2014/10/18/sql-komiksy/"
+                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%9A%D0%B0%D0%BA%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5%20masters%20%D1%81%20github%20pages&amp;url=http://alexsdbk.github.io/2014/10/26/sozdat-stranichku-na-github-pages/"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/18/sql-komiksy/"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/26/sozdat-stranichku-na-github-pages/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/18/sql-komiksy/"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/26/sozdat-stranichku-na-github-pages/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
