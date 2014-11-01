@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Установка phpunit</title>
-    <meta name="description" content="Быстрая установка phpunit framework для linux" />
+    <title>Работа с datetime PHP vs Python</title>
+    <meta name="description" content="" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +17,11 @@
 
     <meta name="generator" content="Ghost 0.5" />
 <link rel="alternate" type="application/rss+xml" title="Веб разработка с alexsdbk.github.io" href="../../../../rss/index.html">
-<link rel="canonical" href="http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/" />
+<link rel="canonical" href="http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/" />
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body class="post-template tag-php tag-phpunit tag-ustanovka">
+<body class="post-template">
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -44,61 +44,31 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-php tag-phpunit tag-ustanovka">
+    <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Установка phpunit</h1>
+            <h1 class="post-title">Работа с datetime PHP vs Python</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2014-10-20">20 October 2014</time>  on <a href="../../../../tag/php/index.html">php</a>, <a href="../../../../tag/phpunit/index.html">phpunit</a>, <a href="../../../../tag/ustanovka/index.html">установка</a>
+                <time class="post-date" datetime="2014-10-31">31 October 2014</time> 
             </section>
         </header>
 
         <section class="post-content">
-            <p>Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:</p>
+            <p>Общая схема преобразования datetime сводится к преобразованию к Unix метку. Как правило используется функция strtotime(). 
+Следующим шагом преобразования Unix datetime в необходимый отображаемый формат, используем date(foramat, unixdatetime).</p>
 
-<pre><code>pear channel-discover pear.phpunit.de
-pear channel-discover pear.symfony-project.com
+<p>Реализуем задачу преобразования даты в формат MYSQL(2014-10-31 12:33)</p>
+
+<p>Php:</p>
+
+<pre><code>date("Y-m-d H:i:s", strtotime("March 10, 2001, 5:16 pm")
 </code></pre>
 
-<p>В случаи проблемы с правами добавляем волшебное "sudo"
-Таким образом мы добавили  <strong>PEAR Installer</strong></p>
+<p>Python</p>
 
-<pre><code>pear install phpunit/PHPUnit
+<pre><code>from datetime import datetime
+date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 </code></pre>
-
-<p>Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:</p>
-
-<pre><code>apt-get install php5-dev
-pecl install xdebug
-</code></pre>
-
-<p>После этого все должно заработать, проверить версию PHPUnit можно командой </p>
-
-<pre><code>phpunit
-</code></pre>
-
-<p>В дополнения простенький пример теста:</p>
-
-<pre><code>&lt;?php
-class StackTest extends PHPUnit_Framework_TestCase
-{
-    public function testPushAndPop()
-    {
-        $stack = array();
-        $this-&gt;assertEquals(0, count($stack));
-
-        array_push($stack, 'foo');
-        $this-&gt;assertEquals('foo',$stack[count($stack)-1]);
-        $this-&gt;assertEquals(1, count($stack));
-
-        $this-&gt;assertEquals('foo',array_pop($stack));
-        $this-&gt;assertEquals(0, count($stack));
-    }
-}
-</code></pre>
-
-<p>Подробнее можно посмотреть в <a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html">документации</a>, где все примеры с закрывающим тегом&lt; ?  <i class="fa fa-wheelchair"></i>facepalm</p>
         </section>
 
         <footer class="post-footer">
@@ -121,15 +91,15 @@ class StackTest extends PHPUnit_Framework_TestCase
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20phpunit&amp;url=http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/"
+                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20datetime%20PHP%20vs%20Python&amp;url=http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/20/ustanovka-phpunit/"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>

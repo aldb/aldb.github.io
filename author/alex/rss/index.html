@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Mon, 27 Oct 2014 03:28:20 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Как сделать слияние masters с github pages]]></title><description><![CDATA[<p>Сабж, создаем бранч, мержим с продактишном и коммитим:</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Sat, 01 Nov 2014 04:42:47 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Работа с datetime PHP vs Python]]></title><description><![CDATA[<p>Общая схема преобразования datetime сводится к преобразованию к Unix метку. Как правило используется функция strtotime(). 
+Следующим шагом преобразования Unix datetime в необходимый отображаемый формат, используем date(foramat, unixdatetime).</p>
+
+<p>Реализуем задачу преобразования даты в формат MYSQL(2014-10-31 12:33)</p>
+
+<p>Php:</p>
+
+<pre><code>date("Y-m-d H:i:s", strtotime("March 10, 2001, 5:16 pm")
+</code></pre>
+
+<p>Python</p>
+
+<pre><code>from datetime import datetime
+date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+</code></pre>]]></description><link>http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/</link><guid isPermaLink="false">ca659b2d-47d7-4396-b87a-2ba754226c23</guid><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Sat, 01 Nov 2014 04:41:54 GMT</pubDate></item><item><title><![CDATA[Как сделать слияние masters с github pages]]></title><description><![CDATA[<p>Сабж, создаем бранч, мержим с продактишном и коммитим:</p>
 
 <pre><code>git checkout --orphan gh-pages
 git merge master
