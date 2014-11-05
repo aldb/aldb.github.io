@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Работа с datetime PHP vs Python</title>
+    <title>Datetime PHP like Python</title>
     <meta name="description" content="" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="../../../../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=9808634a17" />
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=f3426c7b92" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <meta name="generator" content="Ghost 0.5" />
@@ -47,27 +47,30 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Работа с datetime PHP vs Python</h1>
+            <h1 class="post-title">Datetime PHP like Python</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="2014-10-31">31 October 2014</time> 
             </section>
         </header>
 
         <section class="post-content">
-            <p>Общая схема преобразования datetime сводится к преобразованию к Unix метку. Как правило используется функция strtotime(). 
-Следующим шагом преобразования Unix datetime в необходимый отображаемый формат, используем date(foramat, unixdatetime).</p>
+            <p>Разработка данных datetime удобнее с использованием Unix формата(числа).</p>
 
-<p>Реализуем задачу преобразования даты в формат MYSQL(2014-10-31 12:33)</p>
-
-<p>Php:</p>
+<p>Datetime in PHP:</p>
 
 <pre><code>date("Y-m-d H:i:s", strtotime("March 10, 2001, 5:16 pm")
 </code></pre>
 
-<p>Python</p>
+<p>Datetime in Python:</p>
 
 <pre><code>from datetime import datetime
 date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+</code></pre>
+
+<p>Datetime MSSQL in Mysql in Python:</p>
+
+<pre><code>date_object = datetime.strptime(date, '%b %d %Y %I:%M%p')
+date_object.strftime('%Y-%m-%d %H:%M:%S') #MySQL format
 </code></pre>
         </section>
 
@@ -91,7 +94,7 @@ date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20datetime%20PHP%20vs%20Python&amp;url=http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/"
+                <a class="icon-twitter" href="https://twitter.com/share?text=Datetime%20PHP%20like%20Python&amp;url=http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
@@ -167,10 +170,10 @@ today" /></a>
 <!-- /Yandex.Metrika counter -->
     </footer>
 
-    <script src="../../../../public/jquery.js?v=9808634a17"></script>
+    <script src="../../../../public/jquery.js?v=f3426c7b92"></script>
 
-    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=9808634a17"></script>
-    <script type="text/javascript" src="../../../../assets/js/index.js?v=9808634a17"></script>
+    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=f3426c7b92"></script>
+    <script type="text/javascript" src="../../../../assets/js/index.js?v=f3426c7b92"></script>
 
 </body>
 </html>
