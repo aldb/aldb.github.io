@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Sat, 08 Nov 2014 06:23:00 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Datetime PHP like Python]]></title><description><![CDATA[<p>Разработка данных datetime удобнее с использованием Unix формата(числа).</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alex - Веб разработка с alexsdbk.github.io]]></title><description><![CDATA[Веб разработка, костыли, велосипеды.]]></description><link>http://alexsdbk.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Sun, 09 Nov 2014 05:02:08 GMT</lastBuildDate><atom:link href="http://alexsdbk.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Datetime PHP like Python]]></title><description><![CDATA[<p>Разработка данных datetime удобнее с использованием Unix формата(числа).</p>
 
 <p>Datetime in PHP:</p>
 
-<pre><code>date("Y-m-d H:i:s", strtotime("March 10, 2001, 5:16 pm")
+<pre><code>$today = date("Y-m-d H:i:s");  //MYSQL
+$date = date();
+echo $date-&gt;format("Y-m-d H:i:s"); //echo Date in format
+
+$today = date('h-i-s, j-m-y, it is w Day'); // 05-16-18, 10-03-01, 1631 1618 6 Satpm01
 </code></pre>
 
 <p>Datetime in Python:</p>
@@ -12,11 +16,13 @@
 date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 </code></pre>
 
-<p>Datetime MSSQL in Mysql in Python:</p>
+<p>Datetime from MSSQL in Mysql in Python:</p>
 
 <pre><code>date_object = datetime.strptime(date, '%b %d %Y %I:%M%p')
 date_object.strftime('%Y-%m-%d %H:%M:%S') #MySQL format
-</code></pre>]]></description><link>http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/</link><guid isPermaLink="false">ca659b2d-47d7-4396-b87a-2ba754226c23</guid><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Sat, 01 Nov 2014 04:41:54 GMT</pubDate></item><item><title><![CDATA[Как сделать слияние masters с github pages]]></title><description><![CDATA[<p>Сабж, создаем бранч, мержим с продактишном и коммитим:</p>
+</code></pre>
+
+<p>Так что ф-ии datetime в Python похожи на PHP. И не только datetime.</p>]]></description><link>http://alexsdbk.github.io/2014/10/31/rabota-s-datetime-php-vs-python/</link><guid isPermaLink="false">ca659b2d-47d7-4396-b87a-2ba754226c23</guid><dc:creator><![CDATA[Alex]]></dc:creator><pubDate>Sat, 01 Nov 2014 04:41:54 GMT</pubDate></item><item><title><![CDATA[Как сделать слияние masters с github pages]]></title><description><![CDATA[<p>Сабж, создаем бранч, мержим с продактишном и коммитим:</p>
 
 <pre><code>git checkout --orphan gh-pages
 git merge master
