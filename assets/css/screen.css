@@ -684,7 +684,7 @@ margin on the iframe, cause it breaks stuff. */
 .no-cover.main-header {
     min-height: 160px;
     max-height: 40%;
-    background: #f5f8fa;
+    background: #fff;
 }
 
 .no-cover .page-title {
@@ -1795,7 +1795,7 @@ body:not(.post-template) .post-title {
     border-bottom: none;
     height: 75px;
     width: 129.9px;
-    background-color: #414142;
+    background-color: #fff;
 }
 
 .hexagon{
@@ -1834,7 +1834,7 @@ body:not(.post-template) .post-title {
 .hexagon:hover,
 .hexagon:hover:before,
 .hexagon:hover:after{
-    background-color: #78888F;
+    background-color: #425363;
     cursor: pointer;
 }
 .hex-menu ul > li:hover a {
@@ -1844,13 +1844,18 @@ body:not(.post-template) .post-title {
    color: #FFFFFF;
 }
 
+.photo-hex {
+	overflow: hidden;
+	text-align: center;
+}
+
 .hex-menu {
+	margin-top:-5%;
 	overflow: hidden;
 	text-align: center;
 }
 .hex-menu ul {
 	 display: inline-block;
-	 margin-left: -20px;
 }
 .hex-menu ul li{
     position:relative;
@@ -1858,7 +1863,7 @@ body:not(.post-template) .post-title {
     list-style: none;
      margin: 1px 5px;
 }
-.hex-menu ul li a { 
+.hex-menu ul li a {
     text-decoration: none;
     color: #FFF;
     white-space:nowrap;
@@ -1878,5 +1883,84 @@ body:not(.post-template) .post-title {
     font-weight: normal;
     font-size: 80px;
     left: 0;
-    color:#111;
+    color:#414142;
+}
+
+
+
+
+
+@-webkit-keyframes polygon {
+  0% {
+    stroke-dasharray:0 300;
+  }
+  100% {
+    stroke-dasharray:300 0;
+  }
+}
+
+@keyframes polygon {
+  0% {
+    stroke-dasharray:0 300;
+  }
+  100% {
+    stroke-dasharray:300 0;
+  }
+}
+polygon {
+  stroke-width: 1;
+  fill: transparent;
+  stroke: #414142;
+  stroke-miterlimit: 10;
+}
+.hex1 {
+  animation: 4s polygon forwards;
+  -webkit-animation: 4s polygon forwards;
+}
+.hex2 {
+  animation: 8s polygon forwards;
+  -webkit-animation: 8s polygon forwards;
+}
+.hex3 {
+  animation: 12s polygon alternate backwards;
+  -webkit-animation: 12s polygon alternate backwards;
+}
+.hex4 {
+  animation: 10s polygon alternate backwards;
+  -webkit-animation: 10s polygon alternate backwards;
+}
+circle {
+  fill: #414142;
+  -webkit-animation-name: circle-glow;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+
+  animation-name: circle-glow;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+
+}
+
+@-webkit-keyframes circle-glow {
+  0% { fill: hsla(209, 20%, 32%, 1); }
+  50% { fill: hsla(209, 20%, 49%, 1); }
+  100% { fill: hsla(360, 100%, 100%, 1); }
+}
+
+@keyframes circle-glow {
+  0% { fill: hsla(209, 20%, 32%, 1); }
+  50% { fill: hsla(209, 20%, 49%, 1); }
+  100% { fill: hsla(360, 100%, 100%, 1); }
+}
+
+.vertical {
+	position: absolute;
+	margin:auto;
+	left:0px;
+	right: 0px;
+	margin-bottom: :-10%;
 }
