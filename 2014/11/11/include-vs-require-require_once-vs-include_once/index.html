@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="../../../../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=16a62aed46" />
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=68df850372" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <meta name="generator" content="Ghost 0.5" />
@@ -64,7 +64,7 @@ include 'file';
 require 'file';
 </code></pre>
 
-<p>Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(не нахождения указаного файла по указаному пути):</p>
+<p>Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(файл не найден):</p>
 
 <pre><code>require - Fatal error(E_COMPILE_ERROR), т.е останока скрипта
 
@@ -75,10 +75,10 @@ include - Warning error(E_WARNING) и продолжение выполнени�
 
 <p>Использование require более рационально в целях безопастности.</p>
 
-<p>require<em>once и include</em>once отличаются:</p>
-
-<pre><code> "Если код из файла уже один раз был включен, он не будет включен и выполнен повторно."
+<pre><code>require_once и include_once отличаются:
 </code></pre>
+
+<p>Если код из файла уже один раз был включен, он не будет включен и выполнен повторно.</p>
 
 <p>Например:</p>
 
@@ -105,12 +105,15 @@ include_once(dirname(__FILE__) . '/database.class.php');
 require_once(__ROOT__.'/config.php'); 
 </code></pre>
 
-<p>Для автоматической загрузки классов используются функция spl<em>autoload</em>register().</p>
+<p>Для автоматической загрузки классов используются функция     </p>
+
+<pre><code>spl_autoload_register().
+</code></pre>
 
 <p>Пример загруки с использованием ф-ии</p>
 
 <pre><code>function myAutoloader($className) {
-    $path = '/path/to/class';
+    $path = '/path/to/class/';
 
     include $path.$className.'.php';
 }
@@ -126,7 +129,7 @@ spl_autoload_register('MyAutoloader::HelperLoader'); <br />
 spl_autoload_register('MyAutoloader::DatabaseLoader');</p>
 
 <pre><code>class MyAutoloader {
-    public $path = '/path/to/class';
+    public $path = '/path/to/class/';
 
     public static function ClassLoader($className){
          require $this-&gt;path . 'className.php';
@@ -235,10 +238,10 @@ today" /></a>
 <!-- /Yandex.Metrika counter -->
     </footer>
 
-    <script src="../../../../public/jquery.js?v=16a62aed46"></script>
+    <script src="../../../../public/jquery.js?v=68df850372"></script>
 
-    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=16a62aed46"></script>
-    <script type="text/javascript" src="../../../../assets/js/index.js?v=16a62aed46"></script>
+    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=68df850372"></script>
+    <script type="text/javascript" src="../../../../assets/js/index.js?v=68df850372"></script>
 
 </body>
 </html>
