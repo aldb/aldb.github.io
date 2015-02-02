@@ -1,0 +1,403 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Alex - aldb</title><description>Web, code &amp; dev</description><link>http://aldb.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Mon, 02 Feb 2015 22:56:10 GMT</lastBuildDate><atom:link href="http://aldb.github.io/author/alex/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>include() vs require() &amp; require_once() vs include_once()</title><description>&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/11/rrrr.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;include('file');
+require('file');
+include 'file';
+require 'file';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(файл не найден):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require - Fatal error(E_COMPILE_ERROR), т.е останока скрипта
+
+include - Warning error(E_WARNING) и продолжение выполнение сценария.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Если в настройках PHP указано отображение ошибок пользователь увидит данный ошибку и что хуже вашу структуру файлов.&lt;/p&gt;
+
+&lt;p&gt;Использование require более рационально в целях безопастности.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require_once и include_once отличаются:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Если код из файла уже один раз был включен, он не будет включен и выполнен повторно.&lt;/p&gt;
+
+&lt;p&gt;Например:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var_dump(include_once 'file.php'); // exec script
+var_dump(include_once 'file.php'); // bool(true)
+
+var_dump(require_once 'file.php'); // bool(true)
+var_dump(require_once 'file.php'); // bool(true)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Выполнение файла кода в файле file.php произойдет только при первом запуске include_once. В остальных случаях ф-ия вернет true - файл уже подключен.&lt;/p&gt;
+
+&lt;p&gt;Что бы избежать ошибок используются относительные пути:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;require(dirname(__FILE__).'/params.php');
+
+//__FILE__ - абсолютный путь с разрешенными символическими ссылками
+include_once(dirname(__FILE__) . '/database.class.php');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Так же можно проверить подключение файлов, например с определением константы:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;define('__ROOT__', dirname(dirname(__FILE__))); 
+require_once(__ROOT__.'/config.php'); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Для автоматической загрузки классов используются функция     &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;spl_autoload_register().
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Пример загруки с использованием ф-ии&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function myAutoloader($className) {
+    $path = '/path/to/class/';
+
+    include $path.$className.'.php';
+}
+
+spl_autoload_register('myAutoloader');
+$myClass = new MyClass();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Пример использования автозагрузки с использованием классов&lt;/p&gt;
+
+&lt;p&gt;spl_autoload_register('MyAutoloader::ClassLoader'); &lt;br&gt;
+spl_autoload_register('MyAutoloader::HelperLoader'); &lt;br&gt;
+spl_autoload_register('MyAutoloader::DatabaseLoader');&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class MyAutoloader {
+    public $path = '/path/to/class/';
+
+    public static function ClassLoader($className){
+         require $this-&amp;gt;path . 'className.php';
+    }
+
+
+    public static function LibraryLoader($className) {
+         require $this-&amp;gt;path . 'className.php';
+    }
+&lt;/code&gt;&lt;/pre&gt;</description><link>http://aldb.github.io/2014/11/11/include-vs-require-require_once-vs-include_once/</link><guid isPermaLink="false">87e73ab9-ddd5-4857-b222-9da72d295900</guid><category>php</category><dc:creator>Alex</dc:creator><pubDate>Wed, 12 Nov 2014 05:38:39 GMT</pubDate></item><item><title>Datetime PHP like Python</title><description>&lt;p&gt;Разработка данных datetime удобнее с использованием Unix формата(числа).&lt;/p&gt;
+
+&lt;p&gt;Datetime in PHP:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$today = date("Y-m-d H:i:s");  //MYSQL
+$date = date();
+echo $date-&amp;gt;format("Y-m-d H:i:s"); //echo Date in format
+
+$today = date('h-i-s, j-m-y, it is w Day'); // 05-16-18, 10-03-01, 1631 1618 6 Satpm01
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Datetime in Python:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from datetime import datetime
+date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Datetime from MSSQL in Mysql in Python:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;date_object = datetime.strptime(date, '%b %d %Y %I:%M%p')
+date_object.strftime('%Y-%m-%d %H:%M:%S') #MySQL format
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Так что ф-ии datetime в Python похожи на PHP. И не только datetime.&lt;/p&gt;</description><link>http://aldb.github.io/2014/10/31/rabota-s-datetime-php-vs-python/</link><guid isPermaLink="false">ca659b2d-47d7-4396-b87a-2ba754226c23</guid><dc:creator>Alex</dc:creator><pubDate>Sat, 01 Nov 2014 04:41:54 GMT</pubDate></item><item><title>Как сделать слияние masters с github pages</title><description>&lt;p&gt;Сабж, создаем бранч, мержим с продактишном и коммитим:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout --orphan gh-pages
+git merge master
+git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Если есть желание всегда обновлять gh-pages при коммите можно добавить в файл .git/config, секцию [remote "origin"]&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;push = +refs/heads/master:refs/heads/gh-pages
+push = +refs/heads/master:refs/heads/master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ссылки:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://help.github.com/articles/creating-project-pages-manually/"&gt;Creating Project Pages manually&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><link>http://aldb.github.io/2014/10/26/sozdat-stranichku-na-github-pages/</link><guid isPermaLink="false">337f6e79-f670-4e50-844a-1a0d5febf6ff</guid><category>github pages</category><dc:creator>Alex</dc:creator><pubDate>Mon, 27 Oct 2014 03:19:35 GMT</pubDate></item><item><title>Разница datetime и timestamp</title><description>&lt;p&gt;Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:&lt;/p&gt;
+
+&lt;h5 id="datetime"&gt;Datetime&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;8 байт без часового пояса&lt;/li&gt;
+&lt;li&gt;DEFAULT CURRENT&lt;em&gt;TIMESTAMP / ON UPDATE CURRENT&lt;/em&gt;TIMESTAMP устанавливает время по умолчанию (&lt;strong&gt;MySQL 5.6.5&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Запросы не кешируются по умолчанию&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id="timestamp"&gt;Timestamp&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;4 байта с часовым поясом&lt;/li&gt;
+&lt;li&gt;хранит время &lt;strong&gt;UTC&lt;/strong&gt;(Гринвич)&lt;/li&gt;
+&lt;li&gt;в версии до &lt;strong&gt;MySQL 5.6.1&lt;/strong&gt; не более 2 TIMESTAMP колонок в одной таблице, в версии &lt;strong&gt;MySQL 5.6.5&lt;/strong&gt;+ без ограничений&lt;/li&gt;
+&lt;li&gt;Запросы кешируются по умолчанию&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Свойство DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP  может быть примененно только для одной колонке:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CREATE TABLE `test` (
+  `id` INT(10) UNSIGNED NOT NULL,
+  `AddedDate` TIMESTAMP NOT NULL DEFAULT                CURRENT_TIMESTAMP,
+  `UpdatedDate` TIMESTAMP NOT NULL DEFAULT      CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  ) ENGINE=INNODB;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ошибка:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Error Code : 1293
+    Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=""&gt;Когда использовать:&lt;/h4&gt;
+
+&lt;h5 id="datetime"&gt;datetime:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Колонки с фиксированными данными(логирование, день рождения, данные о покупке и т.п)&lt;/li&gt;
+&lt;li&gt;Хорошая ассоциация datetime это часы и календарь на стене, при этом не важно в какой часовой зоне находиться дом в котором они висят.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id="timestamp"&gt;timestamp:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Колонки с часто обновляемыеми данными(последняя авторизация пользователя, дата и время обновления рейтинга/очков/счета и т.п.)&lt;/li&gt;
+&lt;li&gt;Ассоциация: момент времени, т.е. как давно событие. Точный расчет момент времени напрямую зависит от того в каком часовом поясе вы находитесь.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ссылки:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://dev.mysql.com/doc/refman/5.1/en/datetime.html"&gt;Mysql manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla"&gt;Подробнее про ошибку 1293&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/409286/datetime-vs-timestamp"&gt;datetime vs timestamp?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><link>http://aldb.github.io/2014/10/21/raznitsa-datetime-i-timestamp/</link><guid isPermaLink="false">b0979971-d700-44b9-afc9-7f816446c7ab</guid><category>sql</category><category>mysql</category><dc:creator>Alex</dc:creator><pubDate>Wed, 22 Oct 2014 05:13:59 GMT</pubDate></item><item><title>Установка phpunit</title><description>&lt;p&gt;Все знаем что phpunit модно, стильно, молодежно.
+И вот как ее быстро установить:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pear channel-discover pear.phpunit.de
+pear channel-discover pear.symfony-project.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;В случаи проблемы с правами добавляем волшебное "sudo"
+Таким образом мы добавили  &lt;strong&gt;PEAR Installer&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pear install phpunit/PHPUnit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install php5-dev
+pecl install xdebug
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;После этого все должно заработать, проверить версию PHPUnit можно командой &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;phpunit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;В дополнения простенький пример теста:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+class StackTest extends PHPUnit_Framework_TestCase
+{
+    public function testPushAndPop()
+    {
+        $stack = array();
+        $this-&amp;gt;assertEquals(0, count($stack));
+
+        array_push($stack, 'foo');
+        $this-&amp;gt;assertEquals('foo',$stack[count($stack)-1]);
+        $this-&amp;gt;assertEquals(1, count($stack));
+
+        $this-&amp;gt;assertEquals('foo',array_pop($stack));
+        $this-&amp;gt;assertEquals(0, count($stack));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Подробнее можно посмотреть в &lt;a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html"&gt;документации&lt;/a&gt;, где все примеры с закрывающим тегом&amp;lt; ?  &lt;i class="fa fa-wheelchair"&gt;&lt;/i&gt;facepalm&lt;/p&gt;</description><link>http://aldb.github.io/2014/10/20/ustanovka-phpunit/</link><guid isPermaLink="false">cdbbfc04-3c09-4f8b-9726-140d5b0a2b9a</guid><category>php</category><category>phpunit</category><category>установка</category><dc:creator>Alex</dc:creator><pubDate>Mon, 20 Oct 2014 07:01:32 GMT</pubDate></item><item><title>SQL комиксы!</title><description>&lt;h3 id="i"&gt;I&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/10/sql_comics2.png" alt=""&gt;&lt;/p&gt;
+
+&lt;h3 id="ii"&gt;II&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/10/sql_comics1.png" alt=""&gt;&lt;/p&gt;</description><link>http://aldb.github.io/2014/10/18/sql-komiksy/</link><guid isPermaLink="false">ee006c80-0bfb-4d15-8d99-cb2d9bdb89e3</guid><category>sql</category><category>comics</category><dc:creator>Alex</dc:creator><pubDate>Sat, 18 Oct 2014 16:53:47 GMT</pubDate></item><item><title>About</title><description>&lt;p&gt;&lt;br&gt; &lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Hello! &lt;br&gt;
+My name is &lt;strong&gt;Alex&lt;/strong&gt; and this is my blog on github. &lt;br&gt;
+I'm interested in web development, so this blog is about it.&lt;/p&gt;
+
+&lt;p&gt;If you want to contact me, please use my email: alexs.dbk@gmail.com&lt;/p&gt;</description><link>http://aldb.github.io/2014/10/16/about/</link><guid isPermaLink="false">dc9dfdb4-4c70-4444-9cc8-0871833b5eff</guid><category>about</category><dc:creator>Alex</dc:creator><pubDate>Thu, 16 Oct 2014 07:27:33 GMT</pubDate></item><item><title>Как создать блог на github.io используя CMS Ghost</title><description>&lt;p&gt;Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms &lt;strong&gt;ghost&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Я не хочу создавать, я хочу &lt;a href="http://alexsdbk.github.io/"&gt;demo&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;На создание блога нам потребуется &lt;strong&gt;3 Этапа&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;h3 id="i"&gt;I этап&lt;/h3&gt;
+
+&lt;p&gt;Необходимо создать открытый репозиторий на Git, который создаст поддомен с вашим именем пользователя(&lt;a href="http://username.github.io/"&gt;http://username.github.io&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Следуем &lt;a href="https://pages.github.com/"&gt;инструкции&lt;/a&gt; создадим &lt;a href="https://github.com/new"&gt;репозиторий&lt;/a&gt; c именем нашего пользователя на github.&lt;/p&gt;
+
+&lt;h3 id="ii"&gt;II Этап&lt;/h3&gt;
+
+&lt;p&gt;Настройка локального окружения и создание блога.&lt;/p&gt;
+
+&lt;p&gt;Нам потребуется Node.js 0.10.x (latest stable). Для работы с Ghost рекомендуют Node.js 0.10.30 и пакетный менеджер npm 1.4.21. Ниже будут примеры кода под Linux Ссылки для других платформ:&lt;a href="http://support.ghost.org/installing-ghost-mac/"&gt;Mac&lt;/a&gt; &lt;a href="http://support.ghost.org/installing-ghost-windows/"&gt;Windows&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Установим ghost&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir ghost
+wget "http://ghost.org/zip/ghost-latest.zip"
+unzip ghost-latest.zip -d ghost
+cd ghost
+cp config.example.js config.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Установим nodejs &amp;amp; npm&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Изменим &lt;strong&gt;URL&lt;/strong&gt; адрес в config.js раздел Development с &lt;a href="http://localhost:2368/"&gt;http://localhost:2368&lt;/a&gt; на &lt;a href="http://username.github.io/"&gt;http://username.github.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// ### Development **(default)**    development: {
+// The url to use when providing links to the site, E.g. in RSS and email.
+// Change this to your Ghost blogs published URL.
+url: 'http://username.github.io',
+
+// Example mail config
+// Visit http://support.ghost.org/mail for instructions
+// ```
+//  mail: {
+//      transport: 'SMTP',
+//      options: {
+//          service: 'Mailgun',
+//          auth: {
+//              user: '', // mailgun username
+//              pass: ''  // mailgun password
+//          }
+//      }
+//  },
+// ``
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Зайдем в папку ghost, установим и запустим npm&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install
+npm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/10/npminstall.png" alt="npm-start"&gt;&lt;/p&gt;
+
+&lt;p&gt;Зайдем &lt;a href="http://127.0.0.1:2368/ghost/"&gt;http://127.0.0.1:2368/ghost/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/10/ghost-wellcome.png" alt="ghost"&gt;&lt;/p&gt;
+
+&lt;p&gt;Создание и настройка блока а также редактирования постов(по примеру шаблона) интуитивно понятны. Так же всегда можно найти информацию на &lt;a href="https://ghost.org/"&gt;https://ghost.org/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="iii"&gt;III Этап&lt;/h3&gt;
+
+&lt;p&gt;Создание статичного блога и 'commit' на github&lt;/p&gt;
+
+&lt;p&gt;Что бы сделать ghost статичным Нам потребуется &lt;strong&gt;Buster&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/10/buster.png" alt="buster"&gt;&lt;/p&gt;
+
+&lt;p&gt;Установка&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install wget
+sudo apt-get install python
+sudo apt-get install python-pip
+pip install buster
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Проверяем запущен наш блог &lt;a href="http://127.0.0.1:2368/"&gt;http://127.0.0.1:2368&lt;/a&gt; или запускаем:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ghost
+npm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Создадим новую папку для статичной версии блога.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ghost
+cd buster setup
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Запускаем бустер&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;buster setup
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Указываем ссылку на github репозиториий:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://github.com/username/username.github.io 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Бустер сгенерировал папку static. Теперь захватим бустером приведение, т.е. наш локальный ghost.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;buster generate --domain=http://127.0.0.1:2368
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Для предпросмотра запустим:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;buster preview 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Теперь наш статичный блог можно посмотреть &lt;a href="http://127.0.0.1:9000/"&gt;http://127.0.0.1:9000&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Останавливаем отображение превью &lt;strong&gt;Control + C&lt;/strong&gt;. Загружаем блог на Git:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;buster deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Теперь или спустя пару минут он будет доступен &lt;a href="http://username.github.io/"&gt;http://username.github.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6 id=""&gt;Ложка дёгтя&lt;/h6&gt;
+
+&lt;p&gt;У меня не получился deploy в Git через buster. Но я сделал 'commit' через терминал.
+Так же buster не хочет ловить статичные страницы ghost'a. Решил их просто оформлять постами.&lt;/p&gt;
+
+&lt;h3 id=""&gt;Повседневное использование&lt;/h3&gt;
+
+&lt;p&gt;Запускаем ghost и редактируем посты &lt;a href="http://127.0.0.1:2368/ghost"&gt;http://127.0.0.1:2368/ghost&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Buster&lt;/strong&gt; генерирует статичную версию и делает 'commit'.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;buster generate --domain=http://127.0.0.1:2368    
+buster deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=""&gt;Заключение&lt;/h3&gt;
+
+&lt;p&gt;Плюсы использование статичного блога на Github&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Бесплатно&lt;/li&gt;
+&lt;li&gt;Не нужна БД&lt;/li&gt;
+&lt;li&gt;Высокая производительность&lt;/li&gt;
+&lt;li&gt;Возможность легкого бэкап&lt;/li&gt;
+&lt;li&gt;Возможность создать посты оффлайн&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id="c"&gt;Cсылки:&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Оригинальная статья: &lt;a href="http://talalanwar.com/host-a-ghost-blog-for-free/"&gt;How to: Host a Ghost Blog for Free&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Набор ссылок по установке cms ghost: &lt;a href="http://ghost.centminmod.com/how-to-install-ghost-blogging-platform/"&gt;Ghost How to install Ghost blogging platform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git репозиторий &lt;a href="https://github.com/axitkhurana/buster"&gt;buster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><link>http://aldb.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/</link><guid isPermaLink="false">0737aed8-60e9-4f85-883c-727c720d3451</guid><category>ghost</category><category>github</category><category>github pages</category><category>nodejs</category><category>npm</category><category>cms</category><category>blog</category><category>buster</category><dc:creator>Alex</dc:creator><pubDate>Wed, 15 Oct 2014 01:30:03 GMT</pubDate></item></channel></rss>
