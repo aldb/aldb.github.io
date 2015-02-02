@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Как создать блог на github.io используя CMS Ghost</title>
-    <meta name="description" content="Создание статичного блога на github pages используя  Ghost CMS" />
+    <meta name="description" content="Создание статичного блога на github pages используя  Ghost CMS">
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="../../../../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=68df850372" />
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=47bc25ad19">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
 
-    <meta name="generator" content="Ghost 0.5" />
-<link rel="alternate" type="application/rss+xml" title="Веб разработка с alexsdbk.github.io" href="../../../../rss/index.html">
-<link rel="canonical" href="http://alexsdbk.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/" />
+    <meta name="generator" content="Ghost 0.5">
+<link rel="alternate" type="application/rss+xml" title="aldb" href="../../../../rss/index.html">
+<link rel="canonical" href="http://aldb.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -37,8 +36,8 @@
 
 <header class="main-header post-head " style="background-image: url(../../../../content/images/2014/10/ghostbusters.png)">
     <nav class="main-nav overlay clearfix">
-        <a class="back-button icon-arrow-left" href="http://alexsdbk.github.io">Home</a>
-        <a class="subscribe-button icon-feed" href="http://alexsdbk.github.io/rss/">Subscribe</a>
+        <a class="back-button icon-arrow-left" href="http://aldb.github.io">Home</a>
+        <a class="subscribe-button icon-feed" href="http://aldb.github.io/rss/">Subscribe</a>
     </nav>
 </header>
 
@@ -49,7 +48,7 @@
         <header class="post-header">
             <h1 class="post-title">Как создать блог на github.io используя CMS Ghost</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2014-10-14">14 October 2014</time>  on <a href="../../../../tag/ghost-tag/index.html">ghost</a>, <a href="../../../../tag/github/index.html">github</a>, <a href="../../../../tag/github-pages/index.html">github pages</a>, <a href="../../../../tag/nodejs/index.html">nodejs</a>, <a href="../../../../tag/npm/index.html">npm</a>, <a href="../../../../tag/cms/index.html">cms</a>, <a href="../../../../tag/blog/index.html">blog</a>, <a href="../../../../tag/buster/index.html">buster</a>
+                <time class="post-date" datetime="2014-10-14">14 October 2014</time>  on <a href="../../../../tag/ghost-tag/">ghost</a>, <a href="../../../../tag/github/">github</a>, <a href="../../../../tag/github-pages/">github pages</a>, <a href="../../../../tag/nodejs/">nodejs</a>, <a href="../../../../tag/npm/">npm</a>, <a href="../../../../tag/cms/">cms</a>, <a href="../../../../tag/blog/">blog</a>, <a href="../../../../tag/buster/">buster</a>
             </section>
         </header>
 
@@ -62,7 +61,7 @@
 
 <h3 id="i">I этап</h3>
 
-<p>Необходимо создать открытый репозиторий на Git, который создаст поддомен с вашим именем пользователя(<a href='http://username.github.io'>http://username.github.io</a>).</p>
+<p>Необходимо создать открытый репозиторий на Git, который создаст поддомен с вашим именем пользователя(<a href="http://username.github.io">http://username.github.io</a>).</p>
 
 <p>Следуем <a href="https://pages.github.com/">инструкции</a> создадим <a href="https://github.com/new">репозиторий</a> c именем нашего пользователя на github.</p>
 
@@ -88,7 +87,7 @@ sudo apt-get install nodejs
 sudo apt-get install npm
 </code></pre>
 
-<p>Изменим <strong>URL</strong> адрес в config.js раздел Development с <a href='http://localhost:2368'>http://localhost:2368</a> на <a href='http://username.github.io'>http://username.github.io</a></p>
+<p>Изменим <strong>URL</strong> адрес в config.js раздел Development с <a href="http://localhost:2368">http://localhost:2368</a> на <a href="http://username.github.io">http://username.github.io</a></p>
 
 <pre><code>// ### Development **(default)**    development: {
 // The url to use when providing links to the site, E.g. in RSS and email.
@@ -117,13 +116,13 @@ url: 'http://username.github.io',
 npm start
 </code></pre>
 
-<p><img src="../../../../content/images/2014/10/npminstall.png" alt="npm-start" /></p>
+<p><img src="../../../../content/images/2014/10/npminstall.png" alt="npm-start"></p>
 
-<p>Зайдем <a href='../../../../ghost'>http://127.0.0.1:2368/ghost/</a></p>
+<p>Зайдем <a href="../../../../ghost">http://127.0.0.1:2368/ghost/</a></p>
 
-<p><img src="../../../../content/images/2014/10/ghost-wellcome.png" alt="ghost" /></p>
+<p><img src="../../../../content/images/2014/10/ghost-wellcome.png" alt="ghost"></p>
 
-<p>Создание и настройка блока а также редактирования постов(по примеру шаблона) интуитивно понятны. Так же всегда можно найти информацию на <a href='https://ghost.org/'>https://ghost.org/</a>.</p>
+<p>Создание и настройка блока а также редактирования постов(по примеру шаблона) интуитивно понятны. Так же всегда можно найти информацию на <a href="https://ghost.org/">https://ghost.org/</a>.</p>
 
 <h3 id="iii">III Этап</h3>
 
@@ -131,7 +130,7 @@ npm start
 
 <p>Что бы сделать ghost статичным Нам потребуется <strong>Buster</strong></p>
 
-<p><img src="../../../../content/images/2014/10/buster.png" alt="buster" /></p>
+<p><img src="../../../../content/images/2014/10/buster.png" alt="buster"></p>
 
 <p>Установка</p>
 
@@ -142,7 +141,7 @@ sudo apt-get install python-pip
 pip install buster
 </code></pre>
 
-<p>Проверяем запущен наш блог <a href='../../../../index.html'>http://127.0.0.1:2368</a> или запускаем:</p>
+<p>Проверяем запущен наш блог <a href="../../../../">http://127.0.0.1:2368</a> или запускаем:</p>
 
 <pre><code>cd ghost
 npm start
@@ -174,14 +173,14 @@ cd buster setup
 <pre><code>buster preview 
 </code></pre>
 
-<p>Теперь наш статичный блог можно посмотреть <a href='http://127.0.0.1:9000'>http://127.0.0.1:9000</a></p>
+<p>Теперь наш статичный блог можно посмотреть <a href="http://127.0.0.1:9000">http://127.0.0.1:9000</a></p>
 
 <p>Останавливаем отображение превью <strong>Control + C</strong>. Загружаем блог на Git:</p>
 
 <pre><code>buster deploy
 </code></pre>
 
-<p>Теперь или спустя пару минут он будет доступен <a href='http://username.github.io'>http://username.github.io</a></p>
+<p>Теперь или спустя пару минут он будет доступен <a href="http://username.github.io">http://username.github.io</a></p>
 
 <h6 id="">Ложка дёгтя</h6>
 
@@ -190,7 +189,7 @@ cd buster setup
 
 <h3 id="">Повседневное использование</h3>
 
-<p>Запускаем ghost и редактируем посты <a href='../../../../ghost'>http://127.0.0.1:2368/ghost</a></p>
+<p>Запускаем ghost и редактируем посты <a href="../../../../ghost">http://127.0.0.1:2368/ghost</a></p>
 
 <pre><code>npm start
 </code></pre>
@@ -226,32 +225,29 @@ buster deploy
 
 
             <figure class="author-image">
-                <a class="img" href="../../../../author/alex/index.html" style="background-image: url(../../../../content/images/2014/10/vvv.jpg)"><span class="hidden">Alex's Picture</span></a>
+                <a class="img" href="../../../../author/alex/" style="background-image: url(../../../../content/images/2014/10/vvv.jpg)"><span class="hidden">Alex's Picture</span></a>
             </figure>
 
             <section class="author">
-                <h4><a href="../../../../author/alex/index.html">Alex</a></h4>
+                <h4><a href="../../../../author/alex/">Alex</a></h4>
 
                     <p>Full Stack Web Developer</p>
                 <div class="author-meta">
                     <span class="author-location icon-location">Bay Area, CA</span>
-                    <span class="author-link icon-link"><a href="http://alexsdbk.github.io/">http://alexsdbk.github.io/</a></span>
+                    <span class="author-link icon-link"><a href="http://aldb.github.io/">http://aldb.github.io/</a></span>
                 </div>
             </section>
 
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%9A%D0%B0%D0%BA%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D0%B1%D0%BB%D0%BE%D0%B3%20%D0%BD%D0%B0%20github.io%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8F%20CMS%20Ghost&amp;url=http://alexsdbk.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%9A%D0%B0%D0%BA%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C%20%D0%B1%D0%BB%D0%BE%D0%B3%20%D0%BD%D0%B0%20github.io%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8F%20CMS%20Ghost&amp;url=http://aldb.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alexsdbk.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://aldb.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://alexsdbk.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://aldb.github.io/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -280,48 +276,13 @@ buster deploy
 
 
     <footer class="site-footer clearfix">
-         <section class="copyright"><a href="http://alexsdbk.github.io">Веб разработка с alexsdbk.github.io</a> &copy; 2014</section>
+         <section class="copyright"><a href="http://aldb.github.io">aldb</a> © 2015</section>
          <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-         <!-- Yandex.Metrika informer -->
-<a href="https://metrika.yandex.ru/stat/?id=26632854&amp;from=informer"
-target="_blank" rel="nofollow"><img src="http://bs.yandex.ru/informer/26632854/1_0_FFFFFFFF_FFFFFFFF_0_pageviews"
-style="width:80px; height:15px; border:0;" alt="Yandex metrika" title="Views Yandex metrika
-today" /></a>
-<!-- /Yandex.Metrika informer -->
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter26632854 = new Ya.Metrika({id:26632854,
-                    webvisor:true,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="http://mc.yandex.ru/watch/26632854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
     </footer>
 
-    <script src="../../../../public/jquery.js?v=68df850372"></script>
+    <script src="../../../../public/jquery.js?v=47bc25ad19"></script>
 
-    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=68df850372"></script>
-    <script type="text/javascript" src="../../../../assets/js/index.js?v=68df850372"></script>
+    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=47bc25ad19"></script>
+    <script type="text/javascript" src="../../../../assets/js/index.js?v=47bc25ad19"></script>
 
 </body>
-</html>
