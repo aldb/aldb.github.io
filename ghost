@@ -18,23 +18,23 @@
     <meta name="apple-mobile-web-app-title" content="Ghost" />
 
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon-precomposed" href="http://127.0.0.1:2368/ghost/img/touch-icon-iphone.png?v=47bc25ad19" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://127.0.0.1:2368/ghost/img/touch-icon-ipad.png?v=47bc25ad19" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://127.0.0.1:2368/ghost/img/small.png?v=47bc25ad19" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://127.0.0.1:2368/ghost/img/medium.png?v=47bc25ad19" />
+    <link rel="apple-touch-icon-precomposed" href="http://127.0.0.1:2368/ghost/img/touch-icon-iphone.png?v=68df850372" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://127.0.0.1:2368/ghost/img/touch-icon-ipad.png?v=68df850372" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://127.0.0.1:2368/ghost/img/small.png?v=68df850372" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://127.0.0.1:2368/ghost/img/medium.png?v=68df850372" />
 
     <meta name="application-name" content="Ghost" />
     <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-square70x70logo" content="/ghost/img/small.png?v=47bc25ad19" />
-    <meta name="msapplication-square150x150logo" content="/ghost/img/medium.png?v=47bc25ad19" />
-    <meta name="msapplication-square310x310logo" content="/ghost/img/large.png?v=47bc25ad19" />
+    <meta name="msapplication-square70x70logo" content="/ghost/img/small.png?v=68df850372" />
+    <meta name="msapplication-square150x150logo" content="/ghost/img/medium.png?v=68df850372" />
+    <meta name="msapplication-square310x310logo" content="/ghost/img/large.png?v=68df850372" />
 
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" />
-    <link rel="stylesheet" href="http://127.0.0.1:2368/ghost/css/ghost.min.css?v=47bc25ad19" />
+    <link rel="stylesheet" href="http://127.0.0.1:2368/ghost/css/ghost.min.css?v=68df850372" />
 </head>
-<body class="" data-apps="false" data-filestorage="true" data-blogurl="http://aldb.github.io">
+<body class="" data-apps="false" data-filestorage="true" data-blogurl="http://alexsdbk.github.io">
 
-    <script src="http://127.0.0.1:2368/ghost/scripts/vendor-dev.js?v=47bc25ad19"></script><script src="http://127.0.0.1:2368/ghost/scripts/templates-dev.js?v=47bc25ad19"></script><script src="http://127.0.0.1:2368/ghost/scripts/ghost-dev.js?v=47bc25ad19"></script>
+    <script src="http://127.0.0.1:2368/ghost/scripts/vendor-dev.js?v=68df850372"></script><script src="http://127.0.0.1:2368/ghost/scripts/templates-dev.js?v=68df850372"></script><script src="http://127.0.0.1:2368/ghost/scripts/ghost-dev.js?v=68df850372"></script>
 
 </body>
 </html>
