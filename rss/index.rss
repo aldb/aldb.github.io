@@ -1,4 +1,56 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>aldb</title><description>Web, code &amp; dev</description><link>http://aldb.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Tue, 03 Feb 2015 00:14:34 GMT</lastBuildDate><atom:link href="http://aldb.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>include() vs require() &amp; require_once() vs include_once()</title><description>&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/11/rrrr.png" alt=""&gt;&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>aldb</title><description>Web, code &amp; dev</description><link>http://aldb.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Thu, 05 Feb 2015 17:37:49 GMT</lastBuildDate><atom:link href="http://aldb.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js.</title><description>&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое. &lt;/p&gt;
+
+&lt;p&gt;Но есть принципиальное различие в процессе обработки запросов.&lt;/p&gt;
+
+&lt;h4 id=""&gt;Для чего нужны веб серверы?&lt;/h4&gt;
+
+&lt;p&gt;Для начало вспомним как работаю веб серверы.
+Веб серверы нужны для работы с веб приложениями по клиент-серверной модели. Их задача обработка запроса от пользователя(клиента, client) и возвращения результата запроса с сервера(backend, serverside). Подробнее можно ознакомиться на википедии:
+&lt;a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model"&gt;Client–server model&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=""&gt;Ресурсы веб серверов&lt;/h4&gt;
+
+&lt;p&gt;Каждый сервер имеет выделенные "ресурсы"(Оперативная память, процессор и т.п.) для обработки запросов. Данные ресурсы используются в потоках и процессах:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Thread_(computing)"&gt;Thread_(computing)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Process_(computing)"&gt;Process_(computing)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Различие в распределении ресурсов на обработку запросов является ключевым отличием для расматриваемых веб серверов.&lt;/p&gt;
+
+&lt;h4 id="processbasedwebservesapacheiis"&gt;Process-based web serves: Apache, IIS.&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Apache, IIS&lt;/strong&gt; используют обрабатывают каждый запрос в отдельном потоке/процессе - &lt;strong&gt;“process-based”&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/process-based-server-2.png" alt=""&gt;
+&lt;center&gt;Схема работы “process-based” веб серверов.&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;На каждый запрос клиента используется отдельный процесс/поток. Каждый поток/процесс требует определенное кол-во ресурсов серверов. Ресурсы сервера “простаивают” пока ожидают отправку запроса и ответа клиента. Что отрицательно сказывается на производительности при высоких нагрузках, когда выделенных процессов поток недостаточно для обработки всех запросов.&lt;/p&gt;
+
+&lt;h4 id="eventbasedwebservesnginxnodejs"&gt;Event-based web serves: Nginx, Node.js.&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Event-based&lt;/strong&gt; веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/event-based-server-3.png" alt=""&gt;
+&lt;center&gt;Схема работы Event-based веб сервера.&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;loop-event&lt;/strong&gt; - бесконечный цикл обработки запросов. Данный цикл отслеживает состояние запроса(прием запроса от клиента, обработка и отправка ответа). &lt;/p&gt;
+
+&lt;p&gt;В единичном процессе/потоке(&lt;strong&gt;Singe process/thread&lt;/strong&gt;) используются все ресурсы веб сервера, позволяя обрабатывать запросы максимально быстро, а в случаи задержки(получение данных от клиента, отправки данных клиенту) работать с другими запросами из очереди(&lt;strong&gt;Event Queue&lt;/strong&gt;) т.е асинхронно.&lt;/p&gt;
+
+&lt;h4 id=""&gt;Итог&lt;/h4&gt;
+
+&lt;p&gt;Схема &lt;strong&gt;event-based(Node.js, Nginx)&lt;/strong&gt; показывает большую производительность при высоких нагрузках. Это связано с тем что не нужно делить ресурсы сервера между другими потоками/процессами. Также серверные ресурсы всегда используются без “простоя”. &lt;/p&gt;
+
+&lt;h4 id=""&gt;Ссылки&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://habrahabr.ru/post/108241/"&gt;Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://berb.github.io/diploma-thesis/original/042_serverarch.html#42"&gt; Concurrent Programming for Scalable Web Architectures
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.wikivs.com/wiki/apache_vs_nginx"&gt;Apache vs nginx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><link>http://aldb.github.io/2015/02/05/apache-iis-vs-nginx-nodejs/</link><guid isPermaLink="false">d78b5c8f-bb66-49ab-85a1-7eceff35b959</guid><category>nodejs</category><category>apache</category><category>nginx</category><category>web</category><category>server</category><category>iis</category><dc:creator>Alex</dc:creator><pubDate>Thu, 05 Feb 2015 17:29:08 GMT</pubDate></item><item><title>include() vs require() &amp; require_once() vs include_once()</title><description>&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2014/11/rrrr.png" alt=""&gt;&lt;/p&gt;
 
 &lt;p&gt;В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:&lt;/p&gt;
 
