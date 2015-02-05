@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>aldb</title><description>Web, code &amp; dev</description><link>http://aldb.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Thu, 05 Feb 2015 17:37:49 GMT</lastBuildDate><atom:link href="http://aldb.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js.</title><description>&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое. &lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>aldb</title><description>Web, code &amp; dev</description><link>http://aldb.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Thu, 05 Feb 2015 19:15:02 GMT</lastBuildDate><atom:link href="http://aldb.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js.</title><description>&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое. &lt;/p&gt;
 
 &lt;p&gt;Но есть принципиальное различие в процессе обработки запросов.&lt;/p&gt;
 
@@ -289,7 +289,7 @@ I'm interested in web development, so this blog is about it.&lt;/p&gt;
 
 &lt;p&gt;If you want to contact me, please use my email: alexs.dbk@gmail.com&lt;/p&gt;</description><link>http://aldb.github.io/2014/10/16/about/</link><guid isPermaLink="false">dc9dfdb4-4c70-4444-9cc8-0871833b5eff</guid><category>about</category><dc:creator>Alex</dc:creator><pubDate>Thu, 16 Oct 2014 07:27:33 GMT</pubDate></item><item><title>Как создать блог на github.io используя CMS Ghost</title><description>&lt;p&gt;Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms &lt;strong&gt;ghost&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Я не хочу создавать, я хочу &lt;a href="http://alexsdbk.github.io/"&gt;demo&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Я не хочу создавать, я хочу &lt;a href="http://aldb.github.io/"&gt;demo&lt;/a&gt;!&lt;/p&gt;
 
 &lt;p&gt;На создание блога нам потребуется &lt;strong&gt;3 Этапа&lt;/strong&gt;:&lt;/p&gt;
 
