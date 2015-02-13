@@ -1,4 +1,235 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>aldb</title><description>Web, code &amp; dev</description><link>http://aldb.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Thu, 05 Feb 2015 19:15:02 GMT</lastBuildDate><atom:link href="http://aldb.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js.</title><description>&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое. &lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>aldb</title><description>Web, code &amp; dev</description><link>http://aldb.github.io/</link><generator>Ghost 0.5</generator><lastBuildDate>Fri, 13 Feb 2015 22:35:15 GMT</lastBuildDate><atom:link href="http://aldb.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>SQL Joins</title><description>&lt;p&gt;Differense betwen SQL JOINs is a most popular question on enterview. &lt;br&gt;
+So create &lt;b&gt;Table a&lt;/b&gt; is on the left, and &lt;b&gt;Table b&lt;/b&gt; is on the right. &lt;/p&gt;
+
+&lt;h4 id="createtables"&gt;Create tables&lt;/h4&gt;
+
+&lt;pre&gt;
++------++------+
+| &lt;b&gt;a&lt;/b&gt;    || &lt;b&gt;b&lt;/b&gt;    |
++------++------+
+|    &lt;span style="color:green"&gt;1&lt;/span&gt; ||    &lt;span style="color:green"&gt;1&lt;/span&gt; |
+|    &lt;span style="color:green"&gt;2&lt;/span&gt; ||    &lt;span style="color:green"&gt;2&lt;/span&gt; |
+| &lt;span style="color:#ccc"&gt;NULL&lt;/span&gt; || &lt;span style="color:#ccc"&gt;NULL&lt;/span&gt; |
+|   &lt;span style="color:red"&gt;10&lt;/span&gt; ||   &lt;span style="color:red"&gt;20&lt;/span&gt; |
++------++------+
+&lt;/pre&gt;
+
+&lt;p&gt;Sql query:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DROP TABLE IF EXISTS `a`;
+CREATE TABLE `a` (
+  `a` int(11) NULL
+) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+INSERT INTO `a` ( `a`) 
+VALUES 
+  ( '1'),
+  ( '2'),
+  ( NULL),
+  ( 10);
+
+
+DROP TABLE IF EXISTS `b`;
+CREATE TABLE `b` (
+  `b` int(11) NULL
+) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+INSERT INTO `b` ( `b`) 
+VALUES 
+  ( '1'),
+  ( '2'),
+  ( NULL),
+  ( 20);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="delinnerdeljoinandstraight_join"&gt;&lt;del&gt;INNER&lt;/del&gt; JOIN AND STRAIGHT_JOIN&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;The INNER JOIN keyword selects all rows from both tables. INNER JOIN is the same as JOIN.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A &lt;b&gt;STRAIGHT_JOIN&lt;/b&gt; identifies and combines matching rows which are stored in two related tables. This is what an inner join also does. The difference between an inner join and a straight join is that a straight join forces MySQL to read the &lt;b&gt;left table first&lt;/b&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM a &lt;b&gt;JOIN&lt;/b&gt; b ON a=b;
+SELECT * FROM b &lt;b&gt;JOIN&lt;/b&gt; a ON b=a;
+&lt;/pre&gt;
+
+&lt;pre&gt;
++------+------+
+| &lt;b&gt;a&lt;/b&gt;    | &lt;b&gt;b&lt;/b&gt;    |
++------+------+
+|    &lt;span style="color:green"&gt;1&lt;/span&gt; |    &lt;span style="color:green"&gt;1&lt;/span&gt; |
+|    &lt;span style="color:green"&gt;2&lt;/span&gt; |    &lt;span style="color:green"&gt;2&lt;/span&gt; |
++------+------+
+&lt;/pre&gt;
+
+&lt;p&gt;Without condition ON we make &lt;b&gt; CROSS JOIN &lt;/b&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM b &lt;b&gt;JOIN&lt;/b&gt; a;
+SELECT * FROM a,b; 
+&lt;/pre&gt;
+
+&lt;p&gt;OR  &lt;/p&gt;
+
+&lt;pre&gt;
+ SELECT FROM a &lt;b&gt;CROSS JOIN&lt;/b&gt; b;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join8.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+------+------+
+| b    | a    |
++------+------+
+|    1 |    1 |
+|    2 |    1 |
+| NULL |    1 |
+|   20 |    1 |
+|    1 |    2 |
+|    2 |    2 |
+| NULL |    2 |
+|   20 |    2 |
+|    1 | NULL |
+|    2 | NULL |
+| NULL | NULL |
+|   20 | NULL |
+|    1 |   10 |
+|    2 |   10 |
+| NULL |   10 |
+|   20 |   10 |
++------+------+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="leftjoinleftdelouterdeljoin"&gt;LEFT JOIN == LEFT &lt;del&gt;OUTER&lt;/del&gt; JOIN&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;The LEFT JOIN keyword returns all rows from the left table (A), with the matching rows in the right table (B). The result is NULL in the right side when there is no match.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM a &lt;b&gt;LEFT JOIN&lt;/b&gt; b ON a=b;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join2.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;
++------+------+
+| &lt;b&gt;a&lt;/b&gt;    | &lt;b&gt;b&lt;/b&gt;    |
++------+------+
+|    1 |    1 |
+|    2 |    2 |
+| NULL | &lt;span style="color:red"&gt;NULL&lt;/span&gt; |
+|   10 | &lt;span style="color:red"&gt;NULL&lt;/span&gt; |
++------+------+
+&lt;/pre&gt;
+
+&lt;p&gt;If add WHERE condition:&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM a &lt;b&gt;LEFT JOIN&lt;/b&gt; b ON a=b &lt;b&gt;WHERE b IS NULL&lt;/b&gt;;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join3.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;
++------+------+
+| a    | b    |
++------+------+
+| NULL | NULL |
+|   10 | NULL |
++------+------+
+&lt;/pre&gt;
+
+&lt;h4 id="rightjoinrightdelouterdeljoin"&gt;RIGHT JOIN = RIGHT &lt;del&gt;OUTER&lt;/del&gt; JOIN&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;The RIGHT JOIN keyword returns all rows from the right table (B), with the matching rows in the left table (A). The result is NULL in the left side when there is no match.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM a &lt;b&gt;RIGHT JOIN&lt;/b&gt; b ON a=b
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join4.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;
++------+------+
+| a    | b    |
++------+------+
+|    1 |    1 |
+|    2 |    2 |
+| &lt;span style="color:red"&gt;NULL&lt;/span&gt; | NULL |
+| &lt;span style="color:red"&gt;NULL&lt;/span&gt; |   20 |
++------+------+
+&lt;/pre&gt;
+
+&lt;pre&gt;
+SELECT * FROM a &lt;b&gt;RIGHT JOIN&lt;/b&gt; b ON a=b &lt;b&gt;WHERE a IS NULL&lt;/b&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join5.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;
++------+------+
+| a    | b    |
++------+------+
+| NULL | NULL |
+| NULL |   20 |
++------+------+
+&lt;/pre&gt;
+
+&lt;h4 id="fullouter"&gt;FULL OUTER&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;The FULL OUTER JOIN keyword returns all rows from the left table (A) and from the right table (B).
+The FULL OUTER JOIN keyword combines the result of both LEFT and RIGHT joins.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM a &lt;b&gt;FULL OUTER JOIN&lt;/b&gt; b ON a=b
+&lt;/pre&gt;
+
+&lt;p&gt;MYSQL don't have FULL JOINS, but can sure &lt;a href="http://dev.mysql.com/doc/refman/5.0/en/outer-join-simplification.html"&gt;emulate&lt;/a&gt; them.&lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM a LEFT JOIN b ON a = b
+UNION
+SELECT * FROM a RIGHT JOIN b ON a=b
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join6.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;
++------+------+
+| a    | b    |
++------+------+
+&lt;span style="color:green"&gt;|    1 |    1 |
+|    2 |    2 |
+| NULL | NULL |&lt;/span&gt;
+|   10 | &lt;span style="color:red"&gt;NULL&lt;/span&gt; |
+| &lt;span style="color:red"&gt;NULL&lt;/span&gt; |   20 |
++------+------+
+&lt;/pre&gt;
+
+&lt;pre&gt;
+SELECT * FROM a &lt;b&gt;FULL OUTER JOIN b ON a=b
+WHERE a IS null OR b IS null&lt;/b&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;For MYSQL:  &lt;/p&gt;
+
+&lt;pre&gt;
+SELECT * FROM a LEFT JOIN b ON a = b WHERE b IS NULL 
+UNION 
+SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL; 
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="http://aldb.github.io/content/images/2015/02/join7.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;
++------+------+
+| a    | b    |
++------+------+
+&lt;span style="color:green"&gt;| NULL | NULL |&lt;/span&gt;
+|   10 | &lt;span style="color:red"&gt;NULL&lt;/span&gt; |
+| &lt;span style="color:red"&gt;NULL&lt;/span&gt; |   20 |
++------+------+
+&lt;/pre&gt;</description><link>http://aldb.github.io/2015/02/13/sql-joins/</link><guid isPermaLink="false">c293d01b-b31c-401f-8cbc-cae19e784f3f</guid><category>sql</category><category>mysql</category><category>join</category><dc:creator>Alex</dc:creator><pubDate>Fri, 13 Feb 2015 22:33:49 GMT</pubDate></item><item><title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js.</title><description>&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое. &lt;/p&gt;
 
 &lt;p&gt;Но есть принципиальное различие в процессе обработки запросов.&lt;/p&gt;
 
