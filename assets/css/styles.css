@@ -107,13 +107,16 @@ aside {
 }
 
 footer {
-    padding: 45px;
-    padding-top: 40px;
+    padding-left: 40px;
     background-color: #2d2d2d;
 }
 
 footer h4, footer h6 {
     color:#fff;
+}
+
+footer a:hover{
+    color:#007FFF;
 }
 
 .navbar-default {

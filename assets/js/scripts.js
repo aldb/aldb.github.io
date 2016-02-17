@@ -11,12 +11,12 @@
     $('a.page-scroll').bind('click', function(event) {
         var $ele = $(this);
         $('html, body').stop().animate({
-            scrollTop: ($($ele.attr('href')).offset().top - 60)
+            scrollTop: ($($ele.attr('href')).offset().top - 30)
         }, 1450, 'easeInOutExpo');
         event.preventDefault();
     });
     
-    $('#collapsingNavbar li a').click(function() {
+    $('#collapsingNavbar li a').click(function(el) {
         /* always close responsive nav after click */
         $('.navbar-toggler:visible').click();
     });
