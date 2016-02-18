@@ -167,6 +167,10 @@ footer a:hover{
     background-color: transparent;
 }
 
+.blog-link {
+    color: #007FFF !important;
+}
+
 /* responsive nav */
 @media(max-width:48em) {
     .navbar-default .navbar-nav>.nav-item {

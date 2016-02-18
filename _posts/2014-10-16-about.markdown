@@ -1,0 +1,14 @@
+---
+layout: post
+title: About
+date: 2014-10-16 00:27:33.000000000 -07:00
+---
+<br>
+<br>
+
+
+Hello!
+My name is **Alex** and this is my blog on github.
+I'm interested in web development, so this blog is about it.
+
+If you want to contact me, please use my email: alexs.dbk@gmail.com

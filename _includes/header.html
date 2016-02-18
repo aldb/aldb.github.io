@@ -1,0 +1,39 @@
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            ☰
+        </button>
+        <a class="navbar-brand page-scroll" href="#first">aldb.github.io</a>
+        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+            <ul class="nav navbar-nav wow">
+            {% if page.title %}
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="http://aldb.github.io/#one">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll blog-link" href="http://aldb.github.io/#two">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="http://aldb.github.io/#three">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="http://aldb.github.io/#four">Portfolio</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#one">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#two">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#three">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#four">Portfolio</a>
+                </li>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

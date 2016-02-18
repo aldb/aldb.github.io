@@ -3,16 +3,21 @@ layout: default
 ---
 
 <div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+    <div class="card-columns">
+        {% for post in site.posts %}
+            <article class="post">
+                <div class="card">
+                  <img class="card-img-top" data-src="..." alt="Card image cap">
+                  <div class="card-block">
+                    <a style href="{{ site.baseurl }}{{ post.url }}">
+                        <h4 class="card-title">{{ post.title }}</h4>
+                    </a>
+                        <p class="card-text">{{ post.excerpt }}
+                    </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
 </div>
