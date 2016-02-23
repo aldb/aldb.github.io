@@ -1,0 +1,213 @@
+---
+layout: post
+title: SQL Joins
+date: 2015-02-13 21:38:39.000000000 -08:00
+category: programming
+tags: [sql,mysql,join]
+---
+Differense between SQL JOINs is the most popular question on enterview.
+So create **Table a** is on the left, and **Table b** is on the right.
+
+#### Create tables
+
+    +------++------+
+    | a    || b    |
+    +------++------+
+    |    1 ||    1 |
+    |    2 ||    2 |
+    | NULL || NULL |
+    |   10 ||   20 |
+    +------++------+
+
+Sql query:
+
+```sql
+    DROP TABLE IF EXISTS `a`;
+    CREATE TABLE `a` (
+      `a` int(11) NULL
+    ) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+    INSERT INTO `a` ( `a`) 
+    VALUES 
+      ( '1'),
+      ( '2'),
+      ( NULL),
+      ( 10);
+
+
+    DROP TABLE IF EXISTS `b`;
+    CREATE TABLE `b` (
+      `b` int(11) NULL
+    ) ENGINE=InnoDB AUTO_INCREMENT=0;
+
+    INSERT INTO `b` ( `b`) 
+    VALUES 
+      ( '1'),
+      ( '2'),
+      ( NULL),
+      ( 20);
+```
+#### ~~INNER~~ JOIN AND STRAIGHT\_JOIN
+
+*The INNER JOIN keyword selects all rows from both tables. INNER JOIN is the same as JOIN.*
+
+*A **STRAIGHT\_JOIN** identifies and combines matching rows which are stored in two related tables. This is what an inner join also does. The difference between an inner join and a straight join is that a straight join forces MySQL to read the **left table first**.*
+
+![]
+
+```sql
+    SELECT * FROM a JOIN b ON a=b;
+    SELECT * FROM b JOIN a ON b=a;
+```
+    +------+------+
+    | a    | b    |
+    +------+------+
+    |    1 |    1 |
+    |    2 |    2 |
+    +------+------+
+
+Without condition ON we make **CROSS JOIN**
+
+```sql
+    SELECT * FROM b JOIN a;
+    SELECT * FROM a,b; 
+```
+OR
+
+```sql
+     SELECT FROM a CROSS JOIN b;
+```
+![][1]
+
+    +------+------+
+    | b    | a    |
+    +------+------+
+    |    1 |    1 |
+    |    2 |    1 |
+    | NULL |    1 |
+    |   20 |    1 |
+    |    1 |    2 |
+    |    2 |    2 |
+    | NULL |    2 |
+    |   20 |    2 |
+    |    1 | NULL |
+    |    2 | NULL |
+    | NULL | NULL |
+    |   20 | NULL |
+    |    1 |   10 |
+    |    2 |   10 |
+    | NULL |   10 |
+    |   20 |   10 |
+    +------+------+
+#### LEFT JOIN == LEFT ~~OUTER~~ JOIN
+
+*The LEFT JOIN keyword returns all rows from the left table (A), with the matching rows in the right table (B). The result is NULL in the right side when there is no match.*
+
+```sql
+    SELECT * FROM a LEFT JOIN b ON a=b;
+```
+![][2]
+
+    +------+------+
+    | a    | b    |
+    +------+------+
+    |    1 |    1 |
+    |    2 |    2 |
+    | NULL | NULL |
+    |   10 | NULL |
+    +------+------+
+
+If add WHERE condition:
+
+```sql
+    SELECT * FROM a LEFT JOIN b ON a=b WHERE b IS NULL;
+```
+![][3]
+
+    +------+------+
+    | a    | b    |
+    +------+------+
+    | NULL | NULL |
+    |   10 | NULL |
+    +------+------+
+
+#### RIGHT JOIN = RIGHT ~~OUTER~~ JOIN
+
+*The RIGHT JOIN keyword returns all rows from the right table (B), with the matching rows in the left table (A). The result is NULL in the left side when there is no match.*
+
+```sql
+    SELECT * FROM a RIGHT JOIN b ON a=b
+```
+![][4]
+
+    +------+------+
+    | a    | b    |
+    +------+------+
+    |    1 |    1 |
+    |    2 |    2 |
+    | NULL | NULL |
+    | NULL |   20 |
+    +------+------+
+```sql
+    SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL
+```
+![][5]
+
+    +------+------+
+    | a    | b    |
+    +------+------+
+    | NULL | NULL |
+    | NULL |   20 |
+    +------+------+
+
+#### FULL OUTER
+
+*The FULL OUTER JOIN keyword returns all rows from the left table (A) and from the right table (B). The FULL OUTER JOIN keyword combines the result of both LEFT and RIGHT joins.*
+```sql
+    SELECT * FROM a FULL OUTER JOIN b ON a=b
+```
+MYSQL don’t have FULL JOINS, but can sure [emulate] them.
+
+```sql
+    SELECT * FROM a LEFT JOIN b ON a = b
+    UNION
+    SELECT * FROM a RIGHT JOIN b ON a=b
+```
+![][6]
+
+    +------+------+
+    | a    | b    |
+    +------+------+
+    |    1 |    1 |
+    |    2 |    2 |
+    | NULL | NULL |
+    |   10 | NULL |
+    | NULL |   20 |
+    +------+------+
+    ```sql
+    SELECT * FROM a FULL OUTER JOIN b ON a=b
+    WHERE a IS null OR b IS null
+    ```
+For MYSQL:
+
+
+```sql
+SELECT * FROM a LEFT JOIN b ON a = b WHERE b IS NULL
+UNION 
+SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL; 
+```
+
+![][7]
+
+    +------+------+
+    | a    | b    |
+    +------
+  []: ../../../../assets/img/posts/2015/02/join1.png
+  [1]: ../../../../assets/img/posts/2015/02/join8.png
+  [2]: ../../../../assets/img/posts/2015/02/join2.png
+  [3]: ../../../../assets/img/posts/2015/02/join3.png
+  [4]: ../../../../assets/img/posts/2015/02/join4.png
+  [5]: ../../../../assets/img/posts/2015/02/join5.png
+  [emulate]: http://dev.mysql.com/doc/refman/5.0/en/outer-join-simplification.html
+  [6]: ../../../../assets/img/posts/2015/02/join6.png
+  [7]: ../../../../assets/img/posts/2015/02/join7.png
