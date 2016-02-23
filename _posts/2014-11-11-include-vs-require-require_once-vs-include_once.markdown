@@ -2,6 +2,8 @@
 layout: post
 title: include() vs require() & require_once() vs include_once()
 date: 2014-11-11 21:38:39.000000000 -08:00
+category: programming
+tags: [ jekyll ]
 ---
 ![](/content/images/2014/11/rrrr.png)
 

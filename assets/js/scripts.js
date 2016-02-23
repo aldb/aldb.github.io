@@ -25,4 +25,39 @@
        $('#galleryImage').attr("src",$(e.relatedTarget).data("src"));
     });
 
+    window.location.hash.split('#tag=').map(function(v){
+        if (v !== "") {
+            var el = document.getElementById(v);
+            el.focus();
+            el.click()
+        }
+    })
 })(jQuery);
+
+function tags(el) {
+    if (el.className === 'tag-active') {
+        el.className = '';
+        $('.post').show();
+        return true;
+    }
+    $('.tag-active').attr('class', '');
+    el.className = 'tag-active';
+    var tag = el.innerHTML.split('(')[0].trim();
+    var postsTags = document.getElementsByClassName('tags-mark');
+
+
+    for (var i =0; i < postsTags.length; i++ ) {
+        var tags = postsTags[i].innerHTML.split(',');
+        var hide = true;
+        for (var k=0;k < tags.length; k++ ){
+            if (tags[k].trim() === tag) {
+                hide = false;
+                break;
+            }
+        }
+        if (hide === true) {
+            $(postsTags[i].parentElement.parentElement.parentElement.parentElement).hide();
+        }
+    }
+    window.location.hash = 'tag=' + tag;
+}

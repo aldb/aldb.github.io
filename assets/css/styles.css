@@ -350,3 +350,9 @@ img::-moz-selection {
     color: #fff;
     background: 0 0;
 }
+
+.tag-active {
+    border-color: #0275DF !important;;
+    color: #fff !important;
+    background-color: #0275DF !important;
+}
