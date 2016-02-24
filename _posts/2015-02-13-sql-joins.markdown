@@ -3,25 +3,24 @@ layout: post
 title: SQL Joins
 date: 2015-02-13 21:38:39.000000000 -08:00
 category: programming
-tags: [sql,mysql,join]
+tags: [sql,mysql,join,en]
 ---
 Differense between SQL JOINs is the most popular question on enterview.
 So create **Table a** is on the left, and **Table b** is on the right.
 
 #### Create tables
+<pre>
++------++------+
+| <b>a</b>    || <b>b</b>    |
++------++------+
+|    <span style="color:green">1</span> ||    <span style="color:green">1</span> |
+|    <span style="color:green">2</span> ||    <span style="color:green">2</span> |
+| <span style="color:#ccc">NULL</span> || <span style="color:#ccc">NULL</span> |
+|   <span style="color:red">10</span> ||   <span style="color:red">20</span> |
++------++------+
+</pre>Sql query:
 
-    +------++------+
-    | a    || b    |
-    +------++------+
-    |    1 ||    1 |
-    |    2 ||    2 |
-    | NULL || NULL |
-    |   10 ||   20 |
-    +------++------+
-
-Sql query:
-
-```sql
+{% highlight sql %}
     DROP TABLE IF EXISTS `a`;
     CREATE TABLE `a` (
       `a` int(11) NULL
@@ -46,7 +45,7 @@ Sql query:
       ( '2'),
       ( NULL),
       ( 20);
-```
+{% endhighlight %}
 #### ~~INNER~~ JOIN AND STRAIGHT\_JOIN
 
 *The INNER JOIN keyword selects all rows from both tables. INNER JOIN is the same as JOIN.*
@@ -55,28 +54,29 @@ Sql query:
 
 ![]
 
-```sql
+{% highlight sql %}
     SELECT * FROM a JOIN b ON a=b;
     SELECT * FROM b JOIN a ON b=a;
-```
-    +------+------+
-    | a    | b    |
-    +------+------+
-    |    1 |    1 |
-    |    2 |    2 |
-    +------+------+
-
+{% endhighlight %}
+<pre>
++------+------+
+| <b>a</b>    | <b>b</b>    |
++------+------+
+|    <span style="color:green">1</span> |    <span style="color:green">1</span> |
+|    <span style="color:green">2</span> |    <span style="color:green">2</span> |
++------+------+
+</pre>
 Without condition ON we make **CROSS JOIN**
 
-```sql
+{% highlight sql %}
     SELECT * FROM b JOIN a;
     SELECT * FROM a,b; 
-```
+{% endhighlight %}
 OR
 
-```sql
+{% highlight sql %}
      SELECT FROM a CROSS JOIN b;
-```
+{% endhighlight %}
 ![][1]
 
     +------+------+
@@ -103,105 +103,116 @@ OR
 
 *The LEFT JOIN keyword returns all rows from the left table (A), with the matching rows in the right table (B). The result is NULL in the right side when there is no match.*
 
-```sql
+{% highlight sql %}
     SELECT * FROM a LEFT JOIN b ON a=b;
-```
+{% endhighlight %}
 ![][2]
-
-    +------+------+
-    | a    | b    |
-    +------+------+
-    |    1 |    1 |
-    |    2 |    2 |
-    | NULL | NULL |
-    |   10 | NULL |
-    +------+------+
-
+<pre>
++------+------+
+| <b>a</b>    | <b>b</b>    |
++------+------+
+|    1 |    1 |
+|    2 |    2 |
+| NULL | <span style="color:red">NULL</span> |
+|   10 | <span style="color:red">NULL</span> |
++------+------+
+</pre>
 If add WHERE condition:
 
-```sql
+{% highlight sql %}
     SELECT * FROM a LEFT JOIN b ON a=b WHERE b IS NULL;
-```
+{% endhighlight %}
 ![][3]
-
-    +------+------+
-    | a    | b    |
-    +------+------+
-    | NULL | NULL |
-    |   10 | NULL |
-    +------+------+
-
+<pre>
++------+------+
+| a    | b    |
++------+------+
+| NULL | NULL |
+|   10 | NULL |
++------+------+
+</pre>
 #### RIGHT JOIN = RIGHT ~~OUTER~~ JOIN
 
 *The RIGHT JOIN keyword returns all rows from the right table (B), with the matching rows in the left table (A). The result is NULL in the left side when there is no match.*
 
-```sql
+{% highlight sql %}
     SELECT * FROM a RIGHT JOIN b ON a=b
-```
+{% endhighlight %}
 ![][4]
 
-    +------+------+
-    | a    | b    |
-    +------+------+
-    |    1 |    1 |
-    |    2 |    2 |
-    | NULL | NULL |
-    | NULL |   20 |
-    +------+------+
-```sql
+<pre>
++------+------+
+| a    | b    |
++------+------+
+|    1 |    1 |
+|    2 |    2 |
+| <span style="color:red">NULL</span> | NULL |
+| <span style="color:red">NULL</span> |   20 |
++------+------+
+</pre>
+{% highlight sql %}
     SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL
-```
+{% endhighlight %}
 ![][5]
 
-    +------+------+
-    | a    | b    |
-    +------+------+
-    | NULL | NULL |
-    | NULL |   20 |
-    +------+------+
-
+<pre>
++------+------+
+| a    | b    |
++------+------+
+| NULL | NULL |
+| NULL |   20 |
++------+------+
+</pre>
 #### FULL OUTER
 
 *The FULL OUTER JOIN keyword returns all rows from the left table (A) and from the right table (B). The FULL OUTER JOIN keyword combines the result of both LEFT and RIGHT joins.*
-```sql
+{% highlight sql %}
     SELECT * FROM a FULL OUTER JOIN b ON a=b
-```
+{% endhighlight %}
 MYSQL don’t have FULL JOINS, but can sure [emulate] them.
 
-```sql
+{% highlight sql %}
     SELECT * FROM a LEFT JOIN b ON a = b
     UNION
     SELECT * FROM a RIGHT JOIN b ON a=b
-```
+{% endhighlight %}
 ![][6]
 
-    +------+------+
-    | a    | b    |
-    +------+------+
-    |    1 |    1 |
-    |    2 |    2 |
-    | NULL | NULL |
-    |   10 | NULL |
-    | NULL |   20 |
-    +------+------+
-    ```sql
+<pre>
++------+------+
+| a    | b    |
++------+------+
+<span style="color:green">|    1 |    1 |
+|    2 |    2 |
+| NULL | NULL |</span>
+|   10 | <span style="color:red">NULL</span> |
+| <span style="color:red">NULL</span> |   20 |
++------+------+
+</pre>
+    {% highlight sql %}
     SELECT * FROM a FULL OUTER JOIN b ON a=b
     WHERE a IS null OR b IS null
-    ```
+    {% endhighlight %}
 For MYSQL:
 
 
-```sql
+{% highlight sql %}
 SELECT * FROM a LEFT JOIN b ON a = b WHERE b IS NULL
 UNION 
 SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL; 
-```
+{% endhighlight %}
 
 ![][7]
 
-    +------+------+
-    | a    | b    |
-    +------
+<pre>
++------+------+
+| a    | b    |
++------+------+
+<span style="color:green">| NULL | NULL |</span>
+|   10 | <span style="color:red">NULL</span> |
+| <span style="color:red">NULL</span> |   20 |
++------+------+
+</pre>
   []: ../../../../assets/img/posts/2015/02/join1.png
   [1]: ../../../../assets/img/posts/2015/02/join8.png
   [2]: ../../../../assets/img/posts/2015/02/join2.png

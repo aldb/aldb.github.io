@@ -2,6 +2,8 @@
 layout: post
 title: Как сделать слияние masters с github pages
 date: 2014-10-26 20:19:35.000000000 -07:00
+category: programming
+tags: [ github,ru]
 ---
 Сабж, создаем бранч, мержим с продактишном и коммитим:
 
