@@ -6,7 +6,6 @@ category: programming
 tags: [ php,ru]
 ---
 В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:
-<link rel="stylesheet" type="text/css" href="/path/to/pygments.css">
 {% highlight php startinline=true %}
 include('file');
 require('file');

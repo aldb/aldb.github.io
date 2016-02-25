@@ -38,6 +38,7 @@ function tags(el) {
     if (el.className === 'tag-active') {
         el.className = '';
         $('.post').show();
+        window.location.hash = 'three';
         return true;
     }
     $('.tag-active').attr('class', '');

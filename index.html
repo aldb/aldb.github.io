@@ -17,11 +17,6 @@ layout: default
         {% for post in site.posts %}
             <article class="post">
                 <div class="card">
-
-                {% if post.img %}
-                    <img class="card-img-top" data-src="..." alt="Card image cap">
-                {% endif %}
-                  
                   <div class="card-block">
                     <a style href="{{ site.baseurl }}{{ post.url }}">
                         <h4 class="card-title">{{ post.title }}</h4>
