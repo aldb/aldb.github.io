@@ -351,8 +351,9 @@ img::-moz-selection {
     background: 0 0;
 }
 
-.tag-active {
-    border-color: #0275DF !important;;
-    color: #fff !important;
-    background-color: #0275DF !important;
+.ion-close-circled.wow.fadeIn {
+    visibility: visible;
+    animation-name: fadeIn;
+    color:#f7f7f9;
+    font-size:12px;
 }
