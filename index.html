@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="tags" style="font-size:10px;">
+
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+     <span class="site-tag">
+        <a href="#" id="{{tag[0]}}"
+            class="btn btn-primary-outline wow"
+            style="text-align: center;font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%" onclick="tags(this); return false;">
+            {{ tag[0] | replace:'-', ' ' }}
+            ({{ tag | last | size }})
+            <i class="ion-close-circled wow fadeIn"></i>
+        </a>
+    </span>
+{% endfor %}
+
+</div>
+<br>
+<div class="posts">
+    <div class="card-columns">
+        {% for post in site.posts %}
+            {% include card.html %}
+        {% endfor %}
+    </div>
+</div>

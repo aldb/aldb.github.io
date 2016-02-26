@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+    {% include css.html %}
+</head>
+<body class="bg-faded">
+
+
+{% if page.title %}
+{% include header.html %}
+  <section id="two" class="bg-alt">
+      <div class="container wow fadeInUp">
+          <div class="row">
+            {{ content }}
+          </div>
+      </div>
+  </section>
+{% else %}
+  {% include main.html %}
+{% endif %}
+
+<footer id="footer">
+        <span class="pull-right text-muted small"><a href="{{url}}">Made with <i class="ion-android-favorite-outline"></i></a> ©2014-2016</span>
+    </div>
+</footer>
+    {% include js.html %}
+  </body>
+</html>
