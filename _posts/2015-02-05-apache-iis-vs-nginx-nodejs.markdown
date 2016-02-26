@@ -3,7 +3,7 @@ layout: post
 title: 'Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js'
 date: 2015-02-11 21:38:39.000000000 -08:00
 category: programming
-tags: [nodejs, apache, nginx, web, server, iis,ru]
+tags: [nodejs, apache, nginx, iis,ru]
 ---
 На сегодняшний день популярными веб серверами являются: **Apache, IIS, Nginx, Node.js.** У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.
 
