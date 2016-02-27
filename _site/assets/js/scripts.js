@@ -35,6 +35,7 @@
 function tags(el) {
     if ($(el).hasClass("tag-active")) {
         $(el).removeClass("tag-active");
+        $(el).children().hide();
         $('.post').show();
         window.location.hash = 'three';
         return true;
@@ -42,6 +43,7 @@ function tags(el) {
     $(".tag-active").removeClass("tag-active")
     $('.post').hide();
     $(el).addClass("tag-active");
+    $(el).children().show();
     var tag = el.innerHTML.split('(')[0].trim();
     var postsTags = document.getElementsByClassName('tags-mark');
     for (var i =0; i < postsTags.length; i++ ) {
