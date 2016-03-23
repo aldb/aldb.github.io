@@ -3,10 +3,46 @@
 <generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
 <link href="/feed.xml" rel="self" type="application/atom+xml" />
 <link href="/" rel="alternate" type="text/html" />
-<updated>2016-03-02T07:41:48-08:00</updated>
+<updated>2016-03-23T07:23:18-07:00</updated>
 <id>/</id>
-<title>Your Name</title>
-<subtitle>Web Developer from Somewhere</subtitle>
+<title>aldb</title>
+<subtitle>Full Stack</subtitle>
+<entry>
+<title>bash command not found</title>
+<link href="/2016/03/21/bash-command-not-found/" rel="alternate" type="text/html" title="bash command not found" />
+<published>2016-03-21T08:38:39-07:00</published>
+<updated>2016-03-21T08:38:39-07:00</updated>
+<id>/2016/03/21/bash-command-not-found</id>
+<content type="html" xml:base="/2016/03/21/bash-command-not-found/">&lt;p&gt;I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:&lt;/p&gt;
+
+&lt;p&gt;{% highlight bash %}
+$ -bash: tsd: command not found 
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;All others npm packages not running.
+It&amp;#39;s look like bash don&amp;#39;t know path for node modules.&lt;/p&gt;
+
+&lt;p&gt;Command:
+{% highlight bash %}
+$ npm bin
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;Get back:
+{% highlight bash %}
+$ IF (not in PATH env variable)
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;For fix this issue add path for node modules in PATH
+{% highlight bash %}
+$ export PATH=&amp;quot;/Users/&lt;username&gt;/.node/bin:$PATH&amp;quot;
+{% endhighlight %}&lt;/p&gt;
+</content>
+<category term="programming" />
+<category term="mac" />
+<category term="error" />
+<category term="nodejs" />
+<summary>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</summary>
+</entry>
 <entry>
 <title>Eacces permission denied</title>
 <link href="/2016/03/01/eacces-permission-denied/" rel="alternate" type="text/html" title="Eacces permission denied" />
@@ -668,27 +704,5 @@ class StackTest extends PHPUnit_Framework_TestCase
 <category term="php" />
 <category term="ru" />
 <summary>Все знаем что phpunit модно, стильно, молодежно.И вот как ее быстро установить:</summary>
-</entry>
-<entry>
-<title>SQL comics!</title>
-<link href="/2014/10/18/sql-komiksy/" rel="alternate" type="text/html" title="SQL comics!" />
-<published>2014-10-18T09:53:47-07:00</published>
-<updated>2014-10-18T09:53:47-07:00</updated>
-<id>/2014/10/18/sql-komiksy</id>
-<content type="html" xml:base="/2014/10/18/sql-komiksy/">&lt;p&gt;Небольшая подборка комиксов на sql тематику:&lt;/p&gt;
-
-&lt;h3&gt;I&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2014/10/sql_comics1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
-&lt;h3&gt;II&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2014/10/sql_comics2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-<category term="programming" />
-<category term="fun" />
-<category term="ru" />
-<category term="sql" />
-<summary>Небольшая подборка комиксов на sql тематику:</summary>
 </entry>
 </feed>

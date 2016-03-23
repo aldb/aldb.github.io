@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Установка phpunit – aldb – Full Stack</title>
+    <title>bash command not found – aldb – Full Stack</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,18 +9,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:
+    <meta name="description" content="I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:
 " />
-    <meta property="og:description" content="Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:
+    <meta property="og:description" content="I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:
 " />
     
     <meta name="author" content="aldb" />
 
     
-    <meta property="og:title" content="Установка phpunit" />
-    <meta property="twitter:title" content="Установка phpunit" />
+    <meta property="og:title" content="bash command not found" />
+    <meta property="twitter:title" content="bash command not found" />
     
     <link rel="stylesheet" href="/assets/css/ionicons.min.css" />
 <link rel="stylesheet" href="/assets/css/bs4.css" />
@@ -67,23 +65,29 @@
 <div class="col-xs-10 col-xs-offset-1">
 <div class="row">
 <article class="post">
-  <h1>Установка phpunit</h1>
+  <h1>bash command not found</h1>
 
 <p class="card-text">
     <small class="text-muted">
-        October 19, 2014
+        March 21, 2016
     </small>
     
     
      <span class="site-tag">
-        <a href="/#tag=php">
-                php
+        <a href="/#tag=error">
+                error
         </a>
     </span>
     
      <span class="site-tag">
-        <a href="/#tag=ru">
-                ru
+        <a href="/#tag=mac">
+                mac
+        </a>
+    </span>
+    
+     <span class="site-tag">
+        <a href="/#tag=nodejs">
+                nodejs
         </a>
     </span>
     
@@ -91,41 +95,24 @@
 
 
   <div class="entry">
-    <p>Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">pear channel-discover pear.phpunit.de
-pear channel-discover pear.symfony-project.com
-</code></pre></div>
-<p>В случаи проблемы с правами добавляем волшебное &quot;sudo&quot;
-Таким образом мы добавили  <strong>PEAR Installer</strong></p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">pear install phpunit/PHPUnit
-</code></pre></div>
-<p>Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">apt-get install php5-dev
-pecl install xdebug
-</code></pre></div>
-<p>После этого все должно заработать, проверить версию PHPUnit можно командой </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">phpunit
-</code></pre></div>
-<p>В дополнения простенький пример теста:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?php
-class StackTest extends PHPUnit_Framework_TestCase
-{
-    public function testPushAndPop()
-    {
-        $stack = array();
-        $this-&gt;assertEquals(0, count($stack));
+    <p>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</p>
 
-        array_push($stack, &#39;foo&#39;);
-        $this-&gt;assertEquals(&#39;foo&#39;,$stack[count($stack)-1]);
-        $this-&gt;assertEquals(1, count($stack));
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>-bash: tsd: <span class="nb">command </span>not found </code></pre></figure>
 
-        $this-&gt;assertEquals(&#39;foo&#39;,array_pop($stack));
-        $this-&gt;assertEquals(0, count($stack));
-    }
-}
-</code></pre></div>
-<p>Подробнее можно посмотреть в <a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html">документации</a>, где все примеры с закрывающим тегом&lt; ?  <i class="fa fa-wheelchair"></i>facepalm</p>
+<p>All others npm packages not running.
+It&#39;s look like bash don&#39;t know path for node modules.</p>
+
+<p>Command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm bin</code></pre></figure>
+
+<p>Get back:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>IF <span class="o">(</span>not in PATH env variable<span class="o">)</span></code></pre></figure>
+
+<p>For fix this issue add path for node modules in PATH</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/&lt;username&gt;/.node/bin:$PATH&quot;</span></code></pre></figure>
 
   </div>
 
