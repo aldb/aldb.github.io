@@ -30,3 +30,5 @@ For fix this issue add path for node modules in PATH
 {% highlight bash %}
 $ export PATH="/Users/<username>/.node/bin:$PATH"
 {% endhighlight %}
+
+For get bash username use command: whoami
