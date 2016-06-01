@@ -9,7 +9,7 @@ img: /assets/img/posts/2016/jekyll-small.png
 
 ## Problem
 
-Need quick script for install NPM & Node by terminal
+Need quick script for install NPM & Node by terminal.
 
 ## Solution
 
@@ -53,4 +53,4 @@ $ npm -v
 $ which npm
 {% endhighlight %}
 
-Have fun with Nodejs
+Have fun with Nodejs!
