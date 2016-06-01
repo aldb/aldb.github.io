@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Установка phpunit – aldb – Full Stack Web Developer</title>
+    <title>Install Nodejs & NPM by Brew – aldb – Full Stack Web Developer</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,18 +9,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:
+    <meta name="description" content="Install Nodejs &amp; NPM by Brew
 " />
-    <meta property="og:description" content="Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:
+    <meta property="og:description" content="Install Nodejs &amp; NPM by Brew
 " />
     
     <meta name="author" content="aldb" />
 
     
-    <meta property="og:title" content="Установка phpunit" />
-    <meta property="twitter:title" content="Установка phpunit" />
+    <meta property="og:title" content="Install Nodejs & NPM by Brew" />
+    <meta property="twitter:title" content="Install Nodejs & NPM by Brew" />
     
     <link rel="stylesheet" href="/assets/css/ionicons.min.css" />
 <link rel="stylesheet" href="/assets/css/bs4.css" />
@@ -67,23 +65,41 @@
 <div class="col-xs-10 col-xs-offset-1">
 <div class="row">
 <article class="post">
-  <h1>Установка phpunit</h1>
+  <h1>Install Nodejs & NPM by Brew</h1>
 
 <p class="card-text">
     <small class="text-muted">
-        October 19, 2014
+        March 21, 2016
     </small>
     
     
      <span class="site-tag">
-        <a href="/#tag=php">
-                php
+        <a href="/#tag=brew">
+                brew
         </a>
     </span>
     
      <span class="site-tag">
-        <a href="/#tag=ru">
-                ru
+        <a href="/#tag=en">
+                en
+        </a>
+    </span>
+    
+     <span class="site-tag">
+        <a href="/#tag=mac">
+                mac
+        </a>
+    </span>
+    
+     <span class="site-tag">
+        <a href="/#tag=nodejs">
+                nodejs
+        </a>
+    </span>
+    
+     <span class="site-tag">
+        <a href="/#tag=npm">
+                npm
         </a>
     </span>
     
@@ -91,41 +107,36 @@
 
 
   <div class="entry">
-    <p>Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">pear channel-discover pear.phpunit.de
-pear channel-discover pear.symfony-project.com
-</code></pre></div>
-<p>В случаи проблемы с правами добавляем волшебное &quot;sudo&quot;
-Таким образом мы добавили  <strong>PEAR Installer</strong></p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">pear install phpunit/PHPUnit
-</code></pre></div>
-<p>Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">apt-get install php5-dev
-pecl install xdebug
-</code></pre></div>
-<p>После этого все должно заработать, проверить версию PHPUnit можно командой </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">phpunit
-</code></pre></div>
-<p>В дополнения простенький пример теста:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?php
-class StackTest extends PHPUnit_Framework_TestCase
-{
-    public function testPushAndPop()
-    {
-        $stack = array();
-        $this-&gt;assertEquals(0, count($stack));
+    <h1>Install Nodejs &amp; NPM by Brew</h1>
 
-        array_push($stack, &#39;foo&#39;);
-        $this-&gt;assertEquals(&#39;foo&#39;,$stack[count($stack)-1]);
-        $this-&gt;assertEquals(1, count($stack));
+<p>Homebrew - the missing package manager for OS X, really easy way to setup environment.</p>
 
-        $this-&gt;assertEquals(&#39;foo&#39;,array_pop($stack));
-        $this-&gt;assertEquals(0, count($stack));
-    }
-}
-</code></pre></div>
-<p>Подробнее можно посмотреть в <a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html">документации</a>, где все примеры с закрывающим тегом&lt; ?  <i class="fa fa-wheelchair"></i>facepalm</p>
+<p>Open terminal and check Brew version:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew -v</code></pre></figure>
+
+<p>If you get &quot;brew: command not found&quot; got to official web <a href="http://brew.sh/">page</a> and copy/paster url link for install:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span></code></pre></figure>
+
+<p>If on Mac don&#39;t install Xcode you see alert message with option for install. Node.js &amp; NPM don&#39;t need Xcode, so cancel Xcode installation alert message.</p>
+
+<p>Then installing the NPM &amp; Node by command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew node</code></pre></figure>
+
+<p>Done! </p>
+
+<p><img src="" alt="Screenshot"></p>
+
+<p>For check nodejs/NPM version/location use:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>node -v
+<span class="nv">$ </span>which node
+<span class="nv">$ </span>npm -v
+<span class="nv">$ </span>which npm</code></pre></figure>
+
+<p>Have fun with Nodejs</p>
 
   </div>
 

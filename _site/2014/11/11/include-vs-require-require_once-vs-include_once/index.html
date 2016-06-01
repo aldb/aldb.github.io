@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>include() vs require() & require_once() vs include_once() – aldb – Full Stack</title>
+    <title>include() vs require() & require_once() vs include_once() – aldb – Full Stack Web Developer</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -110,14 +110,14 @@ require &#39;file&#39;;
 
 <p>Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(файл не найден):</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">require</span> <span class="o">-</span> <span class="nx">Fatal</span> <span class="nx">error</span><span class="p">(</span><span class="nx">E_COMPILE_ERROR</span><span class="p">),</span> <span class="err">т</span><span class="o">.</span><span class="err">е</span> <span class="err">останока</span> <span class="err">скрипта</span>
-<span class="k">include</span> <span class="o">-</span> <span class="nx">Warning</span> <span class="nx">error</span><span class="p">(</span><span class="k">E_WARNING</span><span class="p">)</span> <span class="err">и</span> <span class="err">продолжение</span> <span class="err">выполнение</span> <span class="err">сценария</span><span class="o">.</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">require</span> <span class="o">-</span> <span class="nx">Fatal</span> <span class="nx">error</span><span class="p">(</span><span class="nx">E_COMPILE_ERROR</span><span class="p">),</span> <span class="nx">т</span><span class="o">.</span><span class="nx">е</span> <span class="nx">останока</span> <span class="nx">скрипта</span>
+<span class="k">include</span> <span class="o">-</span> <span class="nx">Warning</span> <span class="nx">error</span><span class="p">(</span><span class="k">E_WARNING</span><span class="p">)</span> <span class="nx">и</span> <span class="nx">продолжение</span> <span class="nx">выполнение</span> <span class="nx">сценария</span><span class="o">.</span></code></pre></figure>
 
 <p>Если в настройках PHP указано отображение ошибок пользователь увидит данный ошибку и что хуже вашу структуру файлов.</p>
 
 <p>Использование require более рационально в целях безопастности.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">require_once</span> <span class="err">и</span> <span class="k">include_once</span> <span class="err">отличаются</span><span class="o">:</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">require_once</span> <span class="nx">и</span> <span class="k">include_once</span> <span class="nx">отличаются</span><span class="o">:</span></code></pre></figure>
 
 <p>Если код из файла уже один раз был включен, он не будет включен и выполнен повторно.</p>
 

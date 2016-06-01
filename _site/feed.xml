@@ -1,95 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-<generator uri="http://jekyllrb.com" version="3.0.3">Jekyll</generator>
-<link href="/feed.xml" rel="self" type="application/atom+xml" />
-<link href="/" rel="alternate" type="text/html" />
-<updated>2016-03-23T07:23:18-07:00</updated>
-<id>/</id>
-<title>aldb</title>
-<subtitle>Full Stack</subtitle>
-<entry>
-<title>bash command not found</title>
-<link href="/2016/03/21/bash-command-not-found/" rel="alternate" type="text/html" title="bash command not found" />
-<published>2016-03-21T08:38:39-07:00</published>
-<updated>2016-03-21T08:38:39-07:00</updated>
-<id>/2016/03/21/bash-command-not-found</id>
-<content type="html" xml:base="/2016/03/21/bash-command-not-found/">&lt;p&gt;I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-01T14:37:14-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Install Nodejs &amp;amp; NPM by Brew</title><link href="/2016/06/01/install-nodejs-npm-by-brew/" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="/2016/06/01/install-nodejs-npm-by-brew/">&lt;h2&gt;Problem&lt;/h2&gt;
 
-&lt;p&gt;{% highlight bash %}
-$ -bash: tsd: command not found 
-{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;Need quick script for install NPM &amp;amp; Node by terminal&lt;/p&gt;
+
+&lt;h2&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Homebrew - the missing package manager for OS X, really easy way to setup environment.&lt;/p&gt;
+
+&lt;p&gt;Open terminal and check Brew version:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew -v&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you get &amp;quot;brew: command not found&amp;quot; got to official web &lt;a href=&quot;http://brew.sh/&quot;&gt;page&lt;/a&gt; and copy/paster url link for install, for example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/usr/bin/ruby -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If on Mac don&amp;#39;t install Xcode you see alert message with option for install. Node.js &amp;amp; NPM don&amp;#39;t need Xcode, so cancel Xcode installation alert message.&lt;/p&gt;
+
+&lt;p&gt;Then installing the NPM &amp;amp; Node by command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew node&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Done! &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2016/npm_nodejs_by_brew.png&quot; alt=&quot;Screenshot&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Check installed versions&lt;/h2&gt;
+
+&lt;p&gt;For check nodejs/NPM version/location use:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node -v
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which node
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm -v
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which npm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Have fun with Nodejs&lt;/p&gt;</content><category term="programming" /><category term="en" /><category term="mac" /><category term="nodejs" /><category term="npm" /><category term="brew" /><summary>Problem</summary></entry><entry><title>bash command not found</title><link href="/2016/03/21/bash-command-not-found/" rel="alternate" type="text/html" title="bash command not found" /><published>2016-03-21T08:38:39-07:00</published><updated>2016-03-21T08:38:39-07:00</updated><id>/2016/03/21/bash-command-not-found</id><content type="html" xml:base="/2016/03/21/bash-command-not-found/">&lt;p&gt;I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;-bash: tsd: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;All others npm packages not running.
 It&amp;#39;s look like bash don&amp;#39;t know path for node modules.&lt;/p&gt;
 
-&lt;p&gt;Command:
-{% highlight bash %}
-$ npm bin
-{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;Command:&lt;/p&gt;
 
-&lt;p&gt;Get back:
-{% highlight bash %}
-$ IF (not in PATH env variable)
-{% endhighlight %}&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm bin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;For fix this issue add path for node modules in PATH
-{% highlight bash %}
-$ export PATH=&amp;quot;/Users/&lt;username&gt;/.node/bin:$PATH&amp;quot;
-{% endhighlight %}&lt;/p&gt;
-</content>
-<category term="programming" />
-<category term="mac" />
-<category term="error" />
-<category term="nodejs" />
-<summary>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</summary>
-</entry>
-<entry>
-<title>Eacces permission denied</title>
-<link href="/2016/03/01/eacces-permission-denied/" rel="alternate" type="text/html" title="Eacces permission denied" />
-<published>2016-03-01T07:38:39-08:00</published>
-<updated>2016-03-01T07:38:39-08:00</updated>
-<id>/2016/03/01/eacces-permission-denied</id>
-<content type="html" xml:base="/2016/03/01/eacces-permission-denied/">&lt;p&gt;Debug error:
-{% highlight bash %}
-Ionic 2 Unhandled rejection Error: EACCES: permission denied
-{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;Get back:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;IF &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;not in PATH env variable&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For fix this issue add path for node modules in PATH&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/Users/&amp;lt;username&amp;gt;/.node/bin:$PATH&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For get bash username use command: whoami&lt;/p&gt;</content><category term="programming" /><category term="en" /><category term="mac" /><category term="error" /><category term="nodejs" /><summary>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</summary></entry><entry><title>Eacces permission denied</title><link href="/2016/03/01/eacces-permission-denied/" rel="alternate" type="text/html" title="Eacces permission denied" /><published>2016-03-01T07:38:39-08:00</published><updated>2016-03-01T07:38:39-08:00</updated><id>/2016/03/01/eacces-permission-denied</id><content type="html" xml:base="/2016/03/01/eacces-permission-denied/">&lt;p&gt;Debug error:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Ionic &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; Unhandled rejection Error: EACCES: permission denied&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Run code on developer machine and get error: permission denied.
 Get the classic solution:&lt;/p&gt;
 
-&lt;p&gt;{% highlight bash %}
-sudo chown -R whoami ~/.npm
-sudo chown -R whoami /usr/local/lib/node_modules
-{% endhighlight %}&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R whoami ~/.npm
+sudo chown -R whoami /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;whoami - command get current user.&lt;/p&gt;
 
 &lt;p&gt;Another good practice:&lt;/p&gt;
 
-&lt;p&gt;{% highlight bash %}
-sudo chown -R $USER ~/.npm
-sudo chown -R $USER /usr/local/lib/node_modules
-{% endhighlight %}&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; ~/.npm
+sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;If used mac also use:&lt;/p&gt;
 
-&lt;p&gt;{% highlight bash %}
-sudo chown -R $USER /usr/local
-{% endhighlight %}&lt;/p&gt;
-</content>
-<category term="programming" />
-<category term="js" />
-<category term="ionic" />
-<category term="en" />
-<summary>Debug error:Ionic 2 Unhandled rejection Error: EACCES: permission denied</summary>
-</entry>
-<entry>
-<title>Github Jekyll</title>
-<link href="/2016/02/23/Jekyll-vs-ghost-cms/" rel="alternate" type="text/html" title="Github Jekyll" />
-<published>2016-02-23T21:38:39-08:00</published>
-<updated>2016-02-23T21:38:39-08:00</updated>
-<id>/2016/02/23/Jekyll-vs-ghost-cms</id>
-<content type="html" xml:base="/2016/02/23/Jekyll-vs-ghost-cms/">&lt;p&gt;After 2 years use Ghost cms I try change for Jekyll.
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><category term="programming" /><category term="js" /><category term="ionic" /><category term="en" /><summary>Debug error:
+
+Ionic 2 Unhandled rejection Error: EACCES: permission denied</summary></entry><entry><title>Github Jekyll</title><link href="/2016/02/23/Jekyll-vs-ghost-cms/" rel="alternate" type="text/html" title="Github Jekyll" /><published>2016-02-23T21:38:39-08:00</published><updated>2016-02-23T21:38:39-08:00</updated><id>/2016/02/23/Jekyll-vs-ghost-cms</id><content type="html" xml:base="/2016/02/23/Jekyll-vs-ghost-cms/">&lt;p&gt;After 2 years use Ghost cms I try change for Jekyll.
 Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (&lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll Repository&lt;/a&gt;).&lt;/p&gt;
 
 &lt;h3&gt;Why Github Jekyll?&lt;/h3&gt;
@@ -122,21 +106,8 @@ After successful setup process your can check project wiki for details settings 
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;And also github, githubpage and awesome community! Thank you for the all!&lt;/p&gt;
-</content>
-<category term="programming" />
-<category term="jekyll" />
-<category term="ghost" />
-<category term="en" />
-<summary>After 2 years use Ghost cms I try change for Jekyll.Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (Jekyll Repository).</summary>
-</entry>
-<entry>
-<title>SQL Joins</title>
-<link href="/2015/02/13/sql-joins/" rel="alternate" type="text/html" title="SQL Joins" />
-<published>2015-02-13T21:38:39-08:00</published>
-<updated>2015-02-13T21:38:39-08:00</updated>
-<id>/2015/02/13/sql-joins</id>
-<content type="html" xml:base="/2015/02/13/sql-joins/">&lt;p&gt;Differense between SQL JOINs is the most popular question on enterview.
+&lt;p&gt;And also github, githubpage and awesome community! Thank you for the all!&lt;/p&gt;</content><category term="programming" /><category term="jekyll" /><category term="ghost" /><category term="en" /><summary>After 2 years use Ghost cms I try change for Jekyll.
+Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (Jekyll Repository).</summary></entry><entry><title>SQL Joins</title><link href="/2015/02/13/sql-joins/" rel="alternate" type="text/html" title="SQL Joins" /><published>2015-02-13T21:38:39-08:00</published><updated>2015-02-13T21:38:39-08:00</updated><id>/2015/02/13/sql-joins</id><content type="html" xml:base="/2015/02/13/sql-joins/">&lt;p&gt;Differense between SQL JOINs is the most popular question on enterview.
 So create &lt;strong&gt;Table a&lt;/strong&gt; is on the left, and &lt;strong&gt;Table b&lt;/strong&gt; is on the right.&lt;/p&gt;
 
 &lt;h4&gt;Create tables&lt;/h4&gt;
@@ -152,32 +123,32 @@ So create &lt;strong&gt;Table a&lt;/strong&gt; is on the left, and &lt;strong&gt
 +------++------+
 &lt;/pre&gt;Sql query:
 
-{% highlight sql %}
-    DROP TABLE IF EXISTS `a`;
-    CREATE TABLE `a` (
-      `a` int(11) NULL
-    ) ENGINE=InnoDB AUTO_INCREMENT=0;
 
-    INSERT INTO `a` ( `a`) 
-    VALUES 
-      ( &#39;1&#39;),
-      ( &#39;2&#39;),
-      ( NULL),
-      ( 10);
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EXISTS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InnoDB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt; 
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 
-    DROP TABLE IF EXISTS `b`;
-    CREATE TABLE `b` (
-      `b` int(11) NULL
-    ) ENGINE=InnoDB AUTO_INCREMENT=0;
+    &lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EXISTS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InnoDB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    INSERT INTO `b` ( `b`) 
-    VALUES 
-      ( &#39;1&#39;),
-      ( &#39;2&#39;),
-      ( NULL),
-      ( 20);
-{% endhighlight %}
+    &lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt; 
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 #### ~~INNER~~ JOIN AND STRAIGHT\_JOIN
 
 *The INNER JOIN keyword selects all rows from both tables. INNER JOIN is the same as JOIN.*
@@ -186,10 +157,10 @@ So create &lt;strong&gt;Table a&lt;/strong&gt; is on the left, and &lt;strong&gt
 
 ![]
 
-{% highlight sql %}
-    SELECT * FROM a JOIN b ON a=b;
-    SELECT * FROM b JOIN a ON b=a;
-{% endhighlight %}
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;pre&gt;
 +------+------+
 | &lt;b&gt;a&lt;/b&gt;    | &lt;b&gt;b&lt;/b&gt;    |
@@ -201,16 +172,14 @@ So create &lt;strong&gt;Table a&lt;/strong&gt; is on the left, and &lt;strong&gt
 
 &lt;p&gt;Without condition ON we make &lt;strong&gt;CROSS JOIN&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;{% highlight sql %}
-    SELECT * FROM b JOIN a;
-    SELECT * FROM a,b; 
-{% endhighlight %}
-OR&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;{% highlight sql %}
-     SELECT FROM a CROSS JOIN b;
-{% endhighlight %}
-&lt;img src=&quot;../../../../assets/img/posts/2015/02/join8.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;     &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;CROSS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2015/02/join8.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;+------+------+
 | b    | a    |
 +------+------+
@@ -236,10 +205,9 @@ OR&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;The LEFT JOIN keyword returns all rows from the left table (A), with the matching rows in the right table (B). The result is NULL in the right side when there is no match.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;{% highlight sql %}
-    SELECT * FROM a LEFT JOIN b ON a=b;
-{% endhighlight %}
-&lt;img src=&quot;../../../../assets/img/posts/2015/02/join2.png&quot; alt=&quot;&quot;&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2015/02/join2.png&quot; alt=&quot;&quot;&gt;
 &lt;pre&gt;
 +------+------+
 | &lt;b&gt;a&lt;/b&gt;    | &lt;b&gt;b&lt;/b&gt;    |
@@ -252,10 +220,9 @@ OR&lt;/p&gt;
 &lt;/pre&gt;
 If add WHERE condition:&lt;/p&gt;
 
-&lt;p&gt;{% highlight sql %}
-    SELECT * FROM a LEFT JOIN b ON a=b WHERE b IS NULL;
-{% endhighlight %}
-&lt;img src=&quot;../../../../assets/img/posts/2015/02/join3.png&quot; alt=&quot;&quot;&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2015/02/join3.png&quot; alt=&quot;&quot;&gt;
 &lt;pre&gt;
 +------+------+
 | a    | b    |
@@ -269,10 +236,9 @@ If add WHERE condition:&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;The RIGHT JOIN keyword returns all rows from the right table (B), with the matching rows in the left table (A). The result is NULL in the left side when there is no match.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;{% highlight sql %}
-    SELECT * FROM a RIGHT JOIN b ON a=b
-{% endhighlight %}
-&lt;img src=&quot;../../../../assets/img/posts/2015/02/join4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2015/02/join4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;pre&gt;
 +------+------+
@@ -285,10 +251,9 @@ If add WHERE condition:&lt;/p&gt;
 +------+------+
 &lt;/pre&gt;
 
-&lt;p&gt;{% highlight sql %}
-    SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL
-{% endhighlight %}
-&lt;img src=&quot;../../../../assets/img/posts/2015/02/join5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2015/02/join5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;pre&gt;
 +------+------+
@@ -301,18 +266,17 @@ If add WHERE condition:&lt;/p&gt;
 
 &lt;h4&gt;FULL OUTER&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;The FULL OUTER JOIN keyword returns all rows from the left table (A) and from the right table (B). The FULL OUTER JOIN keyword combines the result of both LEFT and RIGHT joins.&lt;/em&gt;
-{% highlight sql %}
-    SELECT * FROM a FULL OUTER JOIN b ON a=b
-{% endhighlight %}
-MYSQL don’t have FULL JOINS, but can sure &lt;a href=&quot;http://dev.mysql.com/doc/refman/5.0/en/outer-join-simplification.html&quot;&gt;emulate&lt;/a&gt; them.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The FULL OUTER JOIN keyword returns all rows from the left table (A) and from the right table (B). The FULL OUTER JOIN keyword combines the result of both LEFT and RIGHT joins.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;{% highlight sql %}
-    SELECT * FROM a LEFT JOIN b ON a = b
-    UNION
-    SELECT * FROM a RIGHT JOIN b ON a=b
-{% endhighlight %}
-&lt;img src=&quot;../../../../assets/img/posts/2015/02/join6.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OUTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;MYSQL don’t have FULL JOINS, but can sure &lt;a href=&quot;http://dev.mysql.com/doc/refman/5.0/en/outer-join-simplification.html&quot;&gt;emulate&lt;/a&gt; them.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2015/02/join6.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;pre&gt;
 +------+------+
@@ -325,18 +289,17 @@ MYSQL don’t have FULL JOINS, but can sure &lt;a href=&quot;http://dev.mysql.co
 | &lt;span style=&quot;color:red&quot;&gt;NULL&lt;/span&gt; |   20 |
 +------+------+
 &lt;/pre&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;{% highlight sql %}
-SELECT * FROM a FULL OUTER JOIN b ON a=b
-WHERE a IS null OR b IS null
-{% endhighlight %}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OUTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OR&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;p&gt;For MYSQL:&lt;/p&gt;
 
-&lt;p&gt;{% highlight sql %}
-SELECT * FROM a LEFT JOIN b ON a = b WHERE b IS NULL
-UNION 
-SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL; 
-{% endhighlight %}&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UNION&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2015/02/join7.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
@@ -348,22 +311,8 @@ SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL;
 |   10 | &lt;span style=&quot;color:red&quot;&gt;NULL&lt;/span&gt; |
 | &lt;span style=&quot;color:red&quot;&gt;NULL&lt;/span&gt; |   20 |
 +------+------+
-&lt;/pre&gt;
-</content>
-<category term="programming" />
-<category term="sql" />
-<category term="mysql" />
-<category term="join" />
-<category term="en" />
-<summary>Differense between SQL JOINs is the most popular question on enterview.So create Table a is on the left, and Table b is on the right.</summary>
-</entry>
-<entry>
-<title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js</title>
-<link href="/2015/02/11/apache-iis-vs-nginx-nodejs/" rel="alternate" type="text/html" title="Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js" />
-<published>2015-02-11T21:38:39-08:00</published>
-<updated>2015-02-11T21:38:39-08:00</updated>
-<id>/2015/02/11/apache-iis-vs-nginx-nodejs</id>
-<content type="html" xml:base="/2015/02/11/apache-iis-vs-nginx-nodejs/">&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.&lt;/p&gt;
+&lt;/pre&gt;</content><category term="programming" /><category term="sql" /><category term="mysql" /><category term="join" /><category term="en" /><summary>Differense between SQL JOINs is the most popular question on enterview.
+So create Table a is on the left, and Table b is on the right.</summary></entry><entry><title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js</title><link href="/2015/02/11/apache-iis-vs-nginx-nodejs/" rel="alternate" type="text/html" title="Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js" /><published>2015-02-11T21:38:39-08:00</published><updated>2015-02-11T21:38:39-08:00</updated><id>/2015/02/11/apache-iis-vs-nginx-nodejs</id><content type="html" xml:base="/2015/02/11/apache-iis-vs-nginx-nodejs/">&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.&lt;/p&gt;
 
 &lt;p&gt;Но есть принципиальное различие в процессе обработки запросов.&lt;/p&gt;
 
@@ -418,161 +367,107 @@ SELECT * FROM a RIGHT JOIN b ON a=b WHERE a IS NULL;
 &lt;li&gt;  &lt;a href=&quot;http://habrahabr.ru/post/108241/&quot;&gt;Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;  &lt;a href=&quot;http://berb.github.io/diploma-thesis/original/042_serverarch.html#42&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;  &lt;a href=&quot;http://www.wikivs.com/wiki/apache_vs_nginx&quot;&gt;Apache vs nginx&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-<category term="programming" />
-<category term="nodejs" />
-<category term="apache" />
-<category term="nginx" />
-<category term="iis" />
-<category term="ru" />
-<summary>На сегодняшний день популярными веб серверами являются: Apache, IIS, Nginx, Node.js. У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.</summary>
-</entry>
-<entry>
-<title>include() vs require() &amp;amp; requireonce() vs includeonce()</title>
-<link href="/2014/11/11/include-vs-require-require_once-vs-include_once/" rel="alternate" type="text/html" title="include() vs require() &amp; require_once() vs include_once()" />
-<published>2014-11-11T21:38:39-08:00</published>
-<updated>2014-11-11T21:38:39-08:00</updated>
-<id>/2014/11/11/include-vs-require-require_once-vs-include_once</id>
-<content type="html" xml:base="/2014/11/11/include-vs-require-require_once-vs-include_once/">&lt;p&gt;В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:
-{% highlight php startinline=true %}
-include(&amp;#39;file&amp;#39;);
-require(&amp;#39;file&amp;#39;);
-include &amp;#39;file&amp;#39;;
-require &amp;#39;file&amp;#39;;
-{% endhighlight %}&lt;/p&gt;
+&lt;/ul&gt;</content><category term="programming" /><category term="nodejs" /><category term="apache" /><category term="nginx" /><category term="iis" /><category term="ru" /><summary>На сегодняшний день популярными веб серверами являются: Apache, IIS, Nginx, Node.js. У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.</summary></entry><entry><title>include() vs require() &amp;amp; requireonce() vs includeonce()</title><link href="/2014/11/11/include-vs-require-require_once-vs-include_once/" rel="alternate" type="text/html" title="include() vs require() &amp; require_once() vs include_once()" /><published>2014-11-11T21:38:39-08:00</published><updated>2014-11-11T21:38:39-08:00</updated><id>/2014/11/11/include-vs-require-require_once-vs-include_once</id><content type="html" xml:base="/2014/11/11/include-vs-require-require_once-vs-include_once/">&lt;p&gt;В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2014/11/include.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(файл не найден):&lt;/p&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-require - Fatal error(E&lt;em&gt;COMPILE&lt;/em&gt;ERROR), т.е останока скрипта
-include - Warning error(E_WARNING) и продолжение выполнение сценария.
-{% endhighlight %}
-Если в настройках PHP указано отображение ошибок пользователь увидит данный ошибку и что хуже вашу структуру файлов.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Fatal&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;E_COMPILE_ERROR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;т&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;е&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;останока&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;скрипта&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Warning&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;E_WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;и&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;продолжение&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;выполнение&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;сценария&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Если в настройках PHP указано отображение ошибок пользователь увидит данный ошибку и что хуже вашу структуру файлов.&lt;/p&gt;
 
 &lt;p&gt;Использование require более рационально в целях безопастности.&lt;/p&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-require&lt;em&gt;once и include&lt;/em&gt;once отличаются:
-{% endhighlight %}&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;require_once&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;и&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;include_once&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;отличаются&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Если код из файла уже один раз был включен, он не будет включен и выполнен повторно.&lt;/p&gt;
 
 &lt;p&gt;Например:&lt;/p&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-var&lt;em&gt;dump(include&lt;/em&gt;once &amp;#39;file.php&amp;#39;); // exec script
-var&lt;em&gt;dump(include&lt;/em&gt;once &amp;#39;file.php&amp;#39;); // bool(true)&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;include_once&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;file.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// exec script&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;include_once&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;file.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// bool(true)&lt;/span&gt;
 
-&lt;p&gt;var&lt;em&gt;dump(require&lt;/em&gt;once &amp;#39;file.php&amp;#39;); // bool(true)
-var&lt;em&gt;dump(require&lt;/em&gt;once &amp;#39;file.php&amp;#39;); // bool(true)
-{% endhighlight %}&lt;/p&gt;
+&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;require_once&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;file.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// bool(true)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;require_once&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;file.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// bool(true)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Выполнение файла кода в файле file.php произойдет только при первом запуске include_once. В остальных случаях ф-ия вернет true - файл уже подключен.&lt;/p&gt;
 
 &lt;p&gt;Что бы избежать ошибок используются относительные пути:&lt;/p&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-require(dirname(&lt;strong&gt;FILE&lt;/strong&gt;).&amp;#39;/params.php&amp;#39;);&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;__FILE__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/params.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-&lt;p&gt;//&lt;strong&gt;FILE&lt;/strong&gt; - абсолютный путь с разрешенными символическими ссылками
-include&lt;em&gt;once(dirname(&lt;/em&gt;&lt;em&gt;FILE&lt;/em&gt;_) . &amp;#39;/database.class.php&amp;#39;);
-{% endhighlight %}
-Так же можно проверить подключение файлов, например с определением константы:&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;//__FILE__ - абсолютный путь с разрешенными символическими ссылками&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;include_once&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;__FILE__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/database.class.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-define(&amp;#39;&lt;strong&gt;ROOT&lt;/strong&gt;&amp;#39;, dirname(dirname(&lt;strong&gt;FILE&lt;/strong&gt;))); 
-require&lt;em&gt;once(&lt;/em&gt;&lt;em&gt;ROOT&lt;/em&gt;_.&amp;#39;/config.php&amp;#39;); 
-{% endhighlight %}
-Для автоматической загрузки классов используются функция&lt;/p&gt;
+&lt;p&gt;Так же можно проверить подключение файлов, например с определением константы:&lt;/p&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-spl&lt;em&gt;autoload&lt;/em&gt;register().
-{% endhighlight %}
-Пример загруки с использованием ф-ии&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nb&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;__ROOT__&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;__FILE__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)));&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;require_once&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__ROOT__&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/config.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-function myAutoloader($className) {
-    $path = &amp;#39;/path/to/class/&amp;#39;;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;include $path.$className.&amp;#39;.php&amp;#39;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;Для автоматической загрузки классов используются функция&lt;/p&gt;
 
-&lt;p&gt;spl&lt;em&gt;autoload&lt;/em&gt;register(&amp;#39;myAutoloader&amp;#39;);
-$myClass = new MyClass();
-{% endhighlight %}
-Пример использования автозагрузки с использованием классов
-{% highlight php startinline=true %}
-spl&lt;em&gt;autoload&lt;/em&gt;register(&amp;#39;MyAutoloader::ClassLoader&amp;#39;);
-spl&lt;em&gt;autoload&lt;/em&gt;register(&amp;#39;MyAutoloader::HelperLoader&amp;#39;);
-spl&lt;em&gt;autoload&lt;/em&gt;register(&amp;#39;MyAutoloader::DatabaseLoader&amp;#39;);&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;class MyAutoloader {
-    public $path = &amp;#39;/path/to/class/&amp;#39;;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nb&quot;&gt;spl_autoload_register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-    public static function ClassLoader($className){
-         require $this-&amp;gt;path . &amp;#39;className.php&amp;#39;;
-    }
+&lt;p&gt;Пример загруки с использованием ф-ии&lt;/p&gt;
 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myAutoloader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/path/to/class/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    public static function LibraryLoader($className) {
-         require $this-&amp;gt;path . &amp;#39;className.php&amp;#39;;
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;{% endhighlight %}&lt;/p&gt;
-</content>
-<category term="programming" />
-<category term="php" />
-<category term="ru" />
-<summary>В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:include(&amp;#39;file&amp;#39;);require(&amp;#39;file&amp;#39;);include &amp;#39;file&amp;#39;;require &amp;#39;file&amp;#39;;</summary>
-</entry>
-<entry>
-<title>Datetime PHP like Python</title>
-<link href="/2014/10/31/rabota-s-datetime-php-vs-python/" rel="alternate" type="text/html" title="Datetime PHP like Python" />
-<published>2014-10-31T21:41:54-07:00</published>
-<updated>2014-10-31T21:41:54-07:00</updated>
-<id>/2014/10/31/rabota-s-datetime-php-vs-python</id>
-<content type="html" xml:base="/2014/10/31/rabota-s-datetime-php-vs-python/">&lt;p&gt;Разработка данных datetime удобнее с использованием Unix формата(числа).&lt;/p&gt;
+    &lt;span class=&quot;k&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;spl_autoload_register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;myAutoloader&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$myClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Пример использования автозагрузки с использованием классов&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nb&quot;&gt;spl_autoload_register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;MyAutoloader::ClassLoader&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;spl_autoload_register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;MyAutoloader::HelperLoader&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;spl_autoload_register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;MyAutoloader::DatabaseLoader&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyAutoloader&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/path/to/class/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ClassLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+             &lt;span class=&quot;k&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;className.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;LibraryLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;k&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;className.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><category term="programming" /><category term="php" /><category term="ru" /><summary>В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:
+
+include(&amp;#39;file&amp;#39;);
+require(&amp;#39;file&amp;#39;);
+include &amp;#39;file&amp;#39;;
+require &amp;#39;file&amp;#39;;</summary></entry><entry><title>Datetime PHP like Python</title><link href="/2014/10/31/rabota-s-datetime-php-vs-python/" rel="alternate" type="text/html" title="Datetime PHP like Python" /><published>2014-10-31T21:41:54-07:00</published><updated>2014-10-31T21:41:54-07:00</updated><id>/2014/10/31/rabota-s-datetime-php-vs-python</id><content type="html" xml:base="/2014/10/31/rabota-s-datetime-php-vs-python/">&lt;p&gt;Разработка данных datetime удобнее с использованием Unix формата(числа).&lt;/p&gt;
 
 &lt;p&gt;Datetime in PHP:&lt;/p&gt;
 
-&lt;p&gt;{% highlight php startinline=true %}
-$today = date(&amp;quot;Y-m-d H:i:s&amp;quot;);  //MYSQL
-$date = date();
-echo $date-&amp;gt;format(&amp;quot;Y-m-d H:i:s&amp;quot;); //echo Date in format&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$today&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Y-m-d H:i:s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//MYSQL&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Y-m-d H:i:s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//echo Date in format&lt;/span&gt;
 
-&lt;p&gt;$today = date(&amp;#39;h-i-s, j-m-y, it is w Day&amp;#39;); // 05-16-18, 10-03-01, 1631 1618 6 Satpm01
-{% endhighlight %}&lt;/p&gt;
+&lt;span class=&quot;nv&quot;&gt;$today&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;h-i-s, j-m-y, it is w Day&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 05-16-18, 10-03-01, 1631 1618 6 Satpm01&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Datetime in Python:&lt;/p&gt;
 
-&lt;p&gt;{% highlight python %}
-from datetime import datetime
-date_object = datetime.strptime(&amp;#39;Jun 1 2005  1:33PM&amp;#39;, &amp;#39;%b %d %Y %I:%M%p&amp;#39;)
-{% endhighlight %}&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;date_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strptime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;Jun 1 2005  1:33PM&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;%b &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; %Y %I:%M%p&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Datetime from MSSQL in Mysql in Python:&lt;/p&gt;
 
-&lt;p&gt;{% highlight python %}
-date&lt;em&gt;object = datetime.strptime(date, &amp;#39;%b %d %Y %I:%M%p&amp;#39;)
-date&lt;/em&gt;object.strftime(&amp;#39;%Y-%m-%d %H:%M:%S&amp;#39;) #MySQL format
-{% endhighlight %}&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;date_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strptime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;%b &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; %Y %I:%M%p&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;date_object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;%Y-%m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%d&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; %H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#MySQL format&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Так что ф-ии datetime в Python похожи на PHP. И не только datetime.&lt;/p&gt;
-</content>
-<category term="programming" />
-<category term="python" />
-<category term="ru" />
-<summary>Разработка данных datetime удобнее с использованием Unix формата(числа).</summary>
-</entry>
-<entry>
-<title>Как сделать слияние masters с github pages</title>
-<link href="/2014/10/26/sozdat-stranichku-na-github-pages/" rel="alternate" type="text/html" title="Как сделать слияние masters с github pages" />
-<published>2014-10-26T20:19:35-07:00</published>
-<updated>2014-10-26T20:19:35-07:00</updated>
-<id>/2014/10/26/sozdat-stranichku-na-github-pages</id>
-<content type="html" xml:base="/2014/10/26/sozdat-stranichku-na-github-pages/">&lt;p&gt;Сабж, создаем бранч, мержим с продактишном и коммитим:&lt;/p&gt;
+&lt;p&gt;Так что ф-ии datetime в Python похожи на PHP. И не только datetime.&lt;/p&gt;</content><category term="programming" /><category term="python" /><category term="ru" /><summary>Разработка данных datetime удобнее с использованием Unix формата(числа).</summary></entry><entry><title>Как сделать слияние masters с github pages</title><link href="/2014/10/26/sozdat-stranichku-na-github-pages/" rel="alternate" type="text/html" title="Как сделать слияние masters с github pages" /><published>2014-10-26T20:19:35-07:00</published><updated>2014-10-26T20:19:35-07:00</updated><id>/2014/10/26/sozdat-stranichku-na-github-pages</id><content type="html" xml:base="/2014/10/26/sozdat-stranichku-na-github-pages/">&lt;p&gt;Сабж, создаем бранч, мержим с продактишном и коммитим:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git checkout --orphan gh-pages
 git merge master
 git push origin gh-pages
@@ -585,20 +480,7 @@ push = +refs/heads/master:refs/heads/master
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/creating-project-pages-manually/&quot;&gt;Creating Project Pages manually&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-<category term="programming" />
-<category term="github" />
-<category term="ru" />
-<summary>Сабж, создаем бранч, мержим с продактишном и коммитим:</summary>
-</entry>
-<entry>
-<title>Разница datetime и timestamp</title>
-<link href="/2014/10/20/raznitsa-datetime-i-timestamp/" rel="alternate" type="text/html" title="Разница datetime и timestamp" />
-<published>2014-10-20T21:03:44-07:00</published>
-<updated>2014-10-20T21:03:44-07:00</updated>
-<id>/2014/10/20/raznitsa-datetime-i-timestamp</id>
-<content type="html" xml:base="/2014/10/20/raznitsa-datetime-i-timestamp/">&lt;p&gt;Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:&lt;/p&gt;
+&lt;/ul&gt;</content><category term="programming" /><category term="github" /><category term="ru" /><summary>Сабж, создаем бранч, мержим с продактишном и коммитим:</summary></entry><entry><title>Разница datetime и timestamp</title><link href="/2014/10/20/raznitsa-datetime-i-timestamp/" rel="alternate" type="text/html" title="Разница datetime и timestamp" /><published>2014-10-20T21:03:44-07:00</published><updated>2014-10-20T21:03:44-07:00</updated><id>/2014/10/20/raznitsa-datetime-i-timestamp</id><content type="html" xml:base="/2014/10/20/raznitsa-datetime-i-timestamp/">&lt;p&gt;Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:&lt;/p&gt;
 
 &lt;h5&gt;Datetime&lt;/h5&gt;
 
@@ -650,59 +532,4 @@ push = +refs/heads/master:refs/heads/master
 &lt;li&gt;&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.1/en/datetime.html&quot;&gt;Mysql manual&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla&quot;&gt;Подробнее про ошибку 1293&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/409286/datetime-vs-timestamp&quot;&gt;datetime vs timestamp?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-<category term="programming" />
-<category term="sql" />
-<category term="mysql" />
-<category term="ru" />
-<summary>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</summary>
-</entry>
-<entry>
-<title>Установка phpunit</title>
-<link href="/2014/10/19/ustanovka-phpunit/" rel="alternate" type="text/html" title="Установка phpunit" />
-<published>2014-10-19T23:54:24-07:00</published>
-<updated>2014-10-19T23:54:24-07:00</updated>
-<id>/2014/10/19/ustanovka-phpunit</id>
-<content type="html" xml:base="/2014/10/19/ustanovka-phpunit/">&lt;p&gt;Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;pear channel-discover pear.phpunit.de
-pear channel-discover pear.symfony-project.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;В случаи проблемы с правами добавляем волшебное &amp;quot;sudo&amp;quot;
-Таким образом мы добавили  &lt;strong&gt;PEAR Installer&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;pear install phpunit/PHPUnit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;apt-get install php5-dev
-pecl install xdebug
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;После этого все должно заработать, проверить версию PHPUnit можно командой &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;phpunit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;В дополнения простенький пример теста:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;?php
-class StackTest extends PHPUnit_Framework_TestCase
-{
-    public function testPushAndPop()
-    {
-        $stack = array();
-        $this-&amp;gt;assertEquals(0, count($stack));
-
-        array_push($stack, &amp;#39;foo&amp;#39;);
-        $this-&amp;gt;assertEquals(&amp;#39;foo&amp;#39;,$stack[count($stack)-1]);
-        $this-&amp;gt;assertEquals(1, count($stack));
-
-        $this-&amp;gt;assertEquals(&amp;#39;foo&amp;#39;,array_pop($stack));
-        $this-&amp;gt;assertEquals(0, count($stack));
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Подробнее можно посмотреть в &lt;a href=&quot;https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html&quot;&gt;документации&lt;/a&gt;, где все примеры с закрывающим тегом&amp;lt; ?  &lt;i class=&quot;fa fa-wheelchair&quot;&gt;&lt;/i&gt;facepalm&lt;/p&gt;
-</content>
-<category term="programming" />
-<category term="php" />
-<category term="ru" />
-<summary>Все знаем что phpunit модно, стильно, молодежно.И вот как ее быстро установить:</summary>
-</entry>
-</feed>
+&lt;/ul&gt;</content><category term="programming" /><category term="sql" /><category term="mysql" /><category term="ru" /><summary>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</summary></entry></feed>
