@@ -23,7 +23,7 @@ $ sudo chown -R whoami ~/.npm
 $ sudo chown -R whoami /usr/local/lib/node_modules
 {% endhighlight %}
 
-whoami - command get current user.
+whoami - terminal command get current user.
 
 Another good practice:
 
