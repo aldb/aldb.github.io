@@ -4,7 +4,7 @@ title: bash command not found
 date: 2016-03-21 07:38:39.000000000 -08:00
 category: programming
 tags: [en,mac,error,nodejs]
-img: /assets/img/posts/2016/jekyll-small.png
+img: /assets/img/posts/2016/def2.png
 ---
 
 I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:

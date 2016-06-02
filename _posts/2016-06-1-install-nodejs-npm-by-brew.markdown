@@ -4,7 +4,8 @@ title: Install Nodejs & NPM by Brew
 date: 2016-06-1 07:38:39.000000000 -08:00
 category: programming
 tags: [en,mac,nodejs,npm,brew]
-img: /assets/img/posts/2016/jekyll-small.png
+img: /assets/img/posts/2016/nodejs.png
+
 ---
 
 ## Problem

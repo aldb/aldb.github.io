@@ -4,7 +4,7 @@ title: Eacces permission denied
 date: 2016-03-01 07:38:39.000000000 -08:00
 category: programming
 tags: [js,ionic,en]
-img: /assets/img/posts/2016/jekyll-small.png
+img: /assets/img/posts/2016/def3.png
 ---
 
 ## Error
