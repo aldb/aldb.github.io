@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-02T13:08:07-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Install Nodejs &amp;amp; NPM by Brew</title><link href="/2016/06/01/install-nodejs-npm-by-brew/" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="/2016/06/01/install-nodejs-npm-by-brew/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-02T13:15:20-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Install Nodejs &amp;amp; NPM by Brew</title><link href="/2016/06/01/install-nodejs-npm-by-brew/" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="/2016/06/01/install-nodejs-npm-by-brew/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
 
 &lt;p&gt;Need quick script for install NPM &amp;amp; Node by terminal.&lt;/p&gt;
 
@@ -52,28 +52,29 @@ It’s look like bash don’t know path for node modules.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/&amp;lt;username&amp;gt;/.node/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;For get bash username use command: whoami&lt;/p&gt;</content><category term="programming" /><category term="en" /><category term="mac" /><category term="error" /><category term="nodejs" /><summary>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</summary></entry><entry><title>Eacces permission denied</title><link href="/2016/03/01/eacces-permission-denied/" rel="alternate" type="text/html" title="Eacces permission denied" /><published>2016-03-01T07:38:39-08:00</published><updated>2016-03-01T07:38:39-08:00</updated><id>/2016/03/01/eacces-permission-denied</id><content type="html" xml:base="/2016/03/01/eacces-permission-denied/">&lt;p&gt;Debug error:&lt;/p&gt;
+&lt;p&gt;For get bash username use command: whoami&lt;/p&gt;</content><category term="programming" /><category term="en" /><category term="mac" /><category term="error" /><category term="nodejs" /><summary>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</summary></entry><entry><title>Eacces permission denied</title><link href="/2016/03/01/eacces-permission-denied/" rel="alternate" type="text/html" title="Eacces permission denied" /><published>2016-03-01T07:38:39-08:00</published><updated>2016-03-01T07:38:39-08:00</updated><id>/2016/03/01/eacces-permission-denied</id><content type="html" xml:base="/2016/03/01/eacces-permission-denied/">&lt;h2 id=&quot;error&quot;&gt;Error&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Ionic 2 Unhandled rejection Error: EACCES: permission denied&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;Get error message in Ionic2 process setup:&lt;/p&gt;
 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;Ionic 2 Unhandled rejection Error: EACCES: permission denied&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;debug&quot;&gt;Debug&lt;/h2&gt;
 &lt;p&gt;Run code on developer machine and get error: permission denied.
 Get the classic solution:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R whoami ~/.npm
-sudo chown -R whoami /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chown -R whoami ~/.npm
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chown -R whoami /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;whoami - command get current user.&lt;/p&gt;
 
 &lt;p&gt;Another good practice:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; ~/.npm
-sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; ~/.npm
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;If used mac also use:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><category term="programming" /><category term="js" /><category term="ionic" /><category term="en" /><summary>Debug error:
-
-Ionic 2 Unhandled rejection Error: EACCES: permission denied</summary></entry><entry><title>Github Jekyll</title><link href="/2016/02/23/Jekyll-vs-ghost-cms/" rel="alternate" type="text/html" title="Github Jekyll" /><published>2016-02-23T21:38:39-08:00</published><updated>2016-02-23T21:38:39-08:00</updated><id>/2016/02/23/Jekyll-vs-ghost-cms</id><content type="html" xml:base="/2016/02/23/Jekyll-vs-ghost-cms/">&lt;p&gt;After 2 years use Ghost cms I try change for Jekyll.
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><category term="programming" /><category term="js" /><category term="ionic" /><category term="en" /><summary>Error</summary></entry><entry><title>Github Jekyll</title><link href="/2016/02/23/Jekyll-vs-ghost-cms/" rel="alternate" type="text/html" title="Github Jekyll" /><published>2016-02-23T21:38:39-08:00</published><updated>2016-02-23T21:38:39-08:00</updated><id>/2016/02/23/Jekyll-vs-ghost-cms</id><content type="html" xml:base="/2016/02/23/Jekyll-vs-ghost-cms/">&lt;p&gt;After 2 years use Ghost cms I try change for Jekyll.
 Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (&lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll Repository&lt;/a&gt;).&lt;/p&gt;
 
 &lt;h3 id=&quot;why-github-jekyll&quot;&gt;Why Github Jekyll?&lt;/h3&gt;

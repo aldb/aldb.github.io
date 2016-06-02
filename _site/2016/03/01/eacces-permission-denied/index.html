@@ -9,14 +9,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Debug error:
-
-Ionic 2 Unhandled rejection Error: EACCES: permission denied
+    <meta name="description" content="Error
 
 " />
-    <meta property="og:description" content="Debug error:
-
-Ionic 2 Unhandled rejection Error: EACCES: permission denied
+    <meta property="og:description" content="Error
 
 " />
     
@@ -108,26 +104,29 @@ h2 {
 
 
   <div class="entry">
-    <p>Debug error:</p>
+    <h2 id="error">Error</h2>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Ionic 2 Unhandled rejection Error: EACCES: permission denied</code></pre></figure>
+<p>Get error message in Ionic2 process setup:</p>
 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>Ionic 2 Unhandled rejection Error: EACCES: permission denied</code></pre></figure>
+
+<h2 id="debug">Debug</h2>
 <p>Run code on developer machine and get error: permission denied.
 Get the classic solution:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown -R whoami ~/.npm
-sudo chown -R whoami /usr/local/lib/node_modules</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo chown -R whoami ~/.npm
+<span class="gp">$ </span>sudo chown -R whoami /usr/local/lib/node_modules</code></pre></figure>
 
 <p>whoami - command get current user.</p>
 
 <p>Another good practice:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown -R <span class="nv">$USER</span> ~/.npm
-sudo chown -R <span class="nv">$USER</span> /usr/local/lib/node_modules</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo chown -R <span class="nv">$USER</span> ~/.npm
+<span class="gp">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local/lib/node_modules</code></pre></figure>
 
 <p>If used mac also use:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo chown -R <span class="nv">$USER</span> /usr/local</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo chown -R <span class="nv">$USER</span> /usr/local</code></pre></figure>
 
   </div>
 
