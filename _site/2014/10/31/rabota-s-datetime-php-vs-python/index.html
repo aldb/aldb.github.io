@@ -10,8 +10,10 @@
 
     
     <meta name="description" content="Разработка данных datetime удобнее с использованием Unix формата(числа).
+
 " />
     <meta property="og:description" content="Разработка данных datetime удобнее с использованием Unix формата(числа).
+
 " />
     
     <meta name="author" content="aldb" />
@@ -59,7 +61,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -93,21 +102,21 @@
 
 <p>Datetime in PHP:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$today</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;Y-m-d H:i:s&quot;</span><span class="p">);</span>  <span class="c1">//MYSQL</span>
-<span class="nv">$date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$date</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s2">&quot;Y-m-d H:i:s&quot;</span><span class="p">);</span> <span class="c1">//echo Date in format</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">$today = date("Y-m-d H:i:s");  //MYSQL
+$date = date();
+echo $date-&gt;format("Y-m-d H:i:s"); //echo Date in format
 
-<span class="nv">$today</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;h-i-s, j-m-y, it is w Day&#39;</span><span class="p">);</span> <span class="c1">// 05-16-18, 10-03-01, 1631 1618 6 Satpm01</span></code></pre></figure>
+$today = date('h-i-s, j-m-y, it is w Day'); // 05-16-18, 10-03-01, 1631 1618 6 Satpm01</code></pre></figure>
 
 <p>Datetime in Python:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">&#39;Jun 1 2005  1:33PM&#39;</span><span class="p">,</span> <span class="s">&#39;%b </span><span class="si">%d</span><span class="s"> %Y %I:%M%p&#39;</span><span class="p">)</span></code></pre></figure>
+<span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'Jun 1 2005  1:33PM'</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M</span><span class="si">%</span><span class="s">p'</span><span class="p">)</span></code></pre></figure>
 
 <p>Datetime from MSSQL in Mysql in Python:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s">&#39;%b </span><span class="si">%d</span><span class="s"> %Y %I:%M%p&#39;</span><span class="p">)</span>
-<span class="n">date_object</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M:%S&#39;</span><span class="p">)</span> <span class="c">#MySQL format</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M</span><span class="si">%</span><span class="s">p'</span><span class="p">)</span>
+<span class="n">date_object</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="c">#MySQL format</span></code></pre></figure>
 
 <p>Так что ф-ии datetime в Python похожи на PHP. И не только datetime.</p>
 

@@ -18,7 +18,7 @@ Homebrew - the missing package manager for OS X, really easy way to setup enviro
 Open terminal and check Brew version:
 
 
-{% highlight bash %}
+{% highlight bash%}
 $ brew -v
 {% endhighlight %}
 
@@ -46,7 +46,7 @@ Done!
 
 For check nodejs/NPM version/location use:
 
-{% highlight bash %}
+{% highlight bash%}
 $ node -v
 $ which node
 $ npm -v

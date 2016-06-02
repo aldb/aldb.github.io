@@ -10,8 +10,10 @@
 
     
     <meta name="description" content="Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms ghost.
+
 " />
     <meta property="og:description" content="Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms ghost.
+
 " />
     
     <meta name="author" content="aldb" />
@@ -59,7 +61,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -107,137 +116,175 @@
 
 <p>На создание блога нам потребуется <strong>3 Этапа</strong>:</p>
 
-<h3>I этап</h3>
-
-<p>Необходимо создать открытый репозиторий на Git, который создаст поддомен с вашим именем пользователя(http://username.github.io).</p>
+<p>###I этап
+Необходимо создать открытый репозиторий на Git, который создаст поддомен с вашим именем пользователя(http://username.github.io).</p>
 
 <p>Следуем <a href="https://pages.github.com/">инструкции</a> создадим <a href="https://github.com/new">репозиторий</a> c именем нашего пользователя на github.</p>
 
-<h3>II Этап</h3>
-
-<p>Настройка локального окружения и создание блога.</p>
+<p>###II Этап
+Настройка локального окружения и создание блога.</p>
 
 <p>Нам потребуется Node.js 0.10.x (latest stable). Для работы с Ghost рекомендуют Node.js 0.10.30 и пакетный менеджер npm 1.4.21. Ниже будут примеры кода под Linux Ссылки для других платформ:<a href="http://support.ghost.org/installing-ghost-mac/">Mac</a> <a href="http://support.ghost.org/installing-ghost-windows/">Windows</a></p>
 
 <p>Установим ghost</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir ghost
-wget &quot;http://ghost.org/zip/ghost-latest.zip&quot;
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir ghost
+wget "http://ghost.org/zip/ghost-latest.zip"
 unzip ghost-latest.zip -d ghost
 cd ghost
 cp config.example.js config.js
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Установим nodejs &amp; npm</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
 sudo apt-get install nodejs
 sudo apt-get install npm
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Изменим <strong>URL</strong> адрес в config.js раздел Development с http://localhost:2368 на http://username.github.io</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">// ### Development **(default)**    development: {
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// ### Development **(default)**	development: {
 // The url to use when providing links to the site, E.g. in RSS and email.
 // Change this to your Ghost blogs published URL.
-url: &#39;http://username.github.io&#39;,
+url: 'http://username.github.io',
 
 // Example mail config
 // Visit http://support.ghost.org/mail for instructions
 // ```
 //  mail: {
-//      transport: &#39;SMTP&#39;,
+//      transport: 'SMTP',
 //      options: {
-//          service: &#39;Mailgun&#39;,
+//          service: 'Mailgun',
 //          auth: {
-//              user: &#39;&#39;, // mailgun username
-//              pass: &#39;&#39;  // mailgun password
+//              user: '', // mailgun username
+//              pass: ''  // mailgun password
 //          }
 //      }
 //  },
 // ``
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Зайдем в папку ghost, установим и запустим npm</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">npm install
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install
 npm start
-</code></pre></div>
-<p><img src="/content/images/2014/10/npminstall.png" alt="npm-start"></p>
+</code></pre>
+</div>
+
+<p><img src="/content/images/2014/10/npminstall.png" alt="npm-start" /></p>
 
 <p>Зайдем http://127.0.0.1:2368/ghost/</p>
 
-<p><img src="/content/images/2014/10/ghost-wellcome.png" alt="ghost"></p>
+<p><img src="/content/images/2014/10/ghost-wellcome.png" alt="ghost" /></p>
 
 <p>Создание и настройка блока а также редактирования постов(по примеру шаблона) интуитивно понятны. Так же всегда можно найти информацию на https://ghost.org/.</p>
 
-<h3>III Этап</h3>
-
-<p>Создание статичного блога и &#39;commit&#39; на github</p>
+<p>###III Этап
+Создание статичного блога и ‘commit’ на github</p>
 
 <p>Что бы сделать ghost статичным Нам потребуется <strong>Buster</strong></p>
 
-<p><img src="/content/images/2014/10/buster.png" alt="buster"></p>
+<p><img src="/content/images/2014/10/buster.png" alt="buster" /></p>
 
 <p>Установка</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
 sudo apt-get install wget
 sudo apt-get install python
 sudo apt-get install python-pip
 pip install buster
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Проверяем запущен наш блог http://127.0.0.1:2368 или запускаем:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd ghost
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ghost
 npm start
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Создадим новую папку для статичной версии блога.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd ghost
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ghost
 cd buster setup
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Запускаем бустер</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">buster setup
-</code></pre></div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>buster setup
+</code></pre>
+</div>
+
 <p>Указываем ссылку на github репозиториий:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">https://github.com/username/username.github.io 
-</code></pre></div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>https://github.com/username/username.github.io 
+</code></pre>
+</div>
+
 <p>Бустер сгенерировал папку static. Теперь захватим бустером приведение, т.е. наш локальный ghost.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">buster generate --domain=http://127.0.0.1:2368
-</code></pre></div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>buster generate --domain=http://127.0.0.1:2368
+</code></pre>
+</div>
+
 <p>Для предпросмотра запустим:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">buster preview 
-</code></pre></div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>buster preview 
+</code></pre>
+</div>
+
 <p>Теперь наш статичный блог можно посмотреть http://127.0.0.1:9000</p>
 
 <p>Останавливаем отображение превью <strong>Control + C</strong>. Загружаем блог на Git:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">buster deploy
-</code></pre></div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>buster deploy
+</code></pre>
+</div>
+
 <p>Теперь или спустя пару минут он будет доступен http://username.github.io</p>
 
-<h6>Ложка дёгтя</h6>
+<p>######Ложка дёгтя
+У меня не получился deploy в Git через buster. Но я сделал ‘commit’ через терминал.
+Так же buster не хочет ловить статичные страницы ghost’a. Решил их просто оформлять постами.</p>
 
-<p>У меня не получился deploy в Git через buster. Но я сделал &#39;commit&#39; через терминал.
-Так же buster не хочет ловить статичные страницы ghost&#39;a. Решил их просто оформлять постами.</p>
-
-<h3>Повседневное использование</h3>
+<p>###Повседневное использование</p>
 
 <p>Запускаем ghost и редактируем посты http://127.0.0.1:2368/ghost</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">npm start
-</code></pre></div>
-<p><strong>Buster</strong> генерирует статичную версию и делает &#39;commit&#39;.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">buster generate --domain=http://127.0.0.1:2368    
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm start
+</code></pre>
+</div>
+
+<p><strong>Buster</strong> генерирует статичную версию и делает ‘commit’.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>buster generate --domain=http://127.0.0.1:2368    
 buster deploy
-</code></pre></div>
-<h3>Заключение</h3>
+</code></pre>
+</div>
+
+<p>###Заключение</p>
 
 <p>Плюсы использование статичного блога на Github</p>
 
 <ul>
-<li>Бесплатно</li>
-<li>Не нужна БД</li>
-<li>Высокая производительность</li>
-<li>Возможность легкого бэкап</li>
-<li>Возможность создать посты оффлайн</li>
+  <li>Бесплатно</li>
+  <li>Не нужна БД</li>
+  <li>Высокая производительность</li>
+  <li>Возможность легкого бэкап</li>
+  <li>Возможность создать посты оффлайн</li>
 </ul>
 
-<h6>Cсылки:</h6>
+<p>######Cсылки:</p>
 
 <ul>
-<li>Оригинальная статья: <a href="http://talalanwar.com/host-a-ghost-blog-for-free/">How to: Host a Ghost Blog for Free</a></li>
-<li>Набор ссылок по установке cms ghost: <a href="http://ghost.centminmod.com/how-to-install-ghost-blogging-platform/">Ghost How to install Ghost blogging platform</a></li>
-<li>Git репозиторий <a href="https://github.com/axitkhurana/buster">buster</a></li>
+  <li>Оригинальная статья: <a href="http://talalanwar.com/host-a-ghost-blog-for-free/">How to: Host a Ghost Blog for Free</a></li>
+  <li>Набор ссылок по установке cms ghost: <a href="http://ghost.centminmod.com/how-to-install-ghost-blogging-platform/">Ghost How to install Ghost blogging platform</a></li>
+  <li>Git репозиторий <a href="https://github.com/axitkhurana/buster">buster</a></li>
 </ul>
 
   </div>

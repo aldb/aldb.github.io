@@ -11,9 +11,11 @@
     
     <meta name="description" content="Все знаем что phpunit модно, стильно, молодежно.
 И вот как ее быстро установить:
+
 " />
     <meta property="og:description" content="Все знаем что phpunit модно, стильно, молодежно.
 И вот как ее быстро установить:
+
 " />
     
     <meta name="author" content="aldb" />
@@ -61,7 +63,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -93,38 +102,53 @@
   <div class="entry">
     <p>Все знаем что phpunit модно, стильно, молодежно.
 И вот как ее быстро установить:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">pear channel-discover pear.phpunit.de
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pear channel-discover pear.phpunit.de
 pear channel-discover pear.symfony-project.com
-</code></pre></div>
-<p>В случаи проблемы с правами добавляем волшебное &quot;sudo&quot;
+</code></pre>
+</div>
+
+<p>В случаи проблемы с правами добавляем волшебное “sudo”
 Таким образом мы добавили  <strong>PEAR Installer</strong></p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">pear install phpunit/PHPUnit
-</code></pre></div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pear install phpunit/PHPUnit
+</code></pre>
+</div>
+
 <p>Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">apt-get install php5-dev
+
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install php5-dev
 pecl install xdebug
-</code></pre></div>
-<p>После этого все должно заработать, проверить версию PHPUnit можно командой </p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">phpunit
-</code></pre></div>
+</code></pre>
+</div>
+
+<p>После этого все должно заработать, проверить версию PHPUnit можно командой</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>phpunit
+</code></pre>
+</div>
+
 <p>В дополнения простенький пример теста:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?php
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;?php
 class StackTest extends PHPUnit_Framework_TestCase
 {
-    public function testPushAndPop()
+	public function testPushAndPop()
     {
         $stack = array();
         $this-&gt;assertEquals(0, count($stack));
 
-        array_push($stack, &#39;foo&#39;);
-        $this-&gt;assertEquals(&#39;foo&#39;,$stack[count($stack)-1]);
+        array_push($stack, 'foo');
+        $this-&gt;assertEquals('foo',$stack[count($stack)-1]);
         $this-&gt;assertEquals(1, count($stack));
 
-        $this-&gt;assertEquals(&#39;foo&#39;,array_pop($stack));
+        $this-&gt;assertEquals('foo',array_pop($stack));
         $this-&gt;assertEquals(0, count($stack));
-    }
+	}
 }
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Подробнее можно посмотреть в <a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html">документации</a>, где все примеры с закрывающим тегом&lt; ?  <i class="fa fa-wheelchair"></i>facepalm</p>
 
   </div>

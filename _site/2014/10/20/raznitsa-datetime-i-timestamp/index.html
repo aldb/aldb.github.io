@@ -10,8 +10,10 @@
 
     
     <meta name="description" content="Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:
+
 " />
     <meta property="og:description" content="Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:
+
 " />
     
     <meta name="author" content="aldb" />
@@ -59,7 +61,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -97,56 +106,57 @@
   <div class="entry">
     <p>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</p>
 
-<h5>Datetime</h5>
+<p>#####Datetime</p>
 
 <ul>
-<li>8 байт без часового пояса</li>
-<li>DEFAULT CURRENT<em>TIMESTAMP / ON UPDATE CURRENT</em>TIMESTAMP устанавливает время по умолчанию (<strong>MySQL 5.6.5</strong>)</li>
-<li>Запросы не кешируются по умолчанию</li>
+  <li>8 байт без часового пояса</li>
+  <li>DEFAULT CURRENT_TIMESTAMP / ON UPDATE CURRENT_TIMESTAMP устанавливает время по умолчанию (<strong>MySQL 5.6.5</strong>)</li>
+  <li>Запросы не кешируются по умолчанию</li>
 </ul>
 
-<h5>Timestamp</h5>
+<p>#####Timestamp</p>
 
 <ul>
-<li>4 байта с часовым поясом</li>
-<li>хранит время <strong>UTC</strong>(Гринвич)</li>
-<li>в версии до <strong>MySQL 5.6.1</strong> не более 2 TIMESTAMP колонок в одной таблице, в версии <strong>MySQL 5.6.5</strong>+ без ограничений</li>
-<li>Запросы кешируются по умолчанию</li>
-<li><p>Свойство DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP  может быть примененно только для одной колонке:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">CREATE TABLE `test` (
-  `id` INT(10) UNSIGNED NOT NULL,
-  `AddedDate` TIMESTAMP NOT NULL DEFAULT                CURRENT_TIMESTAMP,
-  `UpdatedDate` TIMESTAMP NOT NULL DEFAULT      CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-  ) ENGINE=INNODB;
-</code></pre></div></li>
+  <li>4 байта с часовым поясом</li>
+  <li>хранит время <strong>UTC</strong>(Гринвич)</li>
+  <li>в версии до <strong>MySQL 5.6.1</strong> не более 2 TIMESTAMP колонок в одной таблице, в версии <strong>MySQL 5.6.5</strong>+ без ограничений</li>
+  <li>Запросы кешируются по умолчанию</li>
+  <li>
+    <p>Свойство DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP  может быть примененно только для одной колонке:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  CREATE TABLE `test` (
+    `id` INT(10) UNSIGNED NOT NULL,
+    `AddedDate` TIMESTAMP NOT NULL DEFAULT 				CURRENT_TIMESTAMP,
+    `UpdatedDate` TIMESTAMP NOT NULL DEFAULT 		CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ) ENGINE=INNODB;
+</code></pre>
+    </div>
+  </li>
 </ul>
 
 <p>Ошибка:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">    Error Code : 1293
-    Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause
-</code></pre></div>
-<h4>Когда использовать:</h4>
 
-<h5>datetime:</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>	Error Code : 1293
+	Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause
+</code></pre>
+</div>
 
-<ul>
-<li>Колонки с фиксированными данными(логирование, день рождения, данные о покупке и т.п)</li>
-<li>Хорошая ассоциация datetime это часы и календарь на стене, при этом не важно в какой часовой зоне находиться дом в котором они висят.</li>
-</ul>
+<p>####Когда использовать:</p>
 
-<h5>timestamp:</h5>
+<p>#####datetime:
+- Колонки с фиксированными данными(логирование, день рождения, данные о покупке и т.п)
+- Хорошая ассоциация datetime это часы и календарь на стене, при этом не важно в какой часовой зоне находиться дом в котором они висят.</p>
 
-<ul>
-<li>Колонки с часто обновляемыеми данными(последняя авторизация пользователя, дата и время обновления рейтинга/очков/счета и т.п.)</li>
-<li>Ассоциация: момент времени, т.е. как давно событие. Точный расчет момент времени напрямую зависит от того в каком часовом поясе вы находитесь.</li>
-</ul>
+<p>#####timestamp:
+- Колонки с часто обновляемыеми данными(последняя авторизация пользователя, дата и время обновления рейтинга/очков/счета и т.п.)
+- Ассоциация: момент времени, т.е. как давно событие. Точный расчет момент времени напрямую зависит от того в каком часовом поясе вы находитесь.</p>
 
 <p>Ссылки:</p>
 
 <ul>
-<li><a href="http://dev.mysql.com/doc/refman/5.1/en/datetime.html">Mysql manual</a></li>
-<li><a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla">Подробнее про ошибку 1293</a></li>
-<li><a href="http://stackoverflow.com/questions/409286/datetime-vs-timestamp">datetime vs timestamp?</a></li>
+  <li><a href="http://dev.mysql.com/doc/refman/5.1/en/datetime.html">Mysql manual</a></li>
+  <li><a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla">Подробнее про ошибку 1293</a></li>
+  <li><a href="http://stackoverflow.com/questions/409286/datetime-vs-timestamp">datetime vs timestamp?</a></li>
 </ul>
 
   </div>

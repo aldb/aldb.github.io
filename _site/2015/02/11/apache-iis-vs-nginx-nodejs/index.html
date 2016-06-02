@@ -10,8 +10,10 @@
 
     
     <meta name="description" content="На сегодняшний день популярными веб серверами являются: Apache, IIS, Nginx, Node.js. У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.
+
 " />
     <meta property="og:description" content="На сегодняшний день популярными веб серверами являются: Apache, IIS, Nginx, Node.js. У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.
+
 " />
     
     <meta name="author" content="aldb" />
@@ -59,7 +61,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -111,58 +120,64 @@
 
 <p>Но есть принципиальное различие в процессе обработки запросов.</p>
 
-<h4>Для чего нужны веб серверы?</h4>
+<h4 id="section">Для чего нужны веб серверы?</h4>
 
 <p>Для начало вспомним как работаю веб серверы. Веб серверы нужны для работы с веб приложениями по клиент-серверной модели. Их задача обработка запроса от пользователя(клиента, client) и возвращения результата запроса с сервера(backend, serverside). Подробнее можно ознакомиться на википедии: <a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">Client–server model</a>.</p>
 
-<h4>Ресурсы веб серверов</h4>
+<h4 id="section-1">Ресурсы веб серверов</h4>
 
 <p>Каждый сервер имеет выделенные “ресурсы”(Оперативная память, процессор и т.п.) для обработки запросов. Данные ресурсы используются в потоках и процессах:</p>
 
 <ul>
-<li>  <a href="http://en.wikipedia.org/wiki/Thread_(computing)">Thread_(computing)</a></li>
-<li>  <a href="http://en.wikipedia.org/wiki/Process_(computing)">Process_(computing)</a></li>
+  <li>[Thread_(computing)]</li>
+  <li>[Process_(computing)]</li>
 </ul>
 
 <p>Различие в распределении ресурсов на обработку запросов является ключевым отличием для расматриваемых веб серверов.</p>
 
-<h4>Process-based web serves: Apache, IIS.</h4>
+<p>#### Process-based web serves: Apache, IIS.</p>
 
 <p><strong>Apache, IIS</strong> используют обрабатывают каждый запрос в отдельном потоке/процессе - <strong>“process-based”</strong>.</p>
 
-<p><img src="../../../../assets/img/process-based-server-2.png" alt=""></p>
+<p>![]</p>
 
-<p><center>
-Схема работы “process-based” веб серверов.</p>
+<center>
+Схема работы “process-based” веб серверов.
 
-<p></center>
-На каждый запрос клиента используется отдельный процесс/поток. Каждый поток/процесс требует определенное кол-во ресурсов серверов. Ресурсы сервера “простаивают” пока ожидают отправку запроса и ответа клиента. Что отрицательно сказывается на производительности при высоких нагрузках, когда выделенных процессов поток недостаточно для обработки всех запросов.</p>
+</center>
+<p>На каждый запрос клиента используется отдельный процесс/поток. Каждый поток/процесс требует определенное кол-во ресурсов серверов. Ресурсы сервера “простаивают” пока ожидают отправку запроса и ответа клиента. Что отрицательно сказывается на производительности при высоких нагрузках, когда выделенных процессов поток недостаточно для обработки всех запросов.</p>
 
-<h4>Event-based web serves: Nginx, Node.js.</h4>
+<h4 id="event-based-web-serves-nginx-nodejs">Event-based web serves: Nginx, Node.js.</h4>
 
 <p><strong>Event-based</strong> веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.</p>
 
-<p><img src="../../../../assets/img/event-based-server-3.png" alt=""></p>
+<p>![][1]</p>
 
-<p><center>
-Схема работы Event-based веб сервера.</p>
+<center>
+Схема работы Event-based веб сервера.
 
-<p></center>
-<strong>loop-event</strong> - бесконечный цикл обработки запросов. Данный цикл отслеживает состояние запроса(прием запроса от клиента, обработка и отправка ответа).</p>
+</center>
+<p><strong>loop-event</strong> - бесконечный цикл обработки запросов. Данный цикл отслеживает состояние запроса(прием запроса от клиента, обработка и отправка ответа).</p>
 
 <p>В единичном процессе/потоке(<strong>Singe process/thread</strong>) используются все ресурсы веб сервера, позволяя обрабатывать запросы максимально быстро, а в случаи задержки(получение данных от клиента, отправки данных клиенту) работать с другими запросами из очереди(<strong>Event Queue</strong>) т.е асинхронно.</p>
 
-<h4>Итог</h4>
+<h4 id="section-2">Итог</h4>
 
 <p>Схема <strong>event-based(Node.js, Nginx)</strong> показывает большую производительность при высоких нагрузках. Это связано с тем что не нужно делить ресурсы сервера между другими потоками/процессами. Также серверные ресурсы всегда используются без “простоя”.</p>
 
-<h4>Ссылки</h4>
+<h4 id="section-3">Ссылки</h4>
 
 <ul>
-<li>  <a href="http://habrahabr.ru/post/108241/">Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов</a></li>
-<li>  <a href="http://berb.github.io/diploma-thesis/original/042_serverarch.html#42">Concurrent Programming for Scalable Web Architectures</a></li>
-<li>  <a href="http://www.wikivs.com/wiki/apache_vs_nginx">Apache vs nginx</a></li>
+  <li>[Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов]</li>
+  <li>[Concurrent Programming for Scalable Web Architectures]</li>
+  <li>[Apache vs nginx]</li>
 </ul>
+
+<p>[]: ../../../../assets/img/process-based-server-2.png
+  [1]: ../../../../assets/img/event-based-server-3.png
+  [Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов]: http://habrahabr.ru/post/108241/
+  [Concurrent Programming for Scalable Web Architectures]: http://berb.github.io/diploma-thesis/original/042_serverarch.html#42
+  [Apache vs nginx]: http://www.wikivs.com/wiki/apache_vs_nginx</p>
 
   </div>
 

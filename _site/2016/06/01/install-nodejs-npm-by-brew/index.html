@@ -10,8 +10,10 @@
 
     
     <meta name="description" content="Problem
+
 " />
     <meta property="og:description" content="Problem
+
 " />
     
     <meta name="author" content="aldb" />
@@ -59,7 +61,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -107,40 +116,40 @@
 
 
   <div class="entry">
-    <h2>Problem</h2>
+    <h2 id="problem">Problem</h2>
 
 <p>Need quick script for install NPM &amp; Node by terminal.</p>
 
-<h2>Solution</h2>
+<h2 id="solution">Solution</h2>
 
 <p>Homebrew - the missing package manager for OS X, really easy way to setup environment.</p>
 
 <p>Open terminal and check Brew version:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew -v</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew -v</code></pre></figure>
 
-<p>If you get &quot;brew: command not found&quot; got to official web <a href="http://brew.sh/">page</a> and copy/paster url link for install, for example:</p>
+<p>If you get “brew: command not found” got to official web <a href="http://brew.sh/">page</a> and copy/paster url link for install, for example:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>/usr/bin/ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>/usr/bin/ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span></code></pre></figure>
 
-<p>If on Mac don&#39;t install Xcode you see alert message with option for install. Node.js &amp; NPM don&#39;t need Xcode, so cancel Xcode installation alert message.</p>
+<p>If on Mac don’t install Xcode you see alert message with option for install. Node.js &amp; NPM don’t need Xcode, so cancel Xcode installation alert message.</p>
 
 <p>Then installing the NPM &amp; Node by command:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew node</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>brew node</code></pre></figure>
 
-<p>Done! </p>
+<p>Done!</p>
 
-<p><img src="/assets/img/posts/2016/npm_nodejs_by_brew.png" alt="Screenshot"></p>
+<p><img src="/assets/img/posts/2016/npm_nodejs_by_brew.png" alt="Screenshot" /></p>
 
-<h2>Check installed versions</h2>
+<h2 id="check-installed-versions">Check installed versions</h2>
 
 <p>For check nodejs/NPM version/location use:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>node -v
-<span class="nv">$ </span>which node
-<span class="nv">$ </span>npm -v
-<span class="nv">$ </span>which npm</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>node -v
+<span class="gp">$ </span>which node
+<span class="gp">$ </span>npm -v
+<span class="gp">$ </span>which npm</code></pre></figure>
 
 <p>Have fun with Nodejs!</p>
 

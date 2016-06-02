@@ -10,8 +10,10 @@
 
     
     <meta name="description" content="I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:
+
 " />
     <meta property="og:description" content="I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:
+
 " />
     
     <meta name="author" content="aldb" />
@@ -59,7 +61,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -103,22 +112,22 @@
   <div class="entry">
     <p>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>-bash: tsd: <span class="nb">command </span>not found </code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>-bash: tsd: <span class="nb">command </span>not found </code></pre></figure>
 
 <p>All others npm packages not running.
-It&#39;s look like bash don&#39;t know path for node modules.</p>
+It’s look like bash don’t know path for node modules.</p>
 
 <p>Command:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm bin</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>npm bin</code></pre></figure>
 
 <p>Get back:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>IF <span class="o">(</span>not in PATH env variable<span class="o">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>IF <span class="o">(</span>not <span class="k">in </span>PATH env variable<span class="o">)</span></code></pre></figure>
 
 <p>For fix this issue add path for node modules in PATH</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/&lt;username&gt;/.node/bin:$PATH&quot;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/Users/&lt;username&gt;/.node/bin:</span><span class="nv">$PATH</span><span class="s2">"</span></code></pre></figure>
 
 <p>For get bash username use command: whoami</p>
 

@@ -11,17 +11,19 @@
     
     <meta name="description" content="В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:
 
-include(&#39;file&#39;);
-require(&#39;file&#39;);
-include &#39;file&#39;;
-require &#39;file&#39;;
+include('file');
+require('file');
+include 'file';
+require 'file';
+
 " />
     <meta property="og:description" content="В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:
 
-include(&#39;file&#39;);
-require(&#39;file&#39;);
-include &#39;file&#39;;
-require &#39;file&#39;;
+include('file');
+require('file');
+include 'file';
+require 'file';
+
 " />
     
     <meta name="author" content="aldb" />
@@ -69,7 +71,14 @@ require &#39;file&#39;;
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -101,80 +110,80 @@ require &#39;file&#39;;
   <div class="entry">
     <p>В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">include</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">);</span>
-<span class="k">require</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">);</span>
-<span class="k">include</span> <span class="s1">&#39;file&#39;</span><span class="p">;</span>
-<span class="k">require</span> <span class="s1">&#39;file&#39;</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">include('file');
+require('file');
+include 'file';
+require 'file';</code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2014/11/include.png" alt=""></p>
+<p><img src="../../../../assets/img/posts/2014/11/include.png" alt="" /></p>
 
 <p>Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(файл не найден):</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">require</span> <span class="o">-</span> <span class="nx">Fatal</span> <span class="nx">error</span><span class="p">(</span><span class="nx">E_COMPILE_ERROR</span><span class="p">),</span> <span class="nx">т</span><span class="o">.</span><span class="nx">е</span> <span class="nx">останока</span> <span class="nx">скрипта</span>
-<span class="k">include</span> <span class="o">-</span> <span class="nx">Warning</span> <span class="nx">error</span><span class="p">(</span><span class="k">E_WARNING</span><span class="p">)</span> <span class="nx">и</span> <span class="nx">продолжение</span> <span class="nx">выполнение</span> <span class="nx">сценария</span><span class="o">.</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">require - Fatal error(E_COMPILE_ERROR), т.е останока скрипта
+include - Warning error(E_WARNING) и продолжение выполнение сценария.</code></pre></figure>
 
 <p>Если в настройках PHP указано отображение ошибок пользователь увидит данный ошибку и что хуже вашу структуру файлов.</p>
 
 <p>Использование require более рационально в целях безопастности.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">require_once</span> <span class="nx">и</span> <span class="k">include_once</span> <span class="nx">отличаются</span><span class="o">:</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">require_once и include_once отличаются:</code></pre></figure>
 
 <p>Если код из файла уже один раз был включен, он не будет включен и выполнен повторно.</p>
 
 <p>Например:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">var_dump</span><span class="p">(</span><span class="k">include_once</span> <span class="s1">&#39;file.php&#39;</span><span class="p">);</span> <span class="c1">// exec script</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="k">include_once</span> <span class="s1">&#39;file.php&#39;</span><span class="p">);</span> <span class="c1">// bool(true)</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">var_dump(include_once 'file.php'); // exec script
+var_dump(include_once 'file.php'); // bool(true)
 
-<span class="nb">var_dump</span><span class="p">(</span><span class="k">require_once</span> <span class="s1">&#39;file.php&#39;</span><span class="p">);</span> <span class="c1">// bool(true)</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="k">require_once</span> <span class="s1">&#39;file.php&#39;</span><span class="p">);</span> <span class="c1">// bool(true)</span></code></pre></figure>
+var_dump(require_once 'file.php'); // bool(true)
+var_dump(require_once 'file.php'); // bool(true)</code></pre></figure>
 
 <p>Выполнение файла кода в файле file.php произойдет только при первом запуске include_once. В остальных случаях ф-ия вернет true - файл уже подключен.</p>
 
 <p>Что бы избежать ошибок используются относительные пути:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;/params.php&#39;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">require(dirname(__FILE__).'/params.php');
 
-<span class="c1">//__FILE__ - абсолютный путь с разрешенными символическими ссылками</span>
-<span class="k">include_once</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/database.class.php&#39;</span><span class="p">);</span></code></pre></figure>
+//__FILE__ - абсолютный путь с разрешенными символическими ссылками
+include_once(dirname(__FILE__) . '/database.class.php');</code></pre></figure>
 
 <p>Так же можно проверить подключение файлов, например с определением константы:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;__ROOT__&#39;</span><span class="p">,</span> <span class="nb">dirname</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)));</span> 
-<span class="k">require_once</span><span class="p">(</span><span class="nx">__ROOT__</span><span class="o">.</span><span class="s1">&#39;/config.php&#39;</span><span class="p">);</span> </code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">define('__ROOT__', dirname(dirname(__FILE__))); 
+require_once(__ROOT__.'/config.php'); </code></pre></figure>
 
 <p>Для автоматической загрузки классов используются функция</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">spl_autoload_register</span><span class="p">()</span><span class="o">.</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">spl_autoload_register().</code></pre></figure>
 
 <p>Пример загруки с использованием ф-ии</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">myAutoloader</span><span class="p">(</span><span class="nv">$className</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$path</span> <span class="o">=</span> <span class="s1">&#39;/path/to/class/&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">function myAutoloader($className) {
+    $path = '/path/to/class/';
 
-    <span class="k">include</span> <span class="nv">$path</span><span class="o">.</span><span class="nv">$className</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">;</span>
-<span class="p">}</span>
+    include $path.$className.'.php';
+}
 
-<span class="nb">spl_autoload_register</span><span class="p">(</span><span class="s1">&#39;myAutoloader&#39;</span><span class="p">);</span>
-<span class="nv">$myClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span></code></pre></figure>
+spl_autoload_register('myAutoloader');
+$myClass = new MyClass();</code></pre></figure>
 
 <p>Пример использования автозагрузки с использованием классов</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">spl_autoload_register</span><span class="p">(</span><span class="s1">&#39;MyAutoloader::ClassLoader&#39;</span><span class="p">);</span>
-<span class="nb">spl_autoload_register</span><span class="p">(</span><span class="s1">&#39;MyAutoloader::HelperLoader&#39;</span><span class="p">);</span>
-<span class="nb">spl_autoload_register</span><span class="p">(</span><span class="s1">&#39;MyAutoloader::DatabaseLoader&#39;</span><span class="p">);</span>
-    
-    <span class="k">class</span> <span class="nc">MyAutoloader</span> <span class="p">{</span>
-        <span class="k">public</span> <span class="nv">$path</span> <span class="o">=</span> <span class="s1">&#39;/path/to/class/&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">spl_autoload_register('MyAutoloader::ClassLoader');
+spl_autoload_register('MyAutoloader::HelperLoader');
+spl_autoload_register('MyAutoloader::DatabaseLoader');
+	
+	class MyAutoloader {
+		public $path = '/path/to/class/';
 
-        <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">ClassLoader</span><span class="p">(</span><span class="nv">$className</span><span class="p">){</span>
-             <span class="k">require</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">path</span> <span class="o">.</span> <span class="s1">&#39;className.php&#39;</span><span class="p">;</span>
-        <span class="p">}</span>
-    
-    
-        <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">LibraryLoader</span><span class="p">(</span><span class="nv">$className</span><span class="p">)</span> <span class="p">{</span>
-             <span class="k">require</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">path</span> <span class="o">.</span> <span class="s1">&#39;className.php&#39;</span><span class="p">;</span>
-        <span class="p">}</span></code></pre></figure>
+	    public static function ClassLoader($className){
+	         require $this-&gt;path . 'className.php';
+	    }
+	
+	
+	    public static function LibraryLoader($className) {
+	         require $this-&gt;path . 'className.php';
+	    }</code></pre></figure>
 
   </div>
 

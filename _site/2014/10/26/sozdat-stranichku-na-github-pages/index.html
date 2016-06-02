@@ -10,8 +10,10 @@
 
     
     <meta name="description" content="Сабж, создаем бранч, мержим с продактишном и коммитим:
+
 " />
     <meta property="og:description" content="Сабж, создаем бранч, мержим с продактишном и коммитим:
+
 " />
     
     <meta name="author" content="aldb" />
@@ -59,7 +61,14 @@
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -90,18 +99,24 @@
 
   <div class="entry">
     <p>Сабж, создаем бранч, мержим с продактишном и коммитим:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">git checkout --orphan gh-pages
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git checkout --orphan gh-pages
 git merge master
 git push origin gh-pages
-</code></pre></div>
-<p>Если есть желание всегда обновлять gh-pages при коммите можно добавить в файл .git/config, секцию [remote &quot;origin&quot;]</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">push = +refs/heads/master:refs/heads/gh-pages
+</code></pre>
+</div>
+
+<p>Если есть желание всегда обновлять gh-pages при коммите можно добавить в файл .git/config, секцию [remote “origin”]</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>push = +refs/heads/master:refs/heads/gh-pages
 push = +refs/heads/master:refs/heads/master
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>Ссылки:</p>
 
 <ul>
-<li><a href="https://help.github.com/articles/creating-project-pages-manually/">Creating Project Pages manually</a></li>
+  <li><a href="https://help.github.com/articles/creating-project-pages-manually/">Creating Project Pages manually</a></li>
 </ul>
 
   </div>

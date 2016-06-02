@@ -11,9 +11,11 @@
     
     <meta name="description" content="Differense between SQL JOINs is the most popular question on enterview.
 So create Table a is on the left, and Table b is on the right.
+
 " />
     <meta property="og:description" content="Differense between SQL JOINs is the most popular question on enterview.
 So create Table a is on the left, and Table b is on the right.
+
 " />
     
     <meta name="author" content="aldb" />
@@ -61,7 +63,14 @@ So create Table a is on the left, and Table b is on the right.
   <section id="two" class="bg-alt">
       <div class="container wow fadeInUp">
           <div class="row">
-            <div class="container">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
 <div class="row">
 
 <div class="col-xs-10 col-xs-offset-1">
@@ -106,8 +115,7 @@ So create Table a is on the left, and Table b is on the right.
     <p>Differense between SQL JOINs is the most popular question on enterview.
 So create <strong>Table a</strong> is on the left, and <strong>Table b</strong> is on the right.</p>
 
-<h4>Create tables</h4>
-
+<h4 id="create-tables">Create tables</h4>
 <pre>
 +------++------+
 | <b>a</b>    || <b>b</b>    |
@@ -117,42 +125,41 @@ So create <strong>Table a</strong> is on the left, and <strong>Table b</strong> 
 | <span style="color:#ccc">NULL</span> || <span style="color:#ccc">NULL</span> |
 |   <span style="color:red">10</span> ||   <span style="color:red">20</span> |
 +------++------+
-</pre>Sql query:
+</pre>
+<p>Sql query:</p>
 
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">a</span><span class="o">`</span><span class="p">;</span>
-    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">a</span><span class="o">`</span> <span class="p">(</span>
-      <span class="o">`</span><span class="n">a</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NULL</span>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`a`</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`a`</span> <span class="p">(</span>
+      <span class="nv">`a`</span> <span class="n">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NULL</span>
     <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">a</span><span class="o">`</span> <span class="p">(</span> <span class="o">`</span><span class="n">a</span><span class="o">`</span><span class="p">)</span> 
+    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">`a`</span> <span class="p">(</span> <span class="nv">`a`</span><span class="p">)</span> 
     <span class="k">VALUES</span> 
-      <span class="p">(</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span>
-      <span class="p">(</span> <span class="s1">&#39;2&#39;</span><span class="p">),</span>
+      <span class="p">(</span> <span class="s1">'1'</span><span class="p">),</span>
+      <span class="p">(</span> <span class="s1">'2'</span><span class="p">),</span>
       <span class="p">(</span> <span class="k">NULL</span><span class="p">),</span>
       <span class="p">(</span> <span class="mi">10</span><span class="p">);</span>
 
 
-    <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">b</span><span class="o">`</span><span class="p">;</span>
-    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">b</span><span class="o">`</span> <span class="p">(</span>
-      <span class="o">`</span><span class="n">b</span><span class="o">`</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NULL</span>
+    <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`b`</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`b`</span> <span class="p">(</span>
+      <span class="nv">`b`</span> <span class="n">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NULL</span>
     <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
-    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">b</span><span class="o">`</span> <span class="p">(</span> <span class="o">`</span><span class="n">b</span><span class="o">`</span><span class="p">)</span> 
+    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">`b`</span> <span class="p">(</span> <span class="nv">`b`</span><span class="p">)</span> 
     <span class="k">VALUES</span> 
-      <span class="p">(</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span>
-      <span class="p">(</span> <span class="s1">&#39;2&#39;</span><span class="p">),</span>
+      <span class="p">(</span> <span class="s1">'1'</span><span class="p">),</span>
+      <span class="p">(</span> <span class="s1">'2'</span><span class="p">),</span>
       <span class="p">(</span> <span class="k">NULL</span><span class="p">),</span>
       <span class="p">(</span> <span class="mi">20</span><span class="p">);</span></code></pre></figure>
 
-#### ~~INNER~~ JOIN AND STRAIGHT\_JOIN
+<h4 id="inner-join-and-straightjoin"><del>INNER</del> JOIN AND STRAIGHT_JOIN</h4>
 
-*The INNER JOIN keyword selects all rows from both tables. INNER JOIN is the same as JOIN.*
+<p><em>The INNER JOIN keyword selects all rows from both tables. INNER JOIN is the same as JOIN.</em></p>
 
-*A **STRAIGHT\_JOIN** identifies and combines matching rows which are stored in two related tables. This is what an inner join also does. The difference between an inner join and a straight join is that a straight join forces MySQL to read the **left table first**.*
+<p><em>A <strong>STRAIGHT_JOIN</strong> identifies and combines matching rows which are stored in two related tables. This is what an inner join also does. The difference between an inner join and a straight join is that a straight join forces MySQL to read the <strong>left table first</strong>.</em></p>
 
-![]
-
+<p>![]</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="p">;</span>
     <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">b</span> <span class="k">JOIN</span> <span class="n">a</span> <span class="k">ON</span> <span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="p">;</span></code></pre></figure>
@@ -165,7 +172,6 @@ So create <strong>Table a</strong> is on the left, and <strong>Table b</strong> 
 |    <span style="color:green">2</span> |    <span style="color:green">2</span> |
 +------+------+
 </pre>
-
 <p>Without condition ON we make <strong>CROSS JOIN</strong></p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">b</span> <span class="k">JOIN</span> <span class="n">a</span><span class="p">;</span>
@@ -175,8 +181,9 @@ So create <strong>Table a</strong> is on the left, and <strong>Table b</strong> 
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">     <span class="k">SELECT</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">CROSS</span> <span class="k">JOIN</span> <span class="n">b</span><span class="p">;</span></code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2015/02/join8.png" alt=""></p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">+------+------+
+<p>![][1]</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>+------+------+
 | b    | a    |
 +------+------+
 |    1 |    1 |
@@ -195,15 +202,15 @@ So create <strong>Table a</strong> is on the left, and <strong>Table b</strong> 
 |    2 |   10 |
 | NULL |   10 |
 |   20 |   10 |
-+------+------+
-</code></pre></div>
-<h4>LEFT JOIN == LEFT ~~OUTER~~ JOIN</h4>
++------+------+ #### LEFT JOIN == LEFT ~~OUTER~~ JOIN
+</code></pre>
+</div>
 
 <p><em>The LEFT JOIN keyword returns all rows from the left table (A), with the matching rows in the right table (B). The result is NULL in the right side when there is no match.</em></p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="p">;</span></code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2015/02/join2.png" alt="">
+<p>![][2]</p>
 <pre>
 +------+------+
 | <b>a</b>    | <b>b</b>    |
@@ -214,11 +221,11 @@ So create <strong>Table a</strong> is on the left, and <strong>Table b</strong> 
 |   10 | <span style="color:red">NULL</span> |
 +------+------+
 </pre>
-If add WHERE condition:</p>
+<p>If add WHERE condition:</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span> <span class="k">WHERE</span> <span class="n">b</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span></code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2015/02/join3.png" alt="">
+<p>![][3]</p>
 <pre>
 +------+------+
 | a    | b    |
@@ -226,15 +233,14 @@ If add WHERE condition:</p>
 | NULL | NULL |
 |   10 | NULL |
 +------+------+
-</pre></p>
-
-<h4>RIGHT JOIN = RIGHT ~~OUTER~~ JOIN</h4>
+</pre>
+<p>#### RIGHT JOIN = RIGHT <del>OUTER</del> JOIN</p>
 
 <p><em>The RIGHT JOIN keyword returns all rows from the right table (B), with the matching rows in the left table (A). The result is NULL in the left side when there is no match.</em></p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span></code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2015/02/join4.png" alt=""></p>
+<p>![][4]</p>
 
 <pre>
 +------+------+
@@ -249,7 +255,7 @@ If add WHERE condition:</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span> <span class="k">WHERE</span> <span class="n">a</span> <span class="k">IS</span> <span class="k">NULL</span></code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2015/02/join5.png" alt=""></p>
+<p>![][5]</p>
 
 <pre>
 +------+------+
@@ -259,20 +265,19 @@ If add WHERE condition:</p>
 | NULL |   20 |
 +------+------+
 </pre>
-
-<h4>FULL OUTER</h4>
+<p>#### FULL OUTER</p>
 
 <p><em>The FULL OUTER JOIN keyword returns all rows from the left table (A) and from the right table (B). The FULL OUTER JOIN keyword combines the result of both LEFT and RIGHT joins.</em></p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">FULL</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span></code></pre></figure>
 
-<p>MYSQL don’t have FULL JOINS, but can sure <a href="http://dev.mysql.com/doc/refman/5.0/en/outer-join-simplification.html">emulate</a> them.</p>
+<p>MYSQL don’t have FULL JOINS, but can sure [emulate] them.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
     <span class="k">UNION</span>
     <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span></code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2015/02/join6.png" alt=""></p>
+<p>![][6]</p>
 
 <pre>
 +------+------+
@@ -285,7 +290,6 @@ If add WHERE condition:</p>
 | <span style="color:red">NULL</span> |   20 |
 +------+------+
 </pre>
-    
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">FULL</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span>
     <span class="k">WHERE</span> <span class="n">a</span> <span class="k">IS</span> <span class="k">null</span> <span class="k">OR</span> <span class="n">b</span> <span class="k">IS</span> <span class="k">null</span>
@@ -297,7 +301,7 @@ If add WHERE condition:</p>
 <span class="k">UNION</span> 
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">a</span> <span class="k">RIGHT</span> <span class="k">JOIN</span> <span class="n">b</span> <span class="k">ON</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span> <span class="k">WHERE</span> <span class="n">a</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span> </code></pre></figure>
 
-<p><img src="../../../../assets/img/posts/2015/02/join7.png" alt=""></p>
+<p>![][7]</p>
 
 <pre>
 +------+------+
@@ -308,6 +312,15 @@ If add WHERE condition:</p>
 | <span style="color:red">NULL</span> |   20 |
 +------+------+
 </pre>
+<p>[]: ../../../../assets/img/posts/2015/02/join1.png
+  [1]: ../../../../assets/img/posts/2015/02/join8.png
+  [2]: ../../../../assets/img/posts/2015/02/join2.png
+  [3]: ../../../../assets/img/posts/2015/02/join3.png
+  [4]: ../../../../assets/img/posts/2015/02/join4.png
+  [5]: ../../../../assets/img/posts/2015/02/join5.png
+  [emulate]: http://dev.mysql.com/doc/refman/5.0/en/outer-join-simplification.html
+  [6]: ../../../../assets/img/posts/2015/02/join6.png
+  [7]: ../../../../assets/img/posts/2015/02/join7.png</p>
 
   </div>
 
