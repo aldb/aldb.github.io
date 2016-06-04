@@ -7,6 +7,8 @@ tags: [en,mac,error,nodejs]
 img: /assets/img/posts/2016/def2.png
 ---
 
+## Error
+
 I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:
 
 {% highlight bash %}
@@ -25,6 +27,8 @@ Get back:
 {% highlight bash %}
 $ IF (not in PATH env variable)
 {% endhighlight %}
+
+## Fix
 
 For fix this issue add path for node modules in PATH
 {% highlight bash %}

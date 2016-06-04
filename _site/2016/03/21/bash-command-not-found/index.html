@@ -18,10 +18,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:
+    <meta name="description" content="Error
 
 " />
-    <meta property="og:description" content="I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:
+    <meta property="og:description" content="Error
 
 " />
     
@@ -119,7 +119,9 @@ h2 {
 
 
   <div class="entry">
-    <p>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</p>
+    <h2 id="error">Error</h2>
+
+<p>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>-bash: tsd: <span class="nb">command </span>not found </code></pre></figure>
 
@@ -133,6 +135,8 @@ It’s look like bash don’t know path for node modules.</p>
 <p>Get back:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>IF <span class="o">(</span>not <span class="k">in </span>PATH env variable<span class="o">)</span></code></pre></figure>
+
+<h2 id="fix">Fix</h2>
 
 <p>For fix this issue add path for node modules in PATH</p>
 
