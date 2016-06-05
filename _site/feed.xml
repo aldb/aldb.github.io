@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-04T14:01:05-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Install Nodejs &amp;amp; NPM by Brew</title><link href="/2016/06/01/install-nodejs-npm-by-brew/" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="/2016/06/01/install-nodejs-npm-by-brew/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-04T14:01:07-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Install Nodejs &amp;amp; NPM by Brew</title><link href="/2016/06/01/install-nodejs-npm-by-brew/" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="/2016/06/01/install-nodejs-npm-by-brew/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
 
 &lt;p&gt;Need quick script for install NPM &amp;amp; Node by terminal.&lt;/p&gt;
 
@@ -81,7 +81,7 @@ Get the classic solution:&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chown -R &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><category term="programming" /><category term="js" /><category term="ionic" /><category term="en" /><summary>Error</summary></entry><entry><title>Github Jekyll</title><link href="/2016/02/23/Jekyll-vs-ghost-cms/" rel="alternate" type="text/html" title="Github Jekyll" /><published>2016-02-23T21:38:39-08:00</published><updated>2016-02-23T21:38:39-08:00</updated><id>/2016/02/23/Jekyll-vs-ghost-cms</id><content type="html" xml:base="/2016/02/23/Jekyll-vs-ghost-cms/">&lt;p&gt;After 2 years use Ghost cms I try change for Jekyll.
 Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (&lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll Repository&lt;/a&gt;).&lt;/p&gt;
 
-&lt;h3 id=&quot;why-github-jekyll&quot;&gt;Why Github Jekyll?&lt;/h3&gt;
+&lt;h2 id=&quot;why-github-jekyll&quot;&gt;Why Github Jekyll?&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;Github support &amp;amp; free hosting&lt;/li&gt;
@@ -92,7 +92,7 @@ Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted bl
 
 &lt;p&gt;Enough for you.&lt;/p&gt;
 
-&lt;h3 id=&quot;how-setup-jekyll-blog-for-5-minutes&quot;&gt;How setup Jekyll blog for 5 minutes&lt;/h3&gt;
+&lt;h2 id=&quot;how-setup-jekyll-blog-for-5-minutes&quot;&gt;How setup Jekyll blog for 5 minutes&lt;/h2&gt;
 
 &lt;p&gt;Sign in github account and fork &lt;a href=&quot;https://github.com/aldb/jekyll-now&quot;&gt;Jekyll-now&lt;/a&gt; repo. Done! Your ready for customize your Jekyll page!&lt;/p&gt;
 
@@ -100,7 +100,7 @@ Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted bl
 After successful setup process your can check project wiki for details settings like Google Analytics, 404 page and etc.
 &lt;/p&gt;
 
-&lt;h5 id=&quot;online-tools&quot;&gt;Online tools&lt;/h5&gt;
+&lt;h2 id=&quot;online-tools&quot;&gt;Online tools&lt;/h2&gt;
 
 &lt;blockquote&gt;
   &lt;ul&gt;
