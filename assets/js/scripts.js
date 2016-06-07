@@ -30,30 +30,22 @@
             $(document.getElementById(v)).focus().click();
         }
     })
+
 })(jQuery);
+
 
 function tags(el) {
     if ($(el).hasClass("tag-active")) {
-        $(el).removeClass("tag-active");
-        $(el).children().hide();
+        $(el).removeClass("tag-active").children().hide();
         $('.post').show();
         window.location.hash = 'three';
         return true;
     }
-    $(".tag-active").removeClass("tag-active")
-    $('.post').hide();
-    $(el).addClass("tag-active");
-    $(el).children().show();
+    $(el).addClass("tag-active").children().show();
     var tag = el.innerHTML.split('(')[0].trim();
-    var postsTags = document.getElementsByClassName('tags-mark');
-    for (var i =0; i < postsTags.length; i++ ) {
-        var tags = postsTags[i].innerHTML.split(',');
-        for (var k=0;k < tags.length; k++ ){
-            if (tags[k].trim() === tag) {
-                $(postsTags[i].parentElement.parentElement.parentElement.parentElement).show();
-                break;
-            }
-        }
-    }
+    $('.post').hide();
+    $(".tags-mark:contains('" + tag + "')").each(function(){
+        $(this.parentElement.parentElement.parentElement.parentElement).show();
+    });
     window.location.hash = 'tag=' + tag;
 }
