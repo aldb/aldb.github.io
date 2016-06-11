@@ -4,7 +4,7 @@ title: Nightwatchjs build
 date: 2016-06-1 07:38:39.000000000 -08:00
 category: programming
 tags: [en,mac,nightwatchjs]
-img: /assets/img/posts/2016/def2.png
+img: /assets/img/posts/2016/def4.png
 
 ---
 
