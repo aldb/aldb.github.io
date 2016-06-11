@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nightwatchjs build – aldb – Full Stack Web Developer</title>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55760234-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="What|Why is Nightwatch.js?
+
+" />
+    <meta property="og:description" content="What|Why is Nightwatch.js?
+
+" />
+    
+    <meta name="author" content="aldb" />
+
+    
+    <meta property="og:title" content="Nightwatchjs build" />
+    <meta property="twitter:title" content="Nightwatchjs build" />
+    
+    <link rel="stylesheet" href="/assets/css/ionicons.min.css" />
+<link rel="stylesheet" href="/assets/css/bs4.css" />
+<link rel="stylesheet" href="/assets/css/animate.min.css" />
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/pygments.css" />
+</head>
+<body class="bg-faded">
+
+
+
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            ☰
+        </button>
+        
+            <a class="navbar-brand page-scroll page-logo" href="http://aldb.github.io">aldb</a>
+        
+        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+            <ul class="nav navbar-nav wow">
+            
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="http://aldb.github.io/#one">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="http://aldb.github.io/#two">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll blog-link" href="http://aldb.github.io/#three">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="http://aldb.github.io/#four">Portfolio</a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+  <section id="notfound" class="bg-alt">
+      <div class="container wow fadeInUp">
+          <div class="row">
+            <style type="text/css"> 
+/* Custom */
+h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
+</style>
+<div class="container">
+<div class="row">
+
+<div class="col-xs-10 col-xs-offset-1">
+<div class="row">
+<article class="post">
+  <h1>Nightwatchjs build</h1>
+
+<p class="card-text">
+    <small class="text-muted"><em>
+        June  1, 2016
+    </em></small>
+    
+    
+     <span class="site-tag">
+        <a href="/#tag=en">
+                en
+        </a>
+    </span>
+    
+     <span class="site-tag">
+        <a href="/#tag=mac">
+                mac
+        </a>
+    </span>
+    
+     <span class="site-tag">
+        <a href="/#tag=nightwatchjs">
+                nightwatchjs
+        </a>
+    </span>
+    
+</p>
+
+
+  <div class="entry">
+    <h2 id="whatwhy-is-nightwatchjs">What|Why is Nightwatch.js?</h2>
+
+<p><b>Nightwatch.js</b> is an easy to use Node.js based End-to-End (E2E) testing solution for browser based apps and websites. It uses the powerful Selenium WebDriver API to perform commands and assertions on DOM elements. (c) <a href="nightwatchjs.org">nightwatchjs.org</a></p>
+
+<p>I used Nightwatch.js for E2E testing script modules. I really liked option quick setup environment based on Node.js + write javascript test cases + use bash scripts(Node.js/javascript) for automatization run process. In this post I make detail description how setup Nightwatch.js on OS X platform.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p><b>Nightwatch.js Goals:</b></p>
+
+<ul>
+  <li>Crossbrowsers</li>
+  <li>Easy setup writing test process(Javascript, CSS, XPath)</li>
+  <li>Good documentation</li>
+</ul>
+
+<p>Let’s overview logic shceme how Nightwatch works with Selenium server and Browsers:</p>
+
+<p><img src="../../../../assets/img/posts/2016/06/nw_overview.png" alt="" /></p>
+
+<center><em>Nightwatch.js logic scheme with example files paths.</em></center>
+
+<p>*Tests and bin directories in example build setup.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Here details setup description step by step for Mac OS X. TODO work build:</p>
+
+<h4 id="installdownload">Install/Download</h4>
+
+<p>1.Install/update for latest version <a href="http://java.com/en/download/mac_download.jsp">Java</a>
+<br /><br /> 
+<img src="../../../../assets/img/posts/2016/06/screenshot1.png" alt="" />
+<br />
+<br />
+After successful installed you can verify <a href="https://java.com/en/download/installed.jsp">Java version</a> online by java applet. Also check <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SDK</a>.
+<br />
+<br />
+2. Install/update for latest version <a href="https://nodejs.org">Node.js</a>. Check my previos post for <a href="http://aldb.github.io/2016/06/01/install-nodejs-npm-by-brew/">Node.js setup</a>.
+<br />
+3. Download latest <a href="http://www.seleniumhq.org/download/">Selenium Standalone Server</a>
+<br />
+<br />
+<img src="../../../../assets/img/posts/2016/06/screenshot2.png" alt="" />
+<br />
+<br />
+<br />
+3.Download <a href="http://chromedriver.storage.googleapis.com/index.html?path=2.9/">chromedriver</a> for your OS. 
+<br />
+<br />
+<img src="../../../../assets/img/posts/2016/06/screenshot3.png" alt="" />
+<br />
+4.Download <a href="http://nightwatchjs.org/">Nightwatch.js</a> from oficial website.
+<br /></p>
+
+<h4 id="build-files-structure">Build Files structure</h4>
+
+<p>5.Make new project folder, for example <b>“nightwathjs_screenshot”.</b> Create new folders:<b> bin, tests.</b> Copy/paste files: Selenium standalone Server, chrome driver, nightwatch-xxx.zip in bin directory. Extract(unzip) nightwatch-xxx.zip(on example:nightwatch-0.9.0.zip)
+<br />
+<br />
+<img src="../../../../assets/img/posts/2016/06/screenshot4.png" alt="" />
+<br />
+<br />
+In <b>bin</b> directory keep all “run” files: drivers, original nightwatch.js arhive, selenium server and etc.
+<b>Screenshots</b> directory for screenshots images.
+In <b>tests</b> - tests cases files.
+<br /><br /></p>
+
+<h4 id="npm-install">Npm install</h4>
+<p>6.Open in terminal folder “/nightwathjs_screenshot/bin/nightwatch-0.9.0” and run command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>npm install</code></pre></figure>
+
+<p><img src="../../../../assets/img/posts/2016/06/screenshot5.png" alt="" /></p>
+
+<h4 id="selenium-server">Selenium server</h4>
+
+<p>7.For start test cases need run Selenium server with chrome webdriver. Open “/nightwathjs_screenshot/bin/” folder in terminal and run command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>java -jar selenium-server-standalone-2.53.0.jar -Dwebdriver.chrome.driver<span class="o">=</span><span class="s1">'chromedriver'</span></code></pre></figure>
+
+<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr">@selenium server run example <a href="https://t.co/kT5aKXs6Yi">pic.twitter.com/kT5aKXs6Yi</a></p>&mdash; Alex (@aldbpr) <a href="https://twitter.com/aldbpr/status/741462605965840388">June 11, 2016</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>In terminal windows start seleneium server(“Selenium Server is up and running”), for stop this process can use <b>“control + c”</b>. For next steps you need open new <b>“tab”</b> in terminal - <b>“control + r”</b>.</p>
+
+<p><img src="../../../../assets/img/posts/2016/06/screenshot6.png" alt="" /></p>
+
+<p><br />
+For check Selenium server status use <b>API url</b> - <a href="http://localhost:4444/selenium-server/driver/?cmd=getLogMessages">http://localhost:4444/selenium-server/driver/?cmd=getLogMessages</a>
+<br />
+Also can stop Selenium server - <a href="http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer">http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer</a></p>
+
+<h4 id="configuration">Configuration</h4>
+
+<p>8.Depending upon startup point Nightwatch.js used configuration file. By default used configuration from Nightwatch.js - <b>“nightwathjs_screenshot/bin/nightwatch-0.9.0/bin/nightwatch.json”</b>. Let’s make new file <b>nightwatch.json</b> in main folder “nightwathjs_screenshot”:</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"src_folders"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tests"</span><span class="p">],</span><span class="w">
+  </span><span class="nt">"output_folder"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reports"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"custom_commands_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"custom_assertions_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"page_objects_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"globals_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"selenium"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"start_process"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"server_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"log_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"host"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"port"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4444</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cli_args"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"webdriver.chrome.driver"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"./bin/chromedriver"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+
+  </span><span class="nt">"test_settings"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"default"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"launch_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"selenium_port"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="mi">4444</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"selenium_host"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"silent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"screenshots"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"enabled"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"desiredCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chrome"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"javascriptEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"acceptSslCerts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"firefox"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"desiredCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"firefox"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"javascriptEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"acceptSslCerts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"chrome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"desiredCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chrome"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"javascriptEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"acceptSslCerts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"safari"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"desiredCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"browserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"safari"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"javascriptEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"acceptSslCerts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>Detail <a href="http://nightwatchjs.org/guide#settings-file">configuration documentation</a>.</p>
+
+<h4 id="write-and-run-tests">Write and run tests</h4>
+
+<p>9.Let’s write first test file for Nightwatch.js. It navigates to google.com and searches for nightwatch, * verifying if the term ‘The Night Watch’ exists in the search results. In <b> “nightwathjs_screenshot/tests”</b> folder make new file google.js:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+ * Sample automated test scenario for Nightwatch.js
+ *
+ * &gt; it navigates to google.com and searches for nightwatch,
+ *   verifying if the term 'The Night Watch' exists in the search results
+ */</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'demo test google'</span> <span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">client</span>
+      <span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="s1">'http://google.com'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">waitForElementPresent</span><span class="p">(</span><span class="s1">'body'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="s1">'part two'</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">client</span>
+      <span class="p">.</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">'input[type=text]'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'nightwatch'</span><span class="p">,</span> <span class="nx">client</span><span class="p">.</span><span class="nx">Keys</span><span class="p">.</span><span class="nx">ENTER</span><span class="p">])</span>
+      <span class="p">.</span><span class="nx">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">assert</span><span class="p">.</span><span class="nx">containsText</span><span class="p">(</span><span class="s1">'#main'</span><span class="p">,</span> <span class="s1">'Night Watch'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>For run this test file open terminal in <b>“nightwatchjs_screenshot”</b> folder and use command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./bin/nightwatch-0.9.0/bin/nightwatch --test tests/google.js</code></pre></figure>
+
+<p>Where:</p>
+
+<ul>
+  <li>./bin/nightwatch-0.8.18/bin/nightwatch  - path for nightwatch executable file
+–test - additional params, run <a href="http://nightwatchjs.org/guide#command-line-options">specific test file</a>. If in project used another version of nightwatch need update this command from “nightwatch-0.9.0” for “nightwatch-x.x.x” or folder name what used in project.</li>
+  <li>tests/google.js - path for file</li>
+</ul>
+<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/nightwatchjs">@nightwatchjs</a> test run example <a href="https://t.co/EZBGLtb3xM">pic.twitter.com/EZBGLtb3xM</a></p>&mdash; Alex (@aldbpr) <a href="https://twitter.com/aldbpr/status/741462043706818560">June 11, 2016</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h4 id="done">Done!</h4>
+
+<p>Now you can write and run your test. On the end of the post can find Links for most helpfull nightwatchs resources.
+Final file’s structures:
+<br /><br />
+<img src="../../../../assets/img/posts/2016/06/screenshot7.png" alt="" /></p>
+
+<p>In additional you can check two my two favorite test examples:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+ * Sample automated test scenario for Nightwatch.js
+ *
+ * &gt; it navigates to nightwatchjs.org/api and click on API list.
+ * &gt; verify Text h2 header equal clicked li element Text
+ */</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Test NightwatchJS.org'</span> <span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">client</span>
+      <span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="s1">'http://nightwatchjs.org/api'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">waitForElementVisible</span><span class="p">(</span><span class="s1">'body'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">elements</span><span class="p">(</span><span class="s1">'css selector'</span><span class="p">,</span> <span class="s1">'#api-container ul.nav.bs-sidenav&gt;li'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+          <span class="nx">client</span>
+            <span class="p">.</span><span class="nx">elementIdClick</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">ELEMENT</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">pause</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">){</span>
+              <span class="nx">id</span> <span class="o">=</span> <span class="s1">'#'</span> <span class="o">+</span> <span class="nx">r</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">elementIdText</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">ELEMENT</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">client</span><span class="p">.</span><span class="nx">expect</span><span class="p">.</span><span class="nx">element</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">text</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'\n'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>For this test case need folder “nightwathjs_screenshot/screenshots”, for save screenshot images.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+ * Sample automated test scenario for Nightwatch.js
+ *
+ * &gt; it navigates to google.com and make screenshot
+ */</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'Make screenshot'</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">file</span> <span class="o">=</span> <span class="s1">'./imgs/'</span> <span class="o">+</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'.png'</span><span class="p">;</span>
+        <span class="nx">client</span>
+          <span class="p">.</span><span class="nx">resizeWindow</span><span class="p">(</span><span class="mi">1300</span><span class="p">,</span> <span class="mi">1300</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">url</span><span class="p">(</span><span class="s1">'http://google.com'</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">waitForElementPresent</span><span class="p">(</span><span class="s1">'body'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">pause</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">saveScreenshot</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">perform</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Screenshot save:'</span> <span class="o">+</span> <span class="nx">file</span><span class="p">);</span>
+              <span class="c1">// potentially other async stuff going on</span>
+              <span class="c1">// on finished, call the done callback</span>
+              <span class="nx">done</span><span class="p">();</span>
+          <span class="p">})</span>
+          <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>
+
+<h2 id="links">Links:</h2>
+
+<ul>
+  <li>Nightwatch.js - <a href="http://nightwatchjs.org">http://nightwatchjs.org</a></li>
+  <li>Gitub wiki nightwatch.js - <a href="https://github.com/nightwatchjs/nightwatch/wiki">https://github.com/nightwatchjs/nightwatch/wiki</a></li>
+  <li>Google group - <a href="https://groups.google.com/forum/#!forum/nightwatchjs">https://groups.google.com/forum/#!forum/nightwatchjs</a></li>
+  <li>Drivers for Selenium - <a href="https://selenium-release.storage.googleapis.com/index.html">https://selenium-release.storage.googleapis.com/index.html</a></li>
+  <li>Selenium server - <a href="http://www.seleniumhq.org">http://www.seleniumhq.org</a></li>
+</ul>
+
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+
+	    var disqus_shortname = 'httpalexsdbkgithubio';
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+</div>
+</div>
+</div>
+</div>
+          </div>
+      </div>
+  </section>
+
+
+<footer id="footer">
+        <span class="pull-right text-muted small"><a href="">Made with <i class="ion-android-favorite-outline"></i></a> ©2014-2016</span>
+    </div>
+</footer>
+    <!--scripts loaded here-->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/tether.min.js"></script>
+
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.easing.min.js"></script>
+<script src="/assets/js/wow.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+  </body>
+</html>
