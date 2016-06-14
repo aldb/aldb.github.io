@@ -1055,3 +1055,9 @@ i.tags-icon {
 .markdown-body hr {
   border-bottom-color: #eee;
 }
+
+/* Custom */
+h6 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+}
