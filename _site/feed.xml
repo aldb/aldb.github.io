@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-10T19:56:08-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Nightwatchjs build</title><link href="/2016/06/01/nightwatjs-guide/" rel="alternate" type="text/html" title="Nightwatchjs build" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/nightwatjs-guide</id><content type="html" xml:base="/2016/06/01/nightwatjs-guide/">&lt;h2 id=&quot;whatwhy-is-nightwatchjs&quot;&gt;What|Why is Nightwatch.js?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-06-30T10:38:06-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Nightwatchjs build</title><link href="/2016/06/01/nightwatjs-guide/" rel="alternate" type="text/html" title="Nightwatchjs build" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/nightwatjs-guide</id><content type="html" xml:base="/2016/06/01/nightwatjs-guide/">&lt;h2 id=&quot;whatwhy-is-nightwatchjs&quot;&gt;What|Why is Nightwatch.js?&lt;/h2&gt;
 
 &lt;p&gt;&lt;b&gt;Nightwatch.js&lt;/b&gt; is an easy to use Node.js based End-to-End (E2E) testing solution for browser based apps and websites. It uses the powerful Selenium WebDriver API to perform commands and assertions on DOM elements. (c) &lt;a href=&quot;nightwatchjs.org&quot;&gt;nightwatchjs.org&lt;/a&gt;&lt;/p&gt;
 
@@ -381,7 +381,17 @@ After successful setup process your can check project wiki for details settings 
 &lt;/blockquote&gt;
 
 &lt;p&gt;And also github, githubpage and awesome community! Thank you for the all!&lt;/p&gt;</content><category term="programming" /><category term="jekyll" /><category term="ghost" /><category term="en" /><summary>After 2 years use Ghost cms I try change for Jekyll.
-Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (Jekyll Repository).</summary></entry><entry><title>SQL Joins</title><link href="/2015/02/13/sql-joins/" rel="alternate" type="text/html" title="SQL Joins" /><published>2015-02-13T21:38:39-08:00</published><updated>2015-02-13T21:38:39-08:00</updated><id>/2015/02/13/sql-joins</id><content type="html" xml:base="/2015/02/13/sql-joins/">&lt;p&gt;Differense between SQL JOINs is the most popular question on enterview.
+Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (Jekyll Repository).</summary></entry><entry><title>Many to many private chat</title><link href="/2015/06/13/many-to-many-private-chat/" rel="alternate" type="text/html" title="Many to many private chat" /><published>2015-06-13T22:38:39-07:00</published><updated>2015-06-13T22:38:39-07:00</updated><id>/2015/06/13/many-to-many-private-chat</id><content type="html" xml:base="/2015/06/13/many-to-many-private-chat/">&lt;p class=&quot;card-text&quot;&gt;Web chat on: &lt;code&gt;nodejs, socket.io, expressjs, bootstrap&lt;/code&gt;. &lt;a href=&quot;https://github.com/aldb/nodejs_private_chat&quot;&gt;Code.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p class=&quot;card-text&quot;&gt;&lt;i class=&quot;ion-social-github-outline wow fadeIn text-primary&quot; style=&quot;visibility: visible; animation-name: fadeIn;&quot;&gt;&lt;/i&gt;&lt;small class=&quot;text-muted&quot;&gt; Last updated Aug 3, 2015&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Web chat on: nodejs, socket.io, expressjs, bootstrap. Code.
+
+ Last updated Aug 3, 2015</summary></entry><entry><title>Dead pixel finder</title><link href="/2015/06/13/dead_pixel_finder/" rel="alternate" type="text/html" title="Dead pixel finder" /><published>2015-06-13T22:38:39-07:00</published><updated>2015-06-13T22:38:39-07:00</updated><id>/2015/06/13/dead_pixel_finder</id><content type="html" xml:base="/2015/06/13/dead_pixel_finder/">&lt;p class=&quot;card-text&quot;&gt;Web page with screen color change by click for find &lt;a href=&quot;https://en.wikipedia.org/wiki/Defective_pixel&quot;&gt;dead pixel&lt;/a&gt; on screen your device. Check &lt;a href=&quot;http://aldb.github.io/dpixfinder/&quot;&gt;online.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;card-text&quot;&gt;&lt;i class=&quot;ion-social-github-outline wow fadeIn text-primary&quot; style=&quot;visibility: visible; animation-name: fadeIn;&quot;&gt;&lt;/i&gt;&lt;small class=&quot;text-muted&quot;&gt; Last updated Aug 28, 2015&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Web page with screen color change by click for find dead pixel on screen your device. Check online.</summary></entry><entry><title>Mobile app Startup Synchora</title><link href="/2015/05/13/synchora/" rel="alternate" type="text/html" title="Mobile app Startup Synchora" /><published>2015-05-13T22:38:39-07:00</published><updated>2015-05-13T22:38:39-07:00</updated><id>/2015/05/13/synchora</id><content type="html" xml:base="/2015/05/13/synchora/">&lt;p&gt;&lt;small&gt;
+  Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).
+&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).</summary></entry><entry><title>Actuate/OpenText</title><link href="/2015/02/13/actuate/" rel="alternate" type="text/html" title="Actuate/OpenText" /><published>2015-02-13T21:38:39-08:00</published><updated>2015-02-13T21:38:39-08:00</updated><id>/2015/02/13/actuate</id><content type="html" xml:base="/2015/02/13/actuate/">&lt;p&gt;&lt;small&gt;
+  Implemented transaction payment web service. Setup transaction steps logging, alert, history and etc. Design and development frontend payment web service for USA credit card.
+&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Implemented transaction payment web service. Setup transaction steps logging, alert, history and etc. Design and development frontend payment web service for USA credit card.</summary></entry><entry><title>SQL Joins</title><link href="/2015/02/13/sql-joins/" rel="alternate" type="text/html" title="SQL Joins" /><published>2015-02-13T21:38:39-08:00</published><updated>2015-02-13T21:38:39-08:00</updated><id>/2015/02/13/sql-joins</id><content type="html" xml:base="/2015/02/13/sql-joins/">&lt;p&gt;Differense between SQL JOINs is the most popular question on enterview.
 So create &lt;strong&gt;Table a&lt;/strong&gt; is on the left, and &lt;strong&gt;Table b&lt;/strong&gt; is on the right.&lt;/p&gt;
 
 &lt;h4 id=&quot;create-tables&quot;&gt;Create tables&lt;/h4&gt;
@@ -590,184 +600,4 @@ So create &lt;strong&gt;Table a&lt;/strong&gt; is on the left, and &lt;strong&gt
   [emulate]: http://dev.mysql.com/doc/refman/5.0/en/outer-join-simplification.html
   [6]: ../../../../assets/img/posts/2015/02/join6.png
   [7]: ../../../../assets/img/posts/2015/02/join7.png&lt;/p&gt;</content><category term="programming" /><category term="sql" /><category term="mysql" /><category term="join" /><category term="en" /><summary>Differense between SQL JOINs is the most popular question on enterview.
-So create Table a is on the left, and Table b is on the right.</summary></entry><entry><title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js</title><link href="/2015/02/11/apache-iis-vs-nginx-nodejs/" rel="alternate" type="text/html" title="Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js" /><published>2015-02-11T21:38:39-08:00</published><updated>2015-02-11T21:38:39-08:00</updated><id>/2015/02/11/apache-iis-vs-nginx-nodejs</id><content type="html" xml:base="/2015/02/11/apache-iis-vs-nginx-nodejs/">&lt;p&gt;На сегодняшний день популярными веб серверами являются: &lt;strong&gt;Apache, IIS, Nginx, Node.js.&lt;/strong&gt; У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.&lt;/p&gt;
-
-&lt;p&gt;Но есть принципиальное различие в процессе обработки запросов.&lt;/p&gt;
-
-&lt;h4 id=&quot;section&quot;&gt;Для чего нужны веб серверы?&lt;/h4&gt;
-
-&lt;p&gt;Для начало вспомним как работаю веб серверы. Веб серверы нужны для работы с веб приложениями по клиент-серверной модели. Их задача обработка запроса от пользователя(клиента, client) и возвращения результата запроса с сервера(backend, serverside). Подробнее можно ознакомиться на википедии: &lt;a href=&quot;http://en.wikipedia.org/wiki/Client%E2%80%93server_model&quot;&gt;Client–server model&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;section-1&quot;&gt;Ресурсы веб серверов&lt;/h4&gt;
-
-&lt;p&gt;Каждый сервер имеет выделенные “ресурсы”(Оперативная память, процессор и т.п.) для обработки запросов. Данные ресурсы используются в потоках и процессах:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[Thread_(computing)]&lt;/li&gt;
-  &lt;li&gt;[Process_(computing)]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Различие в распределении ресурсов на обработку запросов является ключевым отличием для расматриваемых веб серверов.&lt;/p&gt;
-
-&lt;p&gt;#### Process-based web serves: Apache, IIS.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Apache, IIS&lt;/strong&gt; используют обрабатывают каждый запрос в отдельном потоке/процессе - &lt;strong&gt;“process-based”&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;![]&lt;/p&gt;
-
-&lt;center&gt;
-Схема работы “process-based” веб серверов.
-
-&lt;/center&gt;
-&lt;p&gt;На каждый запрос клиента используется отдельный процесс/поток. Каждый поток/процесс требует определенное кол-во ресурсов серверов. Ресурсы сервера “простаивают” пока ожидают отправку запроса и ответа клиента. Что отрицательно сказывается на производительности при высоких нагрузках, когда выделенных процессов поток недостаточно для обработки всех запросов.&lt;/p&gt;
-
-&lt;h4 id=&quot;event-based-web-serves-nginx-nodejs&quot;&gt;Event-based web serves: Nginx, Node.js.&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Event-based&lt;/strong&gt; веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.&lt;/p&gt;
-
-&lt;p&gt;![][1]&lt;/p&gt;
-
-&lt;center&gt;
-Схема работы Event-based веб сервера.
-
-&lt;/center&gt;
-&lt;p&gt;&lt;strong&gt;loop-event&lt;/strong&gt; - бесконечный цикл обработки запросов. Данный цикл отслеживает состояние запроса(прием запроса от клиента, обработка и отправка ответа).&lt;/p&gt;
-
-&lt;p&gt;В единичном процессе/потоке(&lt;strong&gt;Singe process/thread&lt;/strong&gt;) используются все ресурсы веб сервера, позволяя обрабатывать запросы максимально быстро, а в случаи задержки(получение данных от клиента, отправки данных клиенту) работать с другими запросами из очереди(&lt;strong&gt;Event Queue&lt;/strong&gt;) т.е асинхронно.&lt;/p&gt;
-
-&lt;h4 id=&quot;section-2&quot;&gt;Итог&lt;/h4&gt;
-
-&lt;p&gt;Схема &lt;strong&gt;event-based(Node.js, Nginx)&lt;/strong&gt; показывает большую производительность при высоких нагрузках. Это связано с тем что не нужно делить ресурсы сервера между другими потоками/процессами. Также серверные ресурсы всегда используются без “простоя”.&lt;/p&gt;
-
-&lt;h4 id=&quot;section-3&quot;&gt;Ссылки&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;[Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов]&lt;/li&gt;
-  &lt;li&gt;[Concurrent Programming for Scalable Web Architectures]&lt;/li&gt;
-  &lt;li&gt;[Apache vs nginx]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;[]: ../../../../assets/img/process-based-server-2.png
-  [1]: ../../../../assets/img/event-based-server-3.png
-  [Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов]: http://habrahabr.ru/post/108241/
-  [Concurrent Programming for Scalable Web Architectures]: http://berb.github.io/diploma-thesis/original/042_serverarch.html#42
-  [Apache vs nginx]: http://www.wikivs.com/wiki/apache_vs_nginx&lt;/p&gt;</content><category term="programming" /><category term="nodejs" /><category term="apache" /><category term="nginx" /><category term="iis" /><category term="ru" /><summary>На сегодняшний день популярными веб серверами являются: Apache, IIS, Nginx, Node.js. У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.</summary></entry><entry><title>include() vs require() &amp;amp; require_once() vs include_once()</title><link href="/2014/11/11/include-vs-require-require_once-vs-include_once/" rel="alternate" type="text/html" title="include() vs require() &amp; require_once() vs include_once()" /><published>2014-11-11T21:38:39-08:00</published><updated>2014-11-11T21:38:39-08:00</updated><id>/2014/11/11/include-vs-require-require_once-vs-include_once</id><content type="html" xml:base="/2014/11/11/include-vs-require-require_once-vs-include_once/">&lt;p&gt;В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;include(&#39;file&#39;);
-require(&#39;file&#39;);
-include &#39;file&#39;;
-require &#39;file&#39;;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2014/11/include.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(файл не найден):&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;require - Fatal error(E_COMPILE_ERROR), т.е останока скрипта
-include - Warning error(E_WARNING) и продолжение выполнение сценария.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Если в настройках PHP указано отображение ошибок пользователь увидит данный ошибку и что хуже вашу структуру файлов.&lt;/p&gt;
-
-&lt;p&gt;Использование require более рационально в целях безопастности.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;require_once и include_once отличаются:&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Если код из файла уже один раз был включен, он не будет включен и выполнен повторно.&lt;/p&gt;
-
-&lt;p&gt;Например:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;var_dump(include_once &#39;file.php&#39;); // exec script
-var_dump(include_once &#39;file.php&#39;); // bool(true)
-
-var_dump(require_once &#39;file.php&#39;); // bool(true)
-var_dump(require_once &#39;file.php&#39;); // bool(true)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Выполнение файла кода в файле file.php произойдет только при первом запуске include_once. В остальных случаях ф-ия вернет true - файл уже подключен.&lt;/p&gt;
-
-&lt;p&gt;Что бы избежать ошибок используются относительные пути:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;require(dirname(__FILE__).&#39;/params.php&#39;);
-
-//__FILE__ - абсолютный путь с разрешенными символическими ссылками
-include_once(dirname(__FILE__) . &#39;/database.class.php&#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Так же можно проверить подключение файлов, например с определением константы:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;define(&#39;__ROOT__&#39;, dirname(dirname(__FILE__))); 
-require_once(__ROOT__.&#39;/config.php&#39;); &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Для автоматической загрузки классов используются функция&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;spl_autoload_register().&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Пример загруки с использованием ф-ии&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;function myAutoloader($className) {
-    $path = &#39;/path/to/class/&#39;;
-
-    include $path.$className.&#39;.php&#39;;
-}
-
-spl_autoload_register(&#39;myAutoloader&#39;);
-$myClass = new MyClass();&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Пример использования автозагрузки с использованием классов&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;spl_autoload_register(&#39;MyAutoloader::ClassLoader&#39;);
-spl_autoload_register(&#39;MyAutoloader::HelperLoader&#39;);
-spl_autoload_register(&#39;MyAutoloader::DatabaseLoader&#39;);
-	
-	class MyAutoloader {
-		public $path = &#39;/path/to/class/&#39;;
-
-	    public static function ClassLoader($className){
-	         require $this-&amp;gt;path . &#39;className.php&#39;;
-	    }
-	
-	
-	    public static function LibraryLoader($className) {
-	         require $this-&amp;gt;path . &#39;className.php&#39;;
-	    }&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><category term="programming" /><category term="php" /><category term="ru" /><summary>В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:
-
-include(&#39;file&#39;);
-require(&#39;file&#39;);
-include &#39;file&#39;;
-require &#39;file&#39;;</summary></entry><entry><title>Datetime PHP like Python</title><link href="/2014/10/31/rabota-s-datetime-php-vs-python/" rel="alternate" type="text/html" title="Datetime PHP like Python" /><published>2014-10-31T21:41:54-07:00</published><updated>2014-10-31T21:41:54-07:00</updated><id>/2014/10/31/rabota-s-datetime-php-vs-python</id><content type="html" xml:base="/2014/10/31/rabota-s-datetime-php-vs-python/">&lt;p&gt;Разработка данных datetime удобнее с использованием Unix формата(числа).&lt;/p&gt;
-
-&lt;p&gt;Datetime in PHP:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$today = date(&quot;Y-m-d H:i:s&quot;);  //MYSQL
-$date = date();
-echo $date-&amp;gt;format(&quot;Y-m-d H:i:s&quot;); //echo Date in format
-
-$today = date(&#39;h-i-s, j-m-y, it is w Day&#39;); // 05-16-18, 10-03-01, 1631 1618 6 Satpm01&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Datetime in Python:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;date_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strptime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;Jun 1 2005  1:33PM&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;b &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;I:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;p&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Datetime from MSSQL in Mysql in Python:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;date_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strptime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;b &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;I:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;p&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;date_object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;H:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;M:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;S&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#MySQL format&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Так что ф-ии datetime в Python похожи на PHP. И не только datetime.&lt;/p&gt;</content><category term="programming" /><category term="python" /><category term="ru" /><summary>Разработка данных datetime удобнее с использованием Unix формата(числа).</summary></entry><entry><title>Как сделать слияние masters с github pages</title><link href="/2014/10/26/sozdat-stranichku-na-github-pages/" rel="alternate" type="text/html" title="Как сделать слияние masters с github pages" /><published>2014-10-26T20:19:35-07:00</published><updated>2014-10-26T20:19:35-07:00</updated><id>/2014/10/26/sozdat-stranichku-na-github-pages</id><content type="html" xml:base="/2014/10/26/sozdat-stranichku-na-github-pages/">&lt;p&gt;Сабж, создаем бранч, мержим с продактишном и коммитим:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout --orphan gh-pages
-git merge master
-git push origin gh-pages
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Если есть желание всегда обновлять gh-pages при коммите можно добавить в файл .git/config, секцию [remote “origin”]&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;push = +refs/heads/master:refs/heads/gh-pages
-push = +refs/heads/master:refs/heads/master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Ссылки:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/creating-project-pages-manually/&quot;&gt;Creating Project Pages manually&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="programming" /><category term="github" /><category term="ru" /><summary>Сабж, создаем бранч, мержим с продактишном и коммитим:</summary></entry></feed>
+So create Table a is on the left, and Table b is on the right.</summary></entry></feed>
