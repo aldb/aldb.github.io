@@ -1055,3 +1055,14 @@ i.tags-icon {
 .markdown-body hr {
   border-bottom-color: #eee;
 }
+
+/* Custom */
+
+.ion-social-linkedin {
+    font-size:25px;
+    color:#007FFF;
+}
+
+.ion-social-linkedin:hover{
+    color:rgb(0, 26, 51);
+}

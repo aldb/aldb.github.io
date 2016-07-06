@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Разница datetime и timestamp – aldb – Full Stack Web Developer</title>
+    <title>Mobile app Startup Synchora – aldb – Full Stack Web Developer</title>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -18,18 +18,18 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:
-
+    <meta name="description" content="
+  The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery.
 " />
-    <meta property="og:description" content="Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:
-
+    <meta property="og:description" content="
+  The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery.
 " />
     
     <meta name="author" content="aldb" />
 
     
-    <meta property="og:title" content="Разница datetime и timestamp" />
-    <meta property="twitter:title" content="Разница datetime и timestamp" />
+    <meta property="og:title" content="Mobile app Startup Synchora" />
+    <meta property="twitter:title" content="Mobile app Startup Synchora" />
     
     <link rel="stylesheet" href="/assets/css/ionicons.min.css" />
 <link rel="stylesheet" href="/assets/css/bs4.css" />
@@ -92,91 +92,21 @@ h2 {
 <div class="col-xs-10 col-xs-offset-1">
 <div class="row">
 <article class="post">
-  <h1>Разница datetime и timestamp</h1>
+  <h1>Mobile app Startup Synchora</h1>
 
 <p class="card-text">
     <small class="text-muted"><em>
-        October 20, 2014
+        August 31, 2015
     </em></small>
     
-    
-     <span class="site-tag">
-        <a href="/#tag=mysql">
-                mysql
-        </a>
-    </span>
-    
-     <span class="site-tag">
-        <a href="/#tag=ru">
-                ru
-        </a>
-    </span>
-    
-     <span class="site-tag">
-        <a href="/#tag=sql">
-                sql
-        </a>
-    </span>
     
 </p>
 
 
   <div class="entry">
-    <p>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</p>
-
-<p>#####Datetime</p>
-
-<ul>
-  <li>8 байт без часового пояса</li>
-  <li>DEFAULT CURRENT_TIMESTAMP / ON UPDATE CURRENT_TIMESTAMP устанавливает время по умолчанию (<strong>MySQL 5.6.5</strong>)</li>
-  <li>Запросы не кешируются по умолчанию</li>
-</ul>
-
-<p>#####Timestamp</p>
-
-<ul>
-  <li>4 байта с часовым поясом</li>
-  <li>хранит время <strong>UTC</strong>(Гринвич)</li>
-  <li>в версии до <strong>MySQL 5.6.1</strong> не более 2 TIMESTAMP колонок в одной таблице, в версии <strong>MySQL 5.6.5</strong>+ без ограничений</li>
-  <li>Запросы кешируются по умолчанию</li>
-  <li>
-    <p>Свойство DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP  может быть примененно только для одной колонке:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>  CREATE TABLE `test` (
-    `id` INT(10) UNSIGNED NOT NULL,
-    `AddedDate` TIMESTAMP NOT NULL DEFAULT 				CURRENT_TIMESTAMP,
-    `UpdatedDate` TIMESTAMP NOT NULL DEFAULT 		CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    ) ENGINE=INNODB;
-</code></pre>
-    </div>
-  </li>
-</ul>
-
-<p>Ошибка:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	Error Code : 1293
-	Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause
-</code></pre>
-</div>
-
-<p>####Когда использовать:</p>
-
-<p>#####datetime:
-- Колонки с фиксированными данными(логирование, день рождения, данные о покупке и т.п)
-- Хорошая ассоциация datetime это часы и календарь на стене, при этом не важно в какой часовой зоне находиться дом в котором они висят.</p>
-
-<p>#####timestamp:
-- Колонки с часто обновляемыеми данными(последняя авторизация пользователя, дата и время обновления рейтинга/очков/счета и т.п.)
-- Ассоциация: момент времени, т.е. как давно событие. Точный расчет момент времени напрямую зависит от того в каком часовом поясе вы находитесь.</p>
-
-<p>Ссылки:</p>
-
-<ul>
-  <li><a href="http://dev.mysql.com/doc/refman/5.1/en/datetime.html">Mysql manual</a></li>
-  <li><a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla">Подробнее про ошибку 1293</a></li>
-  <li><a href="http://stackoverflow.com/questions/409286/datetime-vs-timestamp">datetime vs timestamp?</a></li>
-</ul>
-
+    <small>
+  The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery.
+</small>
   </div>
 
   
