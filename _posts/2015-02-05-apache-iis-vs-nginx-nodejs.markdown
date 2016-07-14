@@ -41,7 +41,7 @@ tags: [nodejs, apache, nginx, iis,ru]
 **Event-based** веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.
 
 
-![](../../../..//assets/img/event-based-server-3.png)
+![](../../../../assets/img/event-based-server-3.png)
 <center>
 Схема работы Event-based веб сервера.
 
