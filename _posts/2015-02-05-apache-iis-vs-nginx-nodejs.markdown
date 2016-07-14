@@ -25,6 +25,7 @@ tags: [nodejs, apache, nginx, iis,ru]
   [Client–server model]: http://en.wikipedia.org/wiki/Client%E2%80%93server_model
   [Thread\_(computing)]: http://en.wikipedia.org/wiki/Thread_(computing)
   [Process\_(computing)]: http://en.wikipedia.org/wiki/Process_(computing)
+
 #### Process-based web serves: Apache, IIS.
 
 **Apache, IIS** используют обрабатывают каждый запрос в отдельном потоке/процессе - **“process-based”**.
