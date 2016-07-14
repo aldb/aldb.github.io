@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-07-14T10:22:42-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Nightwatchjs build</title><link href="/2016/06/01/nightwatjs-guide/" rel="alternate" type="text/html" title="Nightwatchjs build" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/nightwatjs-guide</id><content type="html" xml:base="/2016/06/01/nightwatjs-guide/">&lt;h2 id=&quot;whatwhy-is-nightwatchjs&quot;&gt;What|Why is Nightwatch.js?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2016-07-14T11:15:28-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle><entry><title>Differences between Web servers: Apache, IIS vs Nginx, Node.js</title><link href="/2016/07/13/differences-between-web-servers/" rel="alternate" type="text/html" title="Differences between Web servers: Apache, IIS vs Nginx, Node.js" /><published>2016-07-13T22:38:39-07:00</published><updated>2016-07-13T22:38:39-07:00</updated><id>/2016/07/13/differences-between-web-servers</id><content type="html" xml:base="/2016/07/13/differences-between-web-servers/">&lt;p&gt;Today, the most popular web servers are: &lt;strong&gt;Apache, IIS, Nginx, Node.js&lt;/strong&gt;. Every web server has its own history, focus on technology, the preferred operating system, and etc.&lt;/p&gt;
+
+&lt;p&gt;But there is a fundamental difference in processing requests.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-are-web-servers&quot;&gt;What are Web servers?&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/Client-server-model.svg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Web servers need to work with web applications on the &lt;a href=&quot;http://en.wikipedia.org/wiki/Client%E2%80%93server_model&quot;&gt;Client–server model&lt;/a&gt;. Their task processing request from the user (customer, client) and the query result returned from the server (backend, serverside).&lt;/p&gt;
+
+&lt;h4 id=&quot;web-servers-limits&quot;&gt;Web servers limits&lt;/h4&gt;
+
+&lt;p&gt;A web server has defined &lt;b&gt;load limits&lt;/b&gt;, because it can handle only a limited number of concurrent client connections per IP address (and TCP port) and it can serve only a certain maximum number of requests per second (RPS, also known as queries per second or QPS) depending on HTTP request type, settings, cached and &lt;b&gt;hardware&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each server has a dedicated “resources(hardware)” (RAM, CPU, etc.) to handle requests. These resources are used in flows and processes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[Thread_(computing)]&lt;/li&gt;
+  &lt;li&gt;[Process_(computing)]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The difference in the distribution of resources in the processing of requests is a key differentiator for are risen web servers.&lt;/p&gt;
+
+&lt;h4 id=&quot;process-based-web-serves-apache-iis&quot;&gt;Process-based web serves: Apache, IIS.&lt;/h4&gt;
+
+&lt;p&gt;&lt;b&gt;Apache, IIS&lt;/b&gt; are used each request is processed in a separate thread / process - &lt;b&gt;“process-based”&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/process-based-server-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;
+“Process-based” web servers.
+&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+For every client request uses a separate &lt;b&gt;process / thread&lt;/b&gt;. Each thread / process requires a certain number of server &lt;b&gt;resources(hardware)&lt;/b&gt;. Server resources “idle/ not used” until the pending request and send the client a reply. What a &lt;b&gt;negative&lt;/b&gt; impact on performance at high loads when the selected process flow is not enough to handle all requests.&lt;/p&gt;
+
+&lt;h4 id=&quot;event-based-web-serves-nginx-nodejs&quot;&gt;Event-based web serves: Nginx, Node.js.&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/event-based-server-3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;
+Event-based web servers.
+&lt;/center&gt;
+
+&lt;p&gt;&lt;strong&gt;Event-based&lt;/strong&gt; web servers are used all resources of server hardware.
+&lt;strong&gt;Loop-event&lt;/strong&gt; - endless request processing cycle. This cycle tracks the status of the request (the request from the customer reception, processing and sending the response).&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;Singe process/thread&lt;/strong&gt; is used all the resources the web server, allowing you to process requests as quickly as possible, and in cases of delays (obtaining data from the client to send data to the client) to work with other requests from the queue (&lt;b&gt;Event Queue&lt;/b&gt;) ie asynchronously.&lt;/p&gt;
+
+&lt;h4 id=&quot;total&quot;&gt;Total&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Event-based(Node.js, Nginx)&lt;/strong&gt; shows better performance under high loads, because that the server does not need to share resources among other threads / processes. Also, the server resources are always used without the “downtime”.&lt;/p&gt;
+
+&lt;h4 id=&quot;links&quot;&gt;Links&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/042_serverarch.html#42&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wikivs.com/wiki/apache_vs_nginx&quot;&gt;Apache vs nginx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="programming" /><category term="nodejs" /><category term="apache" /><category term="nginx" /><category term="iis" /><category term="en" /><summary>Today, the most popular web servers are: Apache, IIS, Nginx, Node.js. Every web server has its own history, focus on technology, the preferred operating system, and etc.</summary></entry><entry><title>Nightwatchjs build</title><link href="/2016/06/01/nightwatjs-guide/" rel="alternate" type="text/html" title="Nightwatchjs build" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>/2016/06/01/nightwatjs-guide</id><content type="html" xml:base="/2016/06/01/nightwatjs-guide/">&lt;h2 id=&quot;whatwhy-is-nightwatchjs&quot;&gt;What|Why is Nightwatch.js?&lt;/h2&gt;
 
 &lt;p&gt;&lt;b&gt;Nightwatch.js&lt;/b&gt; is an easy to use Node.js based End-to-End (E2E) testing solution for browser based apps and websites. It uses the powerful Selenium WebDriver API to perform commands and assertions on DOM elements. (c) &lt;a href=&quot;nightwatchjs.org&quot;&gt;nightwatchjs.org&lt;/a&gt;&lt;/p&gt;
 
@@ -391,6 +448,4 @@ Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted bl
 
 &lt;p class=&quot;card-text&quot;&gt;&lt;i class=&quot;ion-social-github-outline wow fadeIn text-primary&quot; style=&quot;visibility: visible; animation-name: fadeIn;&quot;&gt;&lt;/i&gt;&lt;small class=&quot;text-muted&quot;&gt; Last updated Aug 28, 2015&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Web page with screen color change by click for find dead pixel on screen your device. Check online.</summary></entry><entry><title>Mobile app Startup Synchora</title><link href="/2015/05/13/synchora/" rel="alternate" type="text/html" title="Mobile app Startup Synchora" /><published>2015-05-13T22:38:39-07:00</published><updated>2015-05-13T22:38:39-07:00</updated><id>/2015/05/13/synchora</id><content type="html" xml:base="/2015/05/13/synchora/">&lt;p&gt;&lt;small&gt;
   Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).
-&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).</summary></entry><entry><title>Actuate/OpenText</title><link href="/2015/02/13/actuate/" rel="alternate" type="text/html" title="Actuate/OpenText" /><published>2015-02-13T21:38:39-08:00</published><updated>2015-02-13T21:38:39-08:00</updated><id>/2015/02/13/actuate</id><content type="html" xml:base="/2015/02/13/actuate/">&lt;p&gt;&lt;small&gt;
-  Implemented transaction payment web service. Setup transaction steps logging, alert, history and etc. Design and development frontend payment web service for USA credit card.
-&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Implemented transaction payment web service. Setup transaction steps logging, alert, history and etc. Design and development frontend payment web service for USA credit card.</summary></entry></feed>
+&lt;/small&gt;&lt;/p&gt;</content><category term="portfolio" /><summary>Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).</summary></entry></feed>
