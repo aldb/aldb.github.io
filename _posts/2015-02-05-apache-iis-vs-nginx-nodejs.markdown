@@ -29,8 +29,7 @@ tags: [nodejs, apache, nginx, iis,ru]
 
 **Apache, IIS** используют обрабатывают каждый запрос в отдельном потоке/процессе - **“process-based”**.
 
-![]
-
+![](../../../../assets/img/process-based-server-2.png)
 <center>
 Схема работы “process-based” веб серверов.
 
@@ -41,8 +40,8 @@ tags: [nodejs, apache, nginx, iis,ru]
 
 **Event-based** веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.
 
-![][1]
 
+![](../../../..//assets/img/event-based-server-3.png)
 <center>
 Схема работы Event-based веб сервера.
 
@@ -61,8 +60,6 @@ tags: [nodejs, apache, nginx, iis,ru]
 -   [Concurrent Programming for Scalable Web Architectures]
 -   [Apache vs nginx]
 
-  []: ../../../../assets/img/process-based-server-2.png
-  [1]: ../../../../assets/img/event-based-server-3.png
   [Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов]: http://habrahabr.ru/post/108241/
   [Concurrent Programming for Scalable Web Architectures]: http://berb.github.io/diploma-thesis/original/042_serverarch.html#42
   [Apache vs nginx]: http://www.wikivs.com/wiki/apache_vs_nginx
