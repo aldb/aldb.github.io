@@ -65,11 +65,11 @@ Github предоставляет всем своим пользователям
 	npm install
 	npm start
     
-![npm-start](/content/images/2014/10/npminstall.png)
+![npm-start](../../../../assets/img/posts/2014/10/npminstall.png)
 
 Зайдем http://127.0.0.1:2368/ghost/
 
-![ghost](/content/images/2014/10/ghost-wellcome.png)
+![ghost](../../../../assets/img/posts/2014/10/ghost-wellcome.png)
 
 Создание и настройка блока а также редактирования постов(по примеру шаблона) интуитивно понятны. Так же всегда можно найти информацию на https://ghost.org/.
 
@@ -79,7 +79,7 @@ Github предоставляет всем своим пользователям
 
 Что бы сделать ghost статичным Нам потребуется **Buster**
 
-![buster](/content/images/2014/10/buster.png)
+![buster](../../../../assets/img/posts/2014/10/buster.png)
 
 Установка
 

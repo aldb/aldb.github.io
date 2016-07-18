@@ -11,5 +11,6 @@ Time sql comics!
 
 ###I
 ![](../../../../assets/img/posts/2014/10/sql_comics1.png)
+posts/
 ###II
 ![](../../../../assets/img/posts/2014/10/sql_comics2.png)
