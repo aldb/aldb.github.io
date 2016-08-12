@@ -31,6 +31,10 @@
         }
     })
 
+    setTimeout(function(){ 
+        $('#navHeader').attr("style", "visibility: visible"); 
+    }, 100);
+
 })(jQuery);
 
 

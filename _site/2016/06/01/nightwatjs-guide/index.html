@@ -50,7 +50,7 @@
             <a class="navbar-brand page-scroll page-logo" href="http://aldb.github.io">aldb</a>
         
         <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
-            <ul class="nav navbar-nav wow">
+            <ul class="nav navbar-nav wow" id="navHeader">
             
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="http://aldb.github.io/#one">Intro</a>
@@ -152,42 +152,42 @@ h2 {
 
 <h4 id="installdownload">Install/Download</h4>
 
-<p>1.Install/update for latest version <a href="http://java.com/en/download/mac_download.jsp">Java</a>
-<br /><br /> 
-<img src="../../../../assets/img/posts/2016/06/screenshot1.png" alt="" />
-<br />
-<br />
-After successful installed you can verify <a href="https://java.com/en/download/installed.jsp">Java version</a> online by java applet. Also check <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SDK</a>.
-<br />
-<br />
-2. Install/update for latest version <a href="https://nodejs.org">Node.js</a>. Check my previos post for <a href="http://aldb.github.io/2016/06/01/install-nodejs-npm-by-brew/">Node.js setup</a>.
-<br />
-3. Download latest <a href="http://www.seleniumhq.org/download/">Selenium Standalone Server</a>
-<br />
-<br />
-<img src="../../../../assets/img/posts/2016/06/screenshot2.png" alt="" />
-<br />
-<br />
-<br />
-3.Download <a href="http://chromedriver.storage.googleapis.com/index.html?path=2.9/">chromedriver</a> for your OS. 
-<br />
-<br />
-<img src="../../../../assets/img/posts/2016/06/screenshot3.png" alt="" />
-<br />
-4.Download <a href="http://nightwatchjs.org/">Nightwatch.js</a> from oficial website.
+<p>1.Install/update for latest version <a href="http://java.com/en/download/mac_download.jsp">Java</a><br />
+<br /><br /> <br />
+<img src="../../../../assets/img/posts/2016/06/screenshot1.png" alt="" /><br />
+<br /><br />
+<br /><br />
+After successful installed you can verify <a href="https://java.com/en/download/installed.jsp">Java version</a> online by java applet. Also check <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SDK</a>.<br />
+<br /><br />
+<br /><br />
+2. Install/update for latest version <a href="https://nodejs.org">Node.js</a>. Check my previos post for <a href="http://aldb.github.io/2016/06/01/install-nodejs-npm-by-brew/">Node.js setup</a>.<br />
+<br /><br />
+3. Download latest <a href="http://www.seleniumhq.org/download/">Selenium Standalone Server</a><br />
+<br /><br />
+<br /><br />
+<img src="../../../../assets/img/posts/2016/06/screenshot2.png" alt="" /><br />
+<br /><br />
+<br /><br />
+<br /><br />
+3.Download <a href="http://chromedriver.storage.googleapis.com/index.html?path=2.9/">chromedriver</a> for your OS. <br />
+<br /><br />
+<br /><br />
+<img src="../../../../assets/img/posts/2016/06/screenshot3.png" alt="" /><br />
+<br /><br />
+4.Download <a href="http://nightwatchjs.org/">Nightwatch.js</a> from oficial website.<br />
 <br /></p>
 
 <h4 id="build-files-structure">Build Files structure</h4>
 
-<p>5.Make new project folder, for example <b>“nightwathjs_screenshot”.</b> Create new folders:<b> bin, tests.</b> Copy/paste files: Selenium standalone Server, chrome driver, nightwatch-xxx.zip in bin directory. Extract(unzip) nightwatch-xxx.zip(on example:nightwatch-0.9.0.zip)
-<br />
-<br />
-<img src="../../../../assets/img/posts/2016/06/screenshot4.png" alt="" />
-<br />
-<br />
-In <b>bin</b> directory keep all “run” files: drivers, original nightwatch.js arhive, selenium server and etc.
-<b>Screenshots</b> directory for screenshots images.
-In <b>tests</b> - tests cases files.
+<p>5.Make new project folder, for example <b>“nightwathjs_screenshot”.</b> Create new folders:<b> bin, tests.</b> Copy/paste files: Selenium standalone Server, chrome driver, nightwatch-xxx.zip in bin directory. Extract(unzip) nightwatch-xxx.zip(on example:nightwatch-0.9.0.zip)<br />
+<br /><br />
+<br /><br />
+<img src="../../../../assets/img/posts/2016/06/screenshot4.png" alt="" /><br />
+<br /><br />
+<br /><br />
+In <b>bin</b> directory keep all “run” files: drivers, original nightwatch.js arhive, selenium server and etc.<br />
+<b>Screenshots</b> directory for screenshots images.<br />
+In <b>tests</b> - tests cases files.<br />
 <br /><br /></p>
 
 <h4 id="npm-install">Npm install</h4>
@@ -210,9 +210,9 @@ In <b>tests</b> - tests cases files.
 
 <p><img src="../../../../assets/img/posts/2016/06/screenshot6.png" alt="" /></p>
 
-<p><br />
-For check Selenium server status use <b>API url</b> - <a href="http://localhost:4444/selenium-server/driver/?cmd=getLogMessages">http://localhost:4444/selenium-server/driver/?cmd=getLogMessages</a>
-<br />
+<p><br /><br />
+For check Selenium server status use <b>API url</b> - <a href="http://localhost:4444/selenium-server/driver/?cmd=getLogMessages">http://localhost:4444/selenium-server/driver/?cmd=getLogMessages</a><br />
+<br /><br />
 Also can stop Selenium server - <a href="http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer">http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer</a></p>
 
 <h4 id="configuration">Configuration</h4>
@@ -313,7 +313,7 @@ Also can stop Selenium server - <a href="http://localhost:4444/selenium-server/d
 <p>Where:</p>
 
 <ul>
-  <li>./bin/nightwatch-0.8.18/bin/nightwatch  - path for nightwatch executable file
+  <li>./bin/nightwatch-0.8.18/bin/nightwatch  - path for nightwatch executable file<br />
 –test - additional params, run <a href="http://nightwatchjs.org/guide#command-line-options">specific test file</a>. If in project used another version of nightwatch need update this command from “nightwatch-0.9.0” for “nightwatch-x.x.x” or folder name what used in project.</li>
   <li>tests/google.js - path for file</li>
 </ul>
@@ -322,9 +322,9 @@ Also can stop Selenium server - <a href="http://localhost:4444/selenium-server/d
 
 <h4 id="done">Done!</h4>
 
-<p>Now you can write and run your test. On the end of the post can find Links for most helpfull nightwatchs resources.
-Final file’s structures:
-<br /><br />
+<p>Now you can write and run your test. On the end of the post can find Links for most helpfull nightwatchs resources.<br />
+Final file’s structures:<br />
+<br /><br /><br />
 <img src="../../../../assets/img/posts/2016/06/screenshot7.png" alt="" /></p>
 
 <p>In additional you can check two my two favorite test examples:</p>

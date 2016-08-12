@@ -50,7 +50,7 @@
             <a class="navbar-brand page-scroll page-logo" href="http://aldb.github.io">aldb</a>
         
         <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
-            <ul class="nav navbar-nav wow">
+            <ul class="nav navbar-nav wow" id="navHeader">
             
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="http://aldb.github.io/#one">Intro</a>
@@ -166,8 +166,8 @@ h2 {
 “Process-based” web servers.
 </center>
 
-<p><br />
-<br />
+<p><br /><br />
+<br /><br />
 For every client request uses a separate <b>process / thread</b>. Each thread / process requires a certain number of server <b>resources(hardware)</b>. Server resources “idle/ not used” until the pending request and send the client a reply. What a <b>negative</b> impact on performance at high loads when the selected process flow is not enough to handle all requests.</p>
 
 <h4 id="event-based-web-serves-nginx-nodejs">Event-based web serves: Nginx, Node.js.</h4>
@@ -177,7 +177,7 @@ For every client request uses a separate <b>process / thread</b>. Each thread / 
 Event-based web servers.
 </center>
 
-<p><strong>Event-based</strong> web servers are used all resources of server hardware.
+<p><strong>Event-based</strong> web servers are used all resources of server hardware.<br />
 <strong>Loop-event</strong> - endless request processing cycle. This cycle tracks the status of the request (the request from the customer reception, processing and sending the response).</p>
 
 <p>In <strong>Singe process/thread</strong> is used all the resources the web server, allowing you to process requests as quickly as possible, and in cases of delays (obtaining data from the client to send data to the client) to work with other requests from the queue (<b>Event Queue</b>) ie asynchronously.</p>
