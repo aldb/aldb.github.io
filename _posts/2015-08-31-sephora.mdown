@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mobile app Startup Synchora
+title: Mobile app Synchora
 date: 2015-08-31 21:38:39.000000000 -08:00
 category: portfolio
 img: /assets/img/posts/portfolio/sephora_m.png
