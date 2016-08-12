@@ -1066,3 +1066,8 @@ i.tags-icon {
 .ion-social-linkedin:hover{
     color:rgb(0, 26, 51);
 }
+
+.close {
+    color: #007FFF; 
+    opacity: 1;
+}
