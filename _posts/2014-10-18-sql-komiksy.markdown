@@ -10,7 +10,7 @@ img: /assets/img/posts/2016/02/batman.png
 Time sql comics!
 
 ###I
-![](../../../../assets/img/posts/2014/10/sql_comics1.png)
+<img src="../../../../assets/img/posts/2014/10/sql_comics1.png" class="img-fluid" alt="Responsive image">
 posts/
 ###II
-![](../../../../assets/img/posts/2014/10/sql_comics2.png)
+<img src="../../../../assets/img/posts/2014/10/sql_comics2.png" class="img-fluid" alt="Responsive image">

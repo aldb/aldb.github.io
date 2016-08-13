@@ -24,7 +24,7 @@ I used Nightwatch.js for E2E testing script modules. I really liked option quick
 
 Let's overview logic shceme how Nightwatch works with Selenium server and Browsers:
 
-![](../../../../assets/img/posts/2016/06/nw_overview.png)
+<img src="../../../../assets/img/posts/2016/06/nw_overview.png" class="img-fluid" alt="Responsive image">
 
 <center><em>Nightwatch.js logic scheme with example files paths.</em></center>
 
@@ -39,7 +39,7 @@ Here details setup description step by step for Mac OS X. TODO work build:
 
 1.Install/update for latest version [Java](http://java.com/en/download/mac_download.jsp)
 <br><br> 
-![](../../../../assets/img/posts/2016/06/screenshot1.png)
+<img src="../../../../assets/img/posts/2016/06/screenshot1.png" class="img-fluid" alt="Responsive image">
 <br>
 <br>
 After successful installed you can verify [Java version](https://java.com/en/download/installed.jsp) online by java applet. Also check [Java SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
@@ -50,14 +50,14 @@ After successful installed you can verify [Java version](https://java.com/en/dow
 3. Download latest [Selenium Standalone Server](http://www.seleniumhq.org/download/)
 <br>
 <br>
-![](../../../../assets/img/posts/2016/06/screenshot2.png)
+<img src="../../../../assets/img/posts/2016/06/screenshot2.png" class="img-fluid" alt="Responsive image">
 <br>
 <br>
 <br>
 3.Download [chromedriver](http://chromedriver.storage.googleapis.com/index.html?path=2.9/) for your OS. 
 <br>
 <br>
-![](../../../../assets/img/posts/2016/06/screenshot3.png)
+<img src="../../../../assets/img/posts/2016/06/screenshot3.png" class="img-fluid" alt="Responsive image">
 <br>
 4.Download [Nightwatch.js](http://nightwatchjs.org/) from oficial website.
 <br>
@@ -67,7 +67,7 @@ After successful installed you can verify [Java version](https://java.com/en/dow
 5.Make new project folder, for example <b>“nightwathjs_screenshot”.</b> Create new folders:<b> bin, tests.</b> Copy/paste files: Selenium standalone Server, chrome driver, nightwatch-xxx.zip in bin directory. Extract(unzip) nightwatch-xxx.zip(on example:nightwatch-0.9.0.zip)
 <br>
 <br>
-![](../../../../assets/img/posts/2016/06/screenshot4.png)
+<img src="../../../../assets/img/posts/2016/06/screenshot4.png" class="img-fluid" alt="Responsive image">
 <br>
 <br>
 In <b>bin</b> directory keep all "run" files: drivers, original nightwatch.js arhive, selenium server and etc.
@@ -81,7 +81,7 @@ In <b>tests</b> - tests cases files.
 {% highlight bash %}
 $ npm install
 {% endhighlight %}
-![](../../../../assets/img/posts/2016/06/screenshot5.png)
+<img src="../../../../assets/img/posts/2016/06/screenshot5.png" class="img-fluid" alt="Responsive image">
 
 #### Selenium server
 
@@ -96,7 +96,7 @@ $ java -jar selenium-server-standalone-2.53.0.jar -Dwebdriver.chrome.driver='chr
 
 In terminal windows start seleneium server("Selenium Server is up and running"), for stop this process can use <b>"control + c"</b>. For next steps you need open new <b>"tab"</b> in terminal - <b>"control + r"</b>.
 
-![](../../../../assets/img/posts/2016/06/screenshot6.png)
+<img src="../../../../assets/img/posts/2016/06/screenshot6.png" class="img-fluid" alt="Responsive image">
 
 <br>
 For check Selenium server status use <b>API url</b> - [http://localhost:4444/selenium-server/driver/?cmd=getLogMessages](http://localhost:4444/selenium-server/driver/?cmd=getLogMessages)
@@ -217,7 +217,7 @@ Where:
 Now you can write and run your test. On the end of the post can find Links for most helpfull nightwatchs resources.
 Final file's structures:
 <br><br>
-![](../../../../assets/img/posts/2016/06/screenshot7.png)
+<img src="../../../../assets/img/posts/2016/06/screenshot7.png" class="img-fluid" alt="Responsive image">
 
 In additional you can check two my two favorite test examples:
 

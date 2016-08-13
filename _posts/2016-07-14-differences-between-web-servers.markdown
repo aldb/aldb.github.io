@@ -11,7 +11,7 @@ But there is a fundamental difference in processing requests.
 
 #### What are Web servers?
 
-![](../../../../assets/img/Client-server-model.svg.png)
+<img src="../../../../assets/img/Client-server-model.svg.png" class="img-fluid" alt="Responsive image">
 
 Web servers need to work with web applications on the [Client–server model]. Their task processing request from the user (customer, client) and the query result returned from the server (backend, serverside).
 
@@ -34,7 +34,7 @@ The difference in the distribution of resources in the processing of requests is
 
 <b>Apache, IIS</b> are used each request is processed in a separate thread / process - <b>"process-based"</b>.
 
-![](../../../../assets/img/process-based-server-2.png)
+<img src="../../../../assets/img/process-based-server-2.png" class="img-fluid" alt="Responsive image">
 <center>
 “Process-based” web servers.
 </center>
@@ -45,7 +45,7 @@ For every client request uses a separate <b>process / thread</b>. Each thread / 
 
 #### Event-based web serves: Nginx, Node.js.
 
-![](../../../../assets/img/event-based-server-3.png)
+<img src="../../../../assets/img/event-based-server-3.png" class="img-fluid" alt="Responsive image">
 <center>
 Event-based web servers.
 </center>

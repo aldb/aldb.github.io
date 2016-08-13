@@ -13,7 +13,7 @@ include 'file';
 require 'file';
 {% endhighlight %}
 
-![](../../../../assets/img/posts/2014/11/include.png)
+<img src="../../../../assets/img/posts/2014/11/include.png" class="img-fluid" alt="Responsive image">
 
 Данные ф-ии производят вставку и выполнение кода из указанного файла, но имеют следующие различия в случаи ошибки(файл не найден):
 

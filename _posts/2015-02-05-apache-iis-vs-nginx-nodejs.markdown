@@ -30,7 +30,7 @@ tags: [nodejs, apache, nginx, iis,ru]
 
 **Apache, IIS** используют обрабатывают каждый запрос в отдельном потоке/процессе - **“process-based”**.
 
-![](../../../../assets/img/process-based-server-2.png)
+<img src="../../../../assets/img/process-based-server-2.png" class="img-fluid" alt="Responsive image">
 <center>
 Схема работы “process-based” веб серверов.
 
@@ -42,7 +42,7 @@ tags: [nodejs, apache, nginx, iis,ru]
 **Event-based** веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.
 
 
-![](../../../../assets/img/event-based-server-3.png)
+<img src="../../../../assets/img/event-based-server-3.png" class="img-fluid" alt="Responsive image">
 <center>
 Схема работы Event-based веб сервера.
 

@@ -140,7 +140,7 @@ h2 {
 
 <h4 id="what-are-web-servers">What are Web servers?</h4>
 
-<p><img src="../../../../assets/img/Client-server-model.svg.png" alt="" /></p>
+<p><img src="../../../../assets/img/Client-server-model.svg.png" class="img-fluid" alt="Responsive image" /></p>
 
 <p>Web servers need to work with web applications on the <a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">Client–server model</a>. Their task processing request from the user (customer, client) and the query result returned from the server (backend, serverside).</p>
 
@@ -161,23 +161,23 @@ h2 {
 
 <p><b>Apache, IIS</b> are used each request is processed in a separate thread / process - <b>“process-based”</b>.</p>
 
-<p><img src="../../../../assets/img/process-based-server-2.png" alt="" /></p>
+<p><img src="../../../../assets/img/process-based-server-2.png" class="img-fluid" alt="Responsive image" /></p>
 <center>
 “Process-based” web servers.
 </center>
 
-<p><br /><br />
-<br /><br />
+<p><br />
+<br />
 For every client request uses a separate <b>process / thread</b>. Each thread / process requires a certain number of server <b>resources(hardware)</b>. Server resources “idle/ not used” until the pending request and send the client a reply. What a <b>negative</b> impact on performance at high loads when the selected process flow is not enough to handle all requests.</p>
 
 <h4 id="event-based-web-serves-nginx-nodejs">Event-based web serves: Nginx, Node.js.</h4>
 
-<p><img src="../../../../assets/img/event-based-server-3.png" alt="" /></p>
+<p><img src="../../../../assets/img/event-based-server-3.png" class="img-fluid" alt="Responsive image" /></p>
 <center>
 Event-based web servers.
 </center>
 
-<p><strong>Event-based</strong> web servers are used all resources of server hardware.<br />
+<p><strong>Event-based</strong> web servers are used all resources of server hardware.
 <strong>Loop-event</strong> - endless request processing cycle. This cycle tracks the status of the request (the request from the customer reception, processing and sending the response).</p>
 
 <p>In <strong>Singe process/thread</strong> is used all the resources the web server, allowing you to process requests as quickly as possible, and in cases of delays (obtaining data from the client to send data to the client) to work with other requests from the queue (<b>Event Queue</b>) ie asynchronously.</p>
