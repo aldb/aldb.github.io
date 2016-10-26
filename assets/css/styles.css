@@ -1071,3 +1071,7 @@ i.tags-icon {
     color: #007FFF; 
     opacity: 1;
 }
+
+.navbar-default .navbar-nav > li > a:hover {
+  border-bottom: 3px solid #001A33;
+}
