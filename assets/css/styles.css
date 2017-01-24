@@ -1075,3 +1075,7 @@ i.tags-icon {
 .navbar-default .navbar-nav > li > a:hover {
   border-bottom: 3px solid #001A33;
 }
+
+.linkedin-icon {
+  margin-top: -10px;
+}
