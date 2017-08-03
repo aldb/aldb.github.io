@@ -4,7 +4,6 @@
     border-radius: 50%;
     border: 1px solid #000;
     position: relative;
-    top: 6px;
     left: 6px;
     background-color: #ff3b47;
     border-color: #9d252b;
@@ -26,7 +25,7 @@
 .fakeMenu {
     width: 350px;
     box-sizing: border-box;
-    height: 32px;
+    height: 25px;
     background-color: #bbb;
     margin: 0 auto;
     border-top-right-radius: 5px;
