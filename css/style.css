@@ -262,7 +262,7 @@ section {
 .animator--dark .content {
     position: relative;
     overflow: hidden;
-    max-height: 310px;
+    padding: 15px;
     line-height: 3;
     -webkit-transition: line-height 400ms ease;
     transition: line-height 400ms ease;
@@ -342,6 +342,10 @@ section {
 }
 
 a {
-    color: #007FFF;
+    color: #E09690;
     text-decoration:none
+}
+
+li > a {
+    color: #007FFF;
 }
