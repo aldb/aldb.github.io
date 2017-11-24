@@ -1,0 +1,14 @@
+---
+layout: post
+title: App Startup Synchora
+date: 2015-05-13 21:38:39.000000000 -08:00
+category: portfolio
+img: /assets/img/posts/portfolio/synchora_m.png
+full_img: /assets/img/posts/portfolio/synchora.png
+techs: api, oauth, js
+country: USA
+---
+
+<small>
+  Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).
+</small>

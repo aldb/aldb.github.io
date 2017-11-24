@@ -1,1 +1,448 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-08-03T01:07:54-07:00</updated><id>/</id><title>aldb</title><subtitle>Full Stack Web Developer</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-23T22:49:05-08:00</updated><id>http://localhost:4000/</id><title type="html">aldb</title><subtitle>aldb - The Full Stack Developer</subtitle><entry><title type="html">Differences between Web servers: Apache, IIS vs Nginx, Node.js</title><link href="http://localhost:4000/programming/2016/07/13/differences-between-web-servers.html" rel="alternate" type="text/html" title="Differences between Web servers: Apache, IIS vs Nginx, Node.js" /><published>2016-07-13T22:38:39-07:00</published><updated>2016-07-13T22:38:39-07:00</updated><id>http://localhost:4000/programming/2016/07/13/differences-between-web-servers</id><content type="html" xml:base="http://localhost:4000/programming/2016/07/13/differences-between-web-servers.html">&lt;p&gt;Today, the most popular web servers are: &lt;strong&gt;Apache, IIS, Nginx, Node.js&lt;/strong&gt;. Every web server has its own history, focus on technology, the preferred operating system, and etc.&lt;/p&gt;
+
+&lt;p&gt;But there is a fundamental difference in processing requests.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-are-web-servers&quot;&gt;What are Web servers?&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/Client-server-model.svg.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Web servers need to work with web applications on the &lt;a href=&quot;http://en.wikipedia.org/wiki/Client%E2%80%93server_model&quot;&gt;Client–server model&lt;/a&gt;. Their task processing request from the user (customer, client) and the query result returned from the server (backend, serverside).&lt;/p&gt;
+
+&lt;h4 id=&quot;web-servers-limits&quot;&gt;Web servers limits&lt;/h4&gt;
+
+&lt;p&gt;A web server has defined &lt;b&gt;load limits&lt;/b&gt;, because it can handle only a limited number of concurrent client connections per IP address (and TCP port) and it can serve only a certain maximum number of requests per second (RPS, also known as queries per second or QPS) depending on HTTP request type, settings, cached and &lt;b&gt;hardware&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each server has a dedicated “resources(hardware)” (RAM, CPU, etc.) to handle requests. These resources are used in flows and processes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[Thread_(computing)]&lt;/li&gt;
+  &lt;li&gt;[Process_(computing)]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The difference in the distribution of resources in the processing of requests is a key differentiator for are risen web servers.&lt;/p&gt;
+
+&lt;h4 id=&quot;process-based-web-serves-apache-iis&quot;&gt;Process-based web serves: Apache, IIS.&lt;/h4&gt;
+
+&lt;p&gt;&lt;b&gt;Apache, IIS&lt;/b&gt; are used each request is processed in a separate thread / process - &lt;b&gt;“process-based”&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/process-based-server-2.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;
+“Process-based” web servers.
+&lt;/center&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+For every client request uses a separate &lt;b&gt;process / thread&lt;/b&gt;. Each thread / process requires a certain number of server &lt;b&gt;resources(hardware)&lt;/b&gt;. Server resources “idle/ not used” until the pending request and send the client a reply. What a &lt;b&gt;negative&lt;/b&gt; impact on performance at high loads when the selected process flow is not enough to handle all requests.&lt;/p&gt;
+
+&lt;h4 id=&quot;event-based-web-serves-nginx-nodejs&quot;&gt;Event-based web serves: Nginx, Node.js.&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/event-based-server-3.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;
+Event-based web servers.
+&lt;/center&gt;
+
+&lt;p&gt;&lt;strong&gt;Event-based&lt;/strong&gt; web servers are used all resources of server hardware.
+&lt;strong&gt;Loop-event&lt;/strong&gt; - endless request processing cycle. This cycle tracks the status of the request (the request from the customer reception, processing and sending the response).&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;Singe process/thread&lt;/strong&gt; is used all the resources the web server, allowing you to process requests as quickly as possible, and in cases of delays (obtaining data from the client to send data to the client) to work with other requests from the queue (&lt;b&gt;Event Queue&lt;/b&gt;) ie asynchronously.&lt;/p&gt;
+
+&lt;h4 id=&quot;total&quot;&gt;Total&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Event-based(Node.js, Nginx)&lt;/strong&gt; shows better performance under high loads, because that the server does not need to share resources among other threads / processes. Also, the server resources are always used without the “downtime”.&lt;/p&gt;
+
+&lt;h4 id=&quot;links&quot;&gt;Links&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/042_serverarch.html#42&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wikivs.com/wiki/apache_vs_nginx&quot;&gt;Apache vs nginx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="programming" /><category term="nodejs" /><category term="apache" /><category term="nginx" /><category term="iis" /><category term="en" /><summary type="html">Today, the most popular web servers are: Apache, IIS, Nginx, Node.js. Every web server has its own history, focus on technology, the preferred operating system, and etc.</summary></entry><entry><title type="html">Nightwatchjs build</title><link href="http://localhost:4000/programming/2016/06/01/nightwatjs-guide.html" rel="alternate" type="text/html" title="Nightwatchjs build" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>http://localhost:4000/programming/2016/06/01/nightwatjs-guide</id><content type="html" xml:base="http://localhost:4000/programming/2016/06/01/nightwatjs-guide.html">&lt;h2 id=&quot;whatwhy-is-nightwatchjs&quot;&gt;What|Why is Nightwatch.js?&lt;/h2&gt;
+
+&lt;p&gt;&lt;b&gt;Nightwatch.js&lt;/b&gt; is an easy to use Node.js based End-to-End (E2E) testing solution for browser based apps and websites. It uses the powerful Selenium WebDriver API to perform commands and assertions on DOM elements. (c) &lt;a href=&quot;nightwatchjs.org&quot;&gt;nightwatchjs.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I used Nightwatch.js for E2E testing script modules. I really liked option quick setup environment based on Node.js + write javascript test cases + use bash scripts(Node.js/javascript) for automatization run process. In this post I make detail description how setup Nightwatch.js on OS X platform.&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;b&gt;Nightwatch.js Goals:&lt;/b&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Crossbrowsers&lt;/li&gt;
+  &lt;li&gt;Easy setup writing test process(Javascript, CSS, XPath)&lt;/li&gt;
+  &lt;li&gt;Good documentation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s overview logic shceme how Nightwatch works with Selenium server and Browsers:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2016/06/nw_overview.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;em&gt;Nightwatch.js logic scheme with example files paths.&lt;/em&gt;&lt;/center&gt;
+
+&lt;p&gt;*Tests and bin directories in example build setup.&lt;/p&gt;
+
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;Here details setup description step by step for Mac OS X. TODO work build:&lt;/p&gt;
+
+&lt;h4 id=&quot;installdownload&quot;&gt;Install/Download&lt;/h4&gt;
+
+&lt;p&gt;1.Install/update for latest version &lt;a href=&quot;http://java.com/en/download/mac_download.jsp&quot;&gt;Java&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt; 
+&lt;img src=&quot;../../../../assets/img/posts/2016/06/screenshot1.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+After successful installed you can verify &lt;a href=&quot;https://java.com/en/download/installed.jsp&quot;&gt;Java version&lt;/a&gt; online by java applet. Also check &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot;&gt;Java SDK&lt;/a&gt;.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Install/update for latest version &lt;a href=&quot;https://nodejs.org&quot;&gt;Node.js&lt;/a&gt;. Check my previos post for &lt;a href=&quot;http://aldb.github.io/2016/06/01/install-nodejs-npm-by-brew/&quot;&gt;Node.js setup&lt;/a&gt;.
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;Download latest &lt;a href=&quot;http://www.seleniumhq.org/download/&quot;&gt;Selenium Standalone Server&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;../../../../assets/img/posts/2016/06/screenshot2.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+3.Download &lt;a href=&quot;http://chromedriver.storage.googleapis.com/index.html?path=2.9/&quot;&gt;chromedriver&lt;/a&gt; for your OS. 
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;../../../../assets/img/posts/2016/06/screenshot3.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;
+&lt;br /&gt;
+4.Download &lt;a href=&quot;http://nightwatchjs.org/&quot;&gt;Nightwatch.js&lt;/a&gt; from oficial website.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;build-files-structure&quot;&gt;Build Files structure&lt;/h4&gt;
+
+&lt;p&gt;5.Make new project folder, for example &lt;b&gt;“nightwathjs_screenshot”.&lt;/b&gt; Create new folders:&lt;b&gt; bin, tests.&lt;/b&gt; Copy/paste files: Selenium standalone Server, chrome driver, nightwatch-xxx.zip in bin directory. Extract(unzip) nightwatch-xxx.zip(on example:nightwatch-0.9.0.zip)
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;../../../../assets/img/posts/2016/06/screenshot4.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+In &lt;b&gt;bin&lt;/b&gt; directory keep all “run” files: drivers, original nightwatch.js arhive, selenium server and etc.
+&lt;b&gt;Screenshots&lt;/b&gt; directory for screenshots images.
+In &lt;b&gt;tests&lt;/b&gt; - tests cases files.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;npm-install&quot;&gt;Npm install&lt;/h4&gt;
+&lt;p&gt;6.Open in terminal folder “/nightwathjs_screenshot/bin/nightwatch-0.9.0” and run command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2016/06/screenshot5.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;selenium-server&quot;&gt;Selenium server&lt;/h4&gt;
+
+&lt;p&gt;7.For start test cases need run Selenium server with chrome webdriver. Open “/nightwathjs_screenshot/bin/” folder in terminal and run command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;java &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; selenium-server-standalone-2.53.0.jar &lt;span class=&quot;nt&quot;&gt;-Dwebdriver&lt;/span&gt;.chrome.driver&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'chromedriver'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote class=&quot;twitter-video&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;@selenium server run example &lt;a href=&quot;https://t.co/kT5aKXs6Yi&quot;&gt;pic.twitter.com/kT5aKXs6Yi&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alex (@aldbpr) &lt;a href=&quot;https://twitter.com/aldbpr/status/741462605965840388&quot;&gt;June 11, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;In terminal windows start seleneium server(“Selenium Server is up and running”), for stop this process can use &lt;b&gt;“control + c”&lt;/b&gt;. For next steps you need open new &lt;b&gt;“tab”&lt;/b&gt; in terminal - &lt;b&gt;“control + r”&lt;/b&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2016/06/screenshot6.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+For check Selenium server status use &lt;b&gt;API url&lt;/b&gt; - &lt;a href=&quot;http://localhost:4444/selenium-server/driver/?cmd=getLogMessages&quot;&gt;http://localhost:4444/selenium-server/driver/?cmd=getLogMessages&lt;/a&gt;
+&lt;br /&gt;
+Also can stop Selenium server - &lt;a href=&quot;http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer&quot;&gt;http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;configuration&quot;&gt;Configuration&lt;/h4&gt;
+
+&lt;p&gt;8.Depending upon startup point Nightwatch.js used configuration file. By default used configuration from Nightwatch.js - &lt;b&gt;“nightwathjs_screenshot/bin/nightwatch-0.9.0/bin/nightwatch.json”&lt;/b&gt;. Let’s make new file &lt;b&gt;nightwatch.json&lt;/b&gt; in main folder “nightwathjs_screenshot”:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src_folders&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tests&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;output_folder&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;reports&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;custom_commands_path&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;custom_assertions_path&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;page_objects_path&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;globals_path&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;selenium&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;start_process&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;server_path&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;log_path&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;host&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4444&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;cli_args&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webdriver.chrome.driver&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;./bin/chromedriver&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test_settings&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;default&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;launch_url&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://localhost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;selenium_port&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4444&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;selenium_host&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;silent&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;screenshots&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;enabled&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;desiredCapabilities&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browserName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chrome&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;javascriptEnabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;acceptSslCerts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;firefox&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;desiredCapabilities&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browserName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;firefox&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;javascriptEnabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;acceptSslCerts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chrome&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;desiredCapabilities&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browserName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;chrome&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;javascriptEnabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;acceptSslCerts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;safari&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;desiredCapabilities&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browserName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;safari&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;javascriptEnabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;acceptSslCerts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Detail &lt;a href=&quot;http://nightwatchjs.org/guide#settings-file&quot;&gt;configuration documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;write-and-run-tests&quot;&gt;Write and run tests&lt;/h4&gt;
+
+&lt;p&gt;9.Let’s write first test file for Nightwatch.js. It navigates to google.com and searches for nightwatch, * verifying if the term ‘The Night Watch’ exists in the search results. In &lt;b&gt; “nightwathjs_screenshot/tests”&lt;/b&gt; folder make new file google.js:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**
+ * Sample automated test scenario for Nightwatch.js
+ *
+ * &amp;gt; it navigates to google.com and searches for nightwatch,
+ *   verifying if the term 'The Night Watch' exists in the search results
+ */&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'demo test google'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'http://google.com'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;waitForElementPresent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'body'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+  &lt;span class=&quot;s1&quot;&gt;'part two'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'input[type=text]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'nightwatch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ENTER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;containsText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#main'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Night Watch'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For run this test file open terminal in &lt;b&gt;“nightwatchjs_screenshot”&lt;/b&gt; folder and use command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./bin/nightwatch-0.9.0/bin/nightwatch &lt;span class=&quot;nt&quot;&gt;--test&lt;/span&gt; tests/google.js&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Where:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;./bin/nightwatch-0.8.18/bin/nightwatch  - path for nightwatch executable file
+–test - additional params, run &lt;a href=&quot;http://nightwatchjs.org/guide#command-line-options&quot;&gt;specific test file&lt;/a&gt;. If in project used another version of nightwatch need update this command from “nightwatch-0.9.0” for “nightwatch-x.x.x” or folder name what used in project.&lt;/li&gt;
+  &lt;li&gt;tests/google.js - path for file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class=&quot;twitter-video&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/nightwatchjs&quot;&gt;@nightwatchjs&lt;/a&gt; test run example &lt;a href=&quot;https://t.co/EZBGLtb3xM&quot;&gt;pic.twitter.com/EZBGLtb3xM&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alex (@aldbpr) &lt;a href=&quot;https://twitter.com/aldbpr/status/741462043706818560&quot;&gt;June 11, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;done&quot;&gt;Done!&lt;/h4&gt;
+
+&lt;p&gt;Now you can write and run your test. On the end of the post can find Links for most helpfull nightwatchs resources.
+Final file’s structures:
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../../assets/img/posts/2016/06/screenshot7.png&quot; class=&quot;img-fluid&quot; alt=&quot;Responsive image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In additional you can check two my two favorite test examples:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**
+ * Sample automated test scenario for Nightwatch.js
+ *
+ * &amp;gt; it navigates to nightwatchjs.org/api and click on API list.
+ * &amp;gt; verify Text h2 header equal clicked li element Text
+ */&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'Test NightwatchJS.org'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'http://nightwatchjs.org/api'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;waitForElementVisible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'body'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'css selector'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#api-container ul.nav.bs-sidenav&amp;gt;li'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elementIdClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ELEMENT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;elementIdText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ELEMENT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For this test case need folder “nightwathjs_screenshot/screenshots”, for save screenshot images.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**
+ * Sample automated test scenario for Nightwatch.js
+ *
+ * &amp;gt; it navigates to google.com and make screenshot
+ */&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'Make screenshot'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./imgs/'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.png'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resizeWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'http://google.com'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;waitForElementPresent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'body'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;saveScreenshot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Screenshot save:'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+              &lt;span class=&quot;c1&quot;&gt;// potentially other async stuff going on&lt;/span&gt;
+              &lt;span class=&quot;c1&quot;&gt;// on finished, call the done callback&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nightwatch.js - &lt;a href=&quot;http://nightwatchjs.org&quot;&gt;http://nightwatchjs.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Gitub wiki nightwatch.js - &lt;a href=&quot;https://github.com/nightwatchjs/nightwatch/wiki&quot;&gt;https://github.com/nightwatchjs/nightwatch/wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Google group - &lt;a href=&quot;https://groups.google.com/forum/#!forum/nightwatchjs&quot;&gt;https://groups.google.com/forum/#!forum/nightwatchjs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Drivers for Selenium - &lt;a href=&quot;https://selenium-release.storage.googleapis.com/index.html&quot;&gt;https://selenium-release.storage.googleapis.com/index.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Selenium server - &lt;a href=&quot;http://www.seleniumhq.org&quot;&gt;http://www.seleniumhq.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="mac" /><category term="nightwatchjs" /><summary type="html">What|Why is Nightwatch.js?</summary></entry><entry><title type="html">Install Nodejs &amp;amp; NPM by Brew</title><link href="http://localhost:4000/programming/2016/06/01/install-nodejs-npm-by-brew.html" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>http://localhost:4000/programming/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="http://localhost:4000/programming/2016/06/01/install-nodejs-npm-by-brew.html">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;Need quick script for install NPM &amp;amp; Node by terminal.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Homebrew - the missing package manager for OS X, really easy way to setup environment.&lt;/p&gt;
+
+&lt;p&gt;Open terminal and check Brew version:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you get “brew: command not found” got to official web &lt;a href=&quot;http://brew.sh/&quot;&gt;page&lt;/a&gt; and copy/paster url link for install, for example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/usr/bin/ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If on Mac don’t install Xcode you see alert message with option for install. Node.js &amp;amp; NPM don’t need Xcode, so cancel Xcode installation alert message.&lt;/p&gt;
+
+&lt;p&gt;Then installing the NPM &amp;amp; Node by command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew node&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2016/npm_nodejs_by_brew.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;check-installed-versions&quot;&gt;Check installed versions&lt;/h2&gt;
+
+&lt;p&gt;For check nodejs/NPM version/location use:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which node
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which npm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Have fun with Nodejs!&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="mac" /><category term="nodejs" /><category term="npm" /><category term="brew" /><summary type="html">Problem</summary></entry><entry><title type="html">bash command not found</title><link href="http://localhost:4000/programming/2016/03/21/bash-command-not-found.html" rel="alternate" type="text/html" title="bash command not found" /><published>2016-03-21T08:38:39-07:00</published><updated>2016-03-21T08:38:39-07:00</updated><id>http://localhost:4000/programming/2016/03/21/bash-command-not-found</id><content type="html" xml:base="http://localhost:4000/programming/2016/03/21/bash-command-not-found.html">&lt;h2 id=&quot;error&quot;&gt;Error&lt;/h2&gt;
+
+&lt;p&gt;I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-bash&lt;/span&gt;: tsd: &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;not found &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;All others npm packages not running.
+It’s look like bash don’t know path for node modules.&lt;/p&gt;
+
+&lt;p&gt;Command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm bin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Get back:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;IF &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;not &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;PATH env variable&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;fix&quot;&gt;Fix&lt;/h2&gt;
+
+&lt;p&gt;For fix this issue add path for node modules in PATH&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/&amp;lt;username&amp;gt;/.node/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For get bash username use command: whoami&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="mac" /><category term="error" /><category term="nodejs" /><summary type="html">Error</summary></entry><entry><title type="html">Eacces permission denied</title><link href="http://localhost:4000/programming/2016/03/01/eacces-permission-denied.html" rel="alternate" type="text/html" title="Eacces permission denied" /><published>2016-03-01T07:38:39-08:00</published><updated>2016-03-01T07:38:39-08:00</updated><id>http://localhost:4000/programming/2016/03/01/eacces-permission-denied</id><content type="html" xml:base="http://localhost:4000/programming/2016/03/01/eacces-permission-denied.html">&lt;h2 id=&quot;error&quot;&gt;Error&lt;/h2&gt;
+
+&lt;p&gt;Get error message in Ionic2 process setup:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;Ionic 2 Unhandled rejection Error: EACCES: permission denied&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;debug&quot;&gt;Debug&lt;/h2&gt;
+&lt;p&gt;Run code on developer machine and get error: permission denied.
+Get the classic solution:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;chown &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; whoami ~/.npm
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;chown &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; whoami /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;whoami - terminal command get current user.&lt;/p&gt;
+
+&lt;p&gt;Another good practice:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;chown &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; ~/.npm
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;chown &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If used mac also use:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;chown &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; /usr/local&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><category term="programming" /><category term="js" /><category term="ionic" /><category term="en" /><summary type="html">Error</summary></entry><entry><title type="html">Github Jekyll</title><link href="http://localhost:4000/programming/2016/02/23/Jekyll-vs-ghost-cms.html" rel="alternate" type="text/html" title="Github Jekyll" /><published>2016-02-23T21:38:39-08:00</published><updated>2016-02-23T21:38:39-08:00</updated><id>http://localhost:4000/programming/2016/02/23/Jekyll-vs-ghost-cms</id><content type="html" xml:base="http://localhost:4000/programming/2016/02/23/Jekyll-vs-ghost-cms.html">&lt;p&gt;After 2 years use Ghost cms I try change for Jekyll.
+Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (&lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll Repository&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&quot;why-github-jekyll&quot;&gt;Why Github Jekyll?&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Github support &amp;amp; free hosting&lt;/li&gt;
+    &lt;li&gt;Static pages&lt;/li&gt;
+    &lt;li&gt;Markdown support&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Enough for you.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-setup-jekyll-blog-for-5-minutes&quot;&gt;How setup Jekyll blog for 5 minutes&lt;/h2&gt;
+
+&lt;p&gt;Sign in github account and fork &lt;a href=&quot;https://github.com/aldb/jekyll-now&quot;&gt;Jekyll-now&lt;/a&gt; repo. Done! Your ready for customize your Jekyll page!&lt;/p&gt;
+
+&lt;p class=&quot;lead blockquote&quot;&gt;
+After successful setup process your can check project wiki for details settings like Google Analytics, 404 page and etc.
+&lt;/p&gt;
+
+&lt;h2 id=&quot;online-tools&quot;&gt;Online tools&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://stackedit.io/editor&quot;&gt;StackEdit&lt;/a&gt; markdown editor, nice code example.&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/docs/templates/&quot;&gt;Code template&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; file convertor&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And also github, githubpage and awesome community! Thank you for the all!&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="jekyll" /><category term="ghost" /><category term="en" /><summary type="html">After 2 years use Ghost cms I try change for Jekyll. Here detail description in 5 minutes for quick setup for GitHub Jekyll hosted blogs (Jekyll Repository).</summary></entry><entry><title type="html">Synchora Gallery</title><link href="http://localhost:4000/portfolio_v2/2015/08/31/sephora.mdown" rel="alternate" type="text/html" title="Synchora Gallery" /><published>2015-08-31T22:38:39-07:00</published><updated>2015-08-31T22:38:39-07:00</updated><id>http://localhost:4000/portfolio_v2/2015/08/31/sephora</id><content type="html" xml:base="http://localhost:4000/portfolio_v2/2015/08/31/sephora.mdown">Design and development Mobile web app and website. The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery. UI provides business logic for products filter, price calculation, discounts, events, users activities and etc.</content><author><name></name></author><category term="portfolio_v2" /><summary type="html">Design and development Mobile web app and website. The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery. UI provides business logic for products filter, price calculation, discounts, events, users activities and etc.</summary></entry><entry><title type="html">Many to many private chat</title><link href="http://localhost:4000/portfolio/2015/06/13/many-to-many-private-chat.html" rel="alternate" type="text/html" title="Many to many private chat" /><published>2015-06-13T22:38:39-07:00</published><updated>2015-06-13T22:38:39-07:00</updated><id>http://localhost:4000/portfolio/2015/06/13/many-to-many-private-chat</id><content type="html" xml:base="http://localhost:4000/portfolio/2015/06/13/many-to-many-private-chat.html">&lt;p class=&quot;card-text&quot;&gt;Web chat on: &lt;code&gt;nodejs, socket.io, expressjs, bootstrap&lt;/code&gt;. &lt;a href=&quot;https://github.com/aldb/nodejs_private_chat&quot;&gt;Code.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p class=&quot;card-text&quot;&gt;&lt;i class=&quot;ion-social-github-outline wow fadeIn text-primary&quot; style=&quot;visibility: visible; animation-name: fadeIn;&quot;&gt;&lt;/i&gt;&lt;small class=&quot;text-muted&quot;&gt; Last updated Aug 3, 2015&lt;/small&gt;&lt;/p&gt;</content><author><name></name></author><category term="portfolio" /><summary type="html">Web chat on: nodejs, socket.io, expressjs, bootstrap. Code. Last updated Aug 3, 2015</summary></entry><entry><title type="html">Dead pixel finder</title><link href="http://localhost:4000/portfolio/2015/06/13/dead_pixel_finder.html" rel="alternate" type="text/html" title="Dead pixel finder" /><published>2015-06-13T22:38:39-07:00</published><updated>2015-06-13T22:38:39-07:00</updated><id>http://localhost:4000/portfolio/2015/06/13/dead_pixel_finder</id><content type="html" xml:base="http://localhost:4000/portfolio/2015/06/13/dead_pixel_finder.html">&lt;p class=&quot;card-text&quot;&gt;Web page with screen color change by click for find &lt;a href=&quot;https://en.wikipedia.org/wiki/Defective_pixel&quot;&gt;dead pixel&lt;/a&gt; on screen your device. Check &lt;a href=&quot;http://aldb.github.io/dpixfinder/&quot;&gt;online.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;card-text&quot;&gt;&lt;i class=&quot;ion-social-github-outline wow fadeIn text-primary&quot; style=&quot;visibility: visible; animation-name: fadeIn;&quot;&gt;&lt;/i&gt;&lt;small class=&quot;text-muted&quot;&gt; Last updated Aug 28, 2015&lt;/small&gt;&lt;/p&gt;</content><author><name></name></author><category term="portfolio" /><summary type="html">Web page with screen color change by click for find dead pixel on screen your device. Check online.</summary></entry><entry><title type="html">App Startup Synchora</title><link href="http://localhost:4000/portfolio/2015/05/13/synchora.html" rel="alternate" type="text/html" title="App Startup Synchora" /><published>2015-05-13T22:38:39-07:00</published><updated>2015-05-13T22:38:39-07:00</updated><id>http://localhost:4000/portfolio/2015/05/13/synchora</id><content type="html" xml:base="http://localhost:4000/portfolio/2015/05/13/synchora.html">&lt;p&gt;&lt;small&gt;
+  Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).
+&lt;/small&gt;&lt;/p&gt;</content><author><name></name></author><category term="portfolio" /><summary type="html">Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).</summary></entry></feed>

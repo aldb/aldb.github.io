@@ -1,0 +1,14 @@
+---
+layout: post
+title: Quality control assessment
+date: 2014-06-13 21:38:39.000000000 -08:00
+category: portfolio
+img: /assets/img/posts/portfolio/okk_m.png
+full_img: /assets/img/posts/portfolio/okk.png
+techs: yii, rbac, php, js
+country: Russian 
+---
+
+<small>
+  Programming modules of dynamically building statistics for quality control assessment project that estimated effective work of operators in callcenters from different regions. <a href="http://www.callcenter.telecontact.ru/gl_5_1_5_6.html"> Details.</a>
+</small>

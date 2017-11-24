@@ -1,0 +1,17 @@
+---
+layout: post
+title: Synchora Gallery
+date: 2015-08-31 21:38:39.000000000 -08:00
+category: portfolio_v2
+img: /assets/img/posts/2017/sephora_gallery_tablet.png
+techs: <i class="icon ion-social-javascript"></i> <i class="icon ion-social-apple"></i> <i class="icon ion-ipad"></i> <i class="icon ion-iphone"></i> <i class="icon ion-monitor"></i>
+carousel: true
+carousel_img_1: /assets/img/posts/2017/sephora_gallery_tablet.png
+carousel_img_2: /assets/img/posts/portfolio/sephora.png
+carousel_img_3: /assets/img/posts/2017/sephora_gallery_mobile.png
+carousel_img_4: /assets/img/posts/2017/ipad_sephora.png
+country: USA
+card_description: Fullstack(<code class="text-primary">REST API, JS/Smarty/CSS, MySQL</code>) app solution to upload data from the IOs devices. Optimized for the browser and iOS. 
+client_description: Sephora stores – Sephora operates approximately 2,300 stores in 33 countries worldwide, with an expanding base of over 430 stores across the Americas.
+---
+Design and development Mobile web app and website. The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery. UI provides business logic for products filter, price calculation, discounts, events, users activities and etc.

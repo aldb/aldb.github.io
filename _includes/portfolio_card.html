@@ -1,0 +1,88 @@
+
+<div class="card hover" onclick="return false;" data-toggle="modal" data-target=".portfolioModal{{i}}">
+  <img class="card-img-top" src="{% if post.img %} {{post.img}} {% else %}/assets/img/posts/2016/def.png{% endif %}" alt="{{ post.title }}">
+  <div class="card-body">
+    <p class="text-muted m-b-0">
+        Portfolio
+    </p>
+    
+    <h6 class="card-title">
+        {{ post.title }}
+    </h6>
+    <p class="card-text">{{ post.card_description }}</p>
+    <p><i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary">{{ post.date | date: "%Y" }}</span></p>
+  </div>
+</div>
+
+<div class="modal fade portfolioModal{{i}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="float-right">&times;</span></button>
+      <div class="modal-body">
+        <div class="container-fluid bd-example-row">
+          <div class="row">
+            <div class="col-sm-8">
+              {% if post.carousel %}
+                <div id="myCarousel" class="carousel slide bg-inverse" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                  </ol>
+                  <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="{{post.carousel_img_1}}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{post.carousel_img_2}}" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{post.carousel_img_3}}" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="{{post.carousel_img_4}}" alt="Four slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              {% else %}
+                <img src="{{post.full_img}}" class="img-rounded img-thumbnail center-block img-fluid">
+              {% endif %}
+            </div>
+            <div class="col-sm-4">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <h6 class="card-title">{{post.title}}</h6>
+                  </li>
+                  <li class="list-group-item">
+                    Techs: {{post.techs}}
+                  </li>
+                  <li class="list-group-item">
+                  Country:
+                    <code class="text-primary">{{post.country}}</code>
+                  </li>
+                  <li class="list-group-item">
+                  Year:
+                    <code class="text-primary">{{post.date| date: '%Y'}}</code>
+                  </li>
+                  <li class="list-group-item">
+                    {{post.content}}
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

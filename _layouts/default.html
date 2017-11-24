@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+  <style type="text/css">
+    
+    .icon-lg {
+      font-size: 80px;
+      line-height: 18px;
+    }
+    .close {
+      margin-top: -5px;
+      margin-right: 2px;
+    }
+    .card-body:hover {
+      top: -10px;
+    }
+
+    body {
+      font: 300 1em/1.5em "Helvetica Neue", sans-serif;
+    }
+    .font-fix {
+      font: 300 1em/1.5em "Helvetica Neue", sans-serif;
+    }
+
+    .hover:hover{
+     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+     margin-top: -2px;
+     cursor: pointer;
+    }
+    .close:hover{
+      cursor: pointer;
+    }
+    .modal-lg {
+      max-width: 80% !important;
+    }
+  </style>
+  <body>
+<section class="bg-dark" style="height:125px;">
+    {% include header.html %}
+</section>
+
+<section>
+  <div class="container py-2" style="margin-top: -75px;">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <p class="text-muted m-b-0">
+                  <small>GETTING STARTED</small>
+                </p>
+                <h4 class="card-title">Welcome</h4>
+                <p class="card-text">Hey! I'm... Alex 👋, "The Full Stack Developer" building Real-World Scalable Web Apps.</p>
+                <p class="card-text">
+                  Welcome to my github pages, it’s great to have you.
+                </p>
+              </div>
+              <div class="col-sm-8">
+                <div class="row">
+                  <div class="col-lg-4 col-md-4 text-center">
+                      <div class="feature">
+                          <i class="icon-lg ion-cube"></i>
+                          <h6 class="text-uppercase">Full</h6>
+                          <p class="text-muted m-b-0">
+                          Frontend, Backend, <code class="text-primary">REST API</code>, with ability to write quality <code class="text-primary">Unit</code> testing solutions.</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 text-center">
+                      <div class="feature">
+                          <i class="icon-lg ion-pull-request"></i>
+                          <h6 class="text-uppercase">Stack</h6>
+                          <p class="text-muted m-b-0">Specialized in scalable Web App, Mobile Web App, SaaS</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 text-center">
+                      <div class="feature">
+                          <i class="icon-lg ion-coffee" ></i>
+                          <h6 class="text-uppercase">Developer</h6>
+                          <p class="text-muted m-b-0">Design and optimization Data Models for <code class="text-primary">MySQL, NoSQL, ORM doctrine</code>. Code architecture & Workflow.</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="Portfolio">
+  {% assign portfolio_list = site.posts| where:"category","portfolio_v2" %}
+
+  {% assign portfolio_count = portfolio_list|size %}
+  {% for i in (0..portfolio_count) %}
+    {% assign post = portfolio_list[i] %}
+    {% if post.title %}
+    {% case i %}
+        {% when 0 or 7 %}
+          <div class="container py-4">
+          <div class="row">
+          <div class="col-sm-12">
+            <div class="row">
+            <div class="col-sm-4">
+              {% include portfolio_card.html %}
+            </div>
+        {% when 1 or 8 %}
+          <div class="col-sm-4">
+            {% include portfolio_card.html %}
+          </div>
+        {% when 2 or 9 %}
+          <div class="col-sm-4">
+            {% include portfolio_card.html %}
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        {% when 3 or 6 or 10 %}
+          <div class="container py-4">
+          <div class="row">
+            <div class="col-sm-12">
+              {% include portfolio_horizontal_card.html %}
+            </div>
+          </div>
+          </div>
+        {% when 4 %}
+          <div class="container py-4">
+          <div class="row">
+          <div class="col-sm-12">
+            <div class="row">
+            <div class="col-sm-6">
+              {% include portfolio_card.html %}
+            </div>
+        {% when 5 %}
+          <div class="col-sm-6">
+            {% include portfolio_card.html %}
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        {% else %}
+    {% endcase %}
+    {% endif %}
+  {% endfor %}
+</section>
+
+{% include footer.html %}
+
+</body>
+</html>
