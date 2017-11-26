@@ -2,13 +2,16 @@
 layout: post
 title: App Startup Synchora
 date: 2015-05-13 21:38:39.000000000 -08:00
-category: portfolio
-img: /assets/img/posts/portfolio/synchora_m.png
-full_img: /assets/img/posts/portfolio/synchora.png
-techs: api, oauth, js
+category: portfolio_v2
+img: /assets/img/posts/2017/synchora_1.jpeg
+techs: <i class="icon ion-social-javascript"></i> <i class="icon ion-social-apple"></i> <i class="icon ion-ipad"></i> <i class="icon ion-iphone"></i>
+carousel: true
+carousel_img_1: /assets/img/posts/2017/synchora_1.jpeg
+carousel_img_2: /assets/img/posts/portfolio/synchora.png
+carousel_img_3: /assets/img/posts/2017/synchora_3.jpg
+carousel_img_4: /assets/img/posts/2017/synchora_4.jpg
 country: USA
+card_description: Backend Developer in mobile startup. <code class="text-primary">REST API, NodeJS, Couchdb, OAuth</code><br><br>
+client_description: <a href="http://synchora.com/" target="_blank">Synchora</a> project supposed to be a rethinked smart address book, that is seamlessly integrated with calling and messaging functionality with underlying AI, that makes the address book usage seamless, and easy.
 ---
-
-<small>
-  Developed json RESTfull API service for new mobile apps(IOs/Android) in two month period, including: OAuth, users profiles, messages, friendship and etc(Node.js, express, socket).
-</small>
+Develop (<code class="text-primary">REST API, NodeJS, Couchdb, OAuth</code>), for new startup mobile application.

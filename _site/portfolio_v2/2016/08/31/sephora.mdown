@@ -13,10 +13,10 @@
 <script src="/assets/js/bootstrap.min.js"></script>
 
 
-  <title>Nightwatchjs build</title>
-  <meta name="description" content="What|Why is Nightwatch.js?">
+  <title>Sephora Gallery</title>
+  <meta name="description" content="Design and development Mobile web app, website, optimized for the browser and iOS. The system consisted of a proprietary single-sign-on and photo upload flow...">
 
-  <link rel="canonical" href="http://localhost:4000/programming/2016/06/01/nightwatjs-guide.html">
+  <link rel="canonical" href="http://localhost:4000/portfolio_v2/2016/08/31/sephora.mdown">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   
