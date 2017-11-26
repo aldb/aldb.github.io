@@ -1,14 +1,15 @@
 ---
 layout: post
-title: rozumsoft.com
+title: ROZUMsoft
 date: 2012-06-13 21:38:39.000000000 -08:00
-category: portfolio
-img: /assets/img/posts/portfolio/rozumsoft_m.png
-full_img: /assets/img/posts/portfolio/rozumsoft.png
-techs: php, mysql, mvc, smarty
+category: portfolio_v2
+img: /assets/img/posts/portfolio/rozumsoft.png
+techs: <i class="icon ion-social-javascript"></i> <i class="icon ion-monitor"></i>
+carousel: false
 country: Belarus
----
+card_description: Fullstack <code class="text-primary">PHP JS MYSQL Smarty</code> callcenters software development for callcenter clients such as Volvo, City Bank, QIWI, Alfa Bank, Beeline, and Sberbank.
+client_description: <a href="www.rozumsoft.com">ROZUMsoft</a> is an international IT company with years of experience in custom software development solutions for businesses and organizations of all sizes worldwide.
 
-<small>
-Developed a company <a href="http://rozumsoft.com">website</a> using PHP, MySQL, Smarty engine and MVC pattern. Implemented 3 domain zones(ru/by/com) algorithm  for 3 languages.
-</small>
+---
+Developed script utilities for call-center agents: JS audio player(hardware acceleration, deceleration and the order to play audio files), сomplex statistical summaries and Cisco data telephony scripts/API.<br> Managed, designed and developed quality control assessment project(Yii module, RBAC, MVC) for estimated effective work of operators(editors, logs, statistical formulas, projects rules and more 10k online users from multi-regions).<br>
+

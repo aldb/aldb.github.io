@@ -13,10 +13,10 @@
 <script src="/assets/js/bootstrap.min.js"></script>
 
 
-  <title>Dead pixel finder</title>
-  <meta name="description" content="Web page with screen color change by click for find dead pixel on screen your device. Check online.">
+  <title>Thismoment</title>
+  <meta name="description" content="Implemented contentcloud social media solutions(Zend, ORM, Elasticsearh). Provide frontend tech SDK(JS) solutions for custom social media websites. Developed...">
 
-  <link rel="canonical" href="http://localhost:4000/portfolio/2015/06/13/dead_pixel_finder.html">
+  <link rel="canonical" href="http://localhost:4000/portfolio_v2/2016/12/13/thismoment.mdown">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   

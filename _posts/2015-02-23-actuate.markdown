@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Actuate/OpenText
-date: 2014-12-13 21:38:39.000000000 -08:00
+date: 2014-01-13 21:38:39.000000000 -08:00
 category: portfolio_v2
-img: /assets/img/posts/2017/actuate.png
+img: /assets/img/posts/2017/actuate 2.png
 techs: <i class="icon ion-social-javascript"></i> <i class="icon ion-social-apple"></i> <i class="icon ion-ipad"></i> <i class="icon ion-iphone"></i><i class="icon ion-monitor"></i>
 carousel: false
 country: USA

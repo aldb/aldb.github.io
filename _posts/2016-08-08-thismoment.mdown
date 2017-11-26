@@ -1,0 +1,19 @@
+---
+layout: post
+title: Thismoment
+date: 2016-12-13 21:38:39.000000000 -08:00
+category: portfolio_v2
+img: /assets/img/posts/2017/thmoment.png
+techs: <i class="icon ion-social-javascript"></i> <i class="icon ion-social-apple"></i> <i class="icon ion-ipad"></i> <i class="icon ion-iphone"></i><i class="icon ion-monitor"></i>
+carousel: true
+carousel_img_1: /assets/img/posts/2017/thismoment_gif22.gif
+carousel_img_2: /assets/img/posts/2017/thismoment_logo.png
+carousel_img_3: /assets/img/posts/2017/content-tagging-2.png
+carousel_img_4: /assets/img/posts/2017/thismoment_logo.png
+country: USA
+card_description: Fullstack web developer for contentcloud social media platform.<code class="text-primary">Zend, ORM, Elasticsearh</code><br>
+client_description: <a href="http://actuate.com/" target="_blank">Thismoment</a> is a Content Cloud, is a digital storytelling platform that enables effortless content curation, digital experience creation and sharing and seamless enterprise technology integration.
+---
+Implemented contentcloud social media solutions(<code class="text-primary">Zend, ORM, Elasticsearh</code>).
+Provide frontend tech <code class="text-primary">SDK(JS)</code> solutions for custom social media websites. Developed and fixed fully responsive interface: desktop, tablet(portrait), mobile. 
+Managed, designed and implemented e2e test project(<code class="text-primary">Nightwatch.js</code> framework based on Page Objects methodology).
