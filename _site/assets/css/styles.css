@@ -28,3 +28,6 @@ body {
 .modal-lg {
   max-width: 80% !important;
 }
+.horizontal-card-img {
+    margin-left: -15px;
+}
