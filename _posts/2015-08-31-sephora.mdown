@@ -11,7 +11,7 @@ carousel_img_2: /assets/img/posts/2017/sephora_gallery_tablet.png
 carousel_img_3: /assets/img/posts/2017/sephora_gallery_mobile.png
 carousel_img_4: /assets/img/posts/portfolio/sephora.png
 country: USA
-card_description: Fullstack(<code class="text-primary">REST API, JS/Smarty/CSS, MySQL</code>) app solution to upload data from the IOs devices.
+card_description: Fullstack development for app solution to upload data from the IOs devices. <code class="text-primary">REST API, JS/Smarty/CSS, MySQL</code>
 client_description: <a href="https://www.sephora.com/community/gallery" target="_blank">Sephora stores</a> – Sephora operates approximately 2,300 stores in 33 countries worldwide, with an expanding base of over 430 stores across the Americas.
 ---
 Design and development Mobile web app, website, optimized for the browser and iOS. The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery. UI provides business logic for products filter, price calculation, discounts, events, users activities, and etc.
