@@ -645,13 +645,7 @@ Managed, designed and implemented e2e test project(<code class="text-primary">Ni
 $(document).ready(function () {
   /***************** Google Map ******************/
   function initialize() {
-    var mapCanvas = document.getElementById('map');
-    var mapOptions = {
-        center: new google.maps.LatLng(37.5689858, -122.0744625),
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-          styles:
-    [{
+    var styles     = [{
       "featureType": "poi",
       "elementType": "all",
       "stylers": [{
@@ -825,7 +819,13 @@ $(document).ready(function () {
       "stylers": [{
         "color": "#474747"
       }]
-    }]
+    }];
+    var mapCanvas  = document.getElementById('map');
+    var mapOptions = {
+        center: new google.maps.LatLng(37.5689858, -122.0744625),
+        zoom: 8,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: styles
     }
     var map = new google.maps.Map(mapCanvas, mapOptions);
   }
