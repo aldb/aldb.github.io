@@ -2,7 +2,7 @@
 layout: post
 title: Datetime PHP like Python
 date: 2014-10-31 21:41:54.000000000 -07:00
-category: programming
+category: programming_del
 tags: [ python,ru]
 img: /assets/img/posts/2016/02/Python_logo-256.png
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: SQL comics
 date: 2014-10-18 09:53:47.000000000 -07:00
-category: programming
+category: programming_del
 tags: [ fun, en, sql]
 img: /assets/img/posts/2016/02/batman.png
 ---

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Eacces permission denied
+title: Ionic 2 debug
 date: 2016-03-01 07:38:39.000000000 -08:00
-category: programming
+category: programming_del
 tags: [js,ionic,en]
 img: /assets/img/posts/2016/def3.png
 ---
