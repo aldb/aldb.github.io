@@ -32,9 +32,11 @@ body {
     margin-left: -15px;
 }
 
+.footer-copyright {
+    background-color: #404040 !important;
+}
 
 #myFooter {
-    background-color: #182c39;
     color: white;
     padding-top: 20px;
 }
