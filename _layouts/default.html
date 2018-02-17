@@ -2,11 +2,19 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
 
-  <body>
+<body>
+
+{% if page.title %}
+<section class="bg-dark">
+    {% include header.html %}
+</section>
+<section>
+  {{ content }}
+</section>
+{% else %}
 <section class="bg-dark" style="height:125px;">
     {% include header.html %}
 </section>
-
 <section>
   <div class="container py-2" style="margin-top: -75px;">
     <div class="row">
@@ -161,7 +169,7 @@
       {% endfor %}
     </div>
 </section>
-
+{%endif%}
 
 {% include footer.html %}
 

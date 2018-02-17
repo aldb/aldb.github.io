@@ -1,25 +1,48 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="container py-4">
+    <main role="main" class="container" style="padding: 60px;">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <div class="blog-post">
+            <h2 class="blog-post-title">{{ page.title}}</h2>
+            <p class="blog-post-meta">{{ page.date | date_to_long_string}} by <a href="#">aldb</a></p>
+            {{ content }}
+          </div><!-- /.blog-post -->
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header>
+          {% if site.disqus.shortname %}
+            {% include disqus_comments.html %}
+          {% endif %}
+        </div><!-- /.blog-main -->
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+        <aside class="col-md-4 blog-sidebar">
+          <div class="p-3 mb-3 bg-light rounded">
+            {% if page.tldr %}
+            <h4 class="font-italic">TL;DR;</h4>
+            <p class="mb-0">{{ page.tldr }}</p>
+            {% else %}
+            <h4 class="font-italic">About</h4>
+            <p class="mb-0">Webpage aldb - "The Full Stack Developer" building Real-World Scalable Web Apps. Welcome to my github pages, it’s great to have you.</p>
+            {% endif %}
+          </div>
 
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
-</article>
+          <div class="p-3">
+            <h4 class="font-italic">Archives</h4>
+            <ol class="list-unstyled mb-0">
+            {% assign portfolio_list = site.posts| where:"category","programming" %}
+            {% assign portfolio_count = portfolio_list|size %}
+            {% for i in (0..portfolio_count) %}
+            {% assign post = portfolio_list[i] %}
+            {% if post.title %}
+              <li><a href="{{post.url}}">{{post.date | date: "%B %Y" }}</a></li>
+            {% endif %}
+            {% endfor %}
+            </ol>
+          </div>
+        </aside><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </main><!-- /.container -->
+</div>
