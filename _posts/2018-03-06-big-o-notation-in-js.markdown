@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Big O Notation in JS
-date: 2018-015-05 07:38:39.000000000 -08:00
+date: 2018-03-03 07:38:39.000000000 -08:00
 category: programming
 tags: [en,mac,error,nodejs]
 img: /assets/img/posts/2016/def2.png
