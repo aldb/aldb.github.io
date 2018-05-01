@@ -19,7 +19,7 @@ Enough for you.
 
 ## How setup Jekyll blog for 5 minutes
 
-Sign in github account and fork [Jekyll-now](https://github.com/aldb/jekyll-now) repo. Done! Your ready for customize your Jekyll page!
+Sign in github account and fork [Jekyll-now](https://github.com/aldu/jekyll-now) repo. Done! Your ready for customize your Jekyll page!
 
 <p class="lead blockquote">
 After successful setup process your can check project wiki for details settings like Google Analytics, 404 page and etc.

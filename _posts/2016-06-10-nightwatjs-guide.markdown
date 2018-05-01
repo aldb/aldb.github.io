@@ -45,7 +45,7 @@ Here details setup description step by step for Mac OS X. TODO work build:
 After successful installed you can verify [Java version](https://java.com/en/download/installed.jsp) online by java applet. Also check [Java SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 <br>
 <br>
-2. Install/update for latest version [Node.js](https://nodejs.org). Check my previos post for [Node.js setup](http://aldb.github.io/2016/06/01/install-nodejs-npm-by-brew/).
+2. Install/update for latest version [Node.js](https://nodejs.org). Check my previos post for [Node.js setup](http://aldu.github.io/2016/06/01/install-nodejs-npm-by-brew/).
 <br>
 3. Download latest [Selenium Standalone Server](http://www.seleniumhq.org/download/)
 <br>
