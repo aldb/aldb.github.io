@@ -12,7 +12,6 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-
   <title>Sephora Gallery</title>
   <meta name="description" content="Design and development Mobile web app, website, optimized for the browser and iOS. The system consisted of a proprietary single-sign-on and photo upload flow...">
 

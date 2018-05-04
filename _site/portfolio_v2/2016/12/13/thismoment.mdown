@@ -12,7 +12,6 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-
   <title>Thismoment</title>
   <meta name="description" content="Implemented contentcloud social media solutions(Zend, ORM, Elasticsearh). Provide frontend tech SDK(JS) solutions for custom social media websites. Developed...">
 
