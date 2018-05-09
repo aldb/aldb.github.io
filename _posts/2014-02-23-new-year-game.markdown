@@ -10,5 +10,5 @@ country: USA
 ---
 
 <small>
-Small game New Year game for kids. <a href="http://aldu.github.io/Christmas-Tree/">Play online.</a>
+Small game New Year game for kids. <a href="http://aldb.github.io/Christmas-Tree/">Play online.</a>
 </small>

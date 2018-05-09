@@ -9,6 +9,6 @@ techs: javascript
 country: Belarus
 ---
 
-<p class="card-text">Web page with screen color change by click for find <a href="https://en.wikipedia.org/wiki/Defective_pixel">dead pixel</a> on screen your device. Check <a href="http://aldu.github.io/dpixfinder/">online.</a></p>
+<p class="card-text">Web page with screen color change by click for find <a href="https://en.wikipedia.org/wiki/Defective_pixel">dead pixel</a> on screen your device. Check <a href="http://aldb.github.io/dpixfinder/">online.</a></p>
 
 <p class="card-text"><i class="ion-social-github-outline wow fadeIn text-primary" style="visibility: visible; animation-name: fadeIn;"></i><small class="text-muted"> Last updated Aug 28, 2015</small></p>
