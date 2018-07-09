@@ -70,17 +70,19 @@
           <div class="blog-post">
             <h2 class="blog-post-title">Big O Notation in JS</h2>
             <p class="blog-post-meta">03 March 2018 by <a href="#">aldb</a></p>
-            <p>Big O notation focuses the worst-case scenario and can be used to describe the execution time/space by an algorithm.
+            <p><img src="../../../../assets/img/posts/2018/bigo_1.png" class="img-fluid" alt="Big O Notations" />
+Big O notation focuses the worst-case scenario and can be used to describe the execution time/space by an algorithm.
 Let’s now explore the most common types of Big O Notations. We’ll be using vanilla JS and ECMA6 examples.</p>
+
+<p><img src="../../../../assets/img/posts/2018/3_space.png" class="img-fluid" alt="Big O Notations" /></p>
 
 <p>For illustrating results we’ll use time(milliseconds - ms), and space(size of array).</p>
 
 <p>Testing data inputs setups</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">For</span> <span class="nx">testing</span> <span class="nx">data</span> <span class="nx">space</span> <span class="nx">using</span> <span class="nx">a</span> <span class="mi">3</span> <span class="nx">array</span> <span class="kd">with</span> <span class="nx">diffrenet</span> <span class="nx">sizes</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">0000</span><span class="p">,</span> <span class="nx">and</span> <span class="mi">1</span><span class="p">,</span><span class="mi">000</span><span class="p">,</span><span class="mi">000</span> <span class="nx">elemnts</span><span class="p">.</span>
+<p>For testing data space using a 3 array with different sizes: 10,000, 10,0000, and 1,000,000 elements.</p>
 
-
-<span class="kd">var</span> <span class="nx">tenThousand</span>     <span class="o">=</span> <span class="p">[];</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">tenThousand</span>     <span class="o">=</span> <span class="p">[];</span>
 <span class="kd">var</span> <span class="nx">hundredThousand</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="kd">var</span> <span class="nx">oneMillion</span>      <span class="o">=</span> <span class="p">[];</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
@@ -98,11 +100,13 @@ Let’s now explore the most common types of Big O Notations. We’ll be using v
 <span class="kd">var</span> <span class="nx">tenThousand</span>     <span class="o">=</span> <span class="p">[...</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">10000</span><span class="p">).</span><span class="nx">keys</span><span class="p">()];</span>
 <span class="kd">var</span> <span class="nx">hundredThousand</span> <span class="o">=</span> <span class="p">[...</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100000</span><span class="p">).</span><span class="nx">keys</span><span class="p">()];</span>
 <span class="kd">var</span> <span class="nx">oneMillion</span>      <span class="o">=</span> <span class="p">[...</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1000000</span><span class="p">).</span><span class="nx">keys</span><span class="p">()];</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'tenThousand:'</span><span class="p">,</span> <span class="nx">tenThousand</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s1">'hundredThousand:'</span><span class="p">,</span> <span class="nx">hundredThousand</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s1">'oneMillion:'</span><span class="p">,</span> <span class="nx">oneMillion</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'tenThousand:'</span><span class="p">,</span> <span class="nx">tenThousand</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s1">'hundredThousand:'</span><span class="p">,</span> <span class="nx">hundredThousand</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s1">'oneMillion:'</span><span class="p">,</span> <span class="nx">oneMillion</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span></code></pre></figure>
 
-<span class="nx">For</span> <span class="nx">time</span> <span class="nx">using</span> <span class="s2">"console.time"</span> <span class="nx">and</span> <span class="s2">"console.timeEnd"</span><span class="p">,</span> <span class="nx">what</span> <span class="nx">allow</span> <span class="nx">you</span> <span class="nx">tracking</span> <span class="nx">execution</span> <span class="nx">time</span> <span class="k">in</span> <span class="nx">MS</span><span class="p">.</span> <span class="nx">Each</span> <span class="k">case</span> <span class="nx">you</span> <span class="nx">can</span> <span class="nx">copy</span><span class="o">/</span><span class="nx">paste</span> <span class="k">in</span> <span class="nx">console</span> <span class="nx">terminal</span> <span class="nx">and</span> <span class="nx">play</span> <span class="kd">with</span> <span class="nx">responses</span><span class="p">.</span></code></pre></figure>
+<p>For time using “console.time” and “console.timeEnd”, what allow you tracking execution time in MS. Each case you can copy/paste in console terminal and play with responses.</p>
 
 <h4 id="o1---constant-time">O(1) - Constant time</h4>
+
+<p><img src="../../../../assets/img/posts/2018/4_o_1.png" class="img-fluid" alt="O 1" /></p>
 
 <p>O(1) always execute at the same time (or space). For example find first element of array.
 The input array could be 1 item or 10,000, 10,0000, and 1,000,000 items, but this method would still just require one “step.”</p>
@@ -123,6 +127,8 @@ The input array could be 1 item or 10,000, 10,0000, and 1,000,000 items, but thi
 <p>All execution time be less than 0,01 ms.</p>
 
 <h4 id="on---linear-time-algorithm">O(N) - Linear Time Algorithm</h4>
+
+<p><img src="../../../../assets/img/posts/2018/5_On.png" class="img-fluid" alt="O(n)" /></p>
 
 <p>The worst-case scenario for test data is reverse all array elements from end to start, so its require N loop iterations.
 Test case function searches by value from the end of the array to start.</p>
@@ -150,8 +156,9 @@ Test case function searches by value from the end of the array to start.</p>
 
 <h4 id="on2---quadratic-time-algorithm">O(N2) - Quadratic Time Algorithm</h4>
 
-<p>O(N2) represents an algorithm whose performance is the square of the number of inputs. In selection sort algorithm time grows exponentially related to the number of inputs.
-https://en.wikipedia.org/wiki/Selection_sort</p>
+<p><img src="../../../../assets/img/posts/2018/3_data_input_extra_space.png" class="img-fluid" alt="O(n2)" /></p>
+
+<p>O(N2) represents an algorithm whose performance is the square of the number of inputs. In <a href="https://en.wikipedia.org/wiki/Selection_sort">Selection sort</a> algorithm time grows exponentially related to the number of inputs.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">selectionSort</span><span class="p">(</span><span class="nx">items</span><span class="p">){</span>
     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -189,9 +196,11 @@ https://en.wikipedia.org/wiki/Selection_sort</p>
 
 <h4 id="o2n">O(2N)</h4>
 
+<p><img src="../../../../assets/img/posts/2018/7_o2n.png" class="img-fluid" alt="O(2n)" /></p>
+
 <p>O(2N) an algorithm whose growth doubles with each addition to the input data set.
-The famous example is the recursive calculation of Fibonacci numbers:
-https://en.wikipedia.org/wiki/Fibonacci_number</p>
+The famous example is the recursive calculation of
+<a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci number</a>.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/*
    fibonacci(4)   .--------&gt; 2 + 1 = 3
@@ -226,8 +235,10 @@ https://en.wikipedia.org/wiki/Fibonacci_number</p>
 
 <h4 id="olog-n---logarithms">O(log n) - Logarithms</h4>
 
+<p><img src="../../../../assets/img/posts/2018/8_ologn.png" class="img-fluid" alt="O(logn)" /></p>
+
 <p>O(log n) most faster-sorting algorithms like QuickSort, Merge-sort.
-Let’s take a look Binary Search algorithm example. https://en.wikipedia.org/wiki/Binary_search_algorithm
+Let’s take a look <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">Binary Search</a> algorithm example.
 For test data use 10,000, 100,000, and 1,000,000 inputs. To generate random elements of an array using Math library:
 arr[Math.floor(Math.random() * arr.length)]
 Binary search is a used to search sorted inputs data by selecting the middle element of the data set, essentially the median, and compares it against a target value.
@@ -274,8 +285,7 @@ If the values match it will return success.</p>
 
 <p>Running simple examples can better feel the difference between algorithms. O big notation help to find the optimal data structure, algorithm, and understand complexity.</p>
 
-<p>Please find all test cases on this JS gist:
-<script src="https://gist.github.com/aldb/b9494e4ca594f6f704671edf713a1922.js"></script></p>
+<p>Please find all test cases on this <a href="https://gist.github.com/aldb/b9494e4ca594f6f704671edf713a1922.js">JS gist</a>:</p>
 
 
           </div><!-- /.blog-post -->
