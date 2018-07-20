@@ -5,7 +5,7 @@ date: 2016-07-13 21:38:39.000000000 -08:00
 category: programming
 tags: [nodejs, apache, nginx, iis,en]
 tldr: 'Difference between web servers: **Apache, IIS, Nginx, Node.js**. Process schema illustrations.'
-permalink: /:year/:month/:day/:title:output_ext
+permalink: /:year/:month/:day/:title/
 ---
 Today, the most popular web servers are: **Apache, IIS, Nginx, Node.js**. Every web server has its own history, focus on technology, the preferred operating system, and etc.
 

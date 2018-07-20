@@ -12,10 +12,10 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-  <title>Установка phpunit</title>
-  <meta name="description" content="Все знаем что phpunit модно, стильно, молодежно. И вот как ее быстро установить:">
+  <title>Ionic 2 debug</title>
+  <meta name="description" content="Error">
 
-  <link rel="canonical" href="http://localhost:4000/2014/10/19/ustanovka-phpunit.html">
+  <link rel="canonical" href="http://localhost:4000/2016/03/01/eacces-permission-denied/">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   
@@ -68,53 +68,31 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <div class="blog-post">
-            <h2 class="blog-post-title">Установка phpunit</h2>
-            <p class="blog-post-meta">19 October 2014 by <a href="#">aldb</a></p>
-            <p>Все знаем что phpunit модно, стильно, молодежно.
-И вот как ее быстро установить:</p>
+            <h2 class="blog-post-title">Ionic 2 debug</h2>
+            <p class="blog-post-meta">01 March 2016 by <a href="#">aldb</a></p>
+            <h2 id="error">Error</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pear channel-discover pear.phpunit.de
-pear channel-discover pear.symfony-project.com
-</code></pre></div></div>
+<p>Get error message in Ionic2 process setup:</p>
 
-<p>В случаи проблемы с правами добавляем волшебное “sudo”
-Таким образом мы добавили  <strong>PEAR Installer</strong></p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>Ionic 2 Unhandled rejection Error: EACCES: permission denied</code></pre></figure>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pear install phpunit/PHPUnit
-</code></pre></div></div>
+<h2 id="debug">Debug</h2>
+<p>Run code on developer machine and get error: permission denied.
+Get the classic solution:</p>
 
-<p>Который в свою очередь установит PHPUnit. Но PHPUnit любит поругаться на недостающие модули:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>chown <span class="nt">-R</span> whoami ~/.npm
+<span class="nv">$ </span><span class="nb">sudo </span>chown <span class="nt">-R</span> whoami /usr/local/lib/node_modules</code></pre></figure>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install php5-dev
-pecl install xdebug
-</code></pre></div></div>
+<p>whoami - terminal command get current user.</p>
 
-<p>После этого все должно заработать, проверить версию PHPUnit можно командой</p>
+<p>Another good practice:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>phpunit
-</code></pre></div></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>chown <span class="nt">-R</span> <span class="nv">$USER</span> ~/.npm
+<span class="nv">$ </span><span class="nb">sudo </span>chown <span class="nt">-R</span> <span class="nv">$USER</span> /usr/local/lib/node_modules</code></pre></figure>
 
-<p>В дополнения простенький пример теста:</p>
+<p>If used mac also use:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
-class StackTest extends PHPUnit_Framework_TestCase
-{
-	public function testPushAndPop()
-    {
-        $stack = array();
-        $this-&gt;assertEquals(0, count($stack));
-
-        array_push($stack, 'foo');
-        $this-&gt;assertEquals('foo',$stack[count($stack)-1]);
-        $this-&gt;assertEquals(1, count($stack));
-
-        $this-&gt;assertEquals('foo',array_pop($stack));
-        $this-&gt;assertEquals(0, count($stack));
-	}
-}
-</code></pre></div></div>
-
-<p>Подробнее можно посмотреть в <a href="https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html">документации</a>, где все примеры с закрывающим тегом&lt; ?  <i class="fa fa-wheelchair"></i>facepalm</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>chown <span class="nt">-R</span> <span class="nv">$USER</span> /usr/local</code></pre></figure>
 
           </div><!-- /.blog-post -->
 
@@ -140,57 +118,57 @@ class StackTest extends PHPUnit_Framework_TestCase
             
             
             
-              <li><a href="/2018/03/03/big-o-notation-in-js.html">March 2018</a></li>
+              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
             
             
             
             
-              <li><a href="/2016/07/13/differences-between-web-servers.html">July 2016</a></li>
+              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/nightwatjs-guide.html">June 2016</a></li>
+              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/install-nodejs-npm-by-brew.html">June 2016</a></li>
+              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/03/21/bash-command-not-found.html">March 2016</a></li>
+              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
             
             
             
             
-              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms.html">February 2016</a></li>
+              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
             
             
             
             
-              <li><a href="/2015/02/13/sql-joins.html">February 2015</a></li>
+              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
             
             
             
             
-              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python.html">October 2014</a></li>
+              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp.html">October 2014</a></li>
+              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/19/ustanovka-phpunit.html">October 2014</a></li>
+              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost.html">October 2014</a></li>
+              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
             
             
             

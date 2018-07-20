@@ -12,10 +12,10 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-  <title>SQL comics</title>
-  <meta name="description" content="Time sql comics!">
+  <title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js</title>
+  <meta name="description" content="На сегодняшний день популярными веб серверами являются: Apache, IIS, Nginx, Node.js. У каждого веб сервера есть своя история, фокус на технологиях, предпочит...">
 
-  <link rel="canonical" href="http://localhost:4000/2014/10/18/sql-komiksy.html">
+  <link rel="canonical" href="http://localhost:4000/2015/02/11/apache-iis-vs-nginx-nodejs/">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   
@@ -68,15 +68,63 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <div class="blog-post">
-            <h2 class="blog-post-title">SQL comics</h2>
-            <p class="blog-post-meta">18 October 2014 by <a href="#">aldb</a></p>
-            <p>Time sql comics!</p>
+            <h2 class="blog-post-title">Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js</h2>
+            <p class="blog-post-meta">11 February 2015 by <a href="#">aldb</a></p>
+            <p>На сегодняшний день популярными веб серверами являются: <strong>Apache, IIS, Nginx, Node.js.</strong> У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.</p>
 
-<p>###I
-<img src="../../../../assets/img/posts/2014/10/sql_comics1.png" class="img-fluid" alt="Responsive image" />
-posts/
-###II
-<img src="../../../../assets/img/posts/2014/10/sql_comics2.png" class="img-fluid" alt="Responsive image" /></p>
+<p>Но есть принципиальное различие в процессе обработки запросов.</p>
+
+<h4 id="для-чего-нужны-веб-серверы">Для чего нужны веб серверы?</h4>
+
+<p>Для начало вспомним как работаю веб серверы. Веб серверы нужны для работы с веб приложениями по клиент-серверной модели. Их задача обработка запроса от пользователя(клиента, client) и возвращения результата запроса с сервера(backend, serverside). Подробнее можно ознакомиться на википедии: <a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">Client–server model</a>.</p>
+
+<h4 id="ресурсы-веб-серверов">Ресурсы веб серверов</h4>
+
+<p>Каждый сервер имеет выделенные “ресурсы”(Оперативная память, процессор и т.п.) для обработки запросов. Данные ресурсы используются в потоках и процессах:</p>
+
+<ul>
+  <li>[Thread_(computing)]</li>
+  <li>[Process_(computing)]</li>
+</ul>
+
+<p>Различие в распределении ресурсов на обработку запросов является ключевым отличием для расматриваемых веб серверов.</p>
+
+<h4 id="process-based-web-serves-apache-iis">Process-based web serves: Apache, IIS.</h4>
+
+<p><strong>Apache, IIS</strong> используют обрабатывают каждый запрос в отдельном потоке/процессе - <strong>“process-based”</strong>.</p>
+
+<p><img src="../../../../assets/img/process-based-server-2.png" class="img-fluid" alt="Responsive image" /></p>
+<center>
+Схема работы “process-based” веб серверов.
+
+</center>
+<p>На каждый запрос клиента используется отдельный процесс/поток. Каждый поток/процесс требует определенное кол-во ресурсов серверов. Ресурсы сервера “простаивают” пока ожидают отправку запроса и ответа клиента. Что отрицательно сказывается на производительности при высоких нагрузках, когда выделенных процессов поток недостаточно для обработки всех запросов.</p>
+
+<h4 id="event-based-web-serves-nginx-nodejs">Event-based web serves: Nginx, Node.js.</h4>
+
+<p><strong>Event-based</strong> веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.</p>
+
+<p><img src="../../../../assets/img/event-based-server-3.png" class="img-fluid" alt="Responsive image" /></p>
+<center>
+Схема работы Event-based веб сервера.
+
+</center>
+<p><strong>loop-event</strong> - бесконечный цикл обработки запросов. Данный цикл отслеживает состояние запроса(прием запроса от клиента, обработка и отправка ответа).</p>
+
+<p>В единичном процессе/потоке(<strong>Singe process/thread</strong>) используются все ресурсы веб сервера, позволяя обрабатывать запросы максимально быстро, а в случаи задержки(получение данных от клиента, отправки данных клиенту) работать с другими запросами из очереди(<strong>Event Queue</strong>) т.е асинхронно.</p>
+
+<h4 id="итог">Итог</h4>
+
+<p>Схема <strong>event-based(Node.js, Nginx)</strong> показывает большую производительность при высоких нагрузках. Это связано с тем что не нужно делить ресурсы сервера между другими потоками/процессами. Также серверные ресурсы всегда используются без “простоя”.</p>
+
+<h4 id="ссылки">Ссылки</h4>
+
+<ul>
+  <li><a href="http://habrahabr.ru/post/108241/">Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов</a></li>
+  <li><a href="http://berb.github.io/diploma-thesis/original/042_serverarch.html#42">Concurrent Programming for Scalable Web Architectures</a></li>
+  <li><a href="http://www.wikivs.com/wiki/apache_vs_nginx">Apache vs nginx</a></li>
+</ul>
+
 
           </div><!-- /.blog-post -->
 
@@ -102,57 +150,57 @@ posts/
             
             
             
-              <li><a href="/2018/03/03/big-o-notation-in-js.html">March 2018</a></li>
+              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
             
             
             
             
-              <li><a href="/2016/07/13/differences-between-web-servers.html">July 2016</a></li>
+              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/nightwatjs-guide.html">June 2016</a></li>
+              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/install-nodejs-npm-by-brew.html">June 2016</a></li>
+              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/03/21/bash-command-not-found.html">March 2016</a></li>
+              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
             
             
             
             
-              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms.html">February 2016</a></li>
+              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
             
             
             
             
-              <li><a href="/2015/02/13/sql-joins.html">February 2015</a></li>
+              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
             
             
             
             
-              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python.html">October 2014</a></li>
+              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp.html">October 2014</a></li>
+              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/19/ustanovka-phpunit.html">October 2014</a></li>
+              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost.html">October 2014</a></li>
+              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
             
             
             

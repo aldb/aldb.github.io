@@ -5,7 +5,7 @@ date: 2014-10-31 21:41:54.000000000 -07:00
 category: programming
 tags: [ python,ru]
 img: /assets/img/posts/2016/02/Python_logo-256.png
-permalink: /:year/:month/:day/:title:output_ext
+permalink: /:year/:month/:day/:title/
 ---
 Разработка данных datetime удобнее с использованием Unix формата(числа).
 

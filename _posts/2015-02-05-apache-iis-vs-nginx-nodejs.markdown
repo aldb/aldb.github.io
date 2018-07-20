@@ -4,7 +4,7 @@ title: 'Ключевое различия между веб серверами: 
 date: 2015-02-11 21:38:39.000000000 -08:00
 category: programming_del
 tags: [nodejs, apache, nginx, iis,ru]
-permalink: /:year/:month/:day/:title:output_ext
+permalink: /:year/:month/:day/:title/
 ---
 На сегодняшний день популярными веб серверами являются: **Apache, IIS, Nginx, Node.js.** У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.
 

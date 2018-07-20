@@ -12,10 +12,10 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-  <title>Разница datetime и timestamp</title>
-  <meta name="description" content="Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:">
+  <title>Datetime PHP like Python</title>
+  <meta name="description" content="Разработка данных datetime удобнее с использованием Unix формата(числа).">
 
-  <link rel="canonical" href="http://localhost:4000/2014/10/20/raznitsa-datetime-i-timestamp.html">
+  <link rel="canonical" href="http://localhost:4000/2014/10/31/rabota-s-datetime-php-vs-python/">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   
@@ -68,64 +68,29 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <div class="blog-post">
-            <h2 class="blog-post-title">Разница datetime и timestamp</h2>
-            <p class="blog-post-meta">20 October 2014 by <a href="#">aldb</a></p>
-            <p>Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:</p>
+            <h2 class="blog-post-title">Datetime PHP like Python</h2>
+            <p class="blog-post-meta">31 October 2014 by <a href="#">aldb</a></p>
+            <p>Разработка данных datetime удобнее с использованием Unix формата(числа).</p>
 
-<p>#####Datetime</p>
+<p>Datetime in PHP:</p>
 
-<ul>
-  <li>8 байт без часового пояса</li>
-  <li>DEFAULT CURRENT_TIMESTAMP / ON UPDATE CURRENT_TIMESTAMP устанавливает время по умолчанию (<strong>MySQL 5.6.5</strong>)</li>
-  <li>Запросы не кешируются по умолчанию</li>
-</ul>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$today</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">);</span>  <span class="c1">//MYSQL
+</span><span class="nv">$date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$date</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">);</span> <span class="c1">//echo Date in format
+</span>
+<span class="nv">$today</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'h-i-s, j-m-y, it is w Day'</span><span class="p">);</span> <span class="o">//</span> <span class="mo">05</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mo">01</span><span class="p">,</span> <span class="mi">1631</span> <span class="mi">1618</span> <span class="mi">6</span> <span class="nx">Satpm01</span></code></pre></figure>
 
-<p>#####Timestamp</p>
+<p>Datetime in Python:</p>
 
-<ul>
-  <li>4 байта с часовым поясом</li>
-  <li>хранит время <strong>UTC</strong>(Гринвич)</li>
-  <li>в версии до <strong>MySQL 5.6.1</strong> не более 2 TIMESTAMP колонок в одной таблице, в версии <strong>MySQL 5.6.5</strong>+ без ограничений</li>
-  <li>Запросы кешируются по умолчанию</li>
-  <li>
-    <p>Свойство DEFAULT CURRENTTIMESTAMP / ON UPDATE CURRENTTIMESTAMP  может быть примененно только для одной колонке:</p>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'Jun 1 2005  1:33PM'</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M</span><span class="si">%</span><span class="s">p'</span><span class="p">)</span></code></pre></figure>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  CREATE TABLE `test` (
-    `id` INT(10) UNSIGNED NOT NULL,
-    `AddedDate` TIMESTAMP NOT NULL DEFAULT 				CURRENT_TIMESTAMP,
-    `UpdatedDate` TIMESTAMP NOT NULL DEFAULT 		CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    ) ENGINE=INNODB;
-</code></pre></div>    </div>
-  </li>
-</ul>
+<p>Datetime from MSSQL in Mysql in Python:</p>
 
-<p>Ошибка:</p>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M</span><span class="si">%</span><span class="s">p'</span><span class="p">)</span>
+<span class="n">date_object</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="c">#MySQL format</span></code></pre></figure>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	Error Code : 1293
-	Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause
-</code></pre></div></div>
-
-<p>####Когда использовать:</p>
-
-<p>#####datetime:</p>
-<ul>
-  <li>Колонки с фиксированными данными(логирование, день рождения, данные о покупке и т.п)</li>
-  <li>Хорошая ассоциация datetime это часы и календарь на стене, при этом не важно в какой часовой зоне находиться дом в котором они висят.</li>
-</ul>
-
-<p>#####timestamp:</p>
-<ul>
-  <li>Колонки с часто обновляемыеми данными(последняя авторизация пользователя, дата и время обновления рейтинга/очков/счета и т.п.)</li>
-  <li>Ассоциация: момент времени, т.е. как давно событие. Точный расчет момент времени напрямую зависит от того в каком часовом поясе вы находитесь.</li>
-</ul>
-
-<p>Ссылки:</p>
-
-<ul>
-  <li><a href="http://dev.mysql.com/doc/refman/5.1/en/datetime.html">Mysql manual</a></li>
-  <li><a href="http://stackoverflow.com/questions/4489548/why-there-can-be-only-one-timestamp-column-with-current-timestamp-in-default-cla">Подробнее про ошибку 1293</a></li>
-  <li><a href="http://stackoverflow.com/questions/409286/datetime-vs-timestamp">datetime vs timestamp?</a></li>
-</ul>
+<p>Так что ф-ии datetime в Python похожи на PHP. И не только datetime.</p>
 
           </div><!-- /.blog-post -->
 
@@ -151,57 +116,57 @@
             
             
             
-              <li><a href="/2018/03/03/big-o-notation-in-js.html">March 2018</a></li>
+              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
             
             
             
             
-              <li><a href="/2016/07/13/differences-between-web-servers.html">July 2016</a></li>
+              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/nightwatjs-guide.html">June 2016</a></li>
+              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/install-nodejs-npm-by-brew.html">June 2016</a></li>
+              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/03/21/bash-command-not-found.html">March 2016</a></li>
+              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
             
             
             
             
-              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms.html">February 2016</a></li>
+              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
             
             
             
             
-              <li><a href="/2015/02/13/sql-joins.html">February 2015</a></li>
+              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
             
             
             
             
-              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python.html">October 2014</a></li>
+              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp.html">October 2014</a></li>
+              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/19/ustanovka-phpunit.html">October 2014</a></li>
+              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost.html">October 2014</a></li>
+              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
             
             
             

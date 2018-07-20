@@ -12,10 +12,10 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-  <title>Datetime PHP like Python</title>
-  <meta name="description" content="Разработка данных datetime удобнее с использованием Unix формата(числа).">
+  <title>bash command not found</title>
+  <meta name="description" content="Error">
 
-  <link rel="canonical" href="http://localhost:4000/2014/10/31/rabota-s-datetime-php-vs-python.html">
+  <link rel="canonical" href="http://localhost:4000/2016/03/21/bash-command-not-found/">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   
@@ -68,29 +68,32 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <div class="blog-post">
-            <h2 class="blog-post-title">Datetime PHP like Python</h2>
-            <p class="blog-post-meta">31 October 2014 by <a href="#">aldb</a></p>
-            <p>Разработка данных datetime удобнее с использованием Unix формата(числа).</p>
+            <h2 class="blog-post-title">bash command not found</h2>
+            <p class="blog-post-meta">21 March 2016 by <a href="#">aldb</a></p>
+            <h2 id="error">Error</h2>
 
-<p>Datetime in PHP:</p>
+<p>I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$today</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">);</span>  <span class="c1">//MYSQL
-</span><span class="nv">$date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$date</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">);</span> <span class="c1">//echo Date in format
-</span>
-<span class="nv">$today</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'h-i-s, j-m-y, it is w Day'</span><span class="p">);</span> <span class="o">//</span> <span class="mo">05</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mo">01</span><span class="p">,</span> <span class="mi">1631</span> <span class="mi">1618</span> <span class="mi">6</span> <span class="nx">Satpm01</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nt">-bash</span>: tsd: <span class="nb">command </span>not found </code></pre></figure>
 
-<p>Datetime in Python:</p>
+<p>All others npm packages not running.
+It’s look like bash don’t know path for node modules.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">'Jun 1 2005  1:33PM'</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M</span><span class="si">%</span><span class="s">p'</span><span class="p">)</span></code></pre></figure>
+<p>Command:</p>
 
-<p>Datetime from MSSQL in Mysql in Python:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm bin</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">date_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">b </span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">Y </span><span class="si">%</span><span class="s">I:</span><span class="si">%</span><span class="s">M</span><span class="si">%</span><span class="s">p'</span><span class="p">)</span>
-<span class="n">date_object</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="c">#MySQL format</span></code></pre></figure>
+<p>Get back:</p>
 
-<p>Так что ф-ии datetime в Python похожи на PHP. И не только datetime.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>IF <span class="o">(</span>not <span class="k">in </span>PATH env variable<span class="o">)</span></code></pre></figure>
+
+<h2 id="fix">Fix</h2>
+
+<p>For fix this issue add path for node modules in PATH</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/Users/&lt;username&gt;/.node/bin:</span><span class="nv">$PATH</span><span class="s2">"</span></code></pre></figure>
+
+<p>For get bash username use command: whoami</p>
 
           </div><!-- /.blog-post -->
 
@@ -116,57 +119,57 @@
             
             
             
-              <li><a href="/2018/03/03/big-o-notation-in-js.html">March 2018</a></li>
+              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
             
             
             
             
-              <li><a href="/2016/07/13/differences-between-web-servers.html">July 2016</a></li>
+              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/nightwatjs-guide.html">June 2016</a></li>
+              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/install-nodejs-npm-by-brew.html">June 2016</a></li>
+              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/03/21/bash-command-not-found.html">March 2016</a></li>
+              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
             
             
             
             
-              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms.html">February 2016</a></li>
+              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
             
             
             
             
-              <li><a href="/2015/02/13/sql-joins.html">February 2015</a></li>
+              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
             
             
             
             
-              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python.html">October 2014</a></li>
+              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp.html">October 2014</a></li>
+              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/19/ustanovka-phpunit.html">October 2014</a></li>
+              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost.html">October 2014</a></li>
+              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
             
             
             

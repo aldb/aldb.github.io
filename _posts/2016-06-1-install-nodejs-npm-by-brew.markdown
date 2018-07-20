@@ -5,7 +5,7 @@ date: 2016-06-1 07:38:39.000000000 -08:00
 category: programming
 tags: [en,mac,nodejs,npm,brew]
 img: /assets/img/posts/2016/nodejs.png
-permalink: /:year/:month/:day/:title:output_ext
+permalink: /:year/:month/:day/:title/
 ---
 
 ## Problem

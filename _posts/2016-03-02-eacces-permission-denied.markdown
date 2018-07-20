@@ -4,7 +4,7 @@ title: Ionic 2 debug
 date: 2016-03-01 07:38:39.000000000 -08:00
 category: programming_del
 tags: [js,ionic,en]
-img: /assets/img/posts/2016/def3.png
+permalink: /:year/:month/:day/:title/
 ---
 
 ## Error

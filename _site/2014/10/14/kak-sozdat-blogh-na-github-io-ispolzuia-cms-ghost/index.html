@@ -12,10 +12,10 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-  <title>Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js</title>
-  <meta name="description" content="На сегодняшний день популярными веб серверами являются: Apache, IIS, Nginx, Node.js. У каждого веб сервера есть своя история, фокус на технологиях, предпочит...">
+  <title>Как создать блог на github.io используя CMS Ghost</title>
+  <meta name="description" content="Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим ка...">
 
-  <link rel="canonical" href="http://localhost:4000/2015/02/11/apache-iis-vs-nginx-nodejs.html">
+  <link rel="canonical" href="http://localhost:4000/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   
@@ -68,63 +68,174 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <div class="blog-post">
-            <h2 class="blog-post-title">Ключевое различия между веб серверами: Apache, IIS vs Nginx, Node.js</h2>
-            <p class="blog-post-meta">11 February 2015 by <a href="#">aldb</a></p>
-            <p>На сегодняшний день популярными веб серверами являются: <strong>Apache, IIS, Nginx, Node.js.</strong> У каждого веб сервера есть своя история, фокус на технологиях, предпочитаемые ОС и многое другое.</p>
+            <h2 class="blog-post-title">Как создать блог на github.io используя CMS Ghost</h2>
+            <p class="blog-post-meta">14 October 2014 by <a href="#">aldb</a></p>
+            <p>Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms <strong>ghost</strong>.</p>
 
-<p>Но есть принципиальное различие в процессе обработки запросов.</p>
+<p>Я не хочу создавать, я хочу <a href="http://alexsdbk.github.io/">demo</a>!</p>
 
-<h4 id="для-чего-нужны-веб-серверы">Для чего нужны веб серверы?</h4>
+<p>На создание блога нам потребуется <strong>3 Этапа</strong>:</p>
 
-<p>Для начало вспомним как работаю веб серверы. Веб серверы нужны для работы с веб приложениями по клиент-серверной модели. Их задача обработка запроса от пользователя(клиента, client) и возвращения результата запроса с сервера(backend, serverside). Подробнее можно ознакомиться на википедии: <a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">Client–server model</a>.</p>
+<h3 id="i-этап">I этап</h3>
 
-<h4 id="ресурсы-веб-серверов">Ресурсы веб серверов</h4>
+<p>Необходимо создать открытый репозиторий на Git, который создаст поддомен с вашим именем пользователя(http://username.github.io).</p>
 
-<p>Каждый сервер имеет выделенные “ресурсы”(Оперативная память, процессор и т.п.) для обработки запросов. Данные ресурсы используются в потоках и процессах:</p>
+<p>Следуем <a href="https://pages.github.com/">инструкции</a> создадим <a href="https://github.com/new">репозиторий</a> c именем нашего пользователя на github.</p>
+
+<h3 id="ii-этап">II Этап</h3>
+
+<p>Настройка локального окружения и создание блога.</p>
+
+<p>Нам потребуется Node.js 0.10.x (latest stable). Для работы с Ghost рекомендуют Node.js 0.10.30 и пакетный менеджер npm 1.4.21. Ниже будут примеры кода под Linux Ссылки для других платформ:<a href="http://support.ghost.org/installing-ghost-mac/">Mac</a> <a href="http://support.ghost.org/installing-ghost-windows/">Windows</a></p>
+
+<p>Установим ghost</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir ghost
+wget "http://ghost.org/zip/ghost-latest.zip"
+unzip ghost-latest.zip -d ghost
+cd ghost
+cp config.example.js config.js
+</code></pre></div></div>
+
+<p>Установим nodejs &amp; npm</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+</code></pre></div></div>
+
+<p>Изменим <strong>URL</strong> адрес в config.js раздел Development с http://localhost:2368 на http://username.github.io</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// ### Development **(default)**	development: {
+// The url to use when providing links to the site, E.g. in RSS and email.
+// Change this to your Ghost blogs published URL.
+url: 'http://username.github.io',
+
+// Example mail config
+// Visit http://support.ghost.org/mail for instructions
+// ```
+//  mail: {
+//      transport: 'SMTP',
+//      options: {
+//          service: 'Mailgun',
+//          auth: {
+//              user: '', // mailgun username
+//              pass: ''  // mailgun password
+//          }
+//      }
+//  },
+// ``
+</code></pre></div></div>
+
+<p>Зайдем в папку ghost, установим и запустим npm</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+npm start
+</code></pre></div></div>
+
+<p><img src="../../../../assets/img/posts/2014/10/npminstall.png" alt="npm-start" /></p>
+
+<p>Зайдем http://127.0.0.1:2368/ghost/</p>
+
+<p><img src="../../../../assets/img/posts/2014/10/ghost-wellcome.png" alt="ghost" /></p>
+
+<p>Создание и настройка блока а также редактирования постов(по примеру шаблона) интуитивно понятны. Так же всегда можно найти информацию на https://ghost.org/.</p>
+
+<h3 id="iii-этап">III Этап</h3>
+
+<p>Создание статичного блога и ‘commit’ на github</p>
+
+<p>Что бы сделать ghost статичным Нам потребуется <strong>Buster</strong></p>
+
+<p><img src="../../../../assets/img/posts/2014/10/buster.png" alt="buster" /></p>
+
+<p>Установка</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+sudo apt-get install wget
+sudo apt-get install python
+sudo apt-get install python-pip
+pip install buster
+</code></pre></div></div>
+
+<p>Проверяем запущен наш блог http://127.0.0.1:2368 или запускаем:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ghost
+npm start
+</code></pre></div></div>
+
+<p>Создадим новую папку для статичной версии блога.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ghost
+cd buster setup
+</code></pre></div></div>
+
+<p>Запускаем бустер</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buster setup
+</code></pre></div></div>
+
+<p>Указываем ссылку на github репозиториий:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/username/username.github.io 
+</code></pre></div></div>
+
+<p>Бустер сгенерировал папку static. Теперь захватим бустером приведение, т.е. наш локальный ghost.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buster generate --domain=http://127.0.0.1:2368
+</code></pre></div></div>
+
+<p>Для предпросмотра запустим:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buster preview 
+</code></pre></div></div>
+
+<p>Теперь наш статичный блог можно посмотреть http://127.0.0.1:9000</p>
+
+<p>Останавливаем отображение превью <strong>Control + C</strong>. Загружаем блог на Git:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buster deploy
+</code></pre></div></div>
+
+<p>Теперь или спустя пару минут он будет доступен http://username.github.io</p>
+
+<h6 id="ложка-дёгтя">Ложка дёгтя</h6>
+
+<p>У меня не получился deploy в Git через buster. Но я сделал ‘commit’ через терминал.
+Так же buster не хочет ловить статичные страницы ghost’a. Решил их просто оформлять постами.</p>
+
+<h3 id="повседневное-использование">Повседневное использование</h3>
+
+<p>Запускаем ghost и редактируем посты http://127.0.0.1:2368/ghost</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div></div>
+
+<p><strong>Buster</strong> генерирует статичную версию и делает ‘commit’.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buster generate --domain=http://127.0.0.1:2368    
+buster deploy
+</code></pre></div></div>
+
+<h3 id="заключение">Заключение</h3>
+
+<p>Плюсы использование статичного блога на Github</p>
 
 <ul>
-  <li>[Thread_(computing)]</li>
-  <li>[Process_(computing)]</li>
+  <li>Бесплатно</li>
+  <li>Не нужна БД</li>
+  <li>Высокая производительность</li>
+  <li>Возможность легкого бэкап</li>
+  <li>Возможность создать посты оффлайн</li>
 </ul>
 
-<p>Различие в распределении ресурсов на обработку запросов является ключевым отличием для расматриваемых веб серверов.</p>
-
-<h4 id="process-based-web-serves-apache-iis">Process-based web serves: Apache, IIS.</h4>
-
-<p><strong>Apache, IIS</strong> используют обрабатывают каждый запрос в отдельном потоке/процессе - <strong>“process-based”</strong>.</p>
-
-<p><img src="../../../../assets/img/process-based-server-2.png" class="img-fluid" alt="Responsive image" /></p>
-<center>
-Схема работы “process-based” веб серверов.
-
-</center>
-<p>На каждый запрос клиента используется отдельный процесс/поток. Каждый поток/процесс требует определенное кол-во ресурсов серверов. Ресурсы сервера “простаивают” пока ожидают отправку запроса и ответа клиента. Что отрицательно сказывается на производительности при высоких нагрузках, когда выделенных процессов поток недостаточно для обработки всех запросов.</p>
-
-<h4 id="event-based-web-serves-nginx-nodejs">Event-based web serves: Nginx, Node.js.</h4>
-
-<p><strong>Event-based</strong> веб сервера работаю на одном процессе/потоке, используя все выделенные ресурсы.</p>
-
-<p><img src="../../../../assets/img/event-based-server-3.png" class="img-fluid" alt="Responsive image" /></p>
-<center>
-Схема работы Event-based веб сервера.
-
-</center>
-<p><strong>loop-event</strong> - бесконечный цикл обработки запросов. Данный цикл отслеживает состояние запроса(прием запроса от клиента, обработка и отправка ответа).</p>
-
-<p>В единичном процессе/потоке(<strong>Singe process/thread</strong>) используются все ресурсы веб сервера, позволяя обрабатывать запросы максимально быстро, а в случаи задержки(получение данных от клиента, отправки данных клиенту) работать с другими запросами из очереди(<strong>Event Queue</strong>) т.е асинхронно.</p>
-
-<h4 id="итог">Итог</h4>
-
-<p>Схема <strong>event-based(Node.js, Nginx)</strong> показывает большую производительность при высоких нагрузках. Это связано с тем что не нужно делить ресурсы сервера между другими потоками/процессами. Также серверные ресурсы всегда используются без “простоя”.</p>
-
-<h4 id="ссылки">Ссылки</h4>
+<h6 id="cсылки">Cсылки:</h6>
 
 <ul>
-  <li><a href="http://habrahabr.ru/post/108241/">Вы наверное шутите, мистер Дал, или почему Node.js — это венец эволюции веб-серверов</a></li>
-  <li><a href="http://berb.github.io/diploma-thesis/original/042_serverarch.html#42">Concurrent Programming for Scalable Web Architectures</a></li>
-  <li><a href="http://www.wikivs.com/wiki/apache_vs_nginx">Apache vs nginx</a></li>
+  <li>Оригинальная статья: <a href="http://talalanwar.com/host-a-ghost-blog-for-free/">How to: Host a Ghost Blog for Free</a></li>
+  <li>Набор ссылок по установке cms ghost: <a href="http://ghost.centminmod.com/how-to-install-ghost-blogging-platform/">Ghost How to install Ghost blogging platform</a></li>
+  <li>Git репозиторий <a href="https://github.com/axitkhurana/buster">buster</a></li>
 </ul>
-
 
           </div><!-- /.blog-post -->
 
@@ -150,57 +261,57 @@
             
             
             
-              <li><a href="/2018/03/03/big-o-notation-in-js.html">March 2018</a></li>
+              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
             
             
             
             
-              <li><a href="/2016/07/13/differences-between-web-servers.html">July 2016</a></li>
+              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/nightwatjs-guide.html">June 2016</a></li>
+              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/install-nodejs-npm-by-brew.html">June 2016</a></li>
+              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/03/21/bash-command-not-found.html">March 2016</a></li>
+              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
             
             
             
             
-              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms.html">February 2016</a></li>
+              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
             
             
             
             
-              <li><a href="/2015/02/13/sql-joins.html">February 2015</a></li>
+              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
             
             
             
             
-              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python.html">October 2014</a></li>
+              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp.html">October 2014</a></li>
+              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/19/ustanovka-phpunit.html">October 2014</a></li>
+              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost.html">October 2014</a></li>
+              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
             
             
             

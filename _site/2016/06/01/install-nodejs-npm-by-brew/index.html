@@ -12,10 +12,10 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
-  <title>Apache vs IIS vs Nginx vs Node.js</title>
-  <meta name="description" content="Today, the most popular web servers are: Apache, IIS, Nginx, Node.js. Every web server has its own history, focus on technology, the preferred operating syst...">
+  <title>Install Nodejs &amp; NPM by Brew</title>
+  <meta name="description" content="Problem">
 
-  <link rel="canonical" href="http://localhost:4000/2016/07/13/differences-between-web-servers.html">
+  <link rel="canonical" href="http://localhost:4000/2016/06/01/install-nodejs-npm-by-brew/">
   <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
   
   
@@ -68,67 +68,44 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <div class="blog-post">
-            <h2 class="blog-post-title">Apache vs IIS vs Nginx vs Node.js</h2>
-            <p class="blog-post-meta">13 July 2016 by <a href="#">aldb</a></p>
-            <p>Today, the most popular web servers are: <strong>Apache, IIS, Nginx, Node.js</strong>. Every web server has its own history, focus on technology, the preferred operating system, and etc.</p>
+            <h2 class="blog-post-title">Install Nodejs & NPM by Brew</h2>
+            <p class="blog-post-meta">01 June 2016 by <a href="#">aldb</a></p>
+            <h2 id="problem">Problem</h2>
 
-<p>But there is a fundamental difference in processing requests.</p>
+<p>Need quick script for install NPM &amp; Node by terminal.</p>
 
-<h4 id="what-are-web-servers">What are Web servers?</h4>
+<h2 id="solution">Solution</h2>
 
-<p><img src="../../../../assets/img/Client-server-model.svg.png" class="img-fluid" alt="Responsive image" /></p>
+<p>Homebrew - the missing package manager for OS X, really easy way to setup environment.</p>
 
-<p>Web servers need to work with web applications on the <a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">Client–server model</a>. Their task processing request from the user (customer, client) and the query result returned from the server (backend, serverside).</p>
+<p>Open terminal and check Brew version:</p>
 
-<h4 id="web-servers-limits">Web servers limits</h4>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew <span class="nt">-v</span></code></pre></figure>
 
-<p>A web server has defined <b>load limits</b>, because it can handle only a limited number of concurrent client connections per IP address (and TCP port) and it can serve only a certain maximum number of requests per second (RPS, also known as queries per second or QPS) depending on HTTP request type, settings, cached and <b>hardware</b>.</p>
+<p>If you get “brew: command not found” got to official web <a href="http://brew.sh/">page</a> and copy/paster url link for install, for example:</p>
 
-<p>Each server has a dedicated “resources(hardware)” (RAM, CPU, etc.) to handle requests. These resources are used in flows and processes:</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span></code></pre></figure>
 
-<ul>
-  <li>[Thread_(computing)]</li>
-  <li>[Process_(computing)]</li>
-</ul>
+<p>If on Mac don’t install Xcode you see alert message with option for install. Node.js &amp; NPM don’t need Xcode, so cancel Xcode installation alert message.</p>
 
-<p>The difference in the distribution of resources in the processing of requests is a key differentiator for are risen web servers.</p>
+<p>Then installing the NPM &amp; Node by command:</p>
 
-<h4 id="process-based-web-serves-apache-iis">Process-based web serves: Apache, IIS.</h4>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew node</code></pre></figure>
 
-<p><b>Apache, IIS</b> are used each request is processed in a separate thread / process - <b>“process-based”</b>.</p>
+<p>Done!</p>
 
-<p><img src="../../../../assets/img/process-based-server-2.png" class="img-fluid" alt="Responsive image" /></p>
-<center>
-“Process-based” web servers.
-</center>
+<p><img src="/assets/img/posts/2016/npm_nodejs_by_brew.png" alt="Screenshot" /></p>
 
-<p><br />
-<br />
-For every client request uses a separate <b>process / thread</b>. Each thread / process requires a certain number of server <b>resources(hardware)</b>. Server resources “idle/ not used” until the pending request and send the client a reply. What a <b>negative</b> impact on performance at high loads when the selected process flow is not enough to handle all requests.</p>
+<h2 id="check-installed-versions">Check installed versions</h2>
 
-<h4 id="event-based-web-serves-nginx-nodejs">Event-based web serves: Nginx, Node.js.</h4>
+<p>For check nodejs/NPM version/location use:</p>
 
-<p><img src="../../../../assets/img/event-based-server-3.png" class="img-fluid" alt="Responsive image" /></p>
-<center>
-Event-based web servers.
-</center>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>node <span class="nt">-v</span>
+<span class="nv">$ </span>which node
+<span class="nv">$ </span>npm <span class="nt">-v</span>
+<span class="nv">$ </span>which npm</code></pre></figure>
 
-<p><strong>Event-based</strong> web servers are used all resources of server hardware.
-<strong>Loop-event</strong> - endless request processing cycle. This cycle tracks the status of the request (the request from the customer reception, processing and sending the response).</p>
-
-<p>In <strong>Singe process/thread</strong> is used all the resources the web server, allowing you to process requests as quickly as possible, and in cases of delays (obtaining data from the client to send data to the client) to work with other requests from the queue (<b>Event Queue</b>) ie asynchronously.</p>
-
-<h4 id="total">Total</h4>
-
-<p><strong>Event-based(Node.js, Nginx)</strong> shows better performance under high loads, because that the server does not need to share resources among other threads / processes. Also, the server resources are always used without the “downtime”.</p>
-
-<h4 id="links">Links</h4>
-
-<ul>
-  <li><a href="http://berb.github.io/diploma-thesis/original/042_serverarch.html#42">Concurrent Programming for Scalable Web Architectures</a></li>
-  <li><a href="http://www.wikivs.com/wiki/apache_vs_nginx">Apache vs nginx</a></li>
-</ul>
-
+<p>Have fun with Nodejs!</p>
 
           </div><!-- /.blog-post -->
 
@@ -141,8 +118,8 @@ Event-based web servers.
         <aside class="col-md-4 blog-sidebar">
           <div class="p-3 mb-3 bg-light rounded">
             
-            <h4 class="font-italic">TL;DR;</h4>
-            <p class="mb-0">Difference between web servers: **Apache, IIS, Nginx, Node.js**. Process schema illustrations.</p>
+            <h4 class="font-italic">About</h4>
+            <p class="mb-0">Webpage aldb - "The Full Stack Developer" building Real-World Scalable Web Apps. Welcome to my github pages, it’s great to have you.</p>
             
           </div>
 
@@ -154,57 +131,57 @@ Event-based web servers.
             
             
             
-              <li><a href="/2018/03/03/big-o-notation-in-js.html">March 2018</a></li>
+              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
             
             
             
             
-              <li><a href="/2016/07/13/differences-between-web-servers.html">July 2016</a></li>
+              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/nightwatjs-guide.html">June 2016</a></li>
+              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/06/01/install-nodejs-npm-by-brew.html">June 2016</a></li>
+              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
             
             
             
             
-              <li><a href="/2016/03/21/bash-command-not-found.html">March 2016</a></li>
+              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
             
             
             
             
-              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms.html">February 2016</a></li>
+              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
             
             
             
             
-              <li><a href="/2015/02/13/sql-joins.html">February 2015</a></li>
+              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
             
             
             
             
-              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python.html">October 2014</a></li>
+              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp.html">October 2014</a></li>
+              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/19/ustanovka-phpunit.html">October 2014</a></li>
+              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
             
             
             
             
-              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost.html">October 2014</a></li>
+              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
             
             
             
