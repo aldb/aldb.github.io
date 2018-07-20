@@ -5,6 +5,7 @@ date: 2015-02-13 21:38:39.000000000 -08:00
 category: programming
 tags: [sql,mysql,join,en]
 img: /assets/img/posts/2016/sql.png
+permalink: /:year/:month/:day/:title:output_ext
 ---
 Differense between SQL JOINs is the most popular question on enterview.
 So create **Table a** is on the left, and **Table b** is on the right.

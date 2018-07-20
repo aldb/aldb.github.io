@@ -5,6 +5,7 @@ date: 2016-02-23 21:38:39.000000000 -08:00
 category: programming
 tags: [jekyll,ghost,en]
 img: /assets/img/posts/2016/jekyll-small.png
+permalink: /:year/:month/:day/:title:output_ext
 ---
 
 After 2 years use Ghost cms I try change for Jekyll.

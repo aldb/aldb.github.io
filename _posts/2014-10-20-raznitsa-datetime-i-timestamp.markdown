@@ -4,6 +4,7 @@ title: Разница datetime и timestamp
 date: 2014-10-20 21:03:44.000000000 -07:00
 category: programming
 tags: [ sql, mysql,ru]
+permalink: /:year/:month/:day/:title:output_ext
 ---
 Datetime и timestamp типы данных в MySQL для хранения информации по дате. Их основные отличия:
 

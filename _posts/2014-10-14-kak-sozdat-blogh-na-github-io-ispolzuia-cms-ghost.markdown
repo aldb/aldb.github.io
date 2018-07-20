@@ -4,6 +4,7 @@ title: Как создать блог на github.io используя CMS Ghos
 date: 2014-10-14 18:28:58.000000000 -07:00
 category: programming
 tags: [github, pages, jekyll,ru]
+permalink: /:year/:month/:day/:title:output_ext
 ---
 Github предоставляет всем своим пользователям создать статический блог в домене github.io. При это предлагает использовать Jekyll. Но сегодня мы поговорим как сделать блог на гитхабе с cms **ghost**.
 

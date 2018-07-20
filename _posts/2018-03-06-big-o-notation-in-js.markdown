@@ -5,6 +5,7 @@ date: 2018-03-03 07:38:39.000000000 -08:00
 category: programming
 tags: [en,bigo,algorithm,js]
 img: /assets/img/posts/2018/bigo_1_def.png
+permalink: /:year/:month/:day/:title:output_ext
 ---
 
 

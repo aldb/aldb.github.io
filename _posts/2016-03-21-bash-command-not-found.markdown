@@ -5,6 +5,7 @@ date: 2016-03-21 07:38:39.000000000 -08:00
 category: programming
 tags: [en,mac,error,nodejs]
 img: /assets/img/posts/2016/def2.png
+permalink: /:year/:month/:day/:title:output_ext
 ---
 
 ## Error
