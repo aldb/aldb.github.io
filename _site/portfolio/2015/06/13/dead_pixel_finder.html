@@ -12,6 +12,20 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    var num=0;
+    window.setInterval(function(){
+      num++;
+      var classes=['','out','ready'];
+      $('#watch').removeClass();
+      $('#watch').addClass(classes[num%3])
+      $('#phone').removeClass();
+      $('#phone').addClass(classes[(num+2)%3]);
+      $('#laptop').removeClass();
+      $('#laptop').addClass(classes[(num+1)%3]);
+    },1200)
+</script>
+
   <title>Dead pixel finder</title>
   <meta name="description" content="Web page with screen color change by click for find dead pixel on screen your device. Check online.">
 

@@ -12,6 +12,20 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    var num=0;
+    window.setInterval(function(){
+      num++;
+      var classes=['','out','ready'];
+      $('#watch').removeClass();
+      $('#watch').addClass(classes[num%3])
+      $('#phone').removeClass();
+      $('#phone').addClass(classes[(num+2)%3]);
+      $('#laptop').removeClass();
+      $('#laptop').addClass(classes[(num+1)%3]);
+    },1200)
+</script>
+
   <title>include() vs require() &amp; require_once() vs include_once()</title>
   <meta name="description" content="В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис: include(&#39;file&#39;); require(&#39;file&#39;); include &#39;fi...">
 

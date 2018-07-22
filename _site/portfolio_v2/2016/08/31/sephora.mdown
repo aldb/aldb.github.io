@@ -12,6 +12,20 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    var num=0;
+    window.setInterval(function(){
+      num++;
+      var classes=['','out','ready'];
+      $('#watch').removeClass();
+      $('#watch').addClass(classes[num%3])
+      $('#phone').removeClass();
+      $('#phone').addClass(classes[(num+2)%3]);
+      $('#laptop').removeClass();
+      $('#laptop').addClass(classes[(num+1)%3]);
+    },1200)
+</script>
+
   <title>Sephora Gallery</title>
   <meta name="description" content="Design and development Mobile web app, website, optimized for the browser and iOS. The system consisted of a proprietary single-sign-on and photo upload flow...">
 

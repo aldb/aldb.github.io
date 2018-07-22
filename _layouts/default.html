@@ -28,35 +28,33 @@
                 </p>
                 <br>
                 <p class="card-text">
-                  Hey! I'm... Alex Dubinchyk👋, <code class="text-primary">Full-Stack Web Developer</code> with 7+ years of experience building web applications on <code class="text-primary">JavaScript/PHP</code>
+                  Hey! I'm... Alex Dubinchyk👋, <code class="text-primary">Full-Stack Developer</code> with 7+ years of experience building web applications.
                 </p>
+                <div class="row">
+                  <div class="col-sm-6">
+                  </div>
+                </div>
+                <div class="feature">
+                    <p class="text-center"><i class="icon-lg ion-cube"></i></p>
+                    <p class="text-muted m-b-0">
+                      <code class="text-primary">
+                    JS, Angular.js, 3d visualization Autodesk-Forge, NodeJS, Express,
+                    PHP Zend, Codeigniter,  Yii, Silex, MySQL, MongoDB
+                      </code>
+                    </p>
+                </div>
+                <div class="feature">
+                    <p class="text-center">
+                      <i class="icon-lg ion-university"></i>
+                    </p>
+                    <p class="text-muted m-b-0 text-center">
+                      Belarusian State University of <code class="text-primary">Informatics and Radioelectronics</code>
+                    </p>
+                </div>
               </div>
               <div class="col-sm-8">
                 <div class="row">
-                  <div class="col-lg-6 col-md-4 text-center">
-                      <div class="feature">
-                          <i class="icon-lg ion-university"></i>
-                          <br><br>
-                          <p class="text-muted m-b-0">
-                            <code class="text-primary">
-                            Belarusian State University of Informatics and Radioelectronics</code>
-                            <br>
-                            Minsk, 2009 - 2013
-                          </p>
-                      </div>
-                  </div>
-                  <div class="col-lg-6 col-md-4 text-center">
-                      <div class="feature">
-                          <i class="icon-lg ion-cube"></i>
-                          <br><br>
-                          <p class="text-muted m-b-0">
-                            <code class="text-primary">
-                          Angular.js, 3D Autodesk-Forge, NodeJS, Express,
-                          PHP Zend, Codeigniter,  Yii, Silex, MySQL, MongoDB
-                            </code>
-                          </p>
-                      </div>
-                  </div>
+                  {% include anime.html %}
                 </div>
               </div>
             </div>
@@ -131,11 +129,6 @@
 </section>
 
 <section id="Blog">
-  <style type="text/css">
-    a:link, a:visited, a:hover, a:active {
-        text-decoration: none;
-    }
-  </style>
     <div class="container">
         <div class="row"></div>
 
@@ -146,24 +139,21 @@
       {% assign post = portfolio_list[i] %}
       {% if post.title %}
         <div class="col-md-6">
-          <a class="text-dark" href="{{post.url}}">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='{{post.url}}'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                {{post.title}}
+                <a class="text-dark" href="{{post.url}}">{{post.title}}</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">{{post.date | date_to_long_string }}</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">{{ post.content | strip_html | truncatewords:5}}</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="{% if post.img %} {{post.img}} {% else %}/assets/img/posts/2016/def.png{% endif %}" alt="{{ post.title }}">
           </div>
-          </a>
         </div>
       {% endif %}
       {% endfor %}

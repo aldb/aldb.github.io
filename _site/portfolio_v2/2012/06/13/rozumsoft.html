@@ -12,6 +12,20 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    var num=0;
+    window.setInterval(function(){
+      num++;
+      var classes=['','out','ready'];
+      $('#watch').removeClass();
+      $('#watch').addClass(classes[num%3])
+      $('#phone').removeClass();
+      $('#phone').addClass(classes[(num+2)%3]);
+      $('#laptop').removeClass();
+      $('#laptop').addClass(classes[(num+1)%3]);
+    },1200)
+</script>
+
   <title>ROZUMsoft</title>
   <meta name="description" content="Developed script utilities for call-center agents: JS audio player(hardware acceleration, deceleration and the order to play audio files), сomplex statistica...">
 

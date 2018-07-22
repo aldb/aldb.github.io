@@ -12,6 +12,20 @@
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    var num=0;
+    window.setInterval(function(){
+      num++;
+      var classes=['','out','ready'];
+      $('#watch').removeClass();
+      $('#watch').addClass(classes[num%3])
+      $('#phone').removeClass();
+      $('#phone').addClass(classes[(num+2)%3]);
+      $('#laptop').removeClass();
+      $('#laptop').addClass(classes[(num+1)%3]);
+    },1200)
+</script>
+
   <title>aldb</title>
   <meta name="description" content="aldb - The Full Stack Developer">
 
@@ -75,35 +89,65 @@
                 </p>
                 <br>
                 <p class="card-text">
-                  Hey! I'm... Alex Dubinchyk👋, <code class="text-primary">Full-Stack Web Developer</code> with 7+ years of experience building web applications on <code class="text-primary">JavaScript/PHP</code>
+                  Hey! I'm... Alex Dubinchyk👋, <code class="text-primary">Full-Stack Developer</code> with 7+ years of experience building web applications.
                 </p>
+                <div class="row">
+                  <div class="col-sm-6">
+                  </div>
+                </div>
+                <div class="feature">
+                    <p class="text-center"><i class="icon-lg ion-cube"></i></p>
+                    <p class="text-muted m-b-0">
+                      <code class="text-primary">
+                    JS, Angular.js, 3d visualization Autodesk-Forge, NodeJS, Express,
+                    PHP Zend, Codeigniter,  Yii, Silex, MySQL, MongoDB
+                      </code>
+                    </p>
+                </div>
+                <div class="feature">
+                    <p class="text-center">
+                      <i class="icon-lg ion-university"></i>
+                    </p>
+                    <p class="text-muted m-b-0 text-center">
+                      Belarusian State University of <code class="text-primary">Informatics and Radioelectronics</code>
+                    </p>
+                </div>
               </div>
               <div class="col-sm-8">
                 <div class="row">
-                  <div class="col-lg-6 col-md-4 text-center">
-                      <div class="feature">
-                          <i class="icon-lg ion-university"></i>
-                          <br><br>
-                          <p class="text-muted m-b-0">
-                            <code class="text-primary">
-                            Belarusian State University of Informatics and Radioelectronics</code>
-                            <br>
-                            Minsk, 2009 - 2013
-                          </p>
-                      </div>
-                  </div>
-                  <div class="col-lg-6 col-md-4 text-center">
-                      <div class="feature">
-                          <i class="icon-lg ion-cube"></i>
-                          <br><br>
-                          <p class="text-muted m-b-0">
-                            <code class="text-primary">
-                          Angular.js, 3D Autodesk-Forge, NodeJS, Express,
-                          PHP Zend, Codeigniter,  Yii, Silex, MySQL, MongoDB
-                            </code>
-                          </p>
-                      </div>
-                  </div>
+                  <div class="artboard">
+  <div id="watch">
+    <div id="crown"></div>
+    <div id="button"></div>
+    <div id="band-up"></div>
+    <div id="band-bottom"></div>
+    <div id="outline">
+      <div id="screen"></div>
+    </div>
+  </div>
+  <div id="phone" class="ready">
+    <div id="outline">
+      <div id="screen"></div>
+    </div>
+    <div id="home"></div>
+    <div id="camera"></div>
+    <div id="sensor"></div>
+    <div id="speaker"></div>
+    <div id="lock"></div>
+    <div id="silent"></div>
+    <div id="volume-up"></div>
+    <div id="volume-down"></div>
+  </div>
+  <div id="laptop" class="out">
+    <div id="outline">
+      <div id="screen"></div>
+    </div>
+    <div id="keyboard"></div>
+    <div id="notch"></div>
+    <div id="back"></div>
+    <div id="camera"></div>
+  </div>
+</div>
                 </div>
               </div>
             </div>
@@ -605,11 +649,6 @@ Managed, designed and implemented e2e test project(<code class="text-primary">Ni
 </section>
 
 <section id="Blog">
-  <style type="text/css">
-    a:link, a:visited, a:hover, a:active {
-        text-decoration: none;
-    }
-  </style>
     <div class="container">
         <div class="row"></div>
 
@@ -620,264 +659,231 @@ Managed, designed and implemented e2e test project(<code class="text-primary">Ni
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2018/03/03/big-o-notation-in-js/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2018/03/03/big-o-notation-in-js/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Big O Notation in JS
+                <a class="text-dark" href="/2018/03/03/big-o-notation-in-js/">Big O Notation in JS</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">03 March 2018</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Big O notation focuses the...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src=" /assets/img/posts/2018/bigo_1_def.png " alt="Big O Notation in JS">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2016/07/13/differences-between-web-servers/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2016/07/13/differences-between-web-servers/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Apache vs IIS vs Nginx vs Node.js
+                <a class="text-dark" href="/2016/07/13/differences-between-web-servers/">Apache vs IIS vs Nginx vs Node.js</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">13 July 2016</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Today, the most popular web...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="/assets/img/posts/2016/def.png" alt="Apache vs IIS vs Nginx vs Node.js">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2016/06/01/nightwatjs-guide/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2016/06/01/nightwatjs-guide/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Nightwatchjs build
+                <a class="text-dark" href="/2016/06/01/nightwatjs-guide/">Nightwatchjs build</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">01 June 2016</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">What|Why is Nightwatch.js? Nightwatch.js is...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src=" /assets/img/posts/2016/def4.png " alt="Nightwatchjs build">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2016/06/01/install-nodejs-npm-by-brew/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2016/06/01/install-nodejs-npm-by-brew/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Install Nodejs & NPM by Brew
+                <a class="text-dark" href="/2016/06/01/install-nodejs-npm-by-brew/">Install Nodejs & NPM by Brew</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">01 June 2016</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Problem Need quick script for...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src=" /assets/img/posts/2016/nodejs.png " alt="Install Nodejs & NPM by Brew">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2016/03/21/bash-command-not-found/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2016/03/21/bash-command-not-found/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                bash command not found
+                <a class="text-dark" href="/2016/03/21/bash-command-not-found/">bash command not found</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">21 March 2016</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Error I get error on...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src=" /assets/img/posts/2016/def2.png " alt="bash command not found">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2016/02/23/Jekyll-vs-ghost-cms/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2016/02/23/Jekyll-vs-ghost-cms/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Github Jekyll
+                <a class="text-dark" href="/2016/02/23/Jekyll-vs-ghost-cms/">Github Jekyll</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">23 February 2016</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">After 2 years use Ghost...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src=" /assets/img/posts/2016/jekyll-small.png " alt="Github Jekyll">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2015/02/13/sql-joins/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2015/02/13/sql-joins/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                SQL Joins
+                <a class="text-dark" href="/2015/02/13/sql-joins/">SQL Joins</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">13 February 2015</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Differense between SQL JOINs is...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src=" /assets/img/posts/2016/sql.png " alt="SQL Joins">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2014/10/31/rabota-s-datetime-php-vs-python/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2014/10/31/rabota-s-datetime-php-vs-python/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Datetime PHP like Python
+                <a class="text-dark" href="/2014/10/31/rabota-s-datetime-php-vs-python/">Datetime PHP like Python</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">31 October 2014</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Разработка данных datetime удобнее с...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src=" /assets/img/posts/2016/02/Python_logo-256.png " alt="Datetime PHP like Python">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2014/10/20/raznitsa-datetime-i-timestamp/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2014/10/20/raznitsa-datetime-i-timestamp/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Разница datetime и timestamp
+                <a class="text-dark" href="/2014/10/20/raznitsa-datetime-i-timestamp/">Разница datetime и timestamp</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">20 October 2014</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Datetime и timestamp типы данных...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="/assets/img/posts/2016/def.png" alt="Разница datetime и timestamp">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2014/10/19/ustanovka-phpunit/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2014/10/19/ustanovka-phpunit/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Установка phpunit
+                <a class="text-dark" href="/2014/10/19/ustanovka-phpunit/">Установка phpunit</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">19 October 2014</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Все знаем что phpunit модно,...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="/assets/img/posts/2016/def.png" alt="Установка phpunit">
           </div>
-          </a>
         </div>
       
       
       
       
         <div class="col-md-6">
-          <a class="text-dark" href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">
-          <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card hover flex-md-row mb-4 box-shadow h-md-250" onclick="document.location='/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/'">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                Как создать блог на github.io используя CMS Ghost
+                <a class="text-dark" href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">Как создать блог на github.io используя CMS Ghost</a>
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">14 October 2014</span>
               </div>
-              
               <!-- <p class="card-text mb-auto">Github предоставляет всем своим пользователям...</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="/assets/img/posts/2016/def.png" alt="Как создать блог на github.io используя CMS Ghost">
           </div>
-          </a>
         </div>
       
       
