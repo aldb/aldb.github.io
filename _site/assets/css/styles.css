@@ -505,14 +505,14 @@ body {
   width: 48vmin;
   height: 33vmin;
   border-radius: 1vmin;
-  background: #00A8E8;
+  background: #45565C;
   display: flex;
   transform-origin: center center;
 }
 #laptop #screen {
   width: 44vmin;
   height: 29vmin;
-  background: #73CFF2;
+  background: #172C33;
   margin: auto;
   transition-delay: 50ms;
   transform-origin: center center;
@@ -523,7 +523,7 @@ body {
   width: 60vmin;
   height: 1.3vmin;
   border-radius: .5vmin .5vmin 0 0;
-  background: #00A8E8;
+  background: #2E4147;
   transform-origin: center -8vmin;
 }
 #laptop #back {
@@ -531,7 +531,7 @@ body {
   top: 34.3vmin;
   width: 60vmin;
   height: .8vmin;
-  background: #008ABE;
+  background: #172C33;
   border-radius: 0 0 .5vmin .5vmin;
   transform-origin: center -10vmin;
 }
@@ -552,7 +552,7 @@ body {
   left: 29.7vmin;
   width: .8vmin;
   height: .8vmin;
-  background: #007EA7;
+  background: #001117;
   border-radius: .4vmin;
   transition-delay: 50ms;
   transform-origin: center 20vmin;
