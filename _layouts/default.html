@@ -131,6 +131,11 @@
 </section>
 
 <section id="Blog">
+  <style type="text/css">
+    a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+    }
+  </style>
     <div class="container">
         <div class="row"></div>
 
@@ -141,13 +146,14 @@
       {% assign post = portfolio_list[i] %}
       {% if post.title %}
         <div class="col-md-6">
+          <a class="text-dark" href="{{post.url}}">
           <div class="card hover flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <p class="text-muted m-b-0">
                   Blog
               </p>
               <h6 class="mb-0">
-                <a class="text-dark" href="{{post.url}}">{{post.title}}</a>
+                {{post.title}}
               </h6>
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">{{post.date | date_to_long_string }}</span>
@@ -157,6 +163,7 @@
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="{% if post.img %} {{post.img}} {% else %}/assets/img/posts/2016/def.png{% endif %}" alt="{{ post.title }}">
           </div>
+          </a>
         </div>
       {% endif %}
       {% endfor %}
