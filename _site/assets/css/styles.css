@@ -241,3 +241,7 @@ pre a {
     color: inherit;
     text-decoration: underline;
 }
+
+.navbar, .bg-dark, .footer-copyright {
+  background: url('/assets/img/ste.png');
+}
