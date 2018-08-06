@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Dijkstra vs BFS vs DFS  vs Bellman-Ford in JS ES6
-date: 2018-07-24 07:38:39.000000000 -08:00
-category: draft
+date: 2018-04-24 07:38:39.000000000 -08:00
+category: programming
 tags: [en,bigo,algorithm,js]
 img: /assets/img/posts/2018/bt.png
 permalink: /:year/:month/:day/:title/
@@ -209,10 +209,10 @@ Bellman-Ford similar to Dijstra's except that instead of utilizing a Priority Qu
 
 <b>Time Complexity different:</b> O(E+V log V) vs O(VE)
 
-<img src="../../../../assets/img/posts/2018/Bellman-FordvsDijkstra.png" class="img-fluid" alt="DFS vs BFS vs Dijkstra">
+<img src="../../../../assets/img/posts/2018/Bellman-FordvsDijkstra.png" class="img-fluid" alt="Bellman vs FordvsDijkstra">
 Compare code implementation Bellman-Ford vs Dijkstra's algorithm.
 
-####References:
+#### References:
 
 - [Github repository with tests](https://github.com/aldb/js_algorithms/)
 - [Graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))

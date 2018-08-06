@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/ionicons.min.css" />
+<link rel="stylesheet" href="/assets/css/styles.css" />
+  <script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    var num=0;
+    window.setInterval(function(){
+      num++;
+      var classes=['','out','ready'];
+      $('#watch').removeClass();
+      $('#watch').addClass(classes[num%3])
+      $('#phone').removeClass();
+      $('#phone').addClass(classes[(num+2)%3]);
+      $('#laptop').removeClass();
+      $('#laptop').addClass(classes[(num+1)%3]);
+    },1200)
+</script>
+
+  <title>Dijkstra vs BFS vs DFS  vs Bellman-Ford in JS ES6</title>
+  <meta name="description" content="Dijkstra vs BFS vs DFS vs Bellman-Ford in JS ES6">
+
+  <link rel="canonical" href="http://localhost:4000/2018/04/24/Dijkstra-BFS-DFS-BellmanFord/">
+  <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
+  
+  
+</head>
+
+
+
+<body>
+
+
+<section class="bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+  <a class="navbar-brand text-primary" href="http://localhost:4000">aldb</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:4000/#">Intro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:4000/#Portfolio">Portfolio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="http://localhost:4000/#Blog">Blog<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="http://localhost:4000/#Contact">Contact</a>
+      </li>
+      <li class="nav-item pull-xs-right">
+          <a class="nav-link" href="https://www.linkedin.com/in/alex-dubinchyk-76054ba0?trk=nav_responsive_tab_profile">
+              <i class="ion-social-linkedin"></i>
+          </a>
+      </li>
+      <li class="nav-item pull-xs-right">
+          <a class="nav-link" href="https://github.com/aldb">
+              <i class="ion-social-github"></i>
+          </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+</section>
+<section>
+  <div class="container py-4">
+    <main role="main" class="container" style="padding: 60px;">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <div class="blog-post">
+            <h2 class="blog-post-title">Dijkstra vs BFS vs DFS  vs Bellman-Ford in JS ES6</h2>
+            <p class="blog-post-meta">24 April 2018 by <a href="#">aldb</a></p>
+            <h4 id="dijkstra-vs-bfs-vs-dfs-vs-bellman-ford-in-js-es6">Dijkstra vs BFS vs DFS vs Bellman-Ford in JS ES6</h4>
+
+<p>In this topic, we’re review graph search, traversal, and explore algorithm implementations in JS ES6.</p>
+
+<p>Candidates:</p>
+<ul>
+  <li>Dijkstra’s algorithm</li>
+  <li>Breadth-first search algorithm</li>
+  <li>Depth-first search algorithm</li>
+  <li>Bellman-Ford algorithm</li>
+</ul>
+
+<p>All code &amp; test provide from this <a href="https://github.com/aldb/js_algorithms/">repository</a>.</p>
+
+<h4 id="graphs-overview">Graphs Overview</h4>
+
+<p>A <a href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)">Graph</a> consists of vertices(nodes) and edges.</p>
+
+<p><img src="../../../../assets/img/posts/2018/graph_types.png" class="img-fluid" alt="DFS vs BFS vs Dijkstra" /></p>
+
+<p>Lets describe Graphs types for algorithm candidates:</p>
+<ul>
+  <li>A Undirected Graph</li>
+  <li>A <a href="https://en.wikipedia.org/wiki/Directed_graph">Directed Graph</a></li>
+  <li>Directed Acyclic Graphs(DAG) - are directed graphs with no directed cycles.</li>
+  <li>Weighted DAG(directed networks)</li>
+  <li>Weighted DAG with negative edges</li>
+</ul>
+
+<p>Each of graph type has a different representation, API and problem solved.
+Lets code non-recursive implementation for algorithm candidates and connect with Graphs type API.</p>
+
+<h4 id="depth-first-search">Depth-first search</h4>
+
+<p>Depth-first search (<a href="https://en.wikipedia.org/wiki/Depth-first_search">DFS</a>) an algorithm for traversing or searching graph or tree. It uses a <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a>, and it delays checking whether a vertex has been discovered until the vertex is popped from the stack rather than making this check before adding the vertex.</p>
+
+<p><b>Time Complexity:</b> O(E+V)</p>
+
+<p>Graph type:</p>
+<ul>
+  <li>Undirected Graph</li>
+  <li>Directed Acyclic Graphs(DAG) without weigth</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">depthFirstSearchTraversal</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">vertex</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">distance</span> <span class="o">=</span> <span class="p">{[</span><span class="nx">vertex</span><span class="p">]</span> <span class="p">:</span> <span class="p">{</span><span class="na">distance</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">parent</span><span class="p">:</span> <span class="s1">'None'</span><span class="p">}};</span>
+  <span class="kd">const</span> <span class="nx">stack</span>    <span class="o">=</span> <span class="p">[</span><span class="nx">vertex</span><span class="p">];</span>
+  <span class="k">while</span><span class="p">(</span><span class="nx">stack</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">current</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">current</span><span class="p">][</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">distance</span><span class="p">[</span><span class="nx">node</span><span class="p">])</span> <span class="p">{</span>
+        <span class="nx">distance</span><span class="p">[</span><span class="nx">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="na">distance</span> <span class="p">:</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">current</span><span class="p">].</span><span class="nx">distance</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="na">parent</span>   <span class="p">:</span> <span class="nx">current</span>
+        <span class="p">};</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">distance</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Example using:</p>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Topological_sorting">Topological sorting</a></li>
+  <li>Maze</li>
+  <li>Finding strongly connected components</li>
+  <li>Generating words in order</li>
+</ul>
+
+<h4 id="breadth-first-search">Breadth-first search</h4>
+
+<p>Breadth-first search (<a href="https://en.wikipedia.org/wiki/Breadth-first_search">BFS</a>) is an algorithm for traversing or searching tree or graph data structures. It uses a <a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">queue</a>.</p>
+
+<p><b>Time Complexity:</b> O(E+V)</p>
+
+<p>Graph type:</p>
+<ul>
+  <li>Undirected Graph</li>
+  <li>Directed Acyclic Graphs(DAG) without weigth</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">breadthFirstSearchTraversal</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">vertex</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">distance</span> <span class="o">=</span> <span class="p">{[</span><span class="nx">vertex</span><span class="p">]</span> <span class="p">:</span> <span class="p">{</span><span class="na">distance</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">parent</span><span class="p">:</span> <span class="s1">'None'</span><span class="p">}};</span>
+  <span class="kd">const</span> <span class="nx">queue</span>    <span class="o">=</span> <span class="p">[</span><span class="nx">vertex</span><span class="p">];</span>
+  <span class="k">while</span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">queue</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">current</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">current</span><span class="p">][</span><span class="nx">i</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">distance</span><span class="p">[</span><span class="nx">node</span><span class="p">])</span> <span class="p">{</span>
+        <span class="nx">distance</span><span class="p">[</span><span class="nx">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="na">distance</span> <span class="p">:</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">current</span><span class="p">].</span><span class="nx">distance</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="na">parent</span>   <span class="p">:</span> <span class="nx">current</span>
+        <span class="p">};</span>
+        <span class="nx">queue</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">distance</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Example using:</p>
+<ul>
+  <li>Shortest Path</li>
+  <li>Copying garbage collection</li>
+  <li>Serialization</li>
+</ul>
+
+<h4 id="dijkstras-algorithm">Dijkstra’s algorithm</h4>
+
+<p><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s algorithm</a> is for finding shortest Path between nodes in the Graphs. It picks the unvisited vertex with the lowest distance, calculates the distance through it to each unvisited neighbor, and updates the neighbor’s distance if smaller. It uses a <a href="https://en.wikipedia.org/wiki/Priority_queue">Priority queue</a>.</p>
+
+<p><b>Time Complexity:</b> O(E+V log V)</p>
+
+<p>Graph type:</p>
+<ul>
+  <li>non-negative weighted DAG</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">dijkstra</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">vertex</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">priorityQueueInsertOrUpdate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">current</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">priorityQueue</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">distance</span><span class="p">[</span><span class="nx">current</span><span class="p">].</span><span class="nx">distance</span> <span class="o">&gt;</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">priorityQueue</span><span class="p">[</span><span class="nx">i</span><span class="p">]].</span><span class="nx">distance</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">priorityQueue</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">current</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">distance</span>      <span class="o">=</span> <span class="p">{[</span><span class="nx">vertex</span><span class="p">]</span> <span class="p">:</span> <span class="p">{</span><span class="na">distance</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">parent</span><span class="p">:</span> <span class="s1">'None'</span><span class="p">}};</span>
+  <span class="kd">const</span> <span class="nx">priorityQueue</span> <span class="o">=</span> <span class="p">[</span><span class="nx">vertex</span><span class="p">];</span>
+
+  <span class="k">while</span><span class="p">(</span><span class="nx">priorityQueue</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">current</span> <span class="o">=</span> <span class="nx">priorityQueue</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">node</span> <span class="k">in</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">current</span><span class="p">])</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">weigth</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">[</span><span class="nx">current</span><span class="p">][</span><span class="nx">node</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">distance</span><span class="p">[</span><span class="nx">node</span><span class="p">]</span> <span class="o">||</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">node</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">current</span><span class="p">].</span><span class="nx">distance</span> <span class="o">+</span> <span class="nx">weigth</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">distance</span><span class="p">[</span><span class="nx">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="na">distance</span> <span class="p">:</span> <span class="nx">distance</span><span class="p">[</span><span class="nx">current</span><span class="p">].</span><span class="nx">distance</span> <span class="o">+</span> <span class="nx">weigth</span><span class="p">,</span> <span class="na">parent</span><span class="p">:</span> <span class="nx">current</span><span class="p">};</span>
+        <span class="nx">priorityQueueInsertOrUpdate</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">distance</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Example using:</p>
+<ul>
+  <li>Shortest path</li>
+</ul>
+
+<h4 id="implementation-pattern">Implementation pattern</h4>
+
+<p>This 3 algorithms has similar code structure. Main different in “order” type data structure:</p>
+<ul>
+  <li>Stack - Depth-first search ((O(E+V)))</li>
+  <li>Queue - Breadth-first search (O(E+V))</li>
+  <li>Priority Queue -  Dijkstra’s algorithm (O(E+V log V))</li>
+</ul>
+
+<p><img src="../../../../assets/img/posts/2018/DFSvsBFSvsDijkstra.png" class="img-fluid" alt="DFS vs BFS vs Dijkstra" />
+Compare code implementation Depth-first search vs Breadth-first search vs Dijkstra’s algorithm.</p>
+
+<h4 id="bellman-ford">Bellman-Ford</h4>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman–Ford</a> algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph.
+It uses 2 for loop, what makes time complexity Vertex * Edges in worst cases.</p>
+
+<p><b>Time Complexity:</b> O(VE)</p>
+
+<p>Graph type:</p>
+<ul>
+  <li>negative or positive weighted DAG</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">bellmanFord</span><span class="p">(</span><span class="nx">graph</span><span class="p">,</span> <span class="nx">vertex</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">distances</span>        <span class="o">=</span> <span class="p">{};</span>
+  <span class="kd">const</span> <span class="nx">previousVertices</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="c1">// Init all distances with infinity</span>
+  <span class="nx">distances</span><span class="p">[</span><span class="nx">vertex</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">graph</span><span class="p">.</span><span class="nx">vertices</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">node</span><span class="p">){</span>
+    <span class="nx">previousVertices</span><span class="p">[</span><span class="nx">node</span><span class="p">]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">node</span> <span class="o">!==</span> <span class="nx">vertex</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">distances</span><span class="p">[</span><span class="nx">node</span><span class="p">]</span> <span class="o">=</span> <span class="kc">Infinity</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">node</span> <span class="k">in</span> <span class="nx">distances</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">startVertex</span> <span class="o">==</span> <span class="nx">node</span> <span class="o">||</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">endVertex</span> <span class="o">==</span> <span class="nx">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">neighbor</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">startVertex</span> <span class="o">==</span> <span class="nx">node</span> <span class="p">?</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">endVertex</span> <span class="p">:</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">startVertex</span><span class="p">;</span>
+
+        <span class="kd">const</span> <span class="nx">distanceToVertex</span> <span class="o">=</span> <span class="nx">distances</span><span class="p">[</span><span class="nx">node</span><span class="p">];</span>
+        <span class="kd">const</span> <span class="nx">distanceToNeighbor</span> <span class="o">=</span> <span class="nx">distanceToVertex</span> <span class="o">+</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">weight</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">distanceToNeighbor</span> <span class="o">&lt;</span> <span class="nx">distances</span><span class="p">[</span><span class="nx">neighbor</span><span class="p">])</span> <span class="p">{</span>
+          <span class="nx">distances</span><span class="p">[</span><span class="nx">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="nx">distanceToNeighbor</span><span class="p">;</span>
+          <span class="nx">previousVertices</span><span class="p">[</span><span class="nx">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="nx">node</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">{</span><span class="nx">distances</span><span class="p">,</span> <span class="nx">previousVertices</span><span class="p">};</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Example using:</p>
+<ul>
+  <li>Shortest path</li>
+</ul>
+
+<h4 id="implementation-pattern-1">Implementation pattern</h4>
+
+<p>Bellman-Ford similar to Dijstra’s except that instead of utilizing a Priority Queue to visit nodes in order, Bellman-Ford looping iterates over every edge V times each, ensuring that all negative edge weights.</p>
+
+<p><b>Time Complexity different:</b> O(E+V log V) vs O(VE)</p>
+
+<p><img src="../../../../assets/img/posts/2018/Bellman-FordvsDijkstra.png" class="img-fluid" alt="Bellman vs FordvsDijkstra" />
+Compare code implementation Bellman-Ford vs Dijkstra’s algorithm.</p>
+
+<h4 id="references">References:</h4>
+
+<ul>
+  <li><a href="https://github.com/aldb/js_algorithms/">Github repository with tests</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)">Graph</a>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Directed_graph">Directed Graph</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Depth-first_search">DFS</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Breadth-first_search">BFS</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s algorithm</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman–Ford</a></li>
+    </ul>
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queue</a>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Priority_queue">Priority queue</a></li>
+    </ul>
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stack</a></li>
+</ul>
+
+          </div><!-- /.blog-post -->
+
+          
+            
+
+          
+        </div><!-- /.blog-main -->
+
+        <aside class="col-md-4 blog-sidebar">
+<!--           <div class="p-3 mb-3 bg-light rounded">
+            
+            <h4 class="font-italic">About</h4>
+            <p class="mb-0">Webpage aldb - "The Full Stack Developer" building Real-World Scalable Web Apps. Welcome to my github pages, it’s great to have you.</p>
+            
+          </div> -->
+
+          <div class="p-3">
+            <h4 class="font-italic">Archives</h4>
+            <ol class="list-unstyled mb-0">
+            
+            
+            
+            
+            
+              <li><a href="/2018/07/24/binary-tree-es6/">July 2018</a></li>
+            
+            
+            
+            
+              <li><a href="/2018/04/24/Dijkstra-BFS-DFS-BellmanFord/">April 2018</a></li>
+            
+            
+            
+            
+              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
+            
+            
+            
+            
+              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
+            
+            
+            
+            
+              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
+            
+            
+            
+            
+              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
+            
+            
+            
+            
+              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
+            
+            
+            
+            
+              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
+            
+            
+            
+            
+              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
+            
+            
+            
+            
+              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
+            
+            
+            
+            
+              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
+            
+            
+            
+            
+              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
+            
+            
+            
+            
+              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
+            
+            
+            
+            
+            
+            </ol>
+          </div>
+        </aside><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </main><!-- /.container -->
+</div>
+
+</section>
+
+
+<div id="map"></div>
+<footer id="myFooter" class="bg-dark">
+    <div class="container" id="Contact">
+        <div class="row">
+            <div class="col-sm-4">
+                <h6>Contact</h6>
+                <ul>
+                    <li><i class="ion-social-linkedin"></i> <a href="https://www.linkedin.com/in/alex-dubinchyk-76054ba0?trk=nav_responsive_tab_profile">Linkedin</a></li>
+                    <li><i class="icon-sm ion-email"></i> <code class="text-primary">hi.alexd at gmail.com</code></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h6>Location</h6>
+                <ul>
+                    <li><i class="icon ion-location"></i> Bay Area, CA</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h6>Social</h6>
+                <ul>
+                    <li><i class="icon ion-social-github"></i> <a href="https://github.com/aldb">Github</a></li>
+                    <li><i class="icon ion-code"></i> <a href="https://www.codewars.com/users/aldb">Codewars</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>Made with <i class="ion-android-favorite-outline"></i> 2014-2018</p>
+    </div>
+</footer>
+
+
+<!-- GOOGLE MAP -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMQ2hSX8M4dfpI0-_C3bz0JjOdGQGMvdI"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+  /***************** Google Map ******************/
+  function initialize() {
+    var styles     = [{
+      "featureType": "poi",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "transit",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "water",
+      "elementType": "labels",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "landscape.man_made",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "on"
+      }]
+    }, {
+      "featureType": "landscape.natural",
+      "elementType": "labels",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "landscape.natural.terrain",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "administrative.neighborhood",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "road.local",
+      "elementType": "labels",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "road.local",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#47453e"
+      }]
+    }, {
+      "featureType": "road.arterial",
+      "elementType": "geometry",
+      "stylers": [{
+        "visibility": "simplified"
+      }, {
+        "color": "#5e5532"
+      }]
+    }, {
+      "featureType": "road.highway",
+      "elementType": "labels",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "administrative.country",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#949494"
+      }]
+    }, {
+      "featureType": "road.arterial",
+      "elementType": "labels",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "landscape.man_made",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "landscape.natural",
+      "elementType": "all",
+      "stylers": [{
+        "color": "#333333"
+      }]
+    }, {
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#404040"
+      }]
+    }, {
+      "featureType": "water",
+      "elementType": "all",
+      "stylers": [{
+        "color": "#8798ab"
+      }]
+    }, {
+      "featureType": "administrative.country",
+      "elementType": "labels.text.fill",
+      "stylers": [{
+        "color": "#c7c7c7"
+      }]
+    }, {
+      "featureType": "administrative.province",
+      "elementType": "labels.text.fill",
+      "stylers": [{
+        "color": "#6b6b6b"
+      }]
+    }, {
+      "featureType": "administrative.province",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "administrative.locality",
+      "elementType": "labels.icon",
+      "stylers": [{
+        "color": "#ffcc00"
+      }]
+    }, {
+      "featureType": "road",
+      "elementType": "labels.icon",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "administrative.country",
+      "elementType": "labels.text.stroke",
+      "stylers": [{
+        "color": "#333333"
+      }, {
+        "weight": 5
+      }]
+    }, {
+      "featureType": "administrative.locality",
+      "elementType": "labels.text.stroke",
+      "stylers": [{
+        "color": "#333333"
+      }]
+    }, {
+      "featureType": "administrative.locality",
+      "elementType": "labels.text.fill",
+      "stylers": [{
+        "color": "#b3b3b3"
+      }]
+    }, {
+      "featureType": "administrative.land_parcel",
+      "elementType": "all",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [{
+        "visibility": "simplified"
+      }, {
+        "color": "#525252"
+      }]
+    }, {
+      "featureType": "road.highway.controlled_access",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#474747"
+      }]
+    }];
+    var mapCanvas  = document.getElementById('map');
+    var mapOptions = {
+        center: new google.maps.LatLng(37.5689858, -122.0744625),
+        zoom: 8,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: styles
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+});
+</script>
+<!-- GOOGLE MAP -->
+</body>
+</html>
