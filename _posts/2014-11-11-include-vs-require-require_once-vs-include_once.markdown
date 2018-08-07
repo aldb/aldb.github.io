@@ -2,9 +2,10 @@
 layout: post
 title: include() vs require() & require_once() vs include_once()
 date: 2014-11-11 21:38:39.000000000 -08:00
-category: programming_del
+category: programming
 tags: [ php,ru]
 permalink: /:year/:month/:day/:title/
+order: 41
 ---
 В php ф-ии include, require отвечают за вставку кода из одних файлов в другие. Ф-ии имеют одинаковый синтаксис:
 {% highlight php startinline=true %}

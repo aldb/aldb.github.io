@@ -6,6 +6,7 @@ category: programming
 tags: [en,mac,nodejs,npm,brew]
 img: /assets/img/posts/2016/nodejs.png
 permalink: /:year/:month/:day/:title/
+order: 46
 ---
 
 ## Problem

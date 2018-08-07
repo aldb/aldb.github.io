@@ -5,6 +5,7 @@ date: 2014-10-19 23:54:24.000000000 -07:00
 category: programming
 tags: [ php,ru]
 permalink: /:year/:month/:day/:title/
+order: 39
 ---
 Все знаем что phpunit модно, стильно, молодежно.
 И вот как ее быстро установить:

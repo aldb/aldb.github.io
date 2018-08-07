@@ -133,8 +133,9 @@
         <div class="row"></div>
 
     <div class="row mb-2">
-      {% assign portfolio_list = site.posts| where:"category","programming" %}
+      {% assign portfolio_list = site.posts| where:"category","programming" | sort : 'order' | reverse %}
       {% assign portfolio_count = portfolio_list|size %}
+
       {% for i in (0..portfolio_count) %}
       {% assign post = portfolio_list[i] %}
       {% if post.title %}

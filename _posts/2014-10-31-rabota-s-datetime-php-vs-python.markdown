@@ -6,6 +6,7 @@ category: programming
 tags: [ python,ru]
 img: /assets/img/posts/2016/02/Python_logo-256.png
 permalink: /:year/:month/:day/:title/
+order: 40
 ---
 Разработка данных datetime удобнее с использованием Unix формата(числа).
 

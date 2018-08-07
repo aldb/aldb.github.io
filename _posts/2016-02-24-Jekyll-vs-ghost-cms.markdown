@@ -6,6 +6,7 @@ category: programming
 tags: [jekyll,ghost,en]
 img: /assets/img/posts/2016/jekyll-small.png
 permalink: /:year/:month/:day/:title/
+order: 43
 ---
 
 After 2 years use Ghost cms I try change for Jekyll.

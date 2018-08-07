@@ -6,6 +6,7 @@ category: programming
 tags: [en,mac,nightwatchjs]
 img: /assets/img/posts/2016/def4.png
 permalink: /:year/:month/:day/:title/
+order: 47
 ---
 
 ## What|Why is Nightwatch.js?

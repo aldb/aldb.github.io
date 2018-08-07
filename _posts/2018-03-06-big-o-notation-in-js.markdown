@@ -6,6 +6,7 @@ category: programming
 tags: [en,bigo,algorithm,js]
 img: /assets/img/posts/2018/bigo_1_def.png
 permalink: /:year/:month/:day/:title/
+order: 48
 ---
 
 

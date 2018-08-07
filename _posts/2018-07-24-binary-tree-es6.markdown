@@ -6,6 +6,7 @@ category: programming
 tags: [en,bigo,algorithm,js]
 img: /assets/img/posts/2018/bt.png
 permalink: /:year/:month/:day/:title/
+order: 49
 ---
 
 #### Binary Tree

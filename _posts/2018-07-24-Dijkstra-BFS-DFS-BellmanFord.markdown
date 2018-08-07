@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Dijkstra vs BFS vs DFS  vs Bellman-Ford in JS ES6
-date: 2018-04-24 07:38:39.000000000 -08:00
+date: 2018-08-05 07:38:39.000000000 -08:00
 category: programming
 tags: [en,bigo,algorithm,js]
-img: /assets/img/posts/2018/bt.png
+img: /assets/img/posts/2018/nodes.png
 permalink: /:year/:month/:day/:title/
+order: 50
 ---
 
 #### Dijkstra vs BFS vs DFS vs Bellman-Ford in JS ES6
