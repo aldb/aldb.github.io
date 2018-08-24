@@ -36,9 +36,7 @@
 </head>
 
 
-
 <body>
-
 
 <section class="bg-dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -103,20 +101,15 @@ push = +refs/heads/master:refs/heads/master
   <li><a href="https://help.github.com/articles/creating-project-pages-manually/">Creating Project Pages manually</a></li>
 </ul>
 
-          </div><!-- /.blog-post -->
+          </div>
 
           
             
 
           
-        </div><!-- /.blog-main -->
+        </div>
 
-        <aside class="col-md-4 blog-sidebar">
-<!--           <div class="p-3 mb-3 bg-light rounded">
-            
-            <h4 class="font-italic">About</h4>
-            <p class="mb-0">Webpage aldb - "The Full Stack Developer" building Real-World Scalable Web Apps. Welcome to my github pages, it’s great to have you.</p>
-            
+        <aside class="col-md-4 blog-sidebar">%}
           </div> -->
 
           <div class="p-3">
@@ -205,17 +198,13 @@ push = +refs/heads/master:refs/heads/master
             
             </ol>
           </div>
-        </aside><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </main><!-- /.container -->
+        </aside>
+      </div>
+    </main>
 </div>
 
 </section>
 
-
-<div id="map"></div>
 <footer id="myFooter" class="bg-dark">
     <div class="container" id="Contact">
         <div class="row">
@@ -245,203 +234,5 @@ push = +refs/heads/master:refs/heads/master
         <p>Made with <i class="ion-android-favorite-outline"></i> 2014-2018</p>
     </div>
 </footer>
-
-
-<!-- GOOGLE MAP -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMQ2hSX8M4dfpI0-_C3bz0JjOdGQGMvdI"></script>
-<script type="text/javascript">
-
-$(document).ready(function () {
-  /***************** Google Map ******************/
-  function initialize() {
-    var styles     = [{
-      "featureType": "poi",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "transit",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "water",
-      "elementType": "labels",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "landscape.man_made",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "on"
-      }]
-    }, {
-      "featureType": "landscape.natural",
-      "elementType": "labels",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "landscape.natural.terrain",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "administrative.neighborhood",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "road.local",
-      "elementType": "labels",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "road.local",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#47453e"
-      }]
-    }, {
-      "featureType": "road.arterial",
-      "elementType": "geometry",
-      "stylers": [{
-        "visibility": "simplified"
-      }, {
-        "color": "#5e5532"
-      }]
-    }, {
-      "featureType": "road.highway",
-      "elementType": "labels",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "administrative.country",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#949494"
-      }]
-    }, {
-      "featureType": "road.arterial",
-      "elementType": "labels",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "landscape.man_made",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "landscape.natural",
-      "elementType": "all",
-      "stylers": [{
-        "color": "#333333"
-      }]
-    }, {
-      "featureType": "road.highway",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#404040"
-      }]
-    }, {
-      "featureType": "water",
-      "elementType": "all",
-      "stylers": [{
-        "color": "#8798ab"
-      }]
-    }, {
-      "featureType": "administrative.country",
-      "elementType": "labels.text.fill",
-      "stylers": [{
-        "color": "#c7c7c7"
-      }]
-    }, {
-      "featureType": "administrative.province",
-      "elementType": "labels.text.fill",
-      "stylers": [{
-        "color": "#6b6b6b"
-      }]
-    }, {
-      "featureType": "administrative.province",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "administrative.locality",
-      "elementType": "labels.icon",
-      "stylers": [{
-        "color": "#ffcc00"
-      }]
-    }, {
-      "featureType": "road",
-      "elementType": "labels.icon",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "administrative.country",
-      "elementType": "labels.text.stroke",
-      "stylers": [{
-        "color": "#333333"
-      }, {
-        "weight": 5
-      }]
-    }, {
-      "featureType": "administrative.locality",
-      "elementType": "labels.text.stroke",
-      "stylers": [{
-        "color": "#333333"
-      }]
-    }, {
-      "featureType": "administrative.locality",
-      "elementType": "labels.text.fill",
-      "stylers": [{
-        "color": "#b3b3b3"
-      }]
-    }, {
-      "featureType": "administrative.land_parcel",
-      "elementType": "all",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "road.highway",
-      "elementType": "geometry",
-      "stylers": [{
-        "visibility": "simplified"
-      }, {
-        "color": "#525252"
-      }]
-    }, {
-      "featureType": "road.highway.controlled_access",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#474747"
-      }]
-    }];
-    var mapCanvas  = document.getElementById('map');
-    var mapOptions = {
-        center: new google.maps.LatLng(37.5689858, -122.0744625),
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-          styles: styles
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-  }
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-});
-</script>
-<!-- GOOGLE MAP -->
 </body>
 </html>

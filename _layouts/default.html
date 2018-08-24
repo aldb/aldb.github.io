@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
-
 <body>
-
 {% if page.title %}
 <section class="bg-dark">
     {% include header_posts.html %}
@@ -64,8 +62,6 @@
     </div>
   </div>
 </section>
-
-
 <section id="Portfolio">
     <div class="container">
         <div class="row">
@@ -127,11 +123,9 @@
     {% endif %}
   {% endfor %}
 </section>
-
 <section id="Blog">
     <div class="container">
         <div class="row"></div>
-
     <div class="row mb-2">
       {% assign portfolio_list = site.posts| where:"category","programming" | sort : 'order' | reverse %}
       {% assign portfolio_count = portfolio_list|size %}
@@ -151,7 +145,6 @@
               <div class="mb-1 small">
                 <i class="ion-ios-calendar"></i>&nbsp;<span class="text-primary" style="font-weight: 200;">{{post.date | date_to_long_string }}</span>
               </div>
-              <!-- <p class="card-text mb-auto">{{ post.content | strip_html | truncatewords:5}}</p> -->
             </div>
             <img class="card-img-right flex-auto d-none d-md-block" src="{% if post.img %} {{post.img}} {% else %}/assets/img/posts/2016/def.png{% endif %}" alt="{{ post.title }}">
           </div>
@@ -161,7 +154,6 @@
     </div>
 </section>
 {%endif%}
-
 {% include footer.html %}
 </body>
 </html>

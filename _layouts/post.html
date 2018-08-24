@@ -9,22 +9,14 @@ layout: default
             <h2 class="blog-post-title">{{ page.title}}</h2>
             <p class="blog-post-meta">{{ page.date | date_to_long_string}} by <a href="#">aldb</a></p>
             {{ content }}
-          </div><!-- /.blog-post -->
+          </div>
 
           {% if site.disqus %}
             {% include disqus_comments.html %}
           {% endif %}
-        </div><!-- /.blog-main -->
+        </div>
 
-        <aside class="col-md-4 blog-sidebar">
-<!--           <div class="p-3 mb-3 bg-light rounded">
-            {% if page.tldr %}
-            <h4 class="font-italic">TL;DR;</h4>
-            <p class="mb-0">{{ page.tldr }}</p>
-            {% else %}
-            <h4 class="font-italic">About</h4>
-            <p class="mb-0">Webpage aldb - "The Full Stack Developer" building Real-World Scalable Web Apps. Welcome to my github pages, it’s great to have you.</p>
-            {% endif %}
+        <aside class="col-md-4 blog-sidebar">%}
           </div> -->
 
           <div class="p-3">
@@ -40,9 +32,7 @@ layout: default
             {% endfor %}
             </ol>
           </div>
-        </aside><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </main><!-- /.container -->
+        </aside>
+      </div>
+    </main>
 </div>
