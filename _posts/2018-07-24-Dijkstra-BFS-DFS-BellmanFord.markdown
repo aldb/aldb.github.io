@@ -208,7 +208,9 @@ Example using:
 
 Bellman-Ford similar to Dijstra's except that instead of utilizing a Priority Queue to visit nodes in order, Bellman-Ford looping iterates over every edge V times each, ensuring that all negative edge weights.
 
-<b>Time Complexity different:</b> O(E+V log V) vs O(VE)
+<b>Time Complexity different:</b> O(E+V log V) vs O(N)
+
+<b>Edited by comment<b/> Dijkstra’s algorithm work O(E+V log V) <b>ONLY</b> if the priority queue has O(log N) add/remove complexity.
 
 <img src="../../../../assets/img/posts/2018/Bellman-FordvsDijkstra.png" class="img-fluid" alt="Bellman vs FordvsDijkstra">
 Compare code implementation Bellman-Ford vs Dijkstra's algorithm.

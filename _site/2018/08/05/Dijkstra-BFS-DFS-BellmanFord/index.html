@@ -295,7 +295,9 @@ It uses 2 for loop, what makes time complexity Vertex * Edges in worst cases.</p
 
 <p>Bellman-Ford similar to Dijstra’s except that instead of utilizing a Priority Queue to visit nodes in order, Bellman-Ford looping iterates over every edge V times each, ensuring that all negative edge weights.</p>
 
-<p><b>Time Complexity different:</b> O(E+V log V) vs O(VE)</p>
+<p><b>Time Complexity different:</b> O(E+V log V) vs O(N)</p>
+
+<p><b>Edited by comment<b></b> Dijkstra’s algorithm work O(E+V log V) <b>ONLY</b> if the priority queue has O(log N) add/remove complexity.</b></p>
 
 <p><img src="../../../../assets/img/posts/2018/Bellman-FordvsDijkstra.png" class="img-fluid" alt="Bellman vs FordvsDijkstra" />
 Compare code implementation Bellman-Ford vs Dijkstra’s algorithm.</p>
@@ -328,97 +330,6 @@ Compare code implementation Bellman-Ford vs Dijkstra’s algorithm.</p>
 
           
         </div>
-
-        <aside class="col-md-4 blog-sidebar">%}
-          </div> -->
-
-          <div class="p-3">
-            <h4 class="font-italic">Archives</h4>
-            <ol class="list-unstyled mb-0">
-            
-            
-            
-            
-            
-              <li><a href="/2018/08/05/Dijkstra-BFS-DFS-BellmanFord/">August 2018</a></li>
-            
-            
-            
-            
-              <li><a href="/2018/07/24/binary-tree-es6/">July 2018</a></li>
-            
-            
-            
-            
-              <li><a href="/2018/03/03/big-o-notation-in-js/">March 2018</a></li>
-            
-            
-            
-            
-              <li><a href="/2016/07/13/differences-between-web-servers/">July 2016</a></li>
-            
-            
-            
-            
-              <li><a href="/2016/06/01/nightwatjs-guide/">June 2016</a></li>
-            
-            
-            
-            
-              <li><a href="/2016/06/01/install-nodejs-npm-by-brew/">June 2016</a></li>
-            
-            
-            
-            
-              <li><a href="/2016/03/21/bash-command-not-found/">March 2016</a></li>
-            
-            
-            
-            
-              <li><a href="/2016/02/23/Jekyll-vs-ghost-cms/">February 2016</a></li>
-            
-            
-            
-            
-              <li><a href="/2015/02/13/sql-joins/">February 2015</a></li>
-            
-            
-            
-            
-              <li><a href="/2015/02/11/apache-iis-vs-nginx-nodejs/">February 2015</a></li>
-            
-            
-            
-            
-              <li><a href="/2014/11/11/include-vs-require-require_once-vs-include_once/">November 2014</a></li>
-            
-            
-            
-            
-              <li><a href="/2014/10/31/rabota-s-datetime-php-vs-python/">October 2014</a></li>
-            
-            
-            
-            
-              <li><a href="/2014/10/20/raznitsa-datetime-i-timestamp/">October 2014</a></li>
-            
-            
-            
-            
-              <li><a href="/2014/10/19/ustanovka-phpunit/">October 2014</a></li>
-            
-            
-            
-            
-              <li><a href="/2014/10/14/kak-sozdat-blogh-na-github-io-ispolzuia-cms-ghost/">October 2014</a></li>
-            
-            
-            
-            
-            
-            </ol>
-          </div>
-        </aside>
       </div>
     </main>
 </div>
