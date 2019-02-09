@@ -123,8 +123,9 @@
         </div>
     </div>
     <div class="footer-copyright">
-        <p>Made with <i class="ion-android-favorite-outline"></i> 2014-2018</p>
+        <p>Made with <i class="ion-android-favorite-outline"></i> 2014-2019</p>
     </div>
 </footer>
+
 </body>
 </html>
