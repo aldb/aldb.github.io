@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-08T21:11:39-08:00</updated><id>http://localhost:4000/</id><title type="html">aldb</title><subtitle>aldb - The Full Stack Developer</subtitle><entry><title type="html">Dijkstra vs BFS vs DFS vs Bellman-Ford in JS ES6</title><link href="http://localhost:4000/2018/08/05/Dijkstra-BFS-DFS-BellmanFord/" rel="alternate" type="text/html" title="Dijkstra vs BFS vs DFS  vs Bellman-Ford in JS ES6" /><published>2018-08-05T08:38:39-07:00</published><updated>2018-08-05T08:38:39-07:00</updated><id>http://localhost:4000/2018/08/05/Dijkstra-BFS-DFS-BellmanFord</id><content type="html" xml:base="http://localhost:4000/2018/08/05/Dijkstra-BFS-DFS-BellmanFord/">&lt;h4 id=&quot;dijkstra-vs-bfs-vs-dfs-vs-bellman-ford-in-js-es6&quot;&gt;Dijkstra vs BFS vs DFS vs Bellman-Ford in JS ES6&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-03T20:06:13-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">4db</title><subtitle>4db - The Full Stack Developer</subtitle><entry><title type="html">Dijkstra vs BFS vs DFS vs Bellman-Ford in JS ES6</title><link href="http://localhost:4000/2018/08/05/Dijkstra-BFS-DFS-BellmanFord/" rel="alternate" type="text/html" title="Dijkstra vs BFS vs DFS  vs Bellman-Ford in JS ES6" /><published>2018-08-05T08:38:39-07:00</published><updated>2018-08-05T08:38:39-07:00</updated><id>http://localhost:4000/2018/08/05/Dijkstra-BFS-DFS-BellmanFord</id><content type="html" xml:base="http://localhost:4000/2018/08/05/Dijkstra-BFS-DFS-BellmanFord/">&lt;h4 id=&quot;dijkstra-vs-bfs-vs-dfs-vs-bellman-ford-in-js-es6&quot;&gt;Dijkstra vs BFS vs DFS vs Bellman-Ford in JS ES6&lt;/h4&gt;
 
 &lt;p&gt;In this topic, we’re review graph search, traversal, and explore algorithm implementations in JS ES6.&lt;/p&gt;
 
@@ -10,7 +10,7 @@
   &lt;li&gt;Bellman-Ford algorithm&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;All code &amp;amp; test provide from this &lt;a href=&quot;https://github.com/aldb/js_algorithms/&quot;&gt;repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All code &amp;amp; test provide from this &lt;a href=&quot;https://github.com/4db/js_algorithms/&quot;&gt;repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;graphs-overview&quot;&gt;Graphs Overview&lt;/h4&gt;
 
@@ -221,7 +221,7 @@ Compare code implementation Bellman-Ford vs Dijkstra’s algorithm.&lt;/p&gt;
 &lt;h4 id=&quot;references&quot;&gt;References:&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/aldb/js_algorithms/&quot;&gt;Github repository with tests&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/4db/js_algorithms/&quot;&gt;Github repository with tests&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)&quot;&gt;Graph&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Directed_graph&quot;&gt;Directed Graph&lt;/a&gt;&lt;/li&gt;
@@ -571,7 +571,7 @@ Compare code implementation Bellman-Ford vs Dijkstra’s algorithm.&lt;/p&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/aldb/js_algorithms/blob/master/binary_search_tree.js&quot;&gt;Testing version&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/4db/js_algorithms/blob/master/binary_search_tree.js&quot;&gt;Testing version&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;at-the-end&quot;&gt;At the end&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;../../../../assets/img/posts/2018/binary_tree.png&quot; class=&quot;img-fluid&quot; alt=&quot;Binary tree in nature&quot; /&gt;
@@ -790,7 +790,7 @@ If the values match it will return success.&lt;/p&gt;
 
 &lt;p&gt;Running simple examples can better feel the difference between algorithms. O big notation help to find the optimal data structure, algorithm, and understand complexity.&lt;/p&gt;
 
-&lt;p&gt;Please find all test cases on this &lt;a href=&quot;https://gist.github.com/aldb/b9494e4ca594f6f704671edf713a1922.js&quot;&gt;JS gist&lt;/a&gt;:&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="bigo" /><category term="algorithm" /><category term="js" /><summary type="html">Big O notation focuses the worst-case scenario and can be used to describe the execution time/space by an algorithm. Let’s now explore the most common types of Big O Notations. We’ll be using vanilla JS and ECMA6 examples.</summary></entry><entry><title type="html">Thismoment</title><link href="http://localhost:4000/portfolio_v2/2016/12/13/thismoment.mdown" rel="alternate" type="text/html" title="Thismoment" /><published>2016-12-13T21:38:39-08:00</published><updated>2016-12-13T21:38:39-08:00</updated><id>http://localhost:4000/portfolio_v2/2016/12/13/thismoment</id><content type="html" xml:base="http://localhost:4000/portfolio_v2/2016/12/13/thismoment.mdown">Implemented contentcloud social media solutions(&lt;code class=&quot;text-primary&quot;&gt;Zend, ORM, Elasticsearh&lt;/code&gt;).
+&lt;p&gt;Please find all test cases on this &lt;a href=&quot;https://gist.github.com/4db/b9494e4ca594f6f704671edf713a1922.js&quot;&gt;JS gist&lt;/a&gt;:&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="bigo" /><category term="algorithm" /><category term="js" /><summary type="html">Big O notation focuses the worst-case scenario and can be used to describe the execution time/space by an algorithm. Let’s now explore the most common types of Big O Notations. We’ll be using vanilla JS and ECMA6 examples.</summary></entry><entry><title type="html">Thismoment</title><link href="http://localhost:4000/portfolio_v2/2016/12/13/thismoment.mdown" rel="alternate" type="text/html" title="Thismoment" /><published>2016-12-13T21:38:39-08:00</published><updated>2016-12-13T21:38:39-08:00</updated><id>http://localhost:4000/portfolio_v2/2016/12/13/thismoment</id><content type="html" xml:base="http://localhost:4000/portfolio_v2/2016/12/13/thismoment.mdown">Implemented contentcloud social media solutions(&lt;code class=&quot;text-primary&quot;&gt;Zend, ORM, Elasticsearh&lt;/code&gt;).
 Provide frontend tech &lt;code class=&quot;text-primary&quot;&gt;SDK(JS)&lt;/code&gt; solutions for custom social media websites. Developed and fixed fully responsive interface: desktop, tablet(portrait), mobile. 
 Managed, designed and implemented e2e test project(&lt;code class=&quot;text-primary&quot;&gt;Nightwatch.js&lt;/code&gt; framework based on Page Objects methodology).</content><author><name></name></author><category term="portfolio_v2" /><summary type="html">Implemented contentcloud social media solutions(Zend, ORM, Elasticsearh). Provide frontend tech SDK(JS) solutions for custom social media websites. Developed and fixed fully responsive interface: desktop, tablet(portrait), mobile. Managed, designed and implemented e2e test project(Nightwatch.js framework based on Page Objects methodology).</summary></entry><entry><title type="html">Sephora Gallery</title><link href="http://localhost:4000/portfolio_v2/2016/08/31/sephora.mdown" rel="alternate" type="text/html" title="Sephora Gallery" /><published>2016-08-31T22:38:39-07:00</published><updated>2016-08-31T22:38:39-07:00</updated><id>http://localhost:4000/portfolio_v2/2016/08/31/sephora</id><content type="html" xml:base="http://localhost:4000/portfolio_v2/2016/08/31/sephora.mdown">Design and development Mobile web app, website, optimized for the browser and iOS. The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery. UI provides business logic for products filter, price calculation, discounts, events, users activities, and etc.</content><author><name></name></author><category term="portfolio_v2" /><summary type="html">Design and development Mobile web app, website, optimized for the browser and iOS. The system consisted of a proprietary single-sign-on and photo upload flow for an in-store iPad driven store kiosk experience, which allowed users to take photos of themselves and upload them to a web gallery. UI provides business logic for products filter, price calculation, discounts, events, users activities, and etc.</summary></entry><entry><title type="html">Apache vs IIS vs Nginx vs Node.js</title><link href="http://localhost:4000/2016/07/13/differences-between-web-servers/" rel="alternate" type="text/html" title="Apache vs IIS vs Nginx vs Node.js" /><published>2016-07-13T22:38:39-07:00</published><updated>2016-07-13T22:38:39-07:00</updated><id>http://localhost:4000/2016/07/13/differences-between-web-servers</id><content type="html" xml:base="http://localhost:4000/2016/07/13/differences-between-web-servers/">&lt;p&gt;Today, the most popular web servers are: &lt;strong&gt;Apache, IIS, Nginx, Node.js&lt;/strong&gt;. Every web server has its own history, focus on technology, the preferred operating system, and etc.&lt;/p&gt;
 
@@ -849,7 +849,42 @@ Event-based web servers.
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/042_serverarch.html#42&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.wikivs.com/wiki/apache_vs_nginx&quot;&gt;Apache vs nginx&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="programming" /><category term="nodejs" /><category term="apache" /><category term="nginx" /><category term="iis" /><category term="en" /><summary type="html">Today, the most popular web servers are: Apache, IIS, Nginx, Node.js. Every web server has its own history, focus on technology, the preferred operating system, and etc.</summary></entry><entry><title type="html">Nightwatchjs build</title><link href="http://localhost:4000/2016/06/01/nightwatjs-guide/" rel="alternate" type="text/html" title="Nightwatchjs build" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>http://localhost:4000/2016/06/01/nightwatjs-guide</id><content type="html" xml:base="http://localhost:4000/2016/06/01/nightwatjs-guide/">&lt;h2 id=&quot;whatwhy-is-nightwatchjs&quot;&gt;What|Why is Nightwatch.js?&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="programming" /><category term="nodejs" /><category term="apache" /><category term="nginx" /><category term="iis" /><category term="en" /><summary type="html">Today, the most popular web servers are: Apache, IIS, Nginx, Node.js. Every web server has its own history, focus on technology, the preferred operating system, and etc.</summary></entry><entry><title type="html">Install Nodejs &amp;amp; NPM by Brew</title><link href="http://localhost:4000/2016/06/01/install-nodejs-npm-by-brew/" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>http://localhost:4000/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="http://localhost:4000/2016/06/01/install-nodejs-npm-by-brew/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;Need quick script for install NPM &amp;amp; Node by terminal.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Homebrew - the missing package manager for OS X, really easy way to setup environment.&lt;/p&gt;
+
+&lt;p&gt;Open terminal and check Brew version:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you get “brew: command not found” got to official web &lt;a href=&quot;http://brew.sh/&quot;&gt;page&lt;/a&gt; and copy/paster url link for install, for example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/usr/bin/ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If on Mac don’t install Xcode you see alert message with option for install. Node.js &amp;amp; NPM don’t need Xcode, so cancel Xcode installation alert message.&lt;/p&gt;
+
+&lt;p&gt;Then installing the NPM &amp;amp; Node by command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew node&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2016/npm_nodejs_by_brew.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;check-installed-versions&quot;&gt;Check installed versions&lt;/h2&gt;
+
+&lt;p&gt;For check nodejs/NPM version/location use:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which node
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which npm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Have fun with Nodejs!&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="mac" /><category term="nodejs" /><category term="npm" /><category term="brew" /><summary type="html">Problem</summary></entry><entry><title type="html">Nightwatchjs build</title><link href="http://localhost:4000/2016/06/01/nightwatjs-guide/" rel="alternate" type="text/html" title="Nightwatchjs build" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>http://localhost:4000/2016/06/01/nightwatjs-guide</id><content type="html" xml:base="http://localhost:4000/2016/06/01/nightwatjs-guide/">&lt;h2 id=&quot;whatwhy-is-nightwatchjs&quot;&gt;What|Why is Nightwatch.js?&lt;/h2&gt;
 
 &lt;p&gt;&lt;b&gt;Nightwatch.js&lt;/b&gt; is an easy to use Node.js based End-to-End (E2E) testing solution for browser based apps and websites. It uses the powerful Selenium WebDriver API to perform commands and assertions on DOM elements. (c) &lt;a href=&quot;nightwatchjs.org&quot;&gt;nightwatchjs.org&lt;/a&gt;&lt;/p&gt;
 
@@ -888,7 +923,7 @@ After successful installed you can verify &lt;a href=&quot;https://java.com/en/d
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Install/update for latest version &lt;a href=&quot;https://nodejs.org&quot;&gt;Node.js&lt;/a&gt;. Check my previos post for &lt;a href=&quot;http://aldb.github.io/2016/06/01/install-nodejs-npm-by-brew/&quot;&gt;Node.js setup&lt;/a&gt;.
+  &lt;li&gt;Install/update for latest version &lt;a href=&quot;https://nodejs.org&quot;&gt;Node.js&lt;/a&gt;. Check my previos post for &lt;a href=&quot;http://4db.github.io/2016/06/01/install-nodejs-npm-by-brew/&quot;&gt;Node.js setup&lt;/a&gt;.
 &lt;br /&gt;&lt;/li&gt;
   &lt;li&gt;Download latest &lt;a href=&quot;http://www.seleniumhq.org/download/&quot;&gt;Selenium Standalone Server&lt;/a&gt;
 &lt;br /&gt;
@@ -932,7 +967,7 @@ In &lt;b&gt;tests&lt;/b&gt; - tests cases files.
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;java &lt;span class=&quot;nt&quot;&gt;-jar&lt;/span&gt; selenium-server-standalone-2.53.0.jar &lt;span class=&quot;nt&quot;&gt;-Dwebdriver&lt;/span&gt;.chrome.driver&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'chromedriver'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;blockquote class=&quot;twitter-video&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;@selenium server run example &lt;a href=&quot;https://t.co/kT5aKXs6Yi&quot;&gt;pic.twitter.com/kT5aKXs6Yi&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alex (@aldbpr) &lt;a href=&quot;https://twitter.com/aldbpr/status/741462605965840388&quot;&gt;June 11, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;blockquote class=&quot;twitter-video&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;@selenium server run example &lt;a href=&quot;https://t.co/kT5aKXs6Yi&quot;&gt;pic.twitter.com/kT5aKXs6Yi&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alex (@4dbpr) &lt;a href=&quot;https://twitter.com/4dbpr/status/741462605965840388&quot;&gt;June 11, 2016&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;In terminal windows start seleneium server(“Selenium Server is up and running”), for stop this process can use &lt;b&gt;“control + c”&lt;/b&gt;. For next steps you need open new &lt;b&gt;“tab”&lt;/b&gt; in terminal - &lt;b&gt;“control + r”&lt;/b&gt;.&lt;/p&gt;
@@ -1046,7 +1081,7 @@ Also can stop Selenium server - &lt;a href=&quot;http://localhost:4444/selenium-
 –test - additional params, run &lt;a href=&quot;http://nightwatchjs.org/guide#command-line-options&quot;&gt;specific test file&lt;/a&gt;. If in project used another version of nightwatch need update this command from “nightwatch-0.9.0” for “nightwatch-x.x.x” or folder name what used in project.&lt;/li&gt;
   &lt;li&gt;tests/google.js - path for file&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote class=&quot;twitter-video&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/nightwatchjs&quot;&gt;@nightwatchjs&lt;/a&gt; test run example &lt;a href=&quot;https://t.co/EZBGLtb3xM&quot;&gt;pic.twitter.com/EZBGLtb3xM&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alex (@aldbpr) &lt;a href=&quot;https://twitter.com/aldbpr/status/741462043706818560&quot;&gt;June 11, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;blockquote class=&quot;twitter-video&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&lt;a href=&quot;https://twitter.com/nightwatchjs&quot;&gt;@nightwatchjs&lt;/a&gt; test run example &lt;a href=&quot;https://t.co/EZBGLtb3xM&quot;&gt;pic.twitter.com/EZBGLtb3xM&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alex (@4dbpr) &lt;a href=&quot;https://twitter.com/4dbpr/status/741462043706818560&quot;&gt;June 11, 2016&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
 &lt;h4 id=&quot;done&quot;&gt;Done!&lt;/h4&gt;
@@ -1121,42 +1156,7 @@ Final file’s structures:
   &lt;li&gt;Google group - &lt;a href=&quot;https://groups.google.com/forum/#!forum/nightwatchjs&quot;&gt;https://groups.google.com/forum/#!forum/nightwatchjs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Drivers for Selenium - &lt;a href=&quot;https://selenium-release.storage.googleapis.com/index.html&quot;&gt;https://selenium-release.storage.googleapis.com/index.html&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Selenium server - &lt;a href=&quot;http://www.seleniumhq.org&quot;&gt;http://www.seleniumhq.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="mac" /><category term="nightwatchjs" /><summary type="html">What|Why is Nightwatch.js?</summary></entry><entry><title type="html">Install Nodejs &amp;amp; NPM by Brew</title><link href="http://localhost:4000/2016/06/01/install-nodejs-npm-by-brew/" rel="alternate" type="text/html" title="Install Nodejs &amp; NPM by Brew" /><published>2016-06-01T08:38:39-07:00</published><updated>2016-06-01T08:38:39-07:00</updated><id>http://localhost:4000/2016/06/01/install-nodejs-npm-by-brew</id><content type="html" xml:base="http://localhost:4000/2016/06/01/install-nodejs-npm-by-brew/">&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-
-&lt;p&gt;Need quick script for install NPM &amp;amp; Node by terminal.&lt;/p&gt;
-
-&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
-
-&lt;p&gt;Homebrew - the missing package manager for OS X, really easy way to setup environment.&lt;/p&gt;
-
-&lt;p&gt;Open terminal and check Brew version:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If you get “brew: command not found” got to official web &lt;a href=&quot;http://brew.sh/&quot;&gt;page&lt;/a&gt; and copy/paster url link for install, for example:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;/usr/bin/ruby &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-fsSL&lt;/span&gt; https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;If on Mac don’t install Xcode you see alert message with option for install. Node.js &amp;amp; NPM don’t need Xcode, so cancel Xcode installation alert message.&lt;/p&gt;
-
-&lt;p&gt;Then installing the NPM &amp;amp; Node by command:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew node&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Done!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/2016/npm_nodejs_by_brew.png&quot; alt=&quot;Screenshot&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;check-installed-versions&quot;&gt;Check installed versions&lt;/h2&gt;
-
-&lt;p&gt;For check nodejs/NPM version/location use:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which node
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npm &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;which npm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Have fun with Nodejs!&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="mac" /><category term="nodejs" /><category term="npm" /><category term="brew" /><summary type="html">Problem</summary></entry><entry><title type="html">bash command not found</title><link href="http://localhost:4000/2016/03/21/bash-command-not-found/" rel="alternate" type="text/html" title="bash command not found" /><published>2016-03-21T08:38:39-07:00</published><updated>2016-03-21T08:38:39-07:00</updated><id>http://localhost:4000/2016/03/21/bash-command-not-found</id><content type="html" xml:base="http://localhost:4000/2016/03/21/bash-command-not-found/">&lt;h2 id=&quot;error&quot;&gt;Error&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="programming" /><category term="en" /><category term="mac" /><category term="nightwatchjs" /><summary type="html">What|Why is Nightwatch.js?</summary></entry><entry><title type="html">bash command not found</title><link href="http://localhost:4000/2016/03/21/bash-command-not-found/" rel="alternate" type="text/html" title="bash command not found" /><published>2016-03-21T08:38:39-07:00</published><updated>2016-03-21T08:38:39-07:00</updated><id>http://localhost:4000/2016/03/21/bash-command-not-found</id><content type="html" xml:base="http://localhost:4000/2016/03/21/bash-command-not-found/">&lt;h2 id=&quot;error&quot;&gt;Error&lt;/h2&gt;
 
 &lt;p&gt;I get error on process npm install on mac. After successfully installed npm package tsd, tsd command get back error message:&lt;/p&gt;
 

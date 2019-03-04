@@ -9,6 +9,6 @@ techs: nodejs
 country: USA
 ---
 
-<p class="card-text">Web chat on: <code>nodejs, socket.io, expressjs, bootstrap</code>. <a href="https://github.com/aldb/nodejs_private_chat">Code.</a></p>
+<p class="card-text">Web chat on: <code>nodejs, socket.io, expressjs, bootstrap</code>. <a href="https://github.com/4db/nodejs_private_chat">Code.</a></p>
 <br>
 <p class="card-text"><i class="ion-social-github-outline wow fadeIn text-primary" style="visibility: visible; animation-name: fadeIn;"></i><small class="text-muted"> Last updated Aug 3, 2015</small></p>

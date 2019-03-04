@@ -13,12 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-name: aldb
-title: aldb
+name: 4db
+title: 4db
 email: your-email@example.com
-description: aldb - The Full Stack Developer
+description: 4db - The Full Stack Developer
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://aldb.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://4db.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 

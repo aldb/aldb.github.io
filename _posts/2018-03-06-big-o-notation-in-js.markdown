@@ -239,5 +239,5 @@ Through the illustrate below compare algorithms performance in this post.
 
 Running simple examples can better feel the difference between algorithms. O big notation help to find the optimal data structure, algorithm, and understand complexity.
 
-Please find all test cases on this [JS gist](https://gist.github.com/aldb/b9494e4ca594f6f704671edf713a1922.js):
+Please find all test cases on this [JS gist](https://gist.github.com/4db/b9494e4ca594f6f704671edf713a1922.js):
 

@@ -30,7 +30,7 @@
   <meta name="description" content="Implemented contentcloud social media solutions(Zend, ORM, Elasticsearh). Provide frontend tech SDK(JS) solutions for custom social media websites. Developed...">
 
   <link rel="canonical" href="http://localhost:4000/portfolio_v2/2016/12/13/thismoment.mdown">
-  <link rel="alternate" type="application/rss+xml" title="aldb" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="4db" href="/feed.xml">
   
   
 </head>
@@ -81,7 +81,7 @@
         <div class="col-md-8 blog-main">
           <div class="blog-post">
             <h2 class="blog-post-title">Thismoment</h2>
-            <p class="blog-post-meta">13 December 2016 by <a href="#">aldb</a></p>
+            <p class="blog-post-meta">13 December 2016 by <a href="#">4db</a></p>
             Implemented contentcloud social media solutions(<code class="text-primary">Zend, ORM, Elasticsearh</code>).
 Provide frontend tech <code class="text-primary">SDK(JS)</code> solutions for custom social media websites. Developed and fixed fully responsive interface: desktop, tablet(portrait), mobile. 
 Managed, designed and implemented e2e test project(<code class="text-primary">Nightwatch.js</code> framework based on Page Objects methodology).

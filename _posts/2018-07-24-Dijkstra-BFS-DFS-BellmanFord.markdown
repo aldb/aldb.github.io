@@ -19,7 +19,7 @@ Candidates:
 - Depth-first search algorithm
 - Bellman-Ford algorithm
 
-All code & test provide from this [repository](https://github.com/aldb/js_algorithms/).
+All code & test provide from this [repository](https://github.com/4db/js_algorithms/).
 
 #### Graphs Overview
 
@@ -217,7 +217,7 @@ Compare code implementation Bellman-Ford vs Dijkstra's algorithm.
 
 #### References:
 
-- [Github repository with tests](https://github.com/aldb/js_algorithms/)
+- [Github repository with tests](https://github.com/4db/js_algorithms/)
 - [Graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
   - [Directed Graph](https://en.wikipedia.org/wiki/Directed_graph)
   - [DFS](https://en.wikipedia.org/wiki/Depth-first_search)

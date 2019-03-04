@@ -332,7 +332,7 @@ class BinaryTree {
 }
 {% endhighlight %}
 
-[Testing version](https://github.com/aldb/js_algorithms/blob/master/binary_search_tree.js)
+[Testing version](https://github.com/4db/js_algorithms/blob/master/binary_search_tree.js)
 
 ### At the end
 <img src="../../../../assets/img/posts/2018/binary_tree.png" class="img-fluid" alt="Binary tree in nature">

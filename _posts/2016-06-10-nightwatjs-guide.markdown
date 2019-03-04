@@ -46,7 +46,7 @@ Here details setup description step by step for Mac OS X. TODO work build:
 After successful installed you can verify [Java version](https://java.com/en/download/installed.jsp) online by java applet. Also check [Java SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 <br>
 <br>
-2. Install/update for latest version [Node.js](https://nodejs.org). Check my previos post for [Node.js setup](http://aldb.github.io/2016/06/01/install-nodejs-npm-by-brew/).
+2. Install/update for latest version [Node.js](https://nodejs.org). Check my previos post for [Node.js setup](http://4db.github.io/2016/06/01/install-nodejs-npm-by-brew/).
 <br>
 3. Download latest [Selenium Standalone Server](http://www.seleniumhq.org/download/)
 <br>
@@ -92,7 +92,7 @@ $ npm install
 $ java -jar selenium-server-standalone-2.53.0.jar -Dwebdriver.chrome.driver='chromedriver'
 {% endhighlight %}
 
-<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr">@selenium server run example <a href="https://t.co/kT5aKXs6Yi">pic.twitter.com/kT5aKXs6Yi</a></p>&mdash; Alex (@aldbpr) <a href="https://twitter.com/aldbpr/status/741462605965840388">June 11, 2016</a></blockquote>
+<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr">@selenium server run example <a href="https://t.co/kT5aKXs6Yi">pic.twitter.com/kT5aKXs6Yi</a></p>&mdash; Alex (@4dbpr) <a href="https://twitter.com/4dbpr/status/741462605965840388">June 11, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 In terminal windows start seleneium server("Selenium Server is up and running"), for stop this process can use <b>"control + c"</b>. For next steps you need open new <b>"tab"</b> in terminal - <b>"control + r"</b>.
@@ -211,7 +211,7 @@ Where:
 * ./bin/nightwatch-0.8.18/bin/nightwatch  - path for nightwatch executable file
 --test - additional params, run [specific test file]( http://nightwatchjs.org/guide#command-line-options). If in project used another version of nightwatch need update this command from "nightwatch-0.9.0" for "nightwatch-x.x.x" or folder name what used in project.
 * tests/google.js - path for file
-<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/nightwatchjs">@nightwatchjs</a> test run example <a href="https://t.co/EZBGLtb3xM">pic.twitter.com/EZBGLtb3xM</a></p>&mdash; Alex (@aldbpr) <a href="https://twitter.com/aldbpr/status/741462043706818560">June 11, 2016</a></blockquote>
+<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/nightwatchjs">@nightwatchjs</a> test run example <a href="https://t.co/EZBGLtb3xM">pic.twitter.com/EZBGLtb3xM</a></p>&mdash; Alex (@4dbpr) <a href="https://twitter.com/4dbpr/status/741462043706818560">June 11, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 #### Done!
 
